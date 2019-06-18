@@ -1,0 +1,84 @@
+<?php
+
+use MemorialBracelets\NameProductRequest\Model\Field;
+
+/**
+ * @var \MemorialBracelets\NameProductRequest\Block\RequestForm $block
+ * @var Field[] $fields
+ */
+$fields = $block->getFields();
+?>
+<p class="request-info">These fields are case sensitive. Please type in the case (UPPER or lower) in which you wish the information to appear on the website and on the product when engraved</p>
+<form data-mage-init='{"validation":{}}' method="post" action="<?= $block->getUrl('request/index/submit'); ?>">
+    <div class="fieldset">
+        <?php foreach ($fields as $field) :
+            $validate = [];
+            if ($field->isRequired()) {
+                $validate['required'] = true;
+            }
+            ?>
+            <div class="field <?= $field->isRequired() ? 'required' : '' ?>">
+                <label class="label" for="<?= $block->escapeQuote($field->getName()); ?>">
+                    <?= $block->escapeHtml($field->getLabel()); ?>
+                </label>
+                <div class="control">
+                    <?php if ($field->getType() == Field::TYPE_TEXT) : ?>
+                        <input type="text"
+                               name="<?= $block->escapeQuote($field->getName()); ?>"
+                            <?= !empty($validate) ? "data-validate='" . json_encode($validate) . "'" : '' ?>
+                            <?= $field->isRequired() ? 'required' : '' ?>
+                            <?= $field->getMaxLength() ? 'maxlength="' . $field->getMaxLength() . '"' : '' ?>
+                        />
+                    <?php elseif ($field->getType() == 'date') : ?>
+                        <input class="input-date"
+                               type="text"
+                               name="<?= $block->escapeQuote($field->getName()); ?>"
+                               data-mage-init='{"calendar": {"showTime": false, "dateFormat": "yy-mm-dd"}}'
+                            <?= !empty($validate) ? "data-validate='" . json_encode($validate) . "'" : '' ?>
+                            <?= $field->isRequired() ? 'required' : '' ?>
+                            <?= $field->getMaxLength() ? 'maxlength="' . $field->getMaxLength() . '"' : '' ?>
+                        />
+                    <?php elseif ($field->getType() == Field::TYPE_TEXTAREA) : ?>
+                        <textarea name="<?= $block->escapeQuote($field->getName()); ?>"
+                            <?= !empty($validate) ? "data-validate='" . json_encode($validate) . "'" : '' ?>
+                            <?= $field->isRequired() ? 'required' : '' ?>
+                            <?= $field->getMaxLength() ? 'maxlength="' . $field->getMaxLength() . '"' : '' ?>
+                        ></textarea>
+
+                    <?php elseif ($field->getType() == Field::TYPE_SELECT) : ?>
+                        <select name="<?= $block->escapeQuote($field->getName()); ?>"
+                            <?= !empty($validate) ? "data-validate='" . json_encode($validate) . "'" : '' ?>
+                            <?= $field->isRequired() ? 'required' : '' ?>
+                        >
+                            <?php foreach ($field->getOptions() as $option) : ?>
+                                <option value="<?= $block->escapeQuote($option->getValue()); ?>"
+                                        <?php echo ($option->getLabel() == 'USA' ? "selected=\"selected\"" : "") ?> >
+                                    <?= $block->escapeHtml($option->getLabel()); ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+
+                    <?php elseif ($field->getType() == Field::TYPE_MULTILINE) : ?>
+                        <div class="engraving-line-wrapper">
+                            <p><?= __('Maximum number of characters per line: 30') ?></p>
+                        </div>
+                        <?php for ($i = 0;$i < $field->getLines();++$i) : ?>
+                            <input type="text" name="<?= $block->escapeQuote($field->getName()); ?>[]"
+                                <?= !empty($validate) ? "data-validate='" . json_encode($validate) . "'" : '' ?>
+                                <?= $field->isRequired() ? 'required' : '' ?>
+                                <?= $field->getMaxLength() ? 'maxlength="' . $field->getMaxLength() . '"' : '' ?>
+                                   placeholder="<?= __('Line') . ' ' . ($i+1) ?>"
+                            />
+                            <br /><br />
+                        <?php endfor; ?>
+                    <?php endif; ?>
+                </div>
+            </div>
+        <?php endforeach; ?>
+        <div class="actions-toolbar">
+            <button type="submit" class="action primary">
+                <span><?= __('Request Person Be Added') ?></span>
+            </button>
+        </div>
+    </div>
+</form>

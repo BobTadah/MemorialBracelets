@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <sales_email>
+            <engraving>
+                <enabled>1</enabled>
+                <template>sales_email_engraving_template</template>
+                <identity>sales</identity>
+                <copy_method>bcc</copy_method>
+            </engraving>
+        </sales_email>
+    </default>
+</config>

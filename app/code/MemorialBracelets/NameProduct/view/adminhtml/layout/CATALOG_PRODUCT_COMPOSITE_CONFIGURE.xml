@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd">
+    <referenceContainer name="product.composite.fieldset.options.js.container">
+        <block class="MemorialBracelets\NameProduct\Block\Adminhtml\Catalog\Product\Composite\NameConfig"
+               name="product.composite.fieldset.nameconfig"
+               before="product.composite.fieldset.options.js"
+               template="MemorialBracelets_NameProduct::catalog/product/composite/name-config.phtml"/>
+    </referenceContainer>
+</layout>

@@ -1,0 +1,23 @@
+<?php
+/** @var  $block MemorialBracelets\ConversionTags\Block\ConversionTags */
+$scriptLocation = $block->getScriptLocation();
+$successPage = $block->getSuccessPage();
+
+switch ($scriptLocation) {
+    //Adds scripts to head html tag.
+    case 'head':
+        echo $block->getHeadTagScripts();
+        break;
+    //Adds scripts to body html tag.
+    case 'body':
+        echo $block->getBodyTagScripts();
+
+        //Adds order success page specific scripts.
+        if ($successPage) {
+            echo $block->getPurchaseCompletionPageScripts();
+        }
+        break;
+    default:
+        break;
+}
+

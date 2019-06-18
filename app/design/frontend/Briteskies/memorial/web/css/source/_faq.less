@@ -1,0 +1,122 @@
+//--faq-page--
+.cms-page-view.cms-faq, .cms-about-us {
+  //--content
+  .title {
+    margin-bottom: 20px;
+    border-bottom: 2px solid @mem-blue;
+    h1 {
+      margin-bottom: 10px;
+    }
+  }
+  .instructions {
+    color: @mem-dark-grey;
+    font-size: 18px;
+  }
+  .content {
+    .row {
+      cursor: pointer;
+      margin-bottom: 20px;
+      .question {
+        padding-left: 15px;
+        margin-bottom: 15px;
+        cursor: pointer;
+        color: @mem-blue;
+        font-weight:bold;
+        font-size: 18px;
+      }
+      .answer {
+        margin-bottom: 5px;
+        display: none;
+        font-size: 18px;
+        color: @mem-dark-grey;
+      }
+    }
+    .row:not(:last-child) {
+      border-bottom: 2px solid @mem-light-grey;
+    }
+    .row.closed p.question {
+      position: relative;
+      &:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        display: block;
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+        border-left: 7px solid @mem-blue;
+        border-right: none;
+        top: 4px;
+        left: 0;
+      }
+    }
+    .row.open p.question {
+      position: relative;
+      color:  @mem-blue-hover;
+      margin-bottom: 5px;
+      &:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        display: block;
+        border-right: 7px solid transparent;
+        border-left: 7px solid transparent;
+        border-top: 7px solid @mem-blue-hover;
+        border-bottom: none;
+        top: 8px;
+        left: -1px;
+      }
+    }
+  }
+
+  //--left
+  .faq-links {
+    padding: 5px;
+    h2 {
+      margin-top: 5px;
+      color: @mem-blue;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    ul {
+      padding-left: 10px;
+      li.link {
+        margin-left: 0;
+        cursor: pointer;
+        margin-bottom: 5px;
+        position: relative;
+        list-style: none;
+        a {
+          color: @mem-blue;
+          padding: 6px 6px 6px 21px;
+          display: block;
+          font-size: 17px;
+          position: relative;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+        &:hover {
+          background-color: @mem-blue;
+          a {
+            color: white;
+            &:after {
+              content: '';
+              position: absolute;
+              width: 0;
+              height: 0;
+              display: block;
+              border-top: 8px solid transparent;
+              border-bottom: 8px solid transparent;
+              border-left: 8px solid #FFFFFF;
+              border-right: none;
+              top: 11px;
+              left: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+/** @var \MemorialBracelets\IconOption\Block\Product\View\Options\Type\Icon $block */
+
+$_option = $block->getOption();
+$class = ($_option->getIsRequire()) ? ' required' : '';
+
+if ($_option->getType() != 'iconpicker') return;
+
+$pickerId = 'iconpicker-'.sha1(microtime(true).rand());
+
+$icons = $block->getIcons();
+?>
+<div class="opticn-attribute field <?php /* @escapeNotVerified */ echo $class ?>">
+    <span class="opticn-attribute-label label"><?php echo $block->escapeHtml($_option->getTitle()) ?></span>
+    <span class="opticn-selected-label"></span>
+
+    <div class="control">
+        <div style="display:none;">
+            <select id="opt-sel-<?= $_option->getId(); ?>" name="options[<?= $_option->getId(); ?>]" class="product-custom-option admin__control-select" selector="options[<?= $_option->getId(); ?>]">
+                <option value>-- Please Select --</option>
+                <?php foreach($icons as $icon):
+                    $selected = $icon->getId() == $block->getDefaultValue();?>
+                    <option value="<?= $icon->getId(); ?>" price="1"  <?= $selected ? 'selected' : '' ?>><?= $icon->getTitle(); ?></option>
+                <?php endforeach; ?>
+            </select>
+        </div>
+        <?php if(count($icons)): ?>
+            <div class="opticn-picker" id="<?= $pickerId ?>">
+                <?php foreach($icons as $icon):
+                    $selected = $icon->getId() == $block->getDefaultValue();
+                    ?>
+                    <div
+                        class="opticn-option <?= $selected ? 'selected' : '' ?>"
+                        data-option-label="<?= $block->escapeHtml($icon->getTitle()); ?> +<?= $block->getFormattedIconPrice($icon); ?>"
+                        data-option-tooltip-thumb="<?= $block->getConfiguration()->getMediaUrl($icon->getData('icon')); ?>"
+                        data-option-tooltip-value="<?= $block->getConfiguration()->getMediaUrl($icon->getData('icon')); ?>"
+                        data-icon-id="<?= $icon->getId(); ?>"
+                        style="background:url('<?= $block->getConfiguration()->getMediaUrl($icon->getData('icon')); ?>') no-repeat center;background-size:contain;"
+                    ></div>
+                <?php endforeach; ?>
+            </div>
+            <script type="text/x-magento-init"><?= json_encode(["#{$pickerId}" => ['MemorialBracelets_IconOption/js/icon-picker' => '']]); ?></script>
+        <?php else: ?>
+            <p>There are no icons available to choose from.</p>
+        <?php endif; ?>
+    </div>
+</div>

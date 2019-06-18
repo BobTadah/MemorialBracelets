@@ -1,0 +1,16 @@
+<?php
+/**
+ * @codingStandardsIgnoreFile
+ * @var $block MemorialBracelets\NameProduct\Block\Adminhtml\Catalog\Product\Composite\NameConfig
+ */
+$item = $block->getOrderItem();
+
+$buyRequest = $item->getBuyRequest()->getData();
+if (!isset($buyRequest['super_group'])) {
+    return;
+}
+
+$value = $buyRequest['options']['child_selection'];
+?>
+<input type="hidden" name="options[child_selection]" value="<?= $value ?>"/>
+<input type="hidden" name="super_group[<?= $value ?>]" value="1" />

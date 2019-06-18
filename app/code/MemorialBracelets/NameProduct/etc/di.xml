@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Quote\Model\Quote\Item\RelatedProducts">
+        <arguments>
+            <argument name="relatedProductTypes" xsi:type="array">
+                <item name="name" xsi:type="const">MemorialBracelets\NameProduct\Model\Product\Type\Name::TYPE_CODE</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Catalog\Block\Product\View">
+        <plugin name="name_shouldRenderQuantity" type="MemorialBracelets\NameProduct\Block\Product\View\Plugin" />
+    </type>
+    <type name="Magento\Catalog\Model\Product\LinkTypeProvider">
+        <arguments>
+            <argument name="linkTypes" xsi:type="array">
+                <item name="name_associated" xsi:type="const">MemorialBracelets\NameProduct\Model\ResourceModel\Product\Link::LINK_TYPE_NAME</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Sales\Model\ResourceModel\Report\Bestsellers">
+        <arguments>
+            <argument name="ignoredProductTypes" xsi:type="array">
+                <item name="name" xsi:type="const">MemorialBracelets\NameProduct\Model\Product\Type\Name::TYPE_CODE</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Catalog\Model\Product\CatalogPrice">
+        <arguments>
+            <argument name="priceModelPool" xsi:type="array">
+                <item name="name" xsi:type="string">MemorialBracelets\NameProduct\Model\Product\CatalogPrice</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Catalog\Model\Product\Type">
+        <plugin name="name_output" type="MemorialBracelets\NameProduct\Model\Product\Type\Plugin" />
+    </type>
+    <type name="Magento\Catalog\Model\Product\CartConfiguration">
+        <plugin name="name_isProductConfigured" type="MemorialBracelets\NameProduct\Model\Product\Cart\Configuration\Plugin\Name" />
+    </type>
+    <type name="Magento\Catalog\Helper\Product\Configuration">
+        <plugin name="name_options" type="MemorialBracelets\NameProduct\Helper\Product\Configuration\Plugin\Name"/>
+    </type>
+    <virtualType name="MemorialBracelets\NameProduct\Pricing\Price\Pool" type="Magento\Framework\Pricing\Price\Pool">
+        <arguments>
+            <argument name="prices" xsi:type="array">
+                <item name="final_price" xsi:type="string">MemorialBracelets\NameProduct\Pricing\Price\FinalPrice</item>
+                <item name="configured_price" xsi:type="string">MemorialBracelets\NameProduct\Pricing\Price\ConfiguredPrice</item>
+            </argument>
+            <argument name="target" xsi:type="object">Magento\Catalog\Pricing\Price\Pool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="MemorialBracelets\NameProduct\Pricing\Price\Collection" type="Magento\Framework\Pricing\Price\Collection">
+        <arguments>
+            <argument name="pool" xsi:type="object">MemorialBracelets\NameProduct\Pricing\Price\Pool</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\Pricing\PriceInfo\Factory">
+        <arguments>
+            <argument name="types" xsi:type="array">
+                <item name="name" xsi:type="array">
+                    <item name="infoClass" xsi:type="string">Magento\Framework\Pricing\PriceInfo\Base</item>
+                    <item name="prices" xsi:type="string">MemorialBracelets\NameProduct\Pricing\Price\Collection</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Catalog\Model\ProductLink\CollectionProvider">
+        <arguments>
+            <argument name="providers" xsi:type="array">
+                <item name="name_associated" xsi:type="object">MemorialBracelets\NameProduct\Model\Product\Link\CollectionProvider\Name</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Catalog\Model\Product\Initialization\Helper\ProductLinks">
+        <plugin name="NameProduct" type="MemorialBracelets\NameProduct\Model\Product\Initialization\Helper\ProductLinks\Plugin\Name" />
+    </type>
+    <type name="\Magento\Catalog\Model\ResourceModel\Product\Link">
+        <plugin name="nameProductLinkProcessor" type="MemorialBracelets\NameProduct\Model\ResourceModel\Product\Link\RelationPersister" />
+    </type>
+    <type name="Magento\Catalog\Model\ProductLink\Converter\ConverterPool">
+        <arguments>
+            <argument name="converters" xsi:type="array">
+                <item name="name_associated" xsi:type="object">\MemorialBracelets\NameProduct\Model\Product\Link\ProductEntity\Converter</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="IWD\OrderManager\Model\Order\Converter">
+        <plugin name="nameOrderEdit" type="MemorialBracelets\NameProduct\Plugin\Iwd\OrderManager\Model\Order\Converter" />
+    </type>
+</config>

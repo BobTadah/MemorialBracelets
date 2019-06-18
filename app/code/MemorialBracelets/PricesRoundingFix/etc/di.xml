@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Directory\Model\PriceCurrency">
+        <plugin name="mb-rounding-fix" type="MemorialBracelets\PricesRoundingFix\Plugin\PriceCurrency" sortOrder="1" disabled="false" />
+    </type>
+    <preference for="Magento\Sales\Ui\Component\Listing\Column\PurchasedPrice" type="MemorialBracelets\PricesRoundingFix\Ui\Component\Listing\Column\PurchasedPrice" />
+    <preference for="Magento\Sales\Ui\Component\Listing\Column\Price" type="MemorialBracelets\PricesRoundingFix\Ui\Component\Listing\Column\Price" />
+    <preference for="IWD\OrderManager\Model\Payment\Method\AuthorizeCim" type="MemorialBracelets\PricesRoundingFix\Model\Payment\Method\AuthorizeCim" />
+</config>

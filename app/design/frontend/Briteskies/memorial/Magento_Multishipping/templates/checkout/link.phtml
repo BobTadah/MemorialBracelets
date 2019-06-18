@@ -1,0 +1,16 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<button type="button"
+        data-role="proceed-to-checkout"
+        title="<?php /* @escapeNotVerified */ echo __('Check Out with Multiple Addresses') ?>"
+        data-mage-init='{"Magento_Checkout/js/proceed-to-checkout":{"checkoutUrl":"<?php /* @escapeNotVerified */ echo $block->getCheckoutUrl(); ?>"}}'
+        class="action multicheckout"
+    <span><?php /* @escapeNotVerified */ echo __('Check Out with Multiple Addresses') ?></span>
+</button>

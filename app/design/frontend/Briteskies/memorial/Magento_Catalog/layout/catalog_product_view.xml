@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <link src="js/pdp.js"/>
+        <link src="js/quantity-discount.js"/>
+    </head>
+    <body>
+        <!--product detail structural rearranging-->
+        <move element="page.main.title" destination="product.info.main" before="-"/>
+        <move element="product.info.review" destination="product.info.main" after="page.main.title"/>
+        <move element="product.info.overview" destination="product.info.main" after="product.info.review"/>
+        <move element="product.info.media" destination="main" before="-"/>
+        <move element="product.name.details" destination="product.info.main" after="product.info.review"/>
+
+        <referenceBlock name="product.info.stock.sku" remove="true"/>
+
+       <!--product info tab removal-->
+        <referenceBlock name="product.info.description" remove="true"/>
+        <referenceBlock name="product.attributes" remove="true"/>
+
+        <referenceBlock name="product.info.addtocart">
+            <block class="Magento\Cms\Block\Block" name="quantity-discounts">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">quantity-discount</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

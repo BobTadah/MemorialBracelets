@@ -1,0 +1,8 @@
+<?php
+// @codingStandardsIgnoreFile
+$isNameType = $this->helper('MemorialBracelets\ReviewAdditions\Helper\Data')->productNameTypeCheck();
+$review     = isset($isNameType) ? __('Reflections') : __('Reviews');
+?>
+<?php if (!empty($count)):?>
+    <a href="#customer-reviews" class="nobr"><?php /* @escapeNotVerified */ echo __('%1 %2(s)', $count, $review) ?></a>
+<?php endif;?>

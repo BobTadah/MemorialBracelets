@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <type name="MemorialBracelets\ExtensibleCustomOption\Model\Product\Option">
+        <plugin name="add_size_as_value_having_type" type="MemorialBracelets\SwatchOption\Model\OptionInterceptor" sortOrder="1" />
+    </type>
+    <type name="Magento\Catalog\Model\Product\Option">
+        <plugin name="save_swatch_options" type="MemorialBracelets\SwatchOption\Plugin\OptionSaveModifier" sortOrder="1" />
+    </type>
+    <type name="Magento\Catalog\Model\ResourceModel\Product\Option\Value\Collection">
+        <plugin name="load_swatch_values" type="MemorialBracelets\SwatchOption\Plugin\ValueCollectionGetModifier" sortOrder="1" />
+    </type>
+    <type name="MemorialBracelets\ExtensibleCustomOption\Model\ResourceModel\Product\Option\Collection">
+        <plugin name="load_swatch_values" type="MemorialBracelets\SwatchOption\Plugin\OptionCollectionAddValuesModifier" sortOrder="1" />
+    </type>
+    <type name="MemorialBracelets\ExtensibleCustomOption\Model\ResourceModel\Product\Option\Value">
+        <plugin name="swatch_save" type="MemorialBracelets\SwatchOption\Plugin\OptionValueSaveModifier" sortOrder="1" />
+    </type>
+</config>

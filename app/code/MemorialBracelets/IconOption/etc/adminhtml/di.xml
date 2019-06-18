@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="MemorialBracelets\IconOption\Ui\Form\DataProvider">
+        <arguments>
+            <!-- defines the constructor variable $modifierPool, which wants an Interface, to be the below virtualType -->
+            <argument name="modifierPool" xsi:type="object">MemorialBracelets\IconOption\Ui\Form\ModifierPool</argument>
+        </arguments>
+    </type>
+    <virtualType name="Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="remove-icon-data" xsi:type="array">
+                    <item name="class" xsi:type="string">MemorialBracelets\IconOption\Ui\External\ProductFormModifier</item>
+                    <item name="sortOrder" xsi:type="number">73</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="MemorialBracelets\IconOption\Ui\Form\ModifierPool"  type="Magento\Ui\DataProvider\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="icon-data-modifier" xsi:type="array">
+                    <item name="class" xsi:type="string">MemorialBracelets\IconOption\Ui\Form\Modifier\IconData</item>
+                    <item name="sortOrder" xsi:type="number">500</item>
+                </item>
+                <item name="icon-price" xsi:type="array">
+                    <item name="class" xsi:type="string">MemorialBracelets\IconOption\Ui\Form\Modifier\PriceBefore</item>
+                    <item name="sortOrder" xsi:type="number">500</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <!-- Adds logic to prepare order item options for print. -->
+    <type name="IWD\OrderManager\Model\Pdf\Order">
+        <plugin name="plugin-pdf-print" type="MemorialBracelets\IconOption\Plugin\PdfPrint" />
+    </type>
+</config>

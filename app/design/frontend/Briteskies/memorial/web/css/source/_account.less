@@ -1,0 +1,321 @@
+/* This file contains all the my account and login Styling. */
+.customer-account-login .page-title-wrapper {
+  display: none;
+}
+
+.customer-account-login {
+  .login-container {
+    margin-top: 30px;
+    .lib-vendor-prefix-display();
+    @media only screen and (max-width: 785px) {
+      .lib-vendor-prefix-flex-direction();
+      .lib-vendor-box-align(center);
+    }
+    > .block { //shared
+      .title-wrapper {
+        .lib-vendor-prefix-display();
+        .flex-justify-content(center);
+      }
+      .block-title {
+        text-align: center;
+        border-bottom: none;
+        color: @mem-blue;
+        display: block;
+        position: relative;
+        font-weight: bold;
+        font-size: 21px;
+        background: @mem-light-blue;
+        padding: 14px;
+        width: 215px;
+        strong {
+          font-weight: bold;
+        }
+        &:before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          top: 0;
+          display: block;
+          border: 29px solid @mem-light-blue;
+          z-index: -1;
+          left: -30px;
+          border-left-width: 30px;
+          border-left-color: transparent;
+        }
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          top: 0;
+          display: block;
+          border: 29px solid @mem-light-blue;
+          z-index: -1;
+          right: -30px;
+          border-right-width: 30px;
+          border-right-color: transparent;
+        }
+      }
+      .actions-toolbar {
+        .primary a, .primary button {
+          color: white;
+          background: @mem-blue;
+          padding: 10px 30px;
+          font-size: 17px;
+          width: 196px;
+          border-color: @mem-blue-hover;
+          &:hover {
+            background: @mem-blue-hover;
+          }
+        }
+      }
+    }
+
+    .block-new-customer {
+      order: 1;
+      padding-bottom: 25px;
+      @media only screen and (min-width: 785px) {
+        border-right: 2px solid @mem-light-grey;
+      }
+      @media only screen and (max-width: 785px) {
+        border-bottom: 2px solid @mem-light-grey;
+      }
+      .block-content {
+        .lib-vendor-prefix-display();
+        .lib-vendor-prefix-flex-direction();
+        .lib-vendor-box-align(center);
+        p {
+          color: @mem-blue;
+          font-size: 16px;
+        }
+        .list-container {
+          margin: 50px 0 20px 0;
+        }
+      }
+    }
+
+    .block-customer-login {
+      order: 2;
+      @media only screen and (max-width: 785px) {
+        margin-top: 30px;
+      }
+      .block-content {
+        .lib-vendor-prefix-display();
+        .lib-vendor-prefix-flex-direction();
+        .lib-vendor-box-align(center);
+        form {
+          fieldset.login {
+            .lib-vendor-prefix-display();
+            .lib-vendor-prefix-flex-direction();
+            .field { //shared
+              .control {
+                width: 100%;
+                input {
+                  width: 100%;
+                  font-size: 18px;
+                  height: 45px;
+                  border-color: @mem-light-grey;
+                  .placeholder({ color: @mem-light-grey; text-align: center; text-transform: uppercase; })
+                }
+              }
+            }
+            .note {
+              text-align: center;
+              color: @mem-blue;
+              font-size: 16px;
+            }
+            .email {
+            }
+            .actions-toolbar {
+              .lib-vendor-prefix-display();
+              .lib-vendor-prefix-flex-direction();
+              margin-left: 0;
+              .secondary {
+                .lib-vendor-prefix-display();
+                .flex-justify-content(space-between);
+                width: 100%;
+                margin-bottom: 20px;
+                a.action.remind {
+                  color: darken(red, 4%);
+                  margin-top: 0;
+                  font-style: italic;
+                  &:hover {
+                    color: darken(red, 10%);
+                  }
+                }
+                .desc {
+                  color: @mem-blue;
+                }
+              }
+              .primary {
+                .lib-vendor-prefix-display();
+                .flex-justify-content(center);
+                button {
+                  span {
+                    padding: 3px;
+                  }
+                }
+              }
+            }
+            &:after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  .login-container .block.block-new-customer .block-content p {
+    font-size: 18px;
+  }
+  .login-container .block.block-customer-login .block-content form fieldset.login .note {
+    font-size: 18px;
+  }
+}
+
+.customer-account-logoutsuccess {
+  p {
+    font-size: 18px;
+  }
+}
+
+.customer-account-edit {
+  form {
+    .fieldset {
+      .field {
+        .label {
+          text-align: left;
+          width: 25.8%;
+          box-sizing: content-box;
+        }
+        .control {
+          input {
+            .placeholder({ color: transparent; text-align: center; text-transform: uppercase; })
+          }
+        }
+      }
+    }
+    .actions-toolbar {
+      clear: both;
+      margin-left: 0 !important;
+      .secondary{
+        display: none;
+      }
+    }
+    .actions-toolbar {
+      .primary a, .primary button {
+        color: white;
+        background: @mem-blue;
+        padding: 10px 30px;
+        font-size: 17px;
+        width: 196px;
+        border-color: @mem-blue-hover;
+        &:hover {
+          background: @mem-blue-hover;
+        }
+      }
+    }
+  }
+}
+
+.customer-address-index {
+  .actions-toolbar {
+    clear: both;
+    margin-left: 0 !important;
+    .secondary{
+      display: none;
+    }
+  }
+  .actions-toolbar {
+    .primary a, .primary button {
+      color: white;
+      background: @mem-blue;
+      padding: 10px 30px;
+      font-size: 17px;
+      width: 196px;
+      border-color: @mem-blue-hover;
+      &:hover {
+        background: @mem-blue-hover;
+      }
+    }
+  }
+}
+
+.newsletter-manage-index {
+  .actions-toolbar {
+    clear: both;
+    margin-left: 0 !important;
+    .secondary{
+      display: none;
+    }
+  }
+  .actions-toolbar {
+    .primary a, .primary button {
+      color: white;
+      background: @mem-blue;
+      padding: 10px 30px;
+      font-size: 17px;
+      width: 196px;
+      border-color: @mem-blue-hover;
+      &:hover {
+        background: @mem-blue-hover;
+      }
+    }
+  }
+}
+
+.customer-address-form {
+  form {
+    .fieldset {
+      .field {
+        .label {
+          text-align: left;
+          width: 25.8%;
+          box-sizing: content-box;
+        }
+        .control {
+          input {
+            .placeholder({ color: transparent; text-align: center; text-transform: uppercase; })
+          }
+        }
+      }
+    }
+    .actions-toolbar {
+      clear: both;
+      margin-left: 0 !important;
+      .secondary{
+        display: none;
+      }
+    }
+    .actions-toolbar {
+      .primary a, .primary button {
+        color: white;
+        background: @mem-blue;
+        padding: 10px 30px;
+        font-size: 17px;
+        width: 196px;
+        border-color: @mem-blue-hover;
+        &:hover {
+          background: @mem-blue-hover;
+        }
+      }
+    }
+  }
+}
+
+.sales-order-view {
+  tr.name-row {
+    > td {
+      padding-bottom: 0;
+      font-weight: bold;
+    }
+  }
+}
+
+.sales-order-print, .cms-check-order-instructions {
+  table > thead > tr > th, table > tbody > tr > th, table > thead > tr > td, table > tbody > tr > td{
+    padding: 0;
+  }
+}
+.cms-check-order-instructions.check-index-index tr.item-options > td {
+  padding: 0;
+}

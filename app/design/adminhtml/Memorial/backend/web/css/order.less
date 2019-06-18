@@ -1,0 +1,31 @@
+.sales-order-view {
+  #order_edit {
+    display: none;
+  }
+
+  .item-options {
+    dt {
+      font-weight: bold;
+    }
+  }
+
+  .col-product {
+    .product-title, .product-sku-block span {
+      font-weight: bold;
+    }
+  }
+}
+
+//Workaround for showing multiple spaces in string.
+.abs-order-tables .item-options, .order-creditmemo-tables .item-options, .order-tables .item-options, .order-invoice-tables .item-options, .edit-order-table .item-options, .order-shipment-table .item-options {
+  white-space: pre;
+
+  //Fix to remove double spacing caused by <br> tag in engraving lines in admin order view/edit page.
+  dd > br {
+    //Chrome Specific directive.
+    content: "";
+    //Other browsers.
+    display: block;
+    margin: -9px 0;
+  }
+}

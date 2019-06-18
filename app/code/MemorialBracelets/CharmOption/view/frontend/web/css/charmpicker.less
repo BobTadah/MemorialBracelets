@@ -1,0 +1,32 @@
+@import '_variables';
+
+.charm-picker {
+  .charm-option {
+    padding: @charmoption__padding-size;
+    width: @charmoption__image-size;
+    height: @charmoption__image-size;
+    display: inline-block;
+    border: @charmoption__border-size solid transparent;
+    cursor: pointer;
+    vertical-align: middle;
+    &.selected {
+      border: @charmoption__border-size solid @charmoption__border-color;
+    }
+    img {
+      max-width: @charmoption__image-size;
+      max-height: @charmoption__image-size;
+    }
+  }
+}
+.charm-attribute {
+  .charm-attribute-label {
+    font-weight: bold;
+    position: relative;
+  }
+  .charm-selected-label {
+    color: @charmoption__selected-label-color;
+    padding-left: @charmoption__selected-label-padding;
+  }
+}
+
+@import '_extend';

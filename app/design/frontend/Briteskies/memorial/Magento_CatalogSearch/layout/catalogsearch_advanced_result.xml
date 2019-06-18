@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <referenceBlock name="catalogsearch_advanced_result" remove="true"/>
+            <block class="Magento\CatalogSearch\Block\Advanced\Result" name="catalogsearch_advanced_result_custom"
+                   template="advanced/result.phtml">
+                <block class="MemorialBracelets\NameCategory\Block\Product\ListProduct" name="search_result_list"
+                       template="MemorialBracelets_NameCategory::product/list.phtml">
+                    <arguments>
+                        <argument name="is_search" xsi:type="string">1</argument>
+                    </arguments>
+                    <action method="setToolbarBlockName">
+                        <argument name="name" xsi:type="string">product_list_toolbar_custom</argument>
+                    </action>
+                    <block class="MemorialBracelets\NameCategory\Block\Product\ProductList\Toolbar"
+                           name="product_list_toolbar_custom"
+                           template="MemorialBracelets_NameCategory::product/list/toolbar.phtml">
+                        <block class="Magento\Theme\Block\Html\Pager" name="product_list_toolbar_pager_custom"/>
+                    </block>
+                </block>
+                <action method="setListCollection"/>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,85 @@
+/* This file contains all the Footer Styling. */
+.page-footer {
+  background: @mem-blue;
+  .footer.content {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+    @media only screen and (max-width: 767px) {
+      margin-top: 0;
+    }
+    .footer-inner-wrapper {
+      .lib-vendor-prefix-display();
+      @media only screen and (max-width: 880px) {
+        .lib-vendor-prefix-flex-wrap();
+      }
+      @media only screen and (max-width: 500px) {
+        .lib-vendor-prefix-flex-direction();
+        .lib-vendor-box-align(center);
+      }
+      .footer-column {//shared
+        width: 25%;
+        @media only screen and (max-width: 880px) {
+          width: 45%;
+        }
+        @media only screen and (max-width: 500px) {
+          width: 80%;
+        }
+        padding:10px;
+        .title-container {
+          h3 {
+            color: white;
+            font-size: 23px;
+            font-weight: bold;
+          }
+        }
+        .links {
+          .lib-vendor-prefix-display();
+          .lib-vendor-prefix-flex-direction();
+          a.link {
+            color: white;
+            padding: 3px 0;
+          }
+        }
+        p.text {
+          color: white;
+        }
+      }
+      @media only screen and (min-width: 880px) {
+        #account-footer {
+          width: 15%;
+          .lib-vendor-prefix-flex-grow(1);
+        }
+        #company-footer {
+          width: auto;
+          min-width: 25%;
+          .lib-vendor-prefix-flex-grow(1);
+        }
+        #copyright-footer {
+          width: 25%;
+          .lib-vendor-prefix-flex-grow(1);
+        }
+        #payment-footer {
+          width: 40%;
+          .lib-vendor-prefix-flex-grow(1);
+        }
+      }
+
+      #payment-footer {
+        .image-wrapper {
+          img {
+            height: auto;
+            width: 80px;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+    .footer-bottom {
+      small {
+        text-align: center;
+        color: white;
+      }
+    }
+  }
+}

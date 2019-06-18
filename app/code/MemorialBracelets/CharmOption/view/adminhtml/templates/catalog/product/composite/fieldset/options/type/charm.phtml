@@ -1,0 +1,42 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+/** @var \MemorialBracelets\CharmOption\Block\Product\View\Options\Type\Charm $block */
+
+$_option = $block->getOption();
+$class = ($_option->getIsRequire()) ? ' required _required' : '';
+
+if ($_option->getType() != 'picker') return;
+
+$pickerId = 'charmpicker-'.sha1(microtime(true).rand());
+
+$charms = $block->getCharms();
+
+/** @var \Magento\Framework\Pricing\Helper\Data $priceHelper */
+$priceHelper = $this->helper(\Magento\Framework\Pricing\Helper\Data::class);
+?>
+<div class="admin__field field <?php /* @escapeNotVerified */ echo $class ?>">
+    <label class="label admin__field-label" for="opt-sel-<?= $_option->getId(); ?>">
+        <span><?php echo $block->escapeHtml($_option->getTitle()) ?></span>
+    </label>
+
+    <div class="control admin__field-control">
+        <select id="opt-sel-<?= $_option->getId(); ?>" name="options[<?= $_option->getId(); ?>]" class="product-custom-option admin__control-select">
+            <option value>-- Please Select --</option>
+            <?php foreach($charms as $charm):
+                $selected = $charm->getId() == $block->getDefaultValue();
+                $price = $block->getFormattedCharmPrice($charm);
+                $priceString = floatval($block->getCharmPrice($charm)) ? " (+ {$price})" : '';
+                ?>
+                <option value="<?= $charm->getId(); ?>" <?= $selected ? 'selected' : '' ?>>
+                    <?= $charm->getTitle(); ?>
+                    <?= $priceString ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+//--main-content--
+.catalog-category-view {
+   // Styling the sub-category landing page
+  .category-landing {
+    ul, li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    img {
+      width: 100%;
+    }
+    h2 {
+      margin-top: 0;
+      margin-bottom: 0.4em;
+    }
+
+    /*Flex items*/
+    .list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .list-item {
+      display: flex;
+      padding: 0.5em;
+      width: 100%;
+    }
+    @media all and (min-width: 40em) {
+      .list-item {
+        width: 47%;
+      }
+    }
+    @media all and (min-width: 60em) {
+      .list-item {
+        width: 31%;
+      }
+    }
+    .list-content {
+      background-color: #ececec;
+      display: flex;
+      flex-direction: column;
+      padding: 1em;
+      width: 100%;
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+    .list-content p {
+      flex: 1 0 auto;
+
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+}

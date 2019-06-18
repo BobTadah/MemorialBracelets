@@ -1,0 +1,20 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Category view template
+ *
+ * @var $block \Magento\Catalog\Block\Category\View
+ */
+?>
+<!--Be more explicit about when products are displayed, must be product mode or mixed -->
+<?php if ((!$block->isContentMode() && $block->isProductMode()) || $block->isMixedMode()): ?>
+    <?php echo $block->getProductListHtml() ?>
+<?php endif; ?>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="sales_order_save_before">
+        <observer name="memb_braceletpreview_add_piece_to_order" instance="MemorialBracelets\BraceletPreview\Plugin\OrderPlaceListener"/>
+    </event>
+    <event name="sales_order_item_save_before">
+        <observer name="memb_braceletpreview_add_piece_to_item" instance="MemorialBracelets\BraceletPreview\Plugin\OrderItemSaveListener"/>
+    </event>
+</config>

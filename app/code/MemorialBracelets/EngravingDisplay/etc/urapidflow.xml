@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+    <urapidflow>
+        <data_types>
+            <product_extra_engraving>
+                <title>Products Extra (Engraving Custom Option)</title>
+                <row_format>fixed</row_format>
+                <model>MemorialBracelets\EngravingDisplay\Model\RapidFlowPro</model>
+                <profile>
+                    <import>
+                        <tabs>
+                            <file>
+                                <title>File Options</title>
+                                <block>Unirgy\RapidFlow\Block\Adminhtml\Profile\Edit\Tab\File</block>
+                            </file>
+                            <csv>
+                                <title>Format Options</title>
+                                <block>Unirgy\RapidFlow\Block\Adminhtml\Profile\Edit\Tab\Csv</block>
+                            </csv>
+                            <options>
+                                <title>Import Options</title>
+                                <block>Unirgy\RapidFlowPro\Block\Adminhtml\Profile\ProductExtra\ImportOptions</block>
+                            </options>
+                            <upload>
+                                <title>Upload Files</title>
+                                <block>Unirgy\RapidFlow\Block\Adminhtml\Profile\Edit\Tab\Upload</block>
+                            </upload>
+                            <reindex>
+                                <title>Reindex</title>
+                                <block>Unirgy\RapidFlow\Block\Adminhtml\Profile\Edit\Tab\Reindex</block>
+                            </reindex>
+                        </tabs>
+                    </import>
+                    <export>
+                        <tabs>
+                            <file>
+                                <title>File Options</title>
+                                <block>Unirgy\RapidFlow\Block\Adminhtml\Profile\Edit\Tab\File</block>
+                            </file>
+                            <csv>
+                                <title>Format Options</title>
+                                <block>Unirgy\RapidFlow\Block\Adminhtml\Profile\Edit\Tab\Csv</block>
+                            </csv>
+                            <options>
+                                <title>Export Options</title>
+                                <block>Unirgy\RapidFlowPro\Block\Adminhtml\Profile\ProductExtra\ExportOptions</block>
+                            </options>
+                        </tabs>
+                    </export>
+                </profile>
+            </product_extra_engraving>
+        </data_types>
+
+        <row_types>
+            <CPCOES>
+                <title>Catalog Product Custom Option Engraving Options</title>
+                <data_type>product_extra_engraving</data_type>
+                <columns>
+                    <sku><col>1</col><key>1</key></sku>
+                    <default_title><col>2</col><key>1</key></default_title>
+                    <max_characters><col>3</col></max_characters>
+                    <lines><col>4</col></lines>
+                    <supportive_message_price><col>5</col></supportive_message_price>
+                    <name_engraving_price><col>6</col></name_engraving_price>
+                </columns>
+            </CPCOES>
+        </row_types>
+    </urapidflow>
+</config>

@@ -1,0 +1,144 @@
+<?php
+/** @var MemorialBracelets\EngravingDisplay\Block\Product\View\Options\Type\Engraving $block */
+/** @var \MemorialBracelets\ExtensibleCustomOption\Model\Product\Option $_option */
+$_option     = $block->getOption();
+$class       = ($_option->getIsRequire()) ? ' required' : '';
+$inputNumber = $_option->getData('number_lines');
+$maxChars    = $_option->getMaxCharacters();
+
+$supportiveBlock = $block->getLayout()->createBlock('MemorialBracelets\EngravingDisplay\Block\Product\SupportiveMessage');
+$messageList     = $supportiveBlock->getSupportiveMessageList();
+$product         = $_option->getProduct();
+$jsonSerialized  = $block->getDefaultValue();
+$areaArray       = [];
+$decodedText     = '';
+$decodedType     = '';
+if ($jsonSerialized != '') {
+    $decoded     = json_decode($jsonSerialized);
+    $decodedText = $decoded->{'text'};
+    $decodedType = $decoded->{'type'};
+    // split lines no matter what return/new line char is separating the strings.
+    $areaArray   = explode("\n", $decodedText);
+    $areaArray   = array_map('trim', $areaArray);
+}
+
+$excludedFlag = $block->getEngravingHelper()->isExcluded();
+$engravingClass= ($_option->getType() == 'engraving') ? 'engraving' : '';
+?>
+
+<div id="engraving-wrapper" class="field <?= $engravingClass ?>">
+    <label class="label"
+           for="options_<?= $_option->getId() ?>_text"><?= $block->escapeHtml($_option->getTitle()) ?></label>
+    <span class="engraving-type-title"></span>
+    <div class="control active " id="custom-text-control">
+        <?php
+        $_textAreaValidate = null;
+        if ($_option->getIsRequire()) {
+            $_textAreaValidate['required'] = true;
+        }
+        ?>
+        <textarea id="options_<?= $_option->getId() ?>_text"
+                  class="product-custom-option"
+            <?php if (!empty($_textAreaValidate)) { ?>
+                data-validate="<?= $block->escapeHtml(json_encode($_textAreaValidate)); ?>"
+            <?php } ?>
+                  name="options[<?= $_option->getId() ?>]"
+                  selector="options[<?= $_option->getId() ?>]"
+                  style="display:none;
+                  rows="<?= $_option->getData('number_lines') ?>"
+        cols="<?= $_option->getMaxCharacters() ?>"><?= $block->escapeHtml($block->getDefaultValue()) ?></textarea>
+        <?php $valueArray = $areaArray; ?>
+
+        <div class='line-container' data-fontclass="<?= $block->getFontClass() ?>">
+
+            <?php for ($x = 0; $x < $_option->getData('number_lines'); $x++): ?>
+                <div class='combo-container'>
+                    <?php if ($_option->getType() == 'engraving'): ?>
+                        <input type="text"
+                               id="options_<?= $_option->getId() ?>_engraving_line-<?= ($x + 1) ?>"
+                               class="line-<?= ($x + 1) ?>"
+                        <?=($maxChars != 'none' ? 'custom-maxlength="' . $maxChars . '"' : "") ?>
+                               placeholder="<?= 'Line ' . ($x + 1) ?>"
+                        <?php if (!empty($_textValidate)) { ?>
+                            data-validate="<?= $block->escapeHtml(json_encode($_textValidate)); ?>"
+                        <?php } ?>
+                               name="engraving[<?= $_option->getId() . '][' . $x ?>]
+                               data-selector="engraving[<?= $_option->getId() ?>]line-<?= ($x + 1) ?>"
+                        <?php if (($block->escapeHtml($block->getDefaultValue() != '')) && ($x < count($valueArray))) { ?>
+                            value="<?= $block->escapeHtml(trim($valueArray[$x])); ?>"
+                        <?php } ?>
+                        <?php if ($excludedFlag) : ?>
+                            readonly="readonly"
+                        <?php endif ?>
+                        />
+                    <?php endif; ?>
+                    <br>
+                    <select class="line-<?= ($x + 1) ?>"
+                            name="supportive[<?= $_option->getId() . '][' . $x ?>]"
+                        <?php if ($excludedFlag) : ?>
+                            data-select="false"
+                        <?php endif ?>>
+                        <?php  if (!$excludedFlag) : ?>
+                            <option value='' selected></option>
+                            <?php foreach ($messageList as $key => $value) : ?>
+                                <?php $message = htmlspecialchars($value->getData()['message'], ENT_QUOTES) ?>
+                                <?php $index   = $key + 1 ?>
+                                <option value="<?= $message ?>"><?= $message ?></option>;
+                            <?php endforeach ?>
+                        <?php endif?>
+                    </select>
+
+                </div>
+            <?php endfor; ?>
+        </div>
+    </div>
+
+    <?php if (($block->escapeHtml($block->getDefaultValue() != '')) && ($decodedType == "name" || $decodedType == "custom")) : ?>
+        <div class="name-information" style="display:none;">
+            <textarea title="name-information"><?= $decodedText ?></textarea>
+        </div>
+    <?php endif ?>
+
+    <div class="control" id="engraving-type-control"
+         data-custom-cost="<?= $_option->getPrice(true); ?>"
+         data-custom-cost-format="<?= $supportiveBlock->getNonHtmlFormattedPrice($_option->getPrice(true)); ?>"
+         data-custom-label="<?= __('Custom Engraving'); ?>"
+         data-supportive-cost="<?= $supportiveBlock->getSupportiveMessagePrice($_option, true); ?>"
+         data-supportive-cost-format="<?= $supportiveBlock->getNonHtmlFormattedPrice($supportiveBlock->getSupportiveMessagePrice($_option,
+             true)); ?>"
+         data-supportive-label="<?= __('Custom Engraving') ?>"
+         data-name-cost="<?= $supportiveBlock->getNameEngravingPrice($_option, true); ?>"
+         data-name-cost-format="<?= $supportiveBlock->getNonHtmlFormattedPrice($supportiveBlock->getNameEngravingPrice($_option,
+             true)); ?>"
+         data-name-label="<?= __('Name Engraving') ?>">
+        <input type="text" name="engraving-type[<?= $_option->getId() . '][0' ?>]"
+               data-selector="engraving-type[<?= $_option->getId() . '][0' ?>]"
+               id="options_<?=$_option->getId() ?>_engraving_type-0"
+            <?php if ($block->escapeHtml($block->getDefaultValue() != '')) : ?>
+                value="<?= $decodedType; ?>"
+            <?php  else : ?>
+                value="custom"
+            <?php endif ?>
+        />
+    </div>
+
+    <?php if ($_option->getMaxCharacters()): ?>
+        <p class="note"><?= __('Maximum number of characters per line:') ?>
+            <strong><?= $_option->getMaxCharacters() ?></strong>
+        </p>
+    <?php endif; ?>
+
+    <div class="engraving-description">
+        <?php if ($excludedFlag) : ?>
+            <p class="text"><?= $block->escapeHtml($block->getVietnamEngravingMessage()) ?></p>
+        <?php else: ?>
+            <p class="text"><?= $block->escapeHtml($block->getEngravingMessage()) ?></p>
+        <?php endif ?>
+    </div>
+
+    <?php if (!$excludedFlag) : ?>
+        <div class="reset-button-set">
+            <a class="engrave-option" id="reset-message-btn" title="Reset Text"><?= __('Reset Text') ?></a>
+        </div>
+    <?php endif ?>
+</div>

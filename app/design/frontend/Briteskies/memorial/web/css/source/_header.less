@@ -1,0 +1,268 @@
+/* This file contains all the Header Styling. */
+
+.pre-ko {
+  display: none;
+}
+
+//--top-content--
+.page-wrapper .header.content {
+  @media (min-width: 768px) {
+    padding: 10px 20px 0;
+  }
+  .block-search, .minicart-wrapper {
+    position: relative;
+    top: 15px;
+  }
+}
+
+.page-header {
+  .panel.wrapper {
+    background: @mem-light-blue;
+    .panel.header {
+      .lib-vendor-prefix-display();
+      .flex-justify-content(space-between);
+      background: @mem-light-blue;
+      .header-top-links { // custom links
+        @media only screen and (max-width: 890px) {
+          width: 40%;
+        }
+        @media only screen and (max-width: 767px) {
+          width: 100%;
+          padding: 10px 0;
+        }
+        a.link {
+          margin-right: 15px;
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: 16px;
+          @media only screen and (max-width: 450px) {
+            font-size: 14px;
+            margin-right: 12px;
+          }
+        }
+      }
+      .header.links {
+        li.welcome,
+        li a {
+          color: @mem-blue;
+          font-weight: bold;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+& when (@media-common = true) {
+  #advanced_search_block {
+    border: 1px solid #c2c2c2;
+    height: 32px;
+    width: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    line-height: 32px;
+    position: static;
+    padding: 0 35px 0 10px;
+
+    .lib-icon-font(
+      '\e615',
+      @_icon-font-size: 22px,
+      @_icon-font-color: #c2c2c2,
+      @_icon-font-color-hover: #c2c2c2,
+      @_icon-font-color-active: #c2c2c2
+    );
+
+    &:before {
+      position: absolute;
+      top: 0;
+      right: 10px;
+    }
+  }
+
+}
+
+//--nav-content--
+//desktop viewport.
+@media only screen and (min-width: 768px) {
+  //these changes bring the nav-menu up into the logo-header area
+  body:not(.cms-index-index) {
+    .page-wrapper {
+      //Fix for ie 11 flexbox and heights not working.
+      .ie10 &,
+      .ie11 & {
+        overflow-x: visible;
+      }
+    }
+  }
+
+  .cms-index-index {
+    .page-wrapper {
+      //Fix for ie 11 flexbox and heights not working on home page
+      .ie10 &,
+      .ie11 & {
+        height: auto;
+      }
+    }
+  }
+
+  .page-wrapper .nav-sections {
+    background: white;
+    border-bottom: 10px solid @mem-light-grey;
+
+    & {
+      /* These three lines stick the navigation up into the header visibly */
+      top: -77px;
+      margin-bottom: -77px;
+      position: relative;
+    }
+    .navigation {
+      background: white;
+      ul { //push the menu items left passed the logo.
+        margin-left: 350px;
+
+        li.level0 { //top level nav.
+          position: relative;
+          top: 10px;
+          &:hover {
+            > a {
+              border-bottom: 10px solid @mem-blue;
+            }
+          }
+          > a {
+            font-size: 20px;
+            padding-bottom: 2px;
+          }
+          > a.ui-state-active {
+            border-bottom: 10px solid @mem-blue;
+          }
+        }
+
+        ul.submenu { // sub-menus shared.
+          border-top: none;
+          box-shadow: none;
+          min-width: 170px;
+          li.ui-menu-item {
+            &:hover {
+              /*background: @mem-light-blue;*/
+            }
+            > a {
+              font-size: 15px;
+              padding: 5px 5px 5px 20px;
+              position: relative;
+            }
+            > a.ui-state-focus,
+            > a.ui-state-active {
+              background: @mem-light-blue;
+            }
+          }
+          li.ui-menu-item.parent {
+            > a.ui-state-focus,
+            > a.ui-state-active {
+              &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: -10px;
+                height: 100%;
+                width: 10px;
+                background-image: url('../images/header-side.svg');
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                z-index: 100;
+              }
+            }
+          }
+        }
+        ul.submenu.level0 { //first drop-down.
+          min-width: 130px;
+          > li {
+            position: relative;
+          }
+        }
+        ul.submenu.level1 { //second level drop-down.
+          background: @mem-light-grey;
+          width: 340px;
+          top: 0 !important;
+          .lib-vendor-prefix-display();
+          .lib-vendor-prefix-flex-wrap();
+          > li.ui-menu-item {
+            &:hover {
+              background: lighten(@mem-light-blue, 5%);
+            }
+            width: 50%;
+            a > {
+
+            }
+            > a.ui-state-focus,
+            > a.ui-state-active {
+              background: lighten(@mem-light-blue, 5%);
+              &:after {
+                right: -10px;
+                background-image: url('../images/header-side-submenu1.svg');
+              }
+            }
+          }
+        }
+        ul.submenu.level2 { //third level drop-down.
+          left: 171px !important;
+          min-width: 150px;
+          > li.ui-menu-item {
+            &:hover {
+              background: lighten(@mem-light-blue, 10%);
+            }
+            > a.ui-state-focus,
+            > a.ui-state-active {
+              background: lighten(@mem-light-blue, 10%);
+              &:after {
+                background-image: url('../images/header-side-submenu3.svg');
+              }
+            }
+          }
+        }
+        ul.submenu.level3 { //fourth level drop-down.
+
+        }
+
+        ul.submenu.line-menu {
+          .lib-vendor-prefix-flex-wrap(nowrap);
+          .lib-vendor-prefix-flex-direction();
+          width: 130px;
+          > li.ui-menu-item {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  //this deals with the default highlighting on category pages.
+  .nav-sections-item-content {
+    .navigation .level0 .submenu .active > a {
+      border-style: none;
+    }
+    .navigation .level0.has-active > .level-top,
+    .navigation .level0.active > .level-top {
+      border-style: none;
+      display: inline;
+    }
+  }
+}
+
+//mobile viewport.
+@media only screen and (max-width: 767px) {
+  #advanced_search_block {
+    left: -300%;
+    margin: 15px 0;
+    position: absolute;
+  }
+
+  .navigation .level0.has-active > a:not(.ui-state-active),
+  .navigation .level0.active > a:not(.ui-state-active) {
+    border-color: @mem-blue;
+  }
+
+  .block-search .search .control {
+    display: none;
+  }
+}

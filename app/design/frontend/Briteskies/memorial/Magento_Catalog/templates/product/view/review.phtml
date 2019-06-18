@@ -1,0 +1,20 @@
+<?php
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+/** @var $block \Magento\Catalog\Block\Product\AbstractProduct */
+// @codingStandardsIgnoreFile
+
+    $_product = $block->getProduct();
+    $applyChanges = false;
+    /** Check if product type is giftcard type. */
+    $isGiftcardType = ($_product->getData('type_id') == 'aw_giftcard') ? true : false;
+    if (isset($isGiftcardType) && $isGiftcardType) {
+        /** @var  $applyChanges, if product type is giftcard, set flag to apply style changes. */
+        $applyChanges = true;
+    }
+
+    if(!$applyChanges) {
+        echo $block->getReviewsSummaryHtml($block->getProduct(), false, true);
+    }

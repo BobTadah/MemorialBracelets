@@ -1,0 +1,256 @@
+/*---<Imports>---*/
+@import '_flex';
+
+/*---<Variables>---*/
+@mobileViewPort: 510px;
+
+/*---<Styling>---*/
+.product.media {
+  position: relative;
+}
+#overlay-preview-container {
+  position: absolute;
+  height: 270px;
+  width: 100%;
+  bottom: 0;
+  .flex-direction(column);
+  .flex(flex);
+  .flex-justify-content(center);
+  .flex-align-items(center);
+  div.no-display {
+    display: none;
+  }
+  .bracelet {
+    width: 100%;
+    @media only screen and (max-width: @mobileViewPort) {
+      height: 156px;
+    }
+    .flex(flex);
+    .flex-justify-content(center);
+    .left-quadrant {
+      width:25%;
+      .flex-align-items(center);
+      .flex(flex);
+      .flex-justify-content(flex-end);
+      .left-charm {
+        background-repeat: no-repeat;
+        width: 110px;
+        height: 110px;
+        @media only screen and (max-width: @mobileViewPort) {
+          width: 70px;
+          height: 70px;
+        }
+      }
+      .line {
+        width: 15px;
+        background-color: darkgray;
+        height: 4px;
+      }
+    }
+    .bracelet-main {
+      width:50%;
+      height: 100%;
+      border: 1px solid grey;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      min-height: 90px;
+      .flex(flex);
+      .flex-direction(row);
+      .flex-align-items(center);
+      .center-column {
+        .flex(flex);
+        .flex-direction(column);
+        .flex-align-items(center);
+        flex: 1;
+      }
+      .left-icon,
+      .right-icon {
+        background-position-y: center;
+      }
+      .top-charm, .left-icon, .right-icon {
+        background-repeat: no-repeat;
+        width: 60px;
+        height: 60px;
+        @media only screen and (max-width: @mobileViewPort) {
+          width: 40px;
+          height: 40px;
+        }
+      }
+      .left-icon {
+        margin-left: 8px;
+      }
+      .right-icon {
+        margin-right: 8px;
+      }
+      .top-charm {
+        margin-top: 8px;
+        margin-bottom: 13px;
+      }
+      .text-lines {
+        @media only screen and (max-width: @mobileViewPort) {
+          margin-top: 5px;
+          white-space: pre-wrap;
+
+        }
+        padding: 5px 5px 0 5px;
+        color: white;
+        text-shadow: 1px 1px 1px black;
+        white-space: pre-wrap;
+        p {
+          display: block;
+          text-align: center;
+        }
+        p:last-child {
+          margin-bottom: 5px;
+        }
+        p.no-text {
+          display: none;
+        }
+      }
+      .text-lines.times-roman {
+         > p {
+           font-family: "Times New Roman", Arial , verdana, sans-serif;
+         }
+      }
+      .text-lines.century {
+        > p {
+          font-family: 'Century', 'Old Standard TT', serif; ;
+        }
+      }
+      .text-lines.ariel {
+        > p {
+          font-family: Arial , verdana, sans-serif;
+        }
+      }
+      .text-lines.ariel-black {
+        > p {
+          color: black;
+          font-family: Arial , verdana, sans-serif;
+          text-shadow: none;
+        }
+      }
+    }
+    .right-quadrant {
+      width:25%;
+      .flex-align-items(center);
+      .flex(flex);
+      .flex-justify-content(flex-start);
+      .right-charm {
+        background-repeat: no-repeat;
+        width: 110px;
+        height: 110px;
+        @media only screen and (max-width: @mobileViewPort) {
+          width: 70px;
+          height: 70px;
+        }
+      }
+      .line {
+        width: 15px;
+        background-color: darkgray;
+        height: 4px;
+      }
+    }
+  }
+  .button-container {
+    margin-top: 10px;
+    button {
+      position: relative;
+      top: 10px;
+    }
+  }
+}
+
+//--cart-preview--
+.checkout-cart-index {
+  .column:not(.sidebar-additional) form .item-preview .actions-toolbar {
+    margin-left: 0;
+  }
+  .item-preview {
+    .actions-toolbar {
+      .preview-container {
+        .flex(flex);
+        .charm { // charm shared.
+          height: 65px;
+          width: 65px;
+          background-size: cover;
+          margin-top: auto;
+          margin-bottom: auto;
+        }
+        .divider {
+          height: 3px;
+          width: 17px;
+          background: darkgray;
+          margin-bottom: auto;
+          margin-top: auto;
+        }
+
+        .preview {
+          .flex(flex);
+          .flex-justify-content(center);
+          min-width: 250px;
+          padding: 2px;
+
+          .icon { // icon shared.
+            height: 40px;
+            width: 40px;
+            background-size: cover;
+            margin-top: auto;
+            margin-bottom: auto;
+          }
+          .middle-preview-container {
+            .flex(flex);
+            .flex-direction(column);
+            .flex-align-items(center);
+            .flex-justify-content(center);
+          }
+
+          .text-wrapper {
+            color: white;
+            margin: 10px;
+            p {
+              margin-bottom: 1px;
+              text-align: center;
+              color: white;
+              text-shadow: 1px 1px 1px #000;
+              white-space: pre-wrap;
+              text-transform: uppercase;
+            }
+
+
+            //.engraving-text {
+            //  white-space: pre-wrap;
+            //  color: #000000;
+          }
+          .text-wrapper.times-roman {
+            > p {
+              font-family: "Times New Roman", Arial , verdana, sans-serif;
+            }
+          }
+          .text-wrapper.century {
+            > p {
+              font-family: 'Century', 'Old Standard TT', serif; ;
+            }
+          }
+          .text-wrapper.ariel {
+            > p {
+              font-family: Arial , verdana, sans-serif;
+            }
+          }
+          .text-wrapper.ariel-black {
+            > p {
+              color: black;
+              font-family: Arial , verdana, sans-serif;
+              text-shadow: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/** <--Module-Extending-Imports--> **/
+@import '_extend';

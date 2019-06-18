@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="web" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1"  showInStore="1">
+            <group id="social" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Social Links</label>
+                <field id="enabled" translate="label" type="select" sortOrder="1" showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="facebook" translate="label comment" type="text" sortOrder="2" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Facebook Url</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="twitter" translate="label comment" type="text" sortOrder="3" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Twitter Url</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="gplus" translate="label comment" type="text" sortOrder="4" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Google Plus Url</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="instagram" translate="label comment" type="text" sortOrder="5" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Instagram Url</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="youtube" translate="label comment" type="text" sortOrder="6" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>You Tube Url</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="linkedin" translate="label comment" type="text" sortOrder="7" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Linked In Url</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="myspace" translate="label comment" type="text" sortOrder="8" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Myspace Url</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="pinterest" translate="label comment" type="text" sortOrder="9" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Pinterest Url</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="tumbler" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Tumbler Url</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

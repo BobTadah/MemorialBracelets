@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference
+            for="MemorialBracelets\IconOption\Api\IconOptionInterface"
+            type="MemorialBracelets\IconOption\Model\IconOption" />
+    <preference
+            for="MemorialBracelets\IconOption\Api\IconOptionRepositoryInterface"
+            type="MemorialBracelets\IconOption\Repository\IconOption" />
+
+    <type name="MemorialBracelets\ExtensibleCustomOption\Model\Product\Option">
+        <plugin name="add_icon_as_value_having_type" type="MemorialBracelets\IconOption\Model\OptionInterceptor" sortOrder="1" />
+    </type>
+
+    <type name="Magento\Catalog\Model\Product\Option\Type\DefaultType">
+        <plugin name="wishlist_icon_validation" type="MemorialBracelets\IconOption\Plugin\WishListIconValidationFix" sortOrder="1" />
+    </type>
+</config>

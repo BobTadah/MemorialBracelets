@@ -1,0 +1,186 @@
+/* This file contains all the my account and create Styling. */
+.customer-account-create {
+  color: @mem-dark-grey;
+  .page-title-wrapper {
+    display:none; //Hide the original header, should find a better way...
+  }
+  .flex-container {
+  }
+
+  .form.password.reset, .form.send.confirmation,
+  .form.password.forget, .form.create.account{
+    margin-top: 20px;
+    width: 100%;
+    #container {
+      .fieldset {
+        .field { //shared
+          .control {
+            width: 100%;
+            input {
+              width: 100%;
+              font-size: 18px;
+              height: 45px;
+              border-color: @mem-dark-grey;
+              .placeholder({ color: @mem-dark-grey; text-align: center; text-transform: uppercase; })
+            }
+          }
+        }
+      }
+    }
+  }
+  .form-create-account {
+    width: 100%;
+    .lib-vendor-prefix-display();
+    .lib-vendor-prefix-flex-direction (row);
+    justify-content: center;
+    #container {
+      width: 600px;
+      .lib-vendor-prefix-display();
+      .lib-vendor-prefix-flex-wrap();
+      .lib-vendor-prefix-flex-direction ();
+      .lib-vendor-box-align (center);
+      > legend {
+        text-align: center;
+        font-size: 18px;
+      }
+      .fieldset {
+        width: 100%;
+        .field{
+          margin: 2px;
+        }
+      }
+    }
+    .actions-toolbar {
+      margin-left: 0 !important;
+    }
+    .field-name-firstname {
+
+      .label {
+        display:none;
+      }
+    }
+    .field-name-lastname {
+
+      .label {
+        display:none;
+      }
+    }
+    .newsletter {
+      .label {
+        line-height:32px;
+      }
+    }
+
+    ine-height: 32px;
+    .field { //shared
+      .control {
+        width: 100%;
+        input {
+          width: 100%;
+          font-size: 18px;
+          height: 45px;
+          border-color: @mem-dark-grey;
+          .placeholder({ color: @mem-dark-grey; text-align: center; text-transform: uppercase; })
+        }
+      }
+      .label {
+        //display:none;
+      }
+
+    }
+    .note {
+      text-align: center;
+      color: @mem-blue;
+      font-size: 16px;
+    }
+    .email {
+    }
+    .actions-toolbar {
+      .primary a, .primary button {
+        color: white;
+        background: @mem-gold;
+        padding: 10px 30px;
+        font-size: 17px;
+        width: 196px;
+        border-color: @mem-gold-hover;
+        &:hover {
+          background: @mem-gold-hover;
+        }
+      }
+    }
+    .actions-toolbar {
+      margin-left: 0;
+      .secondary {
+        width: 100%;
+        margin-bottom: 20px;
+        a.action.remind {
+          color: darken(red, 4%);
+          margin-top: 0;
+          font-style: italic;
+          &:hover {
+            color: darken(red, 10%);
+          }
+        }
+        .desc {
+          color: @mem-blue;
+        }
+      }
+      .primary {
+        button {
+          span {
+            padding: 3px;
+            color: @mem-blue;
+          }
+        }
+      }
+    }
+    &:after {
+      display: none;
+    }
+
+  }
+
+  .block-customer-register {
+      .title-wrapper {
+      }
+      .block-title {
+        text-align: center;
+        border-bottom: none;
+        color: @mem-blue;
+        display: block;
+        position: relative;
+        font-weight: bold;
+        font-size: 21px;
+        background: @mem-light-blue;
+        padding: 14px;
+        width: 215px;
+        strong {
+          font-weight: bold;
+        }
+        &:before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          top: 0;
+          display: block;
+          border: 29px solid @mem-light-blue;
+          z-index: -1;
+          left: -30px;
+          border-left-width: 30px;
+          border-left-color: transparent;
+        }
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          top: 0;
+          display: block;
+          border: 29px solid @mem-light-blue;
+          z-index: -1;
+          right: -30px;
+          border-right-width: 30px;
+          border-right-color: transparent;
+        }
+      }
+    }
+}

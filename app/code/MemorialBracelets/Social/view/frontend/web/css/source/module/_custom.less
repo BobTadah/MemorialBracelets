@@ -1,0 +1,51 @@
+/** <--Imports--> **/
+
+/** <--Variables--> **/
+@twitter-blue: #00aced;
+@facebook-blue: #3B5998;
+@pinterest-red: #cb2027;
+@google-red: #f44336;
+@email-grey: #57544F;
+@print-grey: #BBB9B6;
+
+/** <--Styling--> **/
+
+//social links.
+.product-social-links {
+  ul.link-container {
+    .lib-vendor-prefix-display();
+    padding-left: 0;
+    li {
+      margin-right: 8px;
+      list-style: none;
+      a {
+        &:hover {
+          text-decoration: none;
+          opacity: .9;
+        }
+        i {
+          font-size: 36px;
+        }
+        i.icon-twitter-circle {
+          color: @twitter-blue;
+        }
+        i.icon-facebook-circle {
+          color: @facebook-blue;
+        }
+        i.icon-pinterest-circle {
+          color: @pinterest-red;
+        }
+        i.icon-google-plus-circle {
+          color: @google-red;
+        }
+        i.icon-email-circle {
+          color: @email-grey;
+        }
+        i.icon-print-circle {
+          color: @print-grey;
+        }
+      }
+    }
+  }
+}
+

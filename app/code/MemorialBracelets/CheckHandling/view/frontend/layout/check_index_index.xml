@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="sales_order_print_renderers" />
+    <update handle="sales_order_item_price"/>
+    <update handle="print" />
+    <body>
+        <attribute name="class" value="account"/>
+        <referenceContainer name="page.main.title">
+            <block class="Magento\Sales\Block\Order\PrintShipment" name="order.status" template="MemorialBracelets_CheckHandling::order_status.phtml" />
+            <block class="Magento\Sales\Block\Order\PrintShipment" name="order.date" template="order/order_date.phtml" />
+        </referenceContainer>
+        <referenceContainer name="content">
+            <!-- Our Additions - rest is based off module-sales\view\frontend\layout\sales_order_print.xml -->
+            <block class="Magento\Cms\Block\Page" name="cms_page"/>
+            <block class="MemorialBracelets\CheckHandling\Block\Info"
+                   name="check.info"
+                   template="info.phtml"
+                   after="cms_page"/>
+            <!-- end our additions (except for after="check.info" below) -->
+            <block class="Magento\Sales\Block\Order\PrintShipment" after="check.info" name="sales.order.print" template="order/view.phtml">
+                <block class="Magento\Sales\Block\Order\PrintShipment" name="order_items" template="order/items.phtml">
+                    <block class="Magento\Framework\View\Element\RendererList" name="sales.order.print.renderers" as="renderer.list" />
+                    <block class="Magento\Sales\Block\Order\Totals" name="order_totals" template="order/totals.phtml">
+                        <arguments>
+                            <argument name="label_properties" xsi:type="string">colspan="4" class="mark"</argument>
+                            <argument name="value_properties" xsi:type="string">class="amount"</argument>
+                        </arguments>
+                        <block class="Magento\Tax\Block\Sales\Order\Tax" name="tax" template="order/tax.phtml">
+                            <action method="setIsPlaneMode">
+                                <argument name="value" xsi:type="string">1</argument>
+                            </action>
+                        </block>
+                        <block class="Aheadworks\Giftcard\Block\Order\Totals" name="aw_giftcard_order_totals" />
+                    </block>
+                </block>
+            </block>
+            <block class="Magento\Sales\Block\Order\Info" as="sales.order.print.info" name="sales.order.print.info" template="order/info.phtml"/>
+        </referenceContainer>
+        <block class="Magento\Framework\View\Element\Template" name="additional.product.info" template="Magento_Theme::template.phtml"/>
+        <referenceBlock name="item_unit_price">
+            <arguments>
+                <argument name="should_render_original_price" xsi:type="boolean">true</argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

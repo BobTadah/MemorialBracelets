@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="catalog" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"  showInStore="1">
+            <group id="engravable" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Engraving Options</label>
+                <field id="enabled" translate="label" type="select" sortOrder="1" showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="lines" translate="label comment" type="text" sortOrder="2" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Maximum Number of Engraving lines</label>
+                    <comment>This will determine the maximum amount of lines for engraving used on the product display and cart pages.</comment>
+                </field>
+                <field id="max_char" translate="label comment" type="text" sortOrder="4" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Maximum Characters Per Custom Text Line</label>
+                    <comment>This will determine the maximum amount of characters for the custom line inputs on the product display page. For no maximum value enter the value: none</comment>
+                </field>
+                <field id="pdp_message" translate="label comment" type="text" sortOrder="5" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Engraving Description</label>
+                    <comment>This will determine engraving message on the product pages.</comment>
+                </field>
+                <field id="pdp_message_vietnam" translate="label comment" type="text" sortOrder="6" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Vietnam Engraving Description</label>
+                    <comment>This will determine the Vietnam engraving message on the product pages.</comment>
+                </field>
+                <field id="excluded_events" translate="label comment" type="multiselect" sortOrder="7" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <label>Excluded Events</label>
+                    <source_model>MemorialBracelets\EngravingDisplay\Model\Config\Source\Events</source_model>
+                    <comment>The selected events will not allow the user to customize the engraving.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

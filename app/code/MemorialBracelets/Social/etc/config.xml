@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <web>
+            <social>
+                <enabled>1</enabled>
+                <twitter>https://twitter.com/membracelets</twitter>
+                <facebook>https://www.facebook.com/MemorialBracelets/</facebook>
+                <gplus>https://plus.google.com/+Memorialbracelets911/about</gplus>
+                <instagram>n/a</instagram>
+                <youtube>n/a</youtube>
+                <linkedin>https://www.linkedin.com/company/memorial-bracelets</linkedin>
+                <myspace>n/a</myspace>
+                <pinterest>n/a</pinterest>
+                <tumbler>http://memorialbracelets-blog.tumblr.com/</tumbler>
+            </social>
+        </web>
+    </default>
+</config>

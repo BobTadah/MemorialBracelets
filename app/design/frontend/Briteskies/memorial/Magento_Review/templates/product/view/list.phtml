@@ -1,0 +1,75 @@
+<?php
+// @codingStandardsIgnoreFile
+?>
+<?php
+/** @var $block Magento\Review\Block\Product\View */
+$isNameType = $this->helper('MemorialBracelets\ReviewAdditions\Helper\Data')->productNameTypeCheck();
+$items      = $block->getReviewsCollection();
+$format     = $block->getDateFormat() ?: \IntlDateFormatter::SHORT;
+$_product = $block->getProduct();
+
+/** Check if product type is giftcard type. */
+$applyChanges = false;
+$isGiftcardType = ($_product->getData('type_id') == 'aw_giftcard') ? true : false;
+if (isset($isGiftcardType) && $isGiftcardType) {
+    /** @var  $applyChanges, if product type is giftcard, set flag to apply style changes. */
+    $applyChanges = true;
+}
+?>
+
+<?php if (count($items) && !$applyChanges): ?>
+    <div class="block review-list" id="customer-reviews">
+        <div class="top-review-container">
+            <div class="block-title">
+                <strong><?php /* @escapeNotVerified */
+                    echo isset($isNameType) ? __('Reflections') : __('Reviews') ?></strong>
+            </div>
+            <a id="review-form-button"
+               href="#review-form"><?php echo isset($isNameType) ?
+                    __('Contribute a Reflection') : __('Add a Review') ?></a>
+        </div>
+        <div class="block-content">
+            <div class="toolbar review-toolbar">
+                <?php echo $block->getChildHtml('toolbar') ?>
+            </div>
+            <ol class="items review-items">
+                <?php foreach ($items as $review): ?>
+                    <li class="item review-item">
+                        <div class="review-title">
+                            <span class="name"><?php echo $block->escapeHtml($review->getNickname()) ?></span>
+                            <span class="divider"> | </span>
+                            <span class="date"><?php /* @escapeNotVerified */
+                                echo $block->formatDate($review->getCreatedAt(), $format) ?></span>
+                        </div>
+                        <div class="review-content">
+                            <?php echo nl2br($block->escapeHtml($review->getDetail())) ?>
+                        </div>
+                    </li>
+                <?php endforeach; ?>
+            </ol>
+            <div class="toolbar review-toolbar">
+               <?php echo $block->getChildHtml('toolbar') ?>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        {
+            require([
+                'jquery'
+            ], function ($) {
+                $(document).ready(function () {
+                    $('#review-form-button').click(function (event) {
+                        event.preventDefault();
+                        //display review form.
+                        $('#review-form').show();
+                        //populate and scroll to the review form.
+                        var target = $(this).attr('href');
+                        if (target.length) {
+                            $('html,body').animate({scrollTop: $(target).offset().top}, 'slow');
+                        }
+                    });
+                });
+            });
+        }
+    </script>
+<?php endif; ?>

@@ -1,0 +1,104 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+/** @var \MemorialBracelets\SwatchOption\Block\Product\View\Options\Type\Swatch $block */
+
+$_option = $block->getOption();
+$class = ($_option->getIsRequire()) ? ' required' : '';
+
+/** @var \MemorialBracelets\SwatchOption\Helper\Size */
+$sizeHelper = $this->helper('MemorialBracelets\SwatchOption\Helper\Size');
+
+if ($_option->getGroupByType() != 'swatch') return;
+
+$pickerId = 'swatchpicker-'.sha1(microtime(true).rand());
+
+$swatches = $block->getValues();
+?>
+<div class="swatch-attribute field <?php /* @escapeNotVerified */ echo $class ?>">
+    <span class="swatch-attribute-label label"><?php echo $block->escapeHtml($_option->getTitle()) ?></span>
+    <?php if ($_option->getTitle() == 'Size') : // CMS block and icon additions for size attribute. ?>
+        <img title="<?= __('Click to display size chart.') ?>" class="icon-tape" id="size-toggle" src="<?= $this->getViewFileUrl('MemorialBracelets_SwatchOption::images/tape.png')?>"/>
+        <div class="size-wrapper">
+            <?= $sizeHelper->getSizeCmsBlock() ?>
+            <div class="arrow"></div>
+        </div>
+    <?php endif ?>
+    <span class="swatch-selected-label"></span>
+
+    <div class="control">
+        <div style="display:none;">
+            <select id="opt-sel-<?= $_option->getId(); ?>" name="options[<?= $_option->getId(); ?>]" class="product-custom-option admin__control-select" selector="options[<?= $_option->getId(); ?>]">
+                <option value>-- Please Select --</option>
+                <?php foreach($swatches as $swatch):
+                    $selected = $swatch->getId() == $block->getDefaultValue();?>
+                    <option value="<?= $swatch->getId(); ?>" price="1"  <?= $selected ? 'selected' : '' ?>><?= $swatch->getTitle(); ?></option>
+                <?php endforeach; ?>
+            </select>
+        </div>
+        <?php if(count($swatches)): ?>
+            <div class="swatch-picker" id="<?= $pickerId ?>">
+                <?php foreach($swatches as $swatch): /** @var \Magento\Catalog\Model\Product\Option\Value $swatch */
+                    $selected = $swatch->getId() == $block->getDefaultValue();
+                    $attributes = [];
+                    $attributes['style'] = [];
+                    $attributes['class'] = $selected ? ['selected'] : [];
+                    $attributes['class'][] = 'swatch-option';
+                    $attributes['data-option-label'] = $swatch->getTitle();
+                    $attributes['data-swatch-id'] = $swatch->getId();
+                    $attributes['data-option-type'] = 0;
+                    $innerHTML = '';
+                    if ($_option->getType() == 'swatch_color' && $swatch->getData('image')) {
+                        $attributes['data-option-type'] = 4;
+                        $image = $block->getConfiguration()->getMediaUrl($swatch->getData('image'));
+                        $attributes['data-option-tooltip-value'] = $image;
+                        $attributes['data-option-tooltip-thumb'] = $image;
+                        $attributes['style']['background'] = "url('{$image}') repeat center";
+                    } elseif ($_option->getType() == 'swatch_color') {
+                        $attributes['class'][] = 'color';
+                        $attributes['data-option-type'] = 1;
+                        $attributes['data-option-tooltip-value'] = $swatch->getData('swatch_color');
+                        $attributes['style']['background'] = $swatch->getData('swatch_color');
+                        $attributes['style']['background-size'] = 'initial';
+                    } elseif ($_option->getType() == 'swatch_image') {
+                        $attributes['data-option-type'] = 2;
+                        $attributes['class'][] = 'image';
+                        $image = $block->getConfiguration()->getMediaUrl($swatch->getData('image'));
+                        $attributes['data-option-tooltip-thumb'] = $image;
+                        $attributes['data-option-tooltip-value'] = $image;
+                        $attributes['style']['background'] = "url('{$image}') no-repeat center";
+                        $attributes['style']['background-size'] = 'contain';
+                    } else {
+                        $attributes['class'][] = 'text';
+                        $abbr = $swatch->getData('swatch_abbr');
+                        $innerHTML = $abbr ? $abbr : $swatch->getTitle();
+                    }
+                    $attributeString = [];
+                    foreach($attributes as $attribute => $value) {
+                        if ($attribute == 'class') {
+                            $value = implode(' ', $value);
+                        }
+                        if ($attribute == 'style') {
+                            $tempValue = [];
+                            foreach($value as $key => $val) {
+                                $tempValue[] = "{$key}: {$val}";
+                            }
+                            $value = implode(';', $tempValue);
+                        }
+                        $attributeString[] = $attribute.'="'.$block->escapeQuote($value).'"';
+                    }
+                    $attributeString = implode(' ', $attributeString);
+                    ?>
+                    <div <?= $attributeString ?>><?= $innerHTML ?></div>
+                <?php endforeach; ?>
+            </div>
+            <script type="text/x-magento-init"><?= json_encode(["#{$pickerId}" => ['MemorialBracelets_SwatchOption/js/swatch-picker' => '']]); ?></script>
+        <?php else: ?>
+            <p>There are no options available to choose from.</p>
+        <?php endif; ?>
+    </div>
+</div>

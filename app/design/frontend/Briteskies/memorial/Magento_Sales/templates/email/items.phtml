@@ -1,0 +1,135 @@
+<?php
+$_order = $block->getOrder();
+/** @var  $optionHelper \MemorialBracelets\CheckHandling\Helper\Data */
+$optionHelper = $this->helper('MemorialBracelets\CheckHandling\Helper\Data');
+/** @var $engravingHelper \MemorialBracelets\EngravingDisplay\Helper\Data */
+$engravingHelper = $this->helper('MemorialBracelets\EngravingDisplay\Helper\Data');
+?>
+
+<?php if ($_order): ?>
+    <?php $_items = $_order->getAllItems(); ?>
+    <table class="email-items">
+        <thead>
+            <tr>
+                <th class="item-info">
+                    <?= __('Items'); ?>
+                </th>
+                <th class="item-price">
+                    <?= __('Price'); ?>
+                </th>
+                <th class="item-qty">
+                    <?= __('Qty'); ?>
+                </th>
+                <th class="item-subtotal">
+                    <?= __('Subtotal'); ?>
+                </th>
+            </tr>
+        </thead>
+        <?php $i = 1; ?>
+        <?php foreach ($_items as $_item): ?>
+            <?php
+                if ($_item->getParentItem()) {
+                    continue;
+                }
+            ?>
+            <tbody>
+                <tr>
+                    <td class="item-info has-extra" colspan="1">
+                        <span>Product <?= $i ?></span>
+                        <p class="product-name"><?= $_item->getName(); ?></p>
+                    </td>
+                    <td class="item-price">
+                        $<?= number_format($_item->getOriginalPrice(), 2); ?>
+                    </td>
+                    <td class="item-qty">
+                        <?= $_item->getQtyOrdered(); ?>
+                    </td>
+                    <td class="item-subtotal">
+                        $<?= number_format($_item->getRowTotal(), 2); ?>
+                    </td>
+                </tr>
+
+                <?php if ($_item->getProductType() == 'aw_giftcard'):?>
+                    <tr>
+                        <td>
+                            <?php
+                                echo "<div>";
+                                    echo "<div><b>Recipient Name:</b> ";
+                                        echo "<span>" . $_item->getProductOptions()['info_buyRequest']['aw_gc_recipient_name'] . "</span><br>";
+                                    echo "</div>";
+                                echo "</div>";
+
+                                echo "<div>";
+                                    echo "<div><b>Recipient eMail:</b> ";
+                                        echo "<span>" . $_item->getProductOptions()['info_buyRequest']['aw_gc_recipient_email'] . "</span><br>";
+                                    echo "</div>";
+                                echo "</div>";
+                            ?>
+                        </td>
+                    </tr>
+                <?php else: ?>
+                    <?php foreach ($_item->getProductOptions()['options'] as $option): ?>
+                        <?php if (isset($option['value']) && !empty($option['value'])):?>
+                            <tr>
+                                <td>
+                                    <div><span style="font-weight: bold; float: left;"><?= $option['label']; ?>:&nbsp;</span>
+                                        <?php
+                                        $parts = preg_split('/\R/', $option['value']);
+                                        echo "<div style=\"float: left; \">";
+                                        foreach ($parts as $p) {
+                                            if (!empty($p)) {
+                                                $p = str_replace(' ', '&nbsp;', $p);
+                                                echo "<span>".$p."</span><br>";
+                                            }
+                                        }
+                                        echo "</div>";
+                                        ?>
+                                    </div>
+                                    <?php if ($option['option_type'] == 'engraving'):?>
+                                        <div style="float: left; font-size: 11px;"><p class="text"> * <?= $block->escapeHtml(__('All engraving is centered both vertically and horizontally.')) ?></p></div>
+                                    <?php endif; ?>
+                                </td>
+                                <td class="col price" style="text-align: right"><?= $optionHelper->getOptionPrice($_item, $option) ?></td>
+                                <td class="col qty">&nbsp;</td>
+                                <td class="col subtotal">&nbsp;</td>
+                            </tr>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </tbody>
+            <?php if ($i < count($_items)): ?>
+                <tbody class="spacer">
+                    <tr style="background-color: #f2f2f2">
+                        <td colspan="4" style="line-height:5px;">&nbsp;</td>
+                    </tr>
+                </tbody>
+            <?php endif; ?>
+            <?php $i++; ?>
+        <?php endforeach; ?>
+        <tbody class="spacer">
+            <tr style="background-color: #f2f2f2">
+                <td colspan="4" style="line-height:5px;">&nbsp;</td>
+            </tr>
+        </tbody>
+        <tfoot class="order-totals">
+            <?= $block->getChildHtml('order_totals') ?>
+        </tfoot>
+    </table>
+    <?php if ($this->helper('Magento\GiftMessage\Helper\Message')->isMessagesAllowed('order', $_order, $_order->getStore()) && $_order->getGiftMessageId()): ?>
+        <?php $_giftMessage = $this->helper('Magento\GiftMessage\Helper\Message')->getGiftMessage($_order->getGiftMessageId()); ?>
+        <?php if ($_giftMessage): ?>
+            <br />
+            <table class="message-gift">
+                <tr>
+                    <td>
+                        <h3><?= __('Gift Message for this Order') ?></h3>
+                        <strong><?= __('From:'); ?></strong> <?= $block->escapeHtml($_giftMessage->getSender()) ?>
+                        <br /><strong><?= __('To:'); ?></strong> <?= $block->escapeHtml($_giftMessage->getRecipient()) ?>
+                        <br /><strong><?= __('Message:'); ?></strong>
+                        <br /><?= $block->escapeHtml($_giftMessage->getMessage()) ?>
+                    </td>
+                </tr>
+            </table>
+        <?php endif; ?>
+    <?php endif; ?>
+<?php endif; ?>

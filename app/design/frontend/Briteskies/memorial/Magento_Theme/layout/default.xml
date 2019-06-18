@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_file" xsi:type="string">images/logo.png</argument>
+                <argument name="logo_img_width" xsi:type="number">300</argument>
+                <argument name="logo_img_height" xsi:type="number">300</argument>
+            </arguments>
+        </referenceBlock>
+
+        <!-- removal of default footer content. -->
+        <referenceBlock name="footer_links" remove="true"/>
+        <referenceBlock name="report.bugs" remove="true" />
+        <referenceBlock name="form.subscribe" remove="true" />
+        <referenceBlock name="copyright" remove="true" />
+        <!-- addition of new footer content. -->
+        <referenceContainer name="footer">
+            <block class="Magento\Cms\Block\Block" name="footer-wrapper-container" before="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer-wrapper</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <!-- addition of custom top links. -->
+        <referenceBlock name="header.panel">
+            <block class="Magento\Cms\Block\Block" name="custom-top-links" before="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">header-top-links</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="MemorialBracelets\SupportiveMessages\Api\SupportiveMessageInterface" type="MemorialBracelets\SupportiveMessages\Model\SupportiveMessage" />
+    <preference for="MemorialBracelets\SupportiveMessages\Api\SupportiveMessageRepositoryInterface" type="MemorialBracelets\SupportiveMessages\Model\SupportiveMessageRepository" />
+</config>

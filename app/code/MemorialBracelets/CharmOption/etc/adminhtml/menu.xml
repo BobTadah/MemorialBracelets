@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="MemorialBracelets_CharmOption::charmoption"
+             title="Charms"
+             sortOrder="10"
+             module="MemorialBracelets_CharmOption"
+             parent="MemorialBracelets_ExtensibleCustomOption::shared_options"
+             action="charmoption/index"
+             resource="Magento_Backend::content"/>
+    </menu>
+</config>

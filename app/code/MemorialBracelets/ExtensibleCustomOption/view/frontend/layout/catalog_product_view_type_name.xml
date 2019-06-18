@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="product.info.name.options" remove="true" />
+        <referenceBlock name="product.info.name.options.wrapper">
+            <block class="MemorialBracelets\ExtensibleCustomOption\Block\Product\View\Options" name="product.info.extensible.options" as="product_options" template="MemorialBracelets_NameProduct::product/view/options.phtml">
+                <block class="Magento\Catalog\Block\Product\View\Options\Type\DefaultType" as="default" template="Magento_Catalog::product/view/options/type/default.phtml"/>
+                <block class="Magento\Catalog\Block\Product\View\Options\Type\Text" as="text" template="Magento_Catalog::product/view/options/type/text.phtml"/>
+                <block class="Magento\Catalog\Block\Product\View\Options\Type\File" as="file" template="Magento_Catalog::product/view/options/type/file.phtml"/>
+                <block class="Magento\Catalog\Block\Product\View\Options\Type\Select" as="select" template="Magento_Catalog::product/view/options/type/select.phtml"/>
+                <block class="Magento\Catalog\Block\Product\View\Options\Type\Date" as="date" template="Magento_Catalog::product/view/options/type/date.phtml"/>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

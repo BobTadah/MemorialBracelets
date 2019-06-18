@@ -1,0 +1,37 @@
+<?php /** @var $block \MemorialBracelets\CartMessage\Block\OnePage\Link */ ?>
+<?php if ($block->isPossibleOnepageCheckout()):?>
+    <div class="button-wrapper">
+        <button type="button"
+                data-role="proceed-to-checkout"
+                id = "proceed-to-checkout-button"
+                title="<?= __('Proceed to Checkout') ?>"
+                data-mage-init='{"Magento_Checkout/js/proceed-to-checkout":{"checkoutUrl":"<?= $block->getCheckoutUrl(); ?>"}}'
+                class="action primary checkout<?php echo($block->isDisabled()) ? ' disabled' : ''; ?>"
+                <?php if ($block->isDisabled()):?>disabled="disabled"<?php endif; ?>>
+            <span class="text-wrapper" data-bind="scope: 'customer'">
+                    <?php  $proceedButtonLabel = $block->getProceedButtonLabel(); ?>
+                     <!-- ko if: customer().fullname  -->
+                    <span class="pre-ko" data-bind="html:'<?= __($proceedButtonLabel) ?>',
+                                                    attr: { class: 'logged-in post-ko text' }"></span>
+                    <!-- /ko -->
+                    <!-- ko ifnot: customer().fullname  -->
+                    <span class="pre-ko" data-bind="html:'<?= __('Register or Log In to Account') ?>',
+                                                    attr: { class: 'logged-out post-ko text' }"></span>
+                    <!-- /ko -->
+            </span>
+        </button>
+    </div>
+    <script type="text/x-magento-init">
+        {
+            "*": {
+                "Magento_Ui/js/core/app": {
+                    "components": {
+                        "customer": {
+                            "component": "Magento_Customer/js/view/customer"
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+<?php endif?>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Catalog:etc/product_options.xsd">
+    <option name="engravable" label="Engraving Options" renderer="MemorialBracelets\EngravingDisplay\Block\Adminhtml\Product\Edit\Tab\Options\Type\Engraving">
+        <inputType name="engraving" label="Engraving" />
+    </option>
+    <option name="text" label="Text" renderer="Magento\Catalog\Block\Adminhtml\Product\Edit\Tab\Options\Type\Text">
+        <inputType name="field" label="Field" />
+        <inputType name="area"  label="Area" />
+    </option>
+</config>

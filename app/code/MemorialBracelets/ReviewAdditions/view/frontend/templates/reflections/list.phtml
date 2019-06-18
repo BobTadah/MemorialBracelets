@@ -1,0 +1,90 @@
+<?php /** @var \MemorialBracelets\ReviewAdditions\Block\Reflections $block */ ?>
+<?php $reflection  = $block->getReflections() ?>
+<?php if (!empty($reflection)) : ?>
+    <div class="reflections-container container">
+        <div class="reflections-wrapper wrapper">
+            <div id="year-range-container" class="left sidebar">
+                <div class="title-container">
+                    <h3><?= __('Year Range') ?></h3>
+                </div>
+                <ol id="date-range-list">
+                    <?php foreach ($reflection as $key => $value) : ?>
+                        <li class="list-item">
+                            <a title="<?= __('Go to year') ?>" data-target="date-title-<?= $key ?>">
+                                <span><?= $key ?></span>
+                                <i class="icon-expand-1"></i>
+                            </a>
+                        </li>
+                    <?php endforeach ?>
+                </ol>
+            </div>
+
+            <div class="right reflections">
+                <div class="main-title ribbon-wrapper">
+                    <h1 class="title"><?= __('Reflections') ?></h1>
+                </div>
+                <div class="description-container">
+                    <p class="text"><?= __('Reflections are a tribute to the memories of lost friends and family. To add a Reflection, visit the page of the person listed on the website and click the Add Reflection link.') ?></p>
+                </div>
+                <?php foreach ($reflection as $key => $value) : ?>
+                    <div class="reflection-year wrapper">
+                        <div id="date-title-<?= $key ?>" class="title-container ribbon-wrapper">
+                            <h3 class="title">
+                                <span><?= $key ?></span>
+                                <i title="<?= __('Scroll to Top') ?>" class="icon-collapse to-top"></i>
+                            </h3>
+                        </div>
+                        <div class="year-reflections">
+                            <?php foreach ($value as $item) : ?>
+                                <div class="reflection-wrapper wrapper">
+                                    <div class="product-title row">
+                                        <a href="<?= $item['product_url'] ?>"
+                                           class="product-name"
+                                           title="<?= __('Go to Name Product Page') ?>"><?= $block->escapeHtml($item['product_name']) ?></a>
+                                    </div>
+                                    <div class="title-row row">
+                                        <p class="text reviewer-name"><?= $block->escapeHtml($item['review_name']) ?></p>
+                                        <p class="text divider">|</p>
+                                        <p class="text review-date"><?= $item['review_date'] ?></p>
+                                    </div>
+                                    <div class="reflection-summary row">
+                                        <p class="text summary"><?= nl2br($block->escapeHtml($item['review_summary'])) ?></p>
+                                    </div>
+                                </div>
+                            <?php endforeach ?>
+                        </div>
+                    </div>
+                <?php endforeach ?>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        require([
+            'jquery',
+            'js/stickyfill.min'
+        ], function ($) {
+            $(document).ready(function () {
+                $('#date-range-list').find('a').click(function () {
+                    scrollTo($('#' + $(this).data('target')));
+                });
+
+                $('i.to-top').click(function () {
+                    scrollTo($('#year-range-container'));
+                });
+
+                /** Adds StickyFill to Year column. */
+                Stickyfill.add($('#year-range-container'));
+            });
+
+            /**
+             * scroll to argument element smoothly.
+             * @param element
+             */
+            function scrollTo(element) {
+                if($(element).length) {
+                    $('html,body').animate({scrollTop: $(element[0]).offset().top},'slow');
+                }
+            }
+        });
+    </script>
+<?php endif ?>

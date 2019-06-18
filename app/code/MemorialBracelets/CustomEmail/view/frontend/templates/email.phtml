@@ -1,0 +1,18 @@
+<?php /*$order = $block->getOrder() */?><!--
+<div>Test</div>
+<?php /*if (1) : */?>
+    <?/*= $block->getChildHtml('check.payment.type') */?>
+<?php /*else : */?>
+    <?/*= $block->getChildHtml('other.payment.type') */?>
+--><?php /*endif */?>
+
+
+<?php // Op2
+/** @var MemorialBracelets\CustomEmail\Block\Email $block */
+$content = $block->getContent();
+?>
+<?php if ($content) : ?>
+    <p class="cms-block">
+        <?= $content ?>
+    </p>
+<?php endif ?>

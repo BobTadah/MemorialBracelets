@@ -1,0 +1,44 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+/** @var \MemorialBracelets\SwatchOption\Block\Product\View\Options\Type\Swatch $block */
+
+$_option = $block->getOption();
+$class = ($_option->getIsRequire()) ? ' required _required' : '';
+
+/** @var \MemorialBracelets\SwatchOption\Helper\Size */
+$sizeHelper = $this->helper(\MemorialBracelets\SwatchOption\Helper\Size::class);
+/** @var \Magento\Framework\Pricing\Helper\Data $priceHelper */
+$priceHelper = $this->helper(\Magento\Framework\Pricing\Helper\Data::class);
+
+if ($_option->getGroupByType() != 'swatch') return;
+
+$pickerId = 'swatchpicker-'.sha1(microtime(true).rand());
+
+$swatches = $block->getValues();
+?>
+<div class="admin__field field <?php /* @escapeNotVerified */ echo $class ?>">
+    <label class="label admin__field-label" for="opt-sel-<?= $_option->getId(); ?>">
+        <span><?php echo $block->escapeHtml($_option->getTitle()) ?></span>
+    </label>
+    <div class="control admin__field-control">
+        <select id="opt-sel-<?= $_option->getId(); ?>" name="options[<?= $_option->getId(); ?>]" class="product-custom-option admin__control-select">
+            <option value>-- Please Select --</option>
+            <?php foreach($swatches as $swatch):
+                /** @var \Magento\Catalog\Model\Product\Option\Value $swatch */
+                $selected = $swatch->getId() == $block->getDefaultValue();
+                $price = $priceHelper->currency($swatch->getPrice(true), true, false);
+                $priceString = floatval($swatch->getPrice(true)) ? " (+ {$price})" : '';
+                ?>
+                <option value="<?= $swatch->getId(); ?>" <?= $selected ? 'selected' : '' ?>>
+                    <?= $swatch->getTitle(); ?>
+                    <?= $priceString; ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+    </div>
+</div>

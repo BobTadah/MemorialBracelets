@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <catalog>
+            <engravable>
+                <enabled>1</enabled>
+                <lines>3</lines>
+                <max_char>none</max_char>
+                <pdp_message>All engraving is centered both vertically and horizontally.</pdp_message>
+                <pdp_message_vietnam>All Engraving is centered both vertically and horizontally.Status or Wall Number and State for Vietnam War bracelets are engraved on the ends of the bracelet. Engraving on Vietnam War bracelets and dog tags is not editable.</pdp_message_vietnam>
+            </engravable>
+        </catalog>
+    </default>
+</config>

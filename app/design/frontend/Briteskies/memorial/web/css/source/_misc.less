@@ -1,0 +1,98 @@
+//--special request page--
+.page-with-filter.page-products.categorypath-special-requests.category-special-requests {
+  .category-description {
+    font-size: 18px;
+
+    button {
+      font-size: 18px;
+    }
+  }
+}
+
+//--gift cards page--
+.page-with-filter.page-products.categorypath-gift-cards.category-gift-cards {
+  .category-description {
+    font-size: 18px;
+  }
+}
+
+//--donations page--
+.cms-donations.cms-page-view {
+  .column.main p {
+    font-size: 18px;
+  }
+
+  .page-title {
+    width: 100%;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #4d527d;
+  }
+}
+
+//--about page--
+.cms-about-us.cms-page-view {
+  .column.main p {
+    font-size: 18px;
+  }
+
+  .page-title {
+    width: 100%;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #4d527d;
+  }
+}
+
+.contact-index-index {
+  .page-title {
+    width: 100%;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #4d527d;
+  }
+
+  .webforms-description-text p {
+    font-size: 18px;
+  }
+
+  .recaptcha {
+    margin-left: 25.8%;
+  }
+}
+
+//-- Forgot password --
+.customer-account-forgotpassword {
+  .field.note {
+    font-size: 18px;
+  }
+}
+
+//Workaround for showing multiple spaces in string. (CART PAGE)
+.checkout-cart-index .cart.table-wrapper .product-item-details {
+  white-space: pre;
+}
+//Workaround for showing multiple spaces in string (CUSTOMER ORDER VIEW, PRINT, EMAIL).
+.prod-engraving-lines {
+  white-space: pre;
+}
+
+.order-comments {
+  background: #e5efe5;
+  padding: 10px;
+}
+
+//Adjust fotorama gallery to make clickable area smaller (GIFTCARDS PDP).
+.page-product-giftcard {
+  .fotorama__wrap {
+    padding-right: 15% !important;
+  }
+  .fotorama__stage__shaft {
+    width: 90% !important;
+  }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+  .contact-index-index {
+    .recaptcha {
+      margin-left: auto;
+    }
+  }
+}

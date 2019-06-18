@@ -1,0 +1,58 @@
+<?php
+/* @var $this \MemorialBracelets\BraceletPreview\Block\Product\View\Preview */
+use MemorialBracelets\BraceletPreview\Model\PreviewOptions;
+
+$inputNumber = 3;
+$attributes = $this->getOptionIds();
+
+$getPartOrNull = function($attributes, $part) {
+    return isset($attributes[$part]) ? implode(',', $attributes[$part]) : 'none';
+};
+
+$getPartOrEmpty = function($attributes, $part) {
+    return isset($attributes[$part]) ? $attributes[$part] : [];
+};
+
+$config = json_encode([
+    'braceletPreview' => [
+        PreviewOptions::PART_LEFT_CHARM => $getPartOrEmpty($attributes, PreviewOptions::PART_LEFT_CHARM),
+        PreviewOptions::PART_MATERIAL_COLOR =>  $getPartOrEmpty($attributes, PreviewOptions::PART_MATERIAL_COLOR),
+        PreviewOptions::PART_LEFT_ICON => $getPartOrEmpty($attributes, PreviewOptions::PART_LEFT_ICON),
+        PreviewOptions::PART_TOP_ICON => $getPartOrEmpty($attributes, PreviewOptions::PART_TOP_ICON),
+        PreviewOptions::PART_ENGRAVING => $getPartOrEmpty($attributes, PreviewOptions::PART_ENGRAVING),
+        PreviewOptions::PART_RIGHT_ICON => $getPartOrEmpty($attributes, PreviewOptions::PART_RIGHT_ICON),
+        PreviewOptions::PART_RIGHT_CHARM => $getPartOrEmpty($attributes, PreviewOptions::PART_RIGHT_CHARM),
+    ]
+]);
+
+?>
+<?php if ($this->isEnabled()) : ?>
+    <div id="overlay-preview-container" class="container" data-role="bracelet-preview" data-mage-init='<?= $config ?>'>
+        <div class="bracelet no-display" data-role="bracelet-preview-bracelet">
+            <div class="left-quadrant">
+                <div class="left left-charm no-display" data-part="<?= PreviewOptions::PART_LEFT_CHARM ?>"></div>
+                <div class="line no-display"></div>
+            </div>
+            <div class="bracelet-main no-display" data-part="<?= PreviewOptions::PART_MATERIAL_COLOR; ?>">
+                <div class="left left-icon no-display" data-part="<?= PreviewOptions::PART_LEFT_ICON; ?>"></div>
+                <div class="center-column">
+                    <div class="top top-charm no-display" data-part="<?= PreviewOptions::PART_TOP_ICON; ?>"></div>
+                    <div class="text-lines no-display" data-part="<?= PreviewOptions::PART_ENGRAVING; ?>">
+                        <?php for ($i = 0; $i < $inputNumber; $i++) : ?>
+                            <p class="text" id="line-<?= ($i + 1) ?>"></p>
+                        <?php endfor ?>
+                    </div>
+                </div>
+                <div class="right right-icon no-display" data-part="<?= PreviewOptions::PART_RIGHT_ICON; ?>"></div>
+            </div>
+            <div class="right-quadrant">
+                <div class="line no-display"></div>
+                <div class="right right-charm no-display" data-part="<?= PreviewOptions::PART_RIGHT_CHARM; ?>"></div>
+            </div>
+        </div>
+        <div class="button-container no-display" data-role="bracelet-preview-reset-button-holder">
+            <button title="<?= __('Reset All Bracelet Configurations') ?>" data-role="bracelet-reset-button" id="bracelet-reset" class="link">
+                <span><?= __('Reset Bracelet') ?></span></button>
+        </div>
+    </div>
+<?php endif ?>

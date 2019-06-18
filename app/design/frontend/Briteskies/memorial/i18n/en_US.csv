@@ -1,0 +1,14 @@
+"Could not apply coupon code","Could not apply discount code",module,Magento_Quote
+"Coupon code is not valid","Discount code is not valid",module,Magento_Quote
+"Could not delete coupon code","Could not delete discount code",module,Magento_Quote
+"You canceled the coupon code.","You canceled the discount code.",module,IWD_OrderManager
+"You canceled the coupon code.","You canceled the coupon code.",module,Magento_Checkout
+"The coupon code is not valid.","The discount code is not valid.",module,IWD_OrderManager
+"We cannot apply the coupon code.","We cannot apply the discount code.",module,IWD_OrderManager
+"Coupon Code","Discount Code",module,IWD_OrderManager
+"Your coupon was successfully removed.","Your discount was successfully removed.",module,Magento_SalesRule
+"Your coupon was successfully applied.","Your discount was successfully applied.",module,Magento_SalesRule
+"Could not delete coupon code","Could not delete discount code.",module,Magento_Quote
+"You used coupon code ""%1"".","You used discount code ""%1"".",module,IWD_OrderManager
+"The coupon code ""%1"" is not valid.","The discount code ""%1"" is not valid.",module,Magento_Checkout
+"Estimate Shipping and Tax","Estimate Shipping",module,Magento_Checkout

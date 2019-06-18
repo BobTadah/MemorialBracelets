@@ -1,0 +1,53 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * Template for displaying grouped product price
+ */
+?>
+<?php
+$minProduct = $block->getSaleableItem()
+    ->getPriceInfo()
+    ->getPrice(\Magento\Catalog\Pricing\Price\FinalPrice::PRICE_CODE)
+    ->getMinProduct();
+
+if ($minProduct) {
+    $amountRender = $block->getRendererPool()
+        ->createAmountRender(
+            $minProduct->getPriceInfo()->getPrice('final_price')->getAmount(),
+            $minProduct,
+            $minProduct->getPriceInfo()->getPrice('final_price'),
+            ['include_container' => true]
+        );
+}
+?>
+<?php if ($minProduct && \Magento\Framework\Pricing\Render::ZONE_ITEM_VIEW != $block->getZone()): ?>
+<div class="price-box" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+    <p class="minimal-price">
+        <span class="price-label"><?php /* @escapeNotVerified */ echo __('Starting at')?></span><?php echo $amountRender->toHtml();?>
+    </p>
+</div>
+<?php else:
+    /** @var \Magento\Catalog\Pricing\Render\FinalPriceBox $block */
+    /** @var \Magento\Catalog\Pricing\Price\ConfiguredPrice $configuredPrice */
+    $configuredPrice = $block->getPrice();
+    $schema = ($block->getZone() == 'item_view') ? true : false;
+    $priceLabel = ($block->getPriceLabel() !== null)
+        ? $block->getPriceLabel()
+        : '';
+    ?>
+    <p class="price-as-configured">
+        <?php /* @escapeNotVerified */ echo $block->renderAmount($configuredPrice->getAmount(), [
+            'display_label'     => $priceLabel,
+            'price_id'          => $block->getPriceId('product-price-'),
+            'price_type'        => 'finalPrice',
+            'include_container' => true,
+            'schema' => $schema
+        ]); ?>
+    </p>
+<?php endif; ?>

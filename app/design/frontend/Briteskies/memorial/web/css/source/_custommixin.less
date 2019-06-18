@@ -1,0 +1,126 @@
+/*
+ * This file is for all the custom mixins used in this theme.
+ */
+
+/*
+ * This will set up a background that will stretch outside its container
+ * to the entire width of the screen. As a side note the child elements
+ * will have to have a 'z-index: 1' added to them to be visible. Aso
+ * the parent must have position:relative.
+ */
+.setStretchBackground(@color: transparent)
+{
+  position: relative;
+  &::after {
+    content: "";
+    background-color: @color;
+    position: absolute;
+    width: 100vw;
+    // the ~"..." will escape the string so less does not compile this.
+    left: ~"calc(-50vw + 50%)";
+    height: 100%;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+  }
+  & > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+
+/*---Flexbox Justify Content---
+@justify-content: start, end, center, space-between, space-around
+  *FIXME* - Creates duplicate CSS
+  --------------------------*/
+
+.flex-justify-content (@justify-content: start) {
+  -webkit-box-pack: @justify-content;
+  -moz-box-pack: @justify-content;
+  -ms-flex-pack: @justify-content;
+  -webkit-justify-content: @justify-content;
+  justify-content: @justify-content;
+}
+
+.flex-justify-content (@justify-content: start) when (@justify-content = start) {
+  -webkit-justify-content: ~"flex-@{justify-content}";
+  justify-content: ~"flex-@{justify-content}";
+}
+.flex-justify-content (@justify-content: start) when (@justify-content = end) {
+  -webkit-justify-content: ~"flex-@{justify-content}";
+  justify-content: ~"flex-@{justify-content}";
+}
+.flex-justify-content (@justify-content: start) when (@justify-content = space-between) {
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+}
+.flex-justify-content (@justify-content: start) when (@justify-content = space-around) {
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-flex-pack: distribute;
+}
+
+/* Placeholder Browser Compatibility Rules. */
+.placeholder(@rules) {
+
+  &::-webkit-input-placeholder {
+    @rules();
+  }
+  &:-moz-placeholder {
+    @rules();
+  }
+  &::-moz-placeholder {
+    @rules();
+  }
+  &:-ms-input-placeholder {
+    @rules();
+  }
+}
+
+/* Create the ribbon ends for an element */
+.ribbonEnds(@color: transparent, @borderVal1: 18px, @borderVal2: 18px, @borderVal3: 18px){
+  position: relative;
+  background: @color;
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    display: block;
+    border: @borderVal1 solid @color;
+    z-index: 1;
+    left: -@borderVal2;
+    border-left-width: @borderVal3;
+    border-left-color: transparent;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    display: block;
+    border: @borderVal1 solid @color;
+    z-index: 1;
+    right: -@borderVal2;
+    border-right-width: @borderVal3;
+    border-right-color: transparent;
+  }
+}
+
+/* Align content custom mixin */
+.lib-vendor-box-align-content (
+  @_value: center
+) {
+  -webkit-align-content: @_value;
+  align-content: @_value;
+}
+
+
+.columns-mixin(@width: 100px, @number: 1)
+{
+  -webkit-columns: @width @number;
+  -moz-columns: @width @number;
+  columns: @width @number;
+}

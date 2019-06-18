@@ -1,0 +1,19 @@
+{
+  "name": "memorial/adminhtml-theme-backend",
+  "description": "MemorialBracelets Backend Theme",
+  "version": "0.1.0",
+  "require": {
+    "php": ">=5.6",
+    "magento/framework": "^100.1.0",
+    "memorial/module-backend": "*"
+  },
+  "type": "magento2-theme",
+  "license": [
+    "proprietary"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ]
+  }
+}

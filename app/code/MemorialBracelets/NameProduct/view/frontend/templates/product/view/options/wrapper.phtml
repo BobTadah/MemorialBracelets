@@ -1,0 +1,38 @@
+<?php
+/** @var \MemorialBracelets\NameProduct\Block\Product\View $block */
+// @codingStandardsIgnoreFile
+$required = '';
+if ($block->hasRequiredOptions()) {
+    $required = ' data-hasrequired="'.__('* Required Fields').'"';
+}
+?>
+<div class="product-options-wrapper" id="product-options-wrapper"<?php /* @escapeNotVerified */
+echo $required; ?>>
+    <?php
+        //Get parent product event.
+        $parentProductEvent = $block->getProductEvent();
+    foreach ($block->getChildProducts() as $childProduct): ?>
+    <?php
+        //Get child product type (dog type, paracord, etc.)
+        $childProductType = $block->getChildProductType($childProduct);
+    ?>
+    <?php /* display:none is part of this fieldset for the show() hide() functionality in name-qty.js */ ?>
+        <div class="fieldset product_selection_fieldset" style="display:none;"
+             data-child-product-type="<?php echo $childProductType; ?>"
+             data-parent-product-event="<?php echo $parentProductEvent; ?>"
+             data-productid="<?php /* @escapeNotVerified */
+             echo $childProduct->getId(); ?>">
+            <?php echo $block->getProductHtml($childProduct); ?>
+        </div>
+    <?php endforeach; ?>
+</div>
+<script type="text/x-magento-init">
+    <?=
+    json_encode(
+        [
+            '*' => [
+                'MemorialBracelets_NameProduct/js/name-qty' => new stdClass(),
+            ],
+        ]
+    ); ?>
+</script>

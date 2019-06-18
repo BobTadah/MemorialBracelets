@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template
+            id="sales_email_engraving_template"
+            label="Engraving Alert - Customer Email"
+            area="frontend"
+            module="MemorialBracelets_Engraving"
+            type="html"
+            file="alert_customer.html"/>
+</config>

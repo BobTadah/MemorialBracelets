@@ -1,0 +1,58 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+use MemorialBracelets\CharmOption\Model\CharmOption;
+
+/** @var \MemorialBracelets\CharmOption\Block\Product\View\Options\Type\Charm $block */
+
+$_option = $block->getOption();
+$class = ($_option->getIsRequire()) ? ' required' : '';
+
+if ($_option->getType() != 'picker') return;
+
+$pickerId = 'charmpicker-'.sha1(microtime(true).rand());
+
+$charms = $block->getCharms();
+?>
+<div class="charm-attribute field <?php /* @escapeNotVerified */ echo $class ?>">
+    <span class="charm-attribute-label label"><?php echo $block->escapeHtml($_option->getTitle()) ?></span>
+    <span class="charm-selected-label"></span>
+
+    <div class="control">
+        <div style="display:none;">
+            <select id="opt-sel-<?= $_option->getId(); ?>" name="options[<?= $_option->getId(); ?>]" class="product-custom-option admin__control-select" selector="options[<?= $_option->getId(); ?>]">
+                <option value>-- Please Select --</option>
+                <?php
+                foreach($charms as $charm):
+                    $selected = $charm->getId() == $block->getDefaultValue();
+                    ?>
+                    <option value="<?= $charm->getId(); ?>" price="1" <?= $selected ? 'selected' : '' ?>><?= $charm->getTitle(); ?></option>
+                <?php endforeach; ?>
+            </select>
+        </div>
+        <?php if(count($charms)): ?>
+            <div class="charm-picker" id="<?= $pickerId ?>">
+                <?php foreach($charms as $charm):
+                    $selected = $charm->getId() == $block->getDefaultValue(); ?>
+                    <div
+                        class="charm-option <?= $selected ? 'selected' : '' ?>"
+                        data-option-label="<?= $block->escapeHtml($charm->getTitle()); ?> +<?= $block->getFormattedCharmPrice($charm); ?>"
+                        data-option-tooltip-thumb="<?= $block->getConfiguration()->getMediaUrl($charm->getData('icon')); ?>"
+                        data-option-tooltip-value="<?= $block->getConfiguration()->getMediaUrl($charm->getData('icon')); ?>"
+                        data-charm-id="<?= $charm->getId(); ?>"
+                        style="background:url('<?= $block->getConfiguration()->getMediaUrl($charm->getData('icon')); ?>') no-repeat center;background-size:contain;"
+                    >
+                        <img src="<?= $block->getConfiguration()->getMediaUrl($charm->getData('icon')); ?>" />
+                    </div>
+                <?php endforeach; ?>
+            </div>
+            <script type="text/x-magento-init"><?= json_encode(["#{$pickerId}" => ['MemorialBracelets_CharmOption/js/charm-picker' => '']]); ?></script>
+        <?php else: ?>
+            <p>There are no charms available to choose from.</p>
+        <?php endif; ?>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+<?php /* @var \Magento\Wishlist\Model\Item $item */?>
+<?php /* @var \Magento\Wishlist\Block\Customer\Wishlist\Item\Column\Cart $block */?>
+<?php $product = $block->getItem()->getProduct()?>
+<?php if ($product && $product->getTypeId() != 'name') : ?>
+    <?php foreach ($block->getChildNames() as $childName) : ?>
+        <?= $block->getLayout()->renderElement($childName, false) ?>
+    <?php endforeach ?>
+<?php endif ?>

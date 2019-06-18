@@ -1,0 +1,66 @@
+.checkout-payment-method {
+  .payment-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: flex-start;
+
+    .step-title {
+      order: 50;
+      width: 100%;
+    }
+
+    .payment-method-title {
+      border-top: none;
+      order: 100;
+      display: flex;
+      vertical-align : top;
+      flex: 1;
+      margin : 2.5px;
+
+      input {
+        display: none;
+      }
+      label {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: flex-start;
+        flex: 1;
+        color: @mem-blue;
+        background: @mem-light-blue;
+        border-color: @mem-light-blue-hover;
+        padding: 12px 22px;
+        .payment-icon {
+          vertical-align: middle
+        }
+        a:hover {
+          color: @mem-blue;
+        }
+      }
+
+      input:checked + label{
+        color: white;
+        background: @mem-blue-hover;
+        border-color: @mem-blue-hover;
+      }
+      label:hover {
+        color: white;
+        background: @mem-light-blue-hover;;
+        border-color: @mem-light-blue-hover;;
+      }
+    }
+    .payment-method-content {
+      order: 500;
+      width: 100%;
+      &._active {
+        display: block;
+      }
+    }
+
+  }
+}

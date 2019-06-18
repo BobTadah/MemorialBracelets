@@ -1,0 +1,35 @@
+<?php
+
+/** @var \MemorialBracelets\CategoryLandingPage\Block\Category\View\Landing $block */
+?>
+<div class="category-landing">
+    <ul class="list">
+        <?php foreach ($block->getActiveSubCategories() as $category) :
+            $category = $block->fetchCategory($category->getId());
+            ?>
+            <li class="list-item">
+                <div class="list-content">
+                    <a href="<?= $block->escapeQuote($category->getUrl()); ?>" class="block-promo"
+                       title="<?= $block->escapeQuote($category->getName()); ?>">
+                        <h2><?= $category->getName(); ?> (<?= $block->getVisibleProductCount($category) ?>)</h2>
+                        <?php if ($category->getImageUrl()) : ?>
+                            <?php
+                            $imageHtml = '<img class="subcategory-image" src="' . $category->getImageUrl() .
+                                '" alt="" />';
+                            echo $block->outputHelper()->categoryAttribute($category, $imageHtml, 'image');
+                            ?>
+                        <?php endif; ?>
+                        <?php
+                        $description = $block->stripTags(
+                            $category->getData('description'),
+                            '<strong><em><span><p><br>',
+                            false
+                        );
+                        echo $block->outputHelper()->categoryAttribute($category, $description, 'description');
+                        ?>
+                    </a>
+                </div>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</div>

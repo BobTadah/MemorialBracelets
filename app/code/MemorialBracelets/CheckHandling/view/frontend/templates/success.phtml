@@ -1,0 +1,16 @@
+<?php /** @var $block \Magento\Checkout\Block\Onepage\Success */ ?>
+<div class="checkout-success">
+    <?php if ($block->getOrderId()) : ?>
+        <?php if ($block->getCanViewOrder()) :?>
+            <p><?= __('Thank you for placing an order with Memorial Bracelets.  Your Order\'s Order Number is: %1.', sprintf('<a href="%s" class="order-number"><strong>%s</strong></a>', $block->escapeHtml($block->getViewOrderUrl()), $block->escapeHtml($block->getOrderId()))) ?></p>
+        <?php  else : ?>
+            <p><?= __('Your order # is: <span>%1</span>.', $block->escapeHtml($block->getOrderId())) ?></p>
+        <?php endif ?>
+        <p><?= __('You will receive a confirmation email with all of the details of your order. Please review it carefully to make sure you ordered what you intended. If you don’t see an email confirmation, please check your SPAM/Clutter folder before contacting us.') ?></p>
+        <p><?= __('Since we are creating a custom piece of jewelry, please remember that it will take 20-25 days to engrave prior to shipping. You will receive an email when it ships.') ?></p>
+    <?php endif ?>
+
+    <?= $block->getAdditionalInfoHtml() ?>
+
+    <?= $block->getChildHtml('success.actions') ?>
+</div>

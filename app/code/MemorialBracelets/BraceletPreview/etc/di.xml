@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="MemorialBracelets\ExtensibleCustomOption\Model\ResourceModel\Product\Option">
+        <plugin name="option-preview-piece" type="MemorialBracelets\BraceletPreview\Plugin\OptionResourceSaveModifier" sortOrder="1"/>
+    </type>
+    <type name="MemorialBracelets\ExtensibleCustomOption\Model\ResourceModel\Product\Option\Collection">
+        <plugin name="option-preview-piece" type="MemorialBracelets\BraceletPreview\Plugin\OptionCollectionModifier" sortOrder="1"/>
+    </type>
+    <type name="MemorialBracelets\ExtensibleCustomOption\Model\Product\Option">
+        <plugin name="option-preview-piece" type="MemorialBracelets\BraceletPreview\Plugin\OptionModelModifier" sortOrder="1" />
+    </type>
+    <type name="Xtento\OrderExport\Model\Export\Data\Shared\Items">
+        <plugin name="items_bracelet_piece" type="MemorialBracelets\BraceletPreview\Plugin\XtentoOrderExportItems" sortOrder="1" />
+    </type>
+</config>

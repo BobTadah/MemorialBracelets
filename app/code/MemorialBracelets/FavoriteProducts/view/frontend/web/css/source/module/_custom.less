@@ -1,0 +1,135 @@
+/** <--Imports--> **/
+@import '_flex';
+
+/** <--Variables--> **/
+@mem-blue: #4D527D;
+@mem-blue-hover: #393C5C;
+
+@mem-red: #9C2F1D;
+@mem-red-hover: #7A2517;
+
+@mem-light-blue: #B9CBD2;
+@mem-light-blue-hover: #9BAAB0;
+
+@mem-gold: #FFB52B;
+@mem-gold-hover: #D49520;
+
+@mem-grey: #CBCDCE;
+@mem-grey-hover: #A1A3A6;
+
+@mem-light-grey: #ECECEC;
+@mem-light-grey-hover: #CBCDCE;
+
+@mem-dark-grey: #5C5D60;
+@mem-dark-grey-hover: #414042;
+
+/** <--Styling--> **/
+//--general--
+@media only screen and (max-width: 770px) {
+  .columns, .column {
+    width: 100%;
+  }
+  ul{
+    padding-left: 5px !important;
+  }
+}
+
+  //--slider--
+#favorites-product-slider {
+  padding-bottom: 20px;
+  h3 {
+    font-size: 26px;
+    font-weight: bold;
+    padding: 0 0 15px 0;
+  }
+  div.slider-container {
+    div.item {
+      padding: 5px;
+      margin-right: 15px;
+      border: 2px solid @mem-light-grey;
+      height: 416px;
+      min-height: 416px;
+      cursor: pointer;
+      .flex();
+      .flex-direction(column);
+      .flex-justify-content(space-between);
+      &:hover {
+        border-color: @mem-blue;
+        border-radius: 5px;
+      }
+      .top {
+        .flex();
+        .flex-direction(column);
+        .flex-align-items(center);
+        img {
+          max-height: 215px;
+        }
+        .info {
+          p, a {
+            text-align: center;
+            color: @mem-blue;
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+          }
+          .name {
+            padding: 5px 10px;
+            margin-bottom: 2px;
+            min-height: 67px;
+            &:hover {
+              text-decoration: none;
+              color: @mem-blue-hover;
+            }
+          }
+          .price {
+            font-size: 18px;
+          }
+        }
+      }
+      .bottom {
+        .buttons {
+          a {//shared.
+            font-weight: bold;
+            font-size: 16px;
+            display: block;
+            text-align: center;
+            &:hover {
+              text-decoration: none;
+            }
+          }
+          a.button-customize {
+            background: @mem-gold;
+            width: 100%;
+            padding: 10px 0;
+            &:hover {
+              background: @mem-gold-hover;
+            }
+          }
+          .links {
+            width: 100%;
+            margin-top:5px;
+            .flex();
+            .flex-justify-content(space-between);
+            .button {
+              background: @mem-grey;
+              width: 100%;
+              padding: 5px 0;
+              &:hover {
+                background: @mem-grey-hover;
+              }
+              i {
+                font-size: 23px;
+                position: relative;
+                top: 2px;
+              }
+              span {
+                position: relative;
+                top: -1px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Magento_Swatches::css/swatches.css"/>
+        <css src="MemorialBracelets_SwatchOption::css/swatchpicker.css"/>
+    </head>
+    <body>
+        <referenceBlock name="product.info.extensible.options">
+            <block class="MemorialBracelets\SwatchOption\Block\Product\View\Options\Type\Swatch" as="swatch" template="product/view/options/type/swatch.phtml"/>
+        </referenceBlock>
+    </body>
+</page>

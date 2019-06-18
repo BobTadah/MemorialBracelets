@@ -1,0 +1,57 @@
+//--request-page--
+
+//--<local-vars>--
+
+//--<styling>--
+
+//--<shared-styling>--
+& when (@media-common = true) {
+  // date picker universal styling
+  .ui-datepicker .ui-datepicker-prev span {
+    border-color: transparent @mem-blue transparent transparent;
+  }
+
+  .ui-datepicker .ui-datepicker-next span {
+    border-color: transparent transparent transparent @mem-blue;
+  }
+
+  .ui-datepicker .ui-datepicker-calendar td .ui-state-hover {
+    background: lighten(@mem-blue, 30);
+  }
+
+  .ui-datepicker .ui-datepicker-calendar .ui-state-active {
+    background: lighten(@mem-blue, 15);
+  }
+
+  .ui-datepicker .ui-datepicker-calendar .ui-datepicker-today {
+    background: @mem-light-blue;
+  }
+
+  .engraving-line-wrapper > p {
+    margin-bottom: 0;
+    padding: 7px 5px 11px 5px;
+  }
+
+  .nameproductrequest-index-index {
+    .page-title {
+      width: 100%;
+      margin-bottom: 20px;
+      border-bottom: 2px solid @mem-blue;
+    }
+    .request-info {
+      font-size: 18px;
+    }
+  }
+}
+
+//--<desktop-styling>--
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+}
+
+//--<mobile-styling>--
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+
+}
+
+//--<custom-breakpoints>--

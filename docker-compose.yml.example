@@ -1,0 +1,213 @@
+version: '2.1'
+# https://docs.docker.com/compose/compose-file/compose-versioning/#compatibility-matrix
+# https://github.com/EmakinaFR/docker-magento2/blob/master/docker-compose.yml
+# cheat-sheet https://docs.docker.com/compose/compose-file/compose-file-v2/
+
+# Versions For Magento 2.1.x
+# apache - 2.4.x
+# nginx - 1.x (skipped)
+# php - 7.0.x - can increase for 2.1.16 onward
+# mysql - 5.7.x - 5.6 recommended but failed
+# mariadb - 10.2 (skipped)
+# elastic search - 2.x - Need to build a container
+#  - requires java 1.8
+# redis - 3.2.x
+# rabbitMQ 3.5.x (settling for 3.6.x)
+# varnish - 5.x - Need to lower version
+# memcached latest (skipped)
+
+# Additions - blackfire, maildev, phpmyadmin, kibana, rediscommanders
+
+
+# https://docs.docker.com/compose/compose-file/compose-file-v2/#network-configuration-reference
+networks:
+  localswarm:
+    driver: bridge
+
+# global mount point for each/any service, eg logvolume1: {} here can be used by name in any service above as logvolume1:/var/log
+# https://docs.docker.com/compose/compose-file/compose-file-v2/#volume-configuration-reference
+volumes:
+  dbdata:
+    driver: local
+  esdata:
+    driver: local
+  rddata:
+    driver: local
+
+services:
+
+  # Apache and PHP Combined ~2GB
+  webserver:
+    image: briteskies/local-docker:2_1-php-apache
+    # build: .docker/contexts/php-apache
+    tty: true
+    ports:
+      - 8080:80  # web
+      - 443:443  # https
+      - 901:9001 # need to keep the local 9001 open for PHPSTORM
+    volumes:
+      - .docker/contexts/php-apache/apache2.conf:/etc/apache2/apache2.conf
+      - .docker/contexts/php-apache/000-default.conf:/etc/apache2/sites-available/000-default.conf # customize here for multiple urls
+      - ./:/var/www/html:delegated # delegated means container updates to the files are slowly mapped to the host
+      - ~/.ssh:/root/.ssh
+      - ~/.bash_history:/root/.bash_history
+      # - ~/.zsh_history:/root/.zsh_history
+      - ~/.gitignore_global:/root/.gitignore_global
+      - ~/.composer:/root/.composer
+      - ./.docker/contexts/php-apache/php.ini:/usr/local/etc/php/php.ini
+      # Customizes paths to share any configurations and caches on the host with docker
+      # Add any files here that you want to replace on container at run time, eg. php.ini
+      # environment: # Uncomment for Windows Development
+      #   XDEBUG_CONFIG: "remote_host=10.0.75.1"  #only way this works is with private ip of host - OR create alias for (eg) eth0 and refer to that. OOB "host.docker.internal" should work but is not
+      #   PHP_IDE_CONFIG: "serverName=local-dev.huffy.com" #host.docker.internal=192.168.65.2 #same as exported "DOCKER_HOST" in dockerfile .bashrc. otherwise see: docs.docker.com/docker-for-mac/networking/
+    networks: [localswarm]
+    depends_on: [db]
+
+
+  # Mysql ~372MB
+  db:
+    image: mysql:5.7
+    tty: true
+    ports:
+     - 3306:3306
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=1
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=magento
+      - MYSQL_USER=magento
+      - MYSQL_PASSWORD=magento
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks: [localswarm]
+
+
+#  # Elasticsearch ~125MB
+#  # https://www.docker.elastic.co/ <- use these images in the future
+#  # run the following on the host computer `sudo sysctl -w vm.max_map_count=262144 ; (echo "vm.max_map_count=262144" | sudo tee --append /etc/sysctl.conf)` - [2018-05-04T13:22:19,787][WARN ][o.e.b.BootstrapChecks] [zV5AZ7n] max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
+#  # validate with `sudo sysctl vm.max_map_count`
+#  elasticsearch:
+#    tty: true
+#    image: briteskies/local-docker:2_2-elasticsearch
+#    #build: .docker/contexts/elasticsearch
+#    # volumes:
+#    #   - .docker/contexts/elasticsearch/sysctl.conf:/etc/sysctl.conf
+#    ports:
+#      - 9200:9200
+#    environment:
+#      - discovery.type=single-node # may not have an effect
+#      - xpack.security.enabled=false
+#      - ELASTIC_USERNAME=username
+#      - ELASTIC_PASSWORD=password
+#    networks: [localswarm]
+#    volumes:
+#      - esdata:/usr/share/elasticsearch/data
+
+
+  # Redis ~20.7MB
+  redis:
+    tty: true
+    image: redis:3.2-alpine
+    ports:
+      - 6379:6379
+    networks: [localswarm]
+    volumes:
+      - rddata:/data --name redis dockerfile/redis
+
+
+  # Varnish ~172MB
+  varnish:
+    image: briteskies/local-docker:2_2-varnish
+    #build: .docker/contexts/varnish
+    depends_on: [webserver]
+    volumes:
+#      - .docker/contexts/varnish/default.vcl:/etc/varnish/default.vcl
+      - .docker/contexts/varnish/default-apache-php.vcl:/etc/varnish/default.vcl # Enable for Apache and PHP Combined
+    ports:
+      - 80:8080
+    tty: true
+    networks: [localswarm]
+
+
+  # RabbitMQ ~38.9MB - management version contains the admin ui
+  rabbitmq:
+    image: rabbitmq:3.6-management-alpine
+    #build: .docker/contexts/rabbitmq
+    ports:
+      - 4369:4369
+      - 5671:5671
+      - 5672:5672
+      - 15672:15672
+      - 25672:25672
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    tty: true
+    networks: [localswarm]
+
+
+## Extras vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+#   Blackfire ~21.6MB - Aprrox $20 per month - Settings also required in the php entrypoint
+#   blackfire:
+#     image: blackfire/blackfire
+#     environment:
+#       - BLACKFIRE_PORT=8707
+#       - BLACKFIRE_LOG_LEVEL=4
+#       - BLACKFIRE_SERVER_ID=
+#       - BLACKFIRE_SERVER_TOKEN=
+#       - BLACKFIRE_CLIENT_ID=
+#       - BLACKFIRE_CLIENT_TOKEN=
+#     depends_on:
+#       - php
+#     ports:
+#       - "8707:8707"
+
+
+  # Maildev ~68.8MB
+  maildev:
+    image: djfarrelly/maildev
+    depends_on: [webserver]
+#    depends_on: [php] - may be needed for separate php containers
+    ports:
+      - 1080:80
+    tty: true
+    networks: [localswarm]
+
+  # PMA ~70MB - uncomment if desired
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    environment:
+      - PMA_HOST=db
+      - PMA_USER=root
+      - PMA_PASSWORD=root
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - 8888:80
+    networks: [localswarm]
+    depends_on: [db]
+
+
+#  # TODO - figure out how to disable security or set a license
+#  # Kibana ~644MB - elastic search "client"
+#  kibana:
+#   image: docker.elastic.co/kibana/kibana:5.6.9
+#   container_name: kibana
+#   environment:
+#    - xpack.security.enabled=false
+#    - ELASTICSEARCH_USERNAME=username
+#    - ELASTICSEARCH_PASSWORD=password
+#   ports: ['5601:5601']
+#   networks: [localswarm]
+#   depends_on: [elasticsearch]
+
+
+  # Redis Commander ~108MB -
+  rediscommander:
+   image: rediscommander/redis-commander
+   environment:
+    - REDIS_HOSTS=redis:redis:6379
+   ports:
+    - 8081:8081
+   networks: [localswarm]
+   depends_on: [redis]
+

@@ -1,0 +1,16 @@
+<?php /** @var $block MemorialBracelets\NameProduct\Block\Product\View */ ?>
+<?php $attributes = $block->getNameDetails() ?>
+<?php if (!empty($attributes)) : ?>
+    <div class="name-details-container">
+        <table id="name-details-table">
+            <tbody>
+            <?php foreach ($attributes as $attribute) : ?>
+                <tr class="row">
+                    <td class="detail-item label"><?= $attribute['label'] ?></td>
+                    <td class="detail-item value"><?= $attribute['value'] ?></td>
+                </tr>
+            <?php endforeach ?>
+            </tbody>
+        </table>
+    </div>
+<?php endif ?>

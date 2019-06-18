@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="charm-custom-option" xsi:type="array">
+                    <item name="class" xsi:type="string">MemorialBracelets\CharmOption\Ui\DataProvider\Product\Form\Modifier\CharmOption</item>
+                    <item name="sortOrder" xsi:type="number">73</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="MemorialBracelets\CharmOption\Model\DataProvider">
+        <arguments>
+            <!-- defines the constructor variable $modifierPool, which wants an Interface, to be the below virtualType -->
+            <argument name="modifierPool" xsi:type="object">MemorialBracelets\CharmOption\Ui\DataProvider\CharmOption\Form\Modifier\Pool</argument>
+        </arguments>
+    </type>
+    <virtualType name="MemorialBracelets\CharmOption\Ui\DataProvider\CharmOption\Form\Modifier\Pool"  type="Magento\Ui\DataProvider\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="price-field-modifier" xsi:type="array">
+                    <item name="class" xsi:type="string">MemorialBracelets\CharmOption\Ui\DataProvider\CharmOption\Form\Modifier\PriceBefore</item>
+                    <item name="sortOrder" xsi:type="number">500</item>
+                </item>
+                <item name="icon-data-modifier" xsi:type="array">
+                    <item name="class" xsi:type="string">MemorialBracelets\CharmOption\Ui\DataProvider\CharmOption\Form\Modifier\IconData</item>
+                    <item name="sortOrder" xsi:type="number">500</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="MemorialBracelets\CharmOption\Ui\DataProvider\Product\Form\Modifier\CharmOption">
+        <arguments>
+            <argument name="scopeName" xsi:type="string">product_form.product_form</argument>
+        </arguments>
+    </type>
+</config>

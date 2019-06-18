@@ -1,0 +1,7 @@
+<?php /** @var \MemorialBracelets\Social\Block\Social $block */
+$type = $block->getProductType($block->getData('product_name'));
+if ($type == 'name') {
+    echo __('Remembering') . ': ' . $block->getData('product_name');
+} else {
+    echo __('Memorial Bracelet for Friend or Relative');
+}

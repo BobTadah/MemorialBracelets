@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="conversiontags" translate="label" sortOrder="1" class="conversiontags-tab">
+            <label>Conversion Tags</label>
+        </tab>
+        <section id="conversion_tags" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Conversion Tags</label>
+            <tab>conversiontags</tab>
+            <resource>Magento_Backend::admin</resource>
+            <group id="google" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Google</label>
+                <field id="conversion_id" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Conversion ID</label>
+                </field>
+                <field id="conversion_label" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Conversion Label</label>
+                </field>
+            </group>
+            <group id="facebook" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Facebook</label>
+                <field id="pixel_id" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Pixel ID</label>
+                </field>
+            </group>
+            <group id="linkedin" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Linkedin</label>
+                <field id="data_partner_id" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Data Partner ID</label>
+                </field>
+            </group>
+            <group id="twitter" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Twitter</label>
+                <field id="pixel_id" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Pixel ID</label>
+                </field>
+            </group>
+            <group id="pinterest" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Pinterest</label>
+                <field id="tag_id" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Tag ID</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

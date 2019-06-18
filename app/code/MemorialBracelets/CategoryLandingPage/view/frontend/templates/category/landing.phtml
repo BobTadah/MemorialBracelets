@@ -1,0 +1,17 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * Category view template
+ *
+ * @var $block \MemorialBracelets\CategoryLandingPage\Block\Category\View
+ */
+?>
+<?php if ($block->isContentMode() || $block->isLandingMode()): ?>
+    <?= $block->getChildHtml('landing.list'); ?>
+<?php endif; ?>

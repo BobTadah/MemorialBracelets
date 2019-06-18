@@ -1,0 +1,92 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * Grouped product data template
+ *
+ * @var $block \MemorialBracelets\NameProduct\Block\Product\View\Type\Name
+ */
+
+$block->setPreconfiguredValue();
+$product = $block->getProduct();
+$associatedProducts = $block->getConfiguredProducts();
+$hasAssociatedProducts = count($associatedProducts) > 0;
+
+// Min, to base the rest off of
+$min = $product->getPriceInfo()
+    ->getPrice(\Magento\Catalog\Pricing\Price\FinalPrice::PRICE_CODE)
+    ->getMinProduct()
+    ->getPrice();
+
+$optionName = 'child_selection';
+
+$priceOptions = [
+    'optionConfig' => [
+        $optionName => [],
+    ],
+    'controlContainer' => '.product-selection',
+    'priceHolderSelector' => '[data-role=priceBox][data-productid="'.$product->getId().'"]',
+];
+
+/** @var Magento\Catalog\Model\Product $item */
+foreach($associatedProducts as $item) {
+    $array = [];
+    $id = $item->getId();
+    $oldPrice = $item->getPrice() - $min;
+    $array['prices'] = [
+        'oldPrice' => ['amount' => $oldPrice, 'adjustments' => []],
+        'basePrice' => ['amount' => $oldPrice],
+        'finalPrice' => ['amount' => $item->getFinalPrice(1) - $min],
+    ];
+    $array['type'] = $oldPrice == 0 ? null : 'fixed';
+    $array['name'] = $item->getName();
+    $priceOptions['optionConfig'][$optionName][$id] = $array;
+}
+
+$nameString = $block->getNameInfo();
+?>
+<script type="text/x-magento-init">
+    <?= json_encode(
+        [
+            '#product_addtocart_form' => ['priceOptions' => $priceOptions],
+            '#product-selection-list' => ['MemorialBracelets_NameProduct/js/product-selection-list' => []]
+        ]
+    ); ?>
+</script>
+<div class="name-information" style="display:none;">
+    <textarea ><?php echo $nameString; ?></textarea>
+</div>
+<div id="product-selection-list" class="table-wrapper grouped product-selection fieldset" style="display:none;">
+    <?php if ($hasAssociatedProducts): ?>
+        <h3><label for="select_<?= $optionName ?>">Honor with a Product</label></h3>
+        <div class="control field" id="product_name_selection_control" data-selector="options[<?= $optionName ?>]">
+            <div class="options-list nested" id="options-<?= $optionName ?>-list">
+                <?php foreach($associatedProducts as $item): ?>
+                    <?php $priceDiff = $item->getPrice() - $min; ?>
+                    <?php $imageJson = htmlspecialchars($this->getImageJson($item)); ?>
+                    <div class="field choice admin__field admin__field-option">
+                        <input type="radio"
+                               class="radio admin__control-radio product-custom-option name_product_selection"
+                               name="options[<?= $optionName ?>]"
+                               id="options_<?= $optionName ?>_<?= $item->getId(); ?>"
+                               value="<?= $item->getId(); ?>"
+                               data-selector="options[<?= $optionName ?>]"
+                               data-productid="<?= $item->getId(); ?>"
+                               data-postname="super_group[<?= $item->getId(); ?>]"
+                               data-images="<?= $imageJson ?>"
+                               price="<?= $priceDiff ?>" />
+                        <label class="label admin__field-label" for="options_<?= $optionName ?>_<?= $item->getId(); ?>">
+                            <span><?= htmlspecialchars($item->getName()); ?></span>
+                        </label>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    <?php endif; ?>
+</div>
+<div id="validation-message-box"></div>

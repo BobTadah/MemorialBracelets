@@ -1,0 +1,6 @@
+<?php /** @var $block \Magento\Sales\Block\Order\Info */ ?>
+<?php $status = $block->getOrder()->getStatusLabel() ?>
+<?php if ($status == 'Waiting for Payment') : ?>
+    <?php $status = 'Send Check' ?>
+<?php endif ?>
+<span class="order-status"><?= $status ?></span>

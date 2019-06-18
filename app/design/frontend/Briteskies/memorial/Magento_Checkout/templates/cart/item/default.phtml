@@ -1,0 +1,175 @@
+<?php
+use Aheadworks\Giftcard\Model\ConfigProvider;
+/** @var $block \Magento\Checkout\Block\Cart\Item\Renderer */
+$item            = $block->getItem();
+$product          = $item->getProduct();
+$isVisibleProduct = $product->isVisibleInSiteVisibility();
+/** @var \Magento\Msrp\Helper\Data $helper */
+$helper = $this->helper('Magento\Msrp\Helper\Data');
+/** @var \MemorialBracelets\BraceletPreview\Helper\Data $previewHelper */
+$previewHelper = $this->helper('MemorialBracelets\BraceletPreview\Helper\Data');
+$qtyBlock      = $block->getLayout()->getBlock('quantity-discounts');
+$canApplyMsrp  = $helper->isShowBeforeOrderConfirm($product) && $helper->isMinimalPriceLessMsrp($product);
+?>
+<tbody class="cart item" data-bind="scope: 'customer'">
+    <tr class="item-info">
+        <td data-th="<?= $block->escapeHtml(__('Item')); ?>" class="col item">
+            <?php if ($block->hasProductUrl()):?>
+                <a href="<?= $block->getProductUrl() ?>"
+                   title="<?= $block->escapeHtml($block->getProductName()) ?>"
+                   tabindex="-1"
+                   class="product-item-photo">
+            <?php else:?>
+                <span class="product-item-photo">
+            <?php endif;?>
+            <?= $block->getImage($block->getProductForThumbnail(), 'cart_page_product_thumbnail')->toHtml(); ?>
+            <?php if ($block->hasProductUrl()):?>
+                </a>
+            <?php else: ?>
+                </span>
+            <?php endif; ?>
+            <div class="product-item-details">
+                <strong class="product-item-name">
+                    <?php if ($block->hasProductUrl()):?>
+                        <a href="<?= $block->getProductUrl() ?>"><?= $block->escapeHtml($block->getProductName()) ?></a>
+                    <?php else: ?>
+                        <?= $block->escapeHtml($block->getProductName()) ?>
+                    <?php endif; ?>
+                </strong>
+                <?php if ($_options = $block->getOptionList()):?>
+                    <dl class="item-options">
+                        <?php foreach ($_options as $_option) : ?>
+                            <?php $_formatedOptionValue = $block->getFormatedOptionValue($_option) ?>
+
+                            <?php if (isset($_formatedOptionValue['full_view']) || !empty($_formatedOptionValue['value'])): ?>
+                                <dt><?= $block->escapeHtml($_option['label']) ?></dt>
+                                <dd>
+                                    <?php if (isset($_formatedOptionValue['full_view'])): ?>
+                                        <?= $_formatedOptionValue['full_view'] ?>
+                                    <?php else: ?>
+                                        <?= $_formatedOptionValue['value'] ?>
+                                    <?php endif; ?>
+                                </dd>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </dl>
+                <?php endif;?>
+                <?php if ($messages = $block->getMessages()): ?>
+                    <?php foreach ($messages as $message): ?>
+                        <div class="cart item message <?= $message['type'] ?>"><div><?= $block->escapeHtml($message['text']) ?></div></div>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+                <?php $addInfoBlock = $block->getProductAdditionalInformationBlock(); ?>
+                <?php if ($addInfoBlock): ?>
+                    <?= $addInfoBlock->setItem($item)->toHtml() ?>
+                <?php endif;?>
+            </div>
+        </td>
+
+        <?php if ($canApplyMsrp): ?>
+            <td class="col msrp" data-th="<?= $block->escapeHtml(__('Price')); ?>">
+                <span class="pricing msrp">
+                    <span class="msrp notice"><?= __('See price before order confirmation.'); ?></span>
+                    <?php $helpLinkId = 'cart-msrp-help-' . $item->getId(); ?>
+                    <a href="#" class="action help map" id="<?=($helpLinkId); ?>" data-mage-init='{"addToCart":{"helpLinkId": "#<?= $helpLinkId;?>","productName": "<?= $product->getName(); ?>","showAddToCart": false}}'>
+                        <span><?= __("What's this?"); ?></span>
+                    </a>
+                </span>
+            </td>
+        <?php else: ?>
+            <td class="col price" data-th="<?= $block->escapeHtml(__('Price')); ?>">
+                <?= $block->getUnitPriceHtml($item); ?>
+            </td>
+        <?php endif; ?>
+        <td class="col qty" data-th="<?= $block->escapeHtml(__('Qty')); ?>">
+            <div class="field qty">
+                <label class="label" for="cart-<?= $item->getId() ?>-qty">
+                    <span><?= __('Qty') ?></span>
+                </label>
+                <div class="control qty">
+                    <input id="cart-<?= $item->getId() ?>-qty"
+                           name="cart[<?= $item->getId() ?>][qty]"
+                           data-cart-item-id="<?= $item->getSku() ?>"
+                           value="<?= $block->getQty() ?>"
+                           type="number"
+                           size="4"
+                           title="<?= $block->escapeHtml(__('Qty')); ?>"
+                           class="input-text qty"
+                           maxlength="12"
+                           data-validate="{required:true,'validate-greater-than-zero':true}"
+                           data-role="cart-item-qty"/>
+                </div>
+            </div>
+            <?php // skip quantity discounts block for gift card items ?>
+            <?php if(!$type = $item->getProduct()->getTypeId() === ConfigProvider::GIFTCARD_TOTAL_CODE): ?>
+                <div class="quantity-discount-wrapper">
+                    <a class="link" id="discount-anchor"
+                       title="<?= __('Click to Display Discounts') ?>"><i class="icon-question-mark"></i><?= __('Quantity Discounts') ?></a>
+                    <div class="discount-content">
+                        <div class="table-wrapper">
+                            <?= ($qtyBlock) ? $qtyBlock->toHtml() : '' ?>
+                        </div>
+                        <div class="arrow"></div>
+                    </div>
+                </div>
+            <?php endif ?>
+        </td>
+
+        <td class="col subtotal" data-th="<?= $block->escapeHtml(__('Subtotal'));?>">
+            <?php if ($canApplyMsrp): ?>
+                <span class="cart msrp subtotal">--</span>
+            <?php else: ?>
+                <?= $block->getRowTotalHtml($item); ?>
+            <?php endif; ?>
+        </td>
+    </tr>
+
+    <?php $preview = $previewHelper->buildPreview($item, $_options) ?>
+    <?php if (isset($preview)) : ?>
+        <tr class="item-preview">
+            <td colspan="100">
+                <div class="actions-toolbar">
+                    <?= $preview ?>
+                </div>
+            </td>
+        </tr>
+    <?php endif ?>
+
+    <tr class="item-actions">
+        <td colspan="100">
+            <div class="actions-toolbar">
+                <?= $block->getActions($item) ?>
+            </div>
+        </td>
+    </tr>
+
+    <?php if ($product->getTypeId() != "aw_giftcard"): ?>
+    <!-- ko if: customer().fullname  -->
+    <tr class="initial-row pre-ko"  data-bind="attr: { class: 'initial-row post-ko' }">
+        <td colspan="100">
+            <div class="initials-container">
+                <input class="initials input-text" data-role="cart-item-qty" type="text" name="initials" placeholder="INITIALS" width="30" autocomplete="off" aria-required="true" maxlength="3">
+                <label for="initials" class="label"><?= __('We guarantee that your products will be engraved as ordered. By entering your initials, you are verifying that all selections including engraving, size, color, icon & charm selections are accurate. We do not accept returns for products made to these specifications.') ?></label>
+                <div for="initials" generated="true" class="initials-custom-error mage-error">
+                    <div class="arrow"></div>
+                    <span> <?= __('This is a required field.') ?></span>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <!-- /ko -->
+    <?php endif; ?>
+</tbody>
+<script type="text/x-magento-init">
+        {
+            "*": {
+                "Magento_Ui/js/core/app": {
+                    "components": {
+                        "customer": {
+                            "component": "Magento_Customer/js/view/customer"
+                        }
+                    }
+                }
+            }
+        }
+</script>

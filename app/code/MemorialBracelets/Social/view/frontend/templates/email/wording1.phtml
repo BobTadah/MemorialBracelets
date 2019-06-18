@@ -1,0 +1,7 @@
+<?php
+/** @var $blockSocial MemorialBracelets\Social\Block\Social */
+$blockSocial = $this->getLayout()
+    ->createBlock('MemorialBracelets\Social\Block\Social');
+$wording = $blockSocial->getEmailWording1($this->getData('product_name'), $this->getData('product_url'), $this->getData('sender_name'));
+
+echo $wording;

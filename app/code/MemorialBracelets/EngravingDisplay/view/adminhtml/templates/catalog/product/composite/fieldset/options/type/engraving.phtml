@@ -1,0 +1,141 @@
+<?php
+
+use MemorialBracelets\EngravingDisplay\Block\Product\SupportiveMessage;
+
+/**
+ * @codingStandardsIgnoreFile
+ * @var $block \MemorialBracelets\EngravingDisplay\Block\Product\View\Options\Type\Engraving
+ * @var $supportiveMessageBlock SupportiveMessage
+ * @var $option \MemorialBracelets\ExtensibleCustomOption\Model\Product\Option
+ */
+
+$supportiveMessageBlock = $block->getLayout()->createBlock(SupportiveMessage::class);
+$messageList = $supportiveMessageBlock->getSupportiveMessageList();
+
+$option = $block->getOption();
+$product = $option->getProduct();
+$class = $option->getIsRequire() ? 'required _required' : '';
+
+$lines = $option->getData('number_lines');
+$valueEncoded = $block->getDefaultValue();
+$valueDecoded = json_decode($valueEncoded);
+
+$type = isset($valueDecoded->type) ? $valueDecoded->type : '';
+$text = isset($valueDecoded->text) ? explode("\n", $valueDecoded->text) : [];
+$text = array_map(
+    function ($line) {
+        return trim($line, "\r");
+    },
+    $text
+);
+for ($i = count($text); $i < $lines; ++$i) {
+    $text[] = '';
+}
+
+$priceTypes = [
+    ['value' => '', 'label' => '-- Please Select --'],
+    'name' => ['value' => 'name', 'label' => 'Name Only', 'price' => $block->getNamePrice()],
+    'supportive' => [
+        'value' => 'supportive',
+        'label' => 'Supportive Messages Only',
+        'price' => $block->getSupportivePrice()
+    ],
+    'custom' => ['value' => 'custom', 'label' => 'Custom Message', 'price' => $block->getCustomPrice()],
+];
+
+$config = [
+    'id' => $option->getId(),
+    'required' => !!$option->getIsRequire(),
+    'title' => $option->getTitle(),
+    'text' => $text,
+    'priceTypes' => $priceTypes,
+    'selectedType' => $type,
+];
+
+?>
+<div class="admin__field field <?php echo $class ?>">
+    <label class="label admin__field-label">
+        <span><?php echo $block->escapeHtml($option->getTitle()) . ' (Final)'; ?></span>
+    </label>
+    <div class="control admin__field-control">
+        <input type="hidden" id="opt-engraving-json-<?= $option->getId(); ?>" name="options[<?= $option->getId(); ?>]"
+               value="<?= $block->escapeQuote($valueEncoded); ?>"/>
+        <div style="border: 1px solid gray;padding:5px;">
+            <span style="background: gray;color:white;white-space: pre;"
+                  id="opt-engraving-text-output-<?= $option->getId(); ?>"><?= implode("\r\n", $text); ?></span>
+        </div>
+        <p>Price Type: <span id="opt-engraving-price-output-<?= $option->getId(
+            ); ?>"><?= isset($priceTypes[$type]) ? $priceTypes[$type]['label'] : 'None' ?></span></p>
+        <br/>
+        <button id="opt-json-update-<?= $option->getId(); ?>">Update Preview</button>
+        <p style="color: red; font-weight: bold; margin-top: 5px;">You must update preview in order to save new
+            engraving information. (Including Price)</p>
+    </div>
+</div>
+<div class="admin__field field <?php echo $class ?>">
+    <label class="label admin__field-label" for="opt-engraving-price-<?= $option->getId(); ?>">
+        <span><?php echo $block->escapeHtml($option->getTitle()) . ' (Price)'; ?></span>
+    </label>
+    <div class="control admin__field-control">
+        <select class="admin__control-select" id="opt-engraving-price-<?= $option->getId(); ?>">
+            <?php foreach ($priceTypes as $priceType):
+                $selected = $priceType['value'] == $type ? ' selected' : '';
+                ?>
+                <option value="<?= $priceType['value'] ?>" <?= $selected ?>>
+                    <?= __($priceType['label']); ?>
+                    <?php if (isset($priceType['price']) && $priceType['price'] > 0): ?>
+                        (<?= $block->formatPrice($priceType['price']); ?>)
+                    <?php endif; ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+        <p style="color: red; margin-top: 5px;">Required for any engraving.</p>
+    </div>
+</div>
+<div class="admin__field field <?php echo $class ?>">
+    <label class="label admin__field-label" for="opt-engraving-<?= $option->getId(); ?>">
+        <span><?php echo $block->escapeHtml($option->getTitle()) . ' (Engraving)'; ?></span>
+    </label>
+    <div class="control admin__field-control" id="opt-engraving-<?= $option->getId(); ?>">
+        <?php foreach ($text as $textum): ?>
+            <input value="<?= $block->escapeQuote($textum); ?>" class="admin__control-text" style="margin-bottom:5px;"/>
+            <br/>
+        <?php endforeach; ?>
+    </div>
+</div>
+<script type="text/javascript">
+    require(['jquery'], function ($) {
+        var optId = '<?= $option->getId(); ?>';
+        $('#opt-json-update-' + optId).on('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            var priceTypes = {
+                '': 'None',
+                'custom': 'Custom Message',
+                'name': 'Name Only',
+                'supportive': 'Supportive Messages Only'
+            };
+            var priceType = $('#opt-engraving-price-' + optId).val();
+
+            var lines = [];
+            $('#opt-engraving-' + optId).find('input').each(function () {
+                lines.push($(this).val());
+            });
+            var text = lines.join("\r\n");
+
+            var jsonValue = {
+                type: priceType,
+                text: text
+            };
+            if (priceType === '') {
+                jsonValue = '';
+                text = '';
+            }
+
+            $('#opt-engraving-json-' + optId).val(JSON.stringify(jsonValue));
+            $('#opt-engraving-price-output-' + optId).text(priceTypes[priceType]);
+            $('#opt-engraving-text-output-' + optId).text(text);
+        });
+    });
+</script>

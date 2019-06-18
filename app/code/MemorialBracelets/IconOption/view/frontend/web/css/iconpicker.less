@@ -1,0 +1,33 @@
+@import '_variables';
+
+.opticn-picker {
+  .opticn-option {
+    padding: @iconoption__padding-size;
+    width: @iconoption__image-size;
+    height: @iconoption__image-size;
+    display: inline-block;
+    border: @iconoption__border-size solid transparent;
+    cursor: pointer;
+    vertical-align: middle;
+    &.selected {
+      border: @iconoption__border-size solid @iconoption__border-color;
+    }
+    img {
+      max-width: @iconoption__image-size;
+      max-height: @iconoption__image-size;
+    }
+  }
+}
+
+.opticn-attribute {
+  .opticn-attribute-label {
+    font-weight: bold;
+    position: relative;
+  }
+  .opticn-selected-label {
+    color: @iconoption__selected-label-color;
+    padding-left: @iconoption__selected-label-padding;
+  }
+}
+
+@import '_extend';

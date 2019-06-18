@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="MemorialBracelets_NameProduct::css/name-product.css"/>
+    </head>
+    <update handle="nameproduct_popup_grid"/>
+    <body>
+        <referenceBlock name="product_tabs">
+            <block class="MemorialBracelets\NameProduct\Block\Product\Name\AssociatedProducts" name="catalog.product.edit.tab.name.container" template="MemorialBracelets_NameProduct::product/name/name.phtml">
+                <block class="MemorialBracelets\NameProduct\Block\Product\Name\AssociatedProducts\ListAssociatedProducts" name="catalog.product.edit.tab.super.list" as="list" template="product/name/list.phtml"/>
+                <block class="Magento\Framework\View\Element\Template" name="catalog.product.edit.tab.super.grid.popup.container" as="catalog.product.name.grid.popup.container"/>
+            </block>
+            <action method="addTab">
+                <argument name="name" xsi:type="string">name</argument>
+                <argument name="block" xsi:type="string">catalog.product.edit.tab.name.container</argument>
+            </action>
+            <referenceBlock name="product_tabs.customer_options">
+                <arguments>
+                    <argument name="can_show" xsi:type="boolean">false</argument>
+                </arguments>
+            </referenceBlock>
+            <referenceBlock name="product_tabs.product-alerts">
+                <arguments>
+                    <argument name="can_show" xsi:type="boolean">false</argument>
+                </arguments>
+            </referenceBlock>
+        </referenceBlock>
+    </body>
+</page>
+
+

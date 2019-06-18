@@ -1,0 +1,57 @@
+<?php /** @var $block \Magento\Catalog\Block\Product\View */ ?>
+<?php $qtyBlock    = $block->getLayout()->getBlock('quantity-discounts')?>
+<?php $product     = $block->getProduct(); ?>
+<?php $buttonTitle = __('Update Cart'); ?>
+<?php if ($product->isSaleable()): ?>
+    <div class="box-tocart update">
+        <fieldset class="fieldset">
+            <?php if ($block->shouldRenderQuantity()): ?>
+            <div class="field qty">
+                <label class="label" for="qty"><span><?= __('Qty') ?></span></label>
+                <div class="control">
+                    <input type="number"
+                           name="qty"
+                           id="qty"
+                           maxlength="12"
+                           value="<?= $block->getProductDefaultQty() * 1 ?>"
+                           title="<?= __('Qty') ?>"
+                           class="input-text qty"
+                           data-validate="{'required-number':true,digits:true}"/>
+                </div>
+            </div>
+            <?php endif; ?>
+            <div class="actions">
+                <button type="submit"
+                        title="<?= $buttonTitle ?>"
+                        class="action primary tocart"
+                        id="product-updatecart-button">
+                    <span><?= $buttonTitle ?></span>
+                </button>
+                <?php echo $block->getChildHtml('', true) ?>
+            </div>
+        </fieldset>
+
+        <div class="quantity-discount-wrapper">
+            <a class="link" id="discount-anchor"
+               title="<?= __('Click to Display Discounts') ?>">
+                <i class="icon-question-mark"></i><?= __('Quantity Discounts') ?></a>
+            <div class="discount-content">
+                <div class="table-wrapper">
+                    <?= ($qtyBlock) ? $qtyBlock->toHtml() : '' ?>
+                </div>
+                <div class="arrow"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/x-magento-init">
+        {
+            "#product_addtocart_form": {
+                "validation": {},
+                "addToCart": {
+                    "cartButtonId": "#product-updatecart-button",
+                    "cartForm": "#product_addtocart_form"
+                }
+            }
+        }
+    </script>
+<?php endif; ?>

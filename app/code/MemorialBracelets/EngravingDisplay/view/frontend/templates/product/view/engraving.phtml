@@ -1,0 +1,39 @@
+<?php
+/** @var $this MemorialBracelets\EngravingDisplay\Block\Product\View\Engraving */
+$inputNumber = $this->getEngravingLines();
+$maxChars    = $this->getMaxChars();
+?>
+
+<?php if ($this->isEnabled()) : ?>
+    <div id="engraving-wrapper" class="wrapper">
+        <div class="top">
+            <h3 class="title"><?= __('Engraving') ?></h3>
+            <div class="button-set">
+                <a class="engrave-option active" id="custom-text-btn"
+                   title="Create a Message"><?= __('Enter Your Custom Text') ?></a>
+                <a class="engrave-option" id="select-message-btn"
+                   title="Select a Message"><?= __('Select a Supportive Message') ?></a>
+            </div>
+        </div>
+        <?php /** This wil display by default: Custom Text */ ?>
+        <div class="input-container create-container">
+            <?php for ($i = 0; $i < $inputNumber; $i++) : ?>
+                <input type="text" placeholder="<?= 'Line ' . ($i + 1) ?>"
+                       name="engraving[line-<?= ($i + 1) ?>]"
+                       class="line-<?= ($i + 1) ?>"
+                    <?php echo($maxChars != 'none' ? 'maxlength="' . $maxChars . '"' : "") ?>
+                />
+            <?php endfor ?>
+        </div>
+        <?php /** This will be hidden/disabled by default: Pre-Made Text */ ?>
+        <!-- <div class="input-container select-container">
+            <?php /*for($i=0; $i < $inputNumber; $i++): */ ?>
+                <select name="engraving[line-<? /*= ($i + 1)*/ ?>]" class="engraving-input input-select"
+                 disabled="disabled">
+                    <?php /*$options = $this->getOptions() */ ?>
+
+                </select>
+            <?php /*endfor */ ?>
+        </div>-->
+    </div>
+<?php endif ?>

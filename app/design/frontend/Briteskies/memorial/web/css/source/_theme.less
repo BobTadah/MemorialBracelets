@@ -1,0 +1,59 @@
+// /**
+//  * Copyright © 2015 Magento. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Memorial theme overrides
+//  _____________________________________________
+
+//  Theme file should contain declarations (overrides) ONLY OF EXISTING variables
+//  Otherwise this theme won't be available for parent nesting
+//  All new variables should be placed in local theme lib or local theme files.
+//  path to vars: lib/web/css/source/lib/variables/...
+//--------------------------------
+
+@import "_shared-styling";
+
+//  Fonts
+@font-family-name__base: 'Oswald';
+@font-family__base: @font-family-name__base, @font-family__sans-serif;
+
+@heading__color__base: @mem-blue;
+@heading__font-family__base: @font-family__base;
+
+//  Color nesting
+@sidebar__background-color: @mem-light-grey;
+@primary__color: @mem-dark-grey;
+@border-color__base: @mem-light-grey;
+
+@link__color: @mem-blue;
+@link__hover__color: @mem-blue-hover;
+@link__active__color: @mem-blue-hover;
+
+//  Buttons
+@button__color: @mem-blue;
+@button__background: @mem-light-grey;
+@button__border: 1px solid @mem-light-grey-hover;
+@button__hover__background: @mem-light-grey-hover;
+@button__border-radius: 0;
+
+//  Primary button
+@button-primary__background: @mem-gold;
+@button-primary__border: 1px solid @mem-gold-hover;
+@button-primary__color: @mem-blue;
+@button-primary__hover__background: @mem-gold-hover;
+@button-primary__hover__border: 1px solid @mem-gold-hover;
+@button-primary__hover__color: @mem-blue;
+
+//  Navigation
+@navigation-level0-item__color: @mem-blue;
+@submenu-item__color: @mem-blue;
+
+@navigation-desktop-level0-item__color: @mem-blue;
+@navigation-desktop-level0-item__hover__color: @mem-blue-hover;
+@navigation-desktop-level0-item__active__color: @mem-blue;
+
+//Checkout
+@checkout-shipping-item__active__border-color: @mem-blue;
+@checkout-progress-bar-item__active__background-color: @mem-blue;

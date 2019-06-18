@@ -1,0 +1,15 @@
+{
+  "name": "memorialbracelets/module-nameproductrequest",
+  "version": "1.0.0",
+  "require": {
+    "memorialbracelets/module-name-product": "^100.0.0"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "MemorialBracelets\\NameProductRequest\\": ""
+    }
+  }
+}

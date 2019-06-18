@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="catalog_category_view"/>
+    <body>
+        <referenceContainer name="content">
+            <block class="Magento\Catalog\Block\Category\View" name="category.landing" as="category_landing" template="MemorialBracelets_CategoryLandingPage::category/landing.phtml" before="category.products">
+                <block class="MemorialBracelets\CategoryLandingPage\Block\Category\View\Landing"
+                       name="category.landing.category-list" as="landing.list"
+                       template="MemorialBracelets_CategoryLandingPage::category/landing/list.phtml"/>
+            </block>
+        </referenceContainer>
+        <referenceBlock name="category.products" template="MemorialBracelets_CategoryLandingPage::category/products.phtml"/>
+    </body>
+</page>

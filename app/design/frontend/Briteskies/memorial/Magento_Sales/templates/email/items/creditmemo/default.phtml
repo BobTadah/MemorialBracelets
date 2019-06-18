@@ -1,0 +1,66 @@
+<?php
+    /** @var  $optionHelper \MemorialBracelets\CheckHandling\Helper\Data */
+    $optionHelper = $this->helper('MemorialBracelets\CheckHandling\Helper\Data');
+    /** @var $engravingHelper \MemorialBracelets\EngravingDisplay\Helper\Data */
+    $engravingHelper = $this->helper('MemorialBracelets\EngravingDisplay\Helper\Data');
+
+    $_item = $block->getItem();
+    $pOptions = $_item->getOrderItem()->getProductOptions();
+    unset($pOptions['additional_options']);
+    //Add wording to engraving lines.
+    if (isset($pOptions['options'])) {
+        foreach ($pOptions['options'] as $k => $opt) {
+            if ($opt['option_type'] == 'engraving') {
+                $text = trim($opt['print_value']);
+                $text .= "\n* <span style='font-size: 11px'>" . $engravingHelper->getEngravingMessage()."</span>";
+                $opt['print_value'] = $text;
+                $opt['value'] = $text;
+                $pOptions['options'][$k] = $opt;
+            }
+        }
+    }
+    $_item->getOrderItem()->setProductOptions($pOptions);
+    $_order = $block->getItem()->getOrder();
+?>
+<tr>
+    <td class="item-info<?php if ($block->getItemOptions()): ?> has-extra<?php endif; ?>">
+        <span>Product <?php echo $_item->getSequenceNumber()?></span><br>
+        <p class="product-name" style="margin-top: 5px;">
+            <?= $block->escapeHtml($_item->getName()) ?>
+        </p>
+        <?php $addInfoBlock = $block->getProductAdditionalInformationBlock(); ?>
+        <?php if ($addInfoBlock) :?>
+            <?= $addInfoBlock->setItem($_item->getOrderItem())->toHtml() ?>
+        <?php endif; ?>
+        <?= $block->escapeHtml($_item->getDescription()) ?>
+    </td>
+    <td class="item-qty"><?= /* @escapeNotVerified */  number_format($_item->getOrderItem()->getOriginalPrice(), 2) ?></td>
+    <td class="item-qty"><?= /* @escapeNotVerified */  $_item->getQty() * 1 ?></td>
+    <td class="item-price">
+        <?= /* @escapeNotVerified */  $block->getItemPrice($_item); ?>
+    </td>
+</tr>
+
+<?php if ($block->getItemOptions()):?>
+    <?php foreach ($block->getItemOptions() as $option): ?>
+        <?php if (isset($option['value']) && !empty($option['value'])):?>
+            <tr>
+                <td style="padding:1px 10px;">
+                    <div><span style="font-weight: bold; float: left;"><?= $option['label']; ?>:&nbsp;</span>
+                        <?php
+                        $parts = preg_split('/\R/', $option['value']);
+                        foreach ($parts as $p) {
+                            if (!empty($p)) {
+                                echo "<span>".$p."</span><br>";
+                            }
+                        }
+                        ?>
+                    </div>
+                </td>
+                <td class="col price" style="padding:1px 10px;"><?= $optionHelper->getOptionPrice($_item->getOrderItem(), $option) ?></td>
+                <td class="col qty" style="padding:1px 10px;">&nbsp;</td>
+                <td class="col subtotal" style="padding:1px 10px;">&nbsp;</td>
+            </tr>
+        <?php endif; ?>
+    <?php endforeach; ?>
+<?php endif; ?>

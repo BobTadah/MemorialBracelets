@@ -1,0 +1,140 @@
+{
+    "name": "memorial-bracelets/implementation",
+    "description": "A charitable website selling memorial bracelets for victims of attacks, PoWs, casualties, and more.",
+    "type": "project",
+    "version": "0.1.0",
+    "homepage": "https://www.memorialbracelets.com/",
+    "license": "Proprietary",
+    "authors": [
+        {
+            "name": "Briteskies, LLC",
+            "email": "BriteskiesSupport@briteskies.com",
+            "homepage": "http://www.briteskies.com/",
+            "role": "Developer"
+        }
+    ],
+    "repositories": {
+        "0": {
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        },
+        "artifacts": {
+            "type": "artifact",
+            "url": "artifacts"
+        },
+        "path": {
+            "type": "path",
+            "url": "artifacts/*/*",
+            "options": {
+                "symlink": false
+            }
+        },
+        "briteskies-local-docker": {
+            "type": "vcs",
+            "url": "git@bitbucket.org:briteskies/local-docker.git"
+        },
+        "briteskies-magento-pipelines": {
+            "type": "vcs",
+            "url": "git@bitbucket.org:briteskies/magento-pipelines.git"
+        },
+        "briteskies-module-paypalpartnerid": {
+            "type": "vcs",
+            "url": "git@bitbucket.org:briteskies/module-paypalpartnerid.git"
+        }
+    },
+    "require": {
+        "magento/product-community-edition": "~2.1.6",
+        "composer/composer": "@alpha",
+        "fooman/googleanalyticsplus-m2": "^2.0",
+        "unirgy/m2-simple-license": "^2.0",
+        "unirgy/m2-simple-up": "^2.0",
+        "vladimirpopov/webforms": "^2.8",
+        "xtento/module-orderexport": "^2.2.5",
+        "xtento/module-trackingimport": "^2.1.6",
+        "unirgy/m2-rapidflow": "^3.0",
+        "unirgy/m2-rapidflow-pro": "^3.0",
+        "navarr/easy-upgrades": "^1.0",
+        "cweagans/composer-patches": "^1.6.0",
+        "litespeed/module-litemage": "^2.0",
+        "iwd/all": "^2.1",
+        "iwd/ordermanager": "^2.6",
+        "iwd/authcim": "^2.1",
+        "shippingeasy/module-fulfilment": "^1.0",
+        "yireo/yireo_whoops": "^0.0.3",
+        "ramsey/uuid": "^3.6",
+        "aheadworks/module-giftcard": "^1.0",
+        "amasty/base": "^1.4",
+        "amasty/shiprestriction": "^1.0.7",
+        "amasty/geoip": "^1.3.6",
+        "amasty/module-gdpr": "^1.1.7",
+        "briteskies/local-docker": "dev-2_1 as 2.1.0",
+        "briteskies/module-paypalpartnerid": "^0.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.1.0",
+        "squizlabs/php_codesniffer": "~2.0",
+        "phpmd/phpmd": "2.3.*",
+        "pdepend/pdepend": "2.2.2",
+        "sjparkinson/static-review": "~4.1",
+        "friendsofphp/php-cs-fixer": "~1.2",
+        "lusitanian/oauth": "~0.3 <=0.7.0",
+        "sensiolabs/security-checker": "^3.0"
+    },
+    "config": {
+        "use-include-path": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Magento\\Framework\\": "lib/internal/Magento/Framework/",
+            "Magento\\Setup\\": "setup/src/Magento/Setup/",
+            "Magento\\": "app/code/Magento/"
+        },
+        "psr-0": {
+            "": "app/code/"
+        },
+        "files": [
+            "app/etc/NonComposerComponentRegistration.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Magento\\Sniffs\\": "dev/tests/static/framework/Magento/Sniffs/",
+            "Magento\\Tools\\": "dev/tools/Magento/Tools/",
+            "Magento\\Tools\\Sanity\\": "dev/build/publication/sanity/Magento/Tools/Sanity/",
+            "Magento\\TestFramework\\Inspection\\": "dev/tests/static/framework/Magento/TestFramework/Inspection/",
+            "Magento\\TestFramework\\Utility\\": "dev/tests/static/framework/Magento/TestFramework/Utility/"
+        }
+    },
+    "extra": {
+        "magento-force": "override",
+        "composer-exit-on-patch-failure": true,
+        "patches": {
+            "magento/module-catalog": {
+                "500 product cap on categories fix - MBSUP-8": "patches/magento_catalog_fix_category_product_max_count.patch"
+            },
+            "magento/module-sales-rule": {
+                "MBSUP-241 Mage bug in price rule dates spreading '0000' timestamp to coupons": "patches/MBSUP241_nulldate_sales-rule.patch"
+            },
+            "magento/module-usps": {
+                "Fix USPS shipping option name - MBSUP-99": "patches/usps_shipping_options_patch.patch"
+            }
+        }
+
+    },
+    "minimum-stability": "alpha",
+    "prefer-stable": true,
+    "scripts": {
+        "test": [
+            "@codestyle-check"
+        ],
+        "codestyle-fixer": [
+            "phpcbf --standard=psr2 --ignore=*.css,*.js --warning-severity=8 app/code/"
+        ],
+        "codestyle-check": [
+            "phpcs --standard=psr2 --ignore=*.css,*.js --warning-severity=8 app/code/"
+        ],
+        "vulnerabilities-check": [
+            "security-checker security:check"
+        ]
+    }
+}

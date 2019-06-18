@@ -1,0 +1,42 @@
+& when (@media-common = true) {
+  .checkout-payment-method {
+    .payment-group {
+      .payment-method-content {
+        .billing-address-same-as-shipping-block {
+          label {
+            font-size: 20px;
+          }
+        }
+      }
+
+      .payment-method-title {
+        label {
+          flex-wrap: initial !important;
+        }
+      }
+    }
+    .payment-option-title {
+      font-size: 20px;
+    }
+
+    .payment-option._collapsible._active .payment-option-content {
+      display: block;
+    }
+  }
+
+  //Workaround for showing multiple spaces in string.
+  .item-options {
+    dd {
+      white-space: pre;
+    }
+
+    //Fix to remove double spacing caused by <br> tag in engraving lines in admin order view/edit page.
+    dd > br {
+      //Chrome Specific directive.
+      content: "";
+      //Other browsers.
+      display: block;
+      margin: -9px 0;
+    }
+  }
+}

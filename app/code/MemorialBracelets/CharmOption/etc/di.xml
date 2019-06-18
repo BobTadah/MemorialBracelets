@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="MemorialBracelets\CharmOption\Api\CharmOptionInterface" type="MemorialBracelets\CharmOption\Model\CharmOption" />
+    <preference for="MemorialBracelets\CharmOption\Api\CharmOptionRepositoryInterface" type="MemorialBracelets\CharmOption\Model\CharmOptionRepository" />
+
+    <type name="MemorialBracelets\ExtensibleCustomOption\Model\Product\Option">
+        <plugin name="add_charm_as_value_having_type" type="MemorialBracelets\CharmOption\Model\OptionInterceptor" sortOrder="1" />
+    </type>
+</config>

@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Review\Controller\Customer\Index">
+        <plugin name="MemorialBracelets_ReviewAdditions_Controller_Customer_Index_Override"
+                type="MemorialBracelets\ReviewAdditions\Plugin\Index" sortOrder="1" disabled="false"/>
+    </type>
+    <type name="Magento\Review\Controller\Customer\View">
+        <plugin name="MemorialBracelets_ReviewAdditions_Controller_Customer_View_Override"
+                type="MemorialBracelets\ReviewAdditions\Plugin\View" sortOrder="1" disabled="false"/>
+    </type>
+    <type name="Magento\Review\Model\ResourceModel\Review">
+        <plugin name="MemorialBracelets_ReviewAdditions_Plugin_FlushReviewCacheAfterSave" sortOrder="1" disabled="false"
+                type="MemorialBracelets\ReviewAdditions\Plugin\Magento\Review\Model\ResourceModel\ReviewPlugin" />
+    </type>
+    <type name="Magento\Review\Model\Review">
+        <plugin name="MemorialBracelets_Review_Validate_Plugin"
+                type="MemorialBracelets\ReviewAdditions\Plugin\Model\Review"
+                disabled="false"
+                sortOrder="1"/>
+    </type>
+</config>

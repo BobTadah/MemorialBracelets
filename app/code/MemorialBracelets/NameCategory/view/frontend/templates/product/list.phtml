@@ -1,0 +1,177 @@
+<?php
+use Magento\Framework\App\Action\Action;
+use Magento\Catalog\Block\Product\ReviewRendererInterface;
+use MemorialBracelets\NameProduct\Model\Product\Type\Name;
+use Magento\Catalog\Model\Product;
+
+/** @var $block \MemorialBracelets\NameCategory\Block\Product\ListProduct */
+
+$productCollection = $block->getLoadedProductCollection();
+$helper = $this->helper('Magento\Catalog\Helper\Output');
+$labels = $block->getAttributeLabels();
+
+//Get random product using the same functionality that is being called on ajax requests through the Get New Name button.
+$nameItems = $block->getRandomNameProduct();
+$randomProducts = $output = array_slice($nameItems, 0, 1); // the 1 means get just first element
+$randomProduct = (isset($randomProducts[0])) ? $randomProducts[0] : null;
+
+?>
+<?php if (!$productCollection->count()): ?>
+    <div class="message info empty"><div><?= __('No people yet been added. Please use the Special Request Form to add a lost friend or relative.') ?></div></div>
+<?php else: ?>
+    <?= $block->getToolbarHtml() ?>
+    <?= $block->getAdditionalHtml() ?>
+    <?php
+        $viewMode = 'list';
+        $image = 'category_page_list';
+        $showDescription = true;
+        $templateType = ReviewRendererInterface::FULL_VIEW;
+        
+    // Position for actions regarding image size changing in vde if needed
+    $pos = $block->getPositioned();
+    ?>
+
+    <?php if (!$block->getIsSearch()) : // hide this block on search result pages ?>
+        <div class="random-name-generator name-product-list products wrapper <?= $viewMode; ?> products-<?= $viewMode; ?>">
+            <div class="random-name-title"><?= "Random Name" ?></div>
+            <div class="button-loader">
+                <input type='button' id='random_name_btn' value='Get New Name'>
+                <img id="loading-random" 
+                     style="display:none;" 
+                     src="<?= $block->getViewFileUrl('images/loader-1.gif'); ?>"
+                     alt="<?= __('Loading...') ?>">
+            </div>
+            <script type="text/x-magento-init">
+            {
+                "*": {
+                    "MemorialBracelets_NameCategory/js/random-ajax": {
+                        "AjaxUrl": "<?= $block->getAjaxUrl(); ?>",
+                        "CategoryId": "<?= $block->getCategoryId(); ?>"
+                    }
+                }
+            }
+            </script>
+            <?php $iterator = 1; ?>
+            <table>
+                <thead>
+                <tr>
+                    <?php if ($labels) : ?>
+                        <?php foreach ($labels as $label): ?>
+                            <th><?= $label ?></th>
+                        <?php endforeach ?>
+                    <?php endif ?>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php /** @var Product $_product */ ?>
+
+                <?php if ($randomProduct) : ?>
+                <tr class="random-name-product-row">
+                    <div class="product-item-info" data-container="product-grid">
+                        <div class="product details product-item-details">
+                            <?php
+                            $_productNameStripped = $block->stripTags($randomProduct->getName(), null, true);
+                            $instance = $randomProduct->getTypeInstance();
+                            if ($instance instanceof Name) {
+                                $nameInfo =  $instance->getNameListRow($randomProduct);
+                            } else {
+                                $nameInfo = '<td></td><td></td><td></td><td></td><td></td><td></td><td></td>';
+                            }
+                            ?>
+                            <td>
+                                <strong class="product name product-item-name">
+                                    <a class="product-item-link"
+                                       href="<?= $randomProduct->getProductUrl() ?>">
+                                        <?= $helper->productAttribute($randomProduct, $randomProduct->getName(), 'name'); ?>
+                                    </a>
+                                </strong>
+                            </td>
+                            <?= $nameInfo; ?>
+                            <td>
+
+                                <!--new plp buttons-->
+                                <div class="product-item-inner">
+                                    <div class="buttons">
+                                        <a class="button btn button-customize" href="<?= $randomProduct->getProductUrl() ?>"
+                                        ><?= __('Select') ?></a>
+                                    </div>
+                                </div>
+
+                            </td>
+                        </div>
+                    </div>
+                    <?=($iterator == count($randomProducts)+1) ? '</li>' : '' ?>
+                <?php endif ?>
+                </tbody>
+            </table>
+        </div>
+    <?php endif ?>
+
+    <div class="name-product-list products wrapper <?= $viewMode; ?> products-<?= $viewMode; ?>">
+        <?php $iterator = 1; ?>
+        <table>
+            <thead>
+            <tr>
+                <?php if ($labels) : ?>
+                    <?php foreach ($labels as $label): ?>
+                        <th><?= $label ?></th>
+                    <?php endforeach ?>
+                <?php endif ?>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php /** @var Product $_product */ ?>
+            <?php foreach ($productCollection as $_product): ?>
+            <tr>
+                <div class="product-item-info" data-container="product-grid">
+                    <div class="product details product-item-details">
+                        <?php
+                        $_productNameStripped = $block->stripTags($_product->getName(), null, true);
+                        $product = $_product;
+                        $instance = $product->getTypeInstance();
+                        if ($instance instanceof Name) {
+                            $nameInfo =  $instance->getNameListRow($product);
+                        } else {
+                            $nameInfo = '<td></td><td></td><td></td><td></td><td></td><td></td><td></td>';
+                        }
+                        ?>
+                        <td>
+                            <strong class="product name product-item-name">
+                                <a class="product-item-link"
+                                   href="<?= $_product->getProductUrl() ?>">
+                                    <?= $helper->productAttribute($_product, $_product->getName(), 'name'); ?>
+                                </a>
+                            </strong>
+                        </td>
+
+                        <?= $nameInfo; ?>
+
+                        <td>
+                            <!--new plp buttons-->
+                            <div class="product-item-inner">
+                                <div class="buttons">
+                                    <a class="button btn button-customize" href="<?= $_product->getProductUrl() ?>"
+                                    ><?= __('Select') ?></a>
+                                </div>
+                            </div>
+                        </td>
+                    </div>
+                </div>
+                <?=($iterator == count($productCollection)+1) ? '</li>' : '' ?>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <?= $block->getToolbarHtml() ?>
+    <?php if (!$block->isRedirectToCartEnabled()) : ?>
+        <script type="text/x-magento-init">
+        {
+            "[data-role=tocart-form], .form.map.checkout": {
+                "catalogAddToCart": {}
+            }
+        }
+        </script>
+    <?php endif; ?>
+<?php endif; ?>

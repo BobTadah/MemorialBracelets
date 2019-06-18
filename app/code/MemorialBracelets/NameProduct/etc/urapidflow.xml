@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+    <urapidflow>
+        <data_types>
+            <nameproduct_extra>
+                <title>Name Products Extra</title>
+                <row_format>fixed</row_format>
+                <model>MemorialBracelets\NameProduct\Model\RapidFlowPro\NameProduct</model>
+                <profile>
+                    <import>
+                        <tabs>
+                            <file>
+                                <title>File Options</title>
+                                <block>Unirgy\RapidFlow\Block\Adminhtml\Profile\Edit\Tab\File</block>
+                            </file>
+                            <csv>
+                                <title>Format Options</title>
+                                <block>Unirgy\RapidFlow\Block\Adminhtml\Profile\Edit\Tab\Csv</block>
+                            </csv>
+                            <options>
+                                <title>Import Options</title>
+                                <block>Unirgy\RapidFlowPro\Block\Adminhtml\Profile\ProductExtra\ImportOptions</block>
+                            </options>
+                            <upload>
+                                <title>Upload Files</title>
+                                <block>Unirgy\RapidFlow\Block\Adminhtml\Profile\Edit\Tab\Upload</block>
+                            </upload>
+                            <reindex>
+                                <title>Reindex</title>
+                                <block>Unirgy\RapidFlow\Block\Adminhtml\Profile\Edit\Tab\Reindex</block>
+                            </reindex>
+                        </tabs>
+                    </import>
+                    <export>
+                        <tabs>
+                            <file>
+                                <title>File Options</title>
+                                <block>Unirgy\RapidFlow\Block\Adminhtml\Profile\Edit\Tab\File</block>
+                            </file>
+                            <csv>
+                                <title>Format Options</title>
+                                <block>Unirgy\RapidFlow\Block\Adminhtml\Profile\Edit\Tab\Csv</block>
+                            </csv>
+                            <options>
+                                <title>Export Options</title>
+                                <block>Unirgy\RapidFlowPro\Block\Adminhtml\Profile\ProductExtra\ExportOptions</block>
+                            </options>
+                            <conditions>
+                                <title>Export Conditions</title>
+                                <block>Unirgy\RapidFlow\Block\Adminhtml\Profile\Edit\Tab\Export\Condition</block>
+                            </conditions>
+                        </tabs>
+                    </export>
+                </profile>
+            </nameproduct_extra>
+        </data_types>
+
+        <row_types>
+            <CPNO>
+                <title>Catalog Product Name Product Option</title>
+                <data_type>nameproduct_extra</data_type>
+                <columns>
+                    <sku><col>1</col><key>1</key></sku>
+                    <linked_sku><col>2</col><key>1</key></linked_sku>
+                    <position><col>3</col></position>
+                </columns>
+            </CPNO>
+        </row_types>
+    </urapidflow>
+</config>

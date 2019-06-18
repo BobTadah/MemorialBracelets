@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Sales:etc/pdf_file.xsd">
+    <renderers>
+        <page type="invoice">
+            <renderer product_type="name">MemorialBracelets\NameProduct\Model\Order\Pdf\Items\Invoice\Name</renderer>
+        </page>
+        <page type="creditmemo">
+            <renderer product_type="name">MemorialBracelets\NameProduct\Model\Order\Pdf\Items\Creditmemo\Name</renderer>
+        </page>
+    </renderers>
+</config>

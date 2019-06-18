@@ -1,0 +1,23 @@
+<?php
+// @codingStandardsIgnoreFile
+?>
+<?php
+/** @var $block \Magento\Framework\View\Element\Template */
+/** @var $helper \Magento\Search\Helper\Data */
+$helper = $this->helper('Magento\Search\Helper\Data');
+?>
+<div class="block block-search">
+    <div class="block block-title"><strong><?= __('Search'); ?></strong></div>
+    <div class="block block-content">
+        <div class="field search">
+            <a href="<?= $block->getUrl('catalogsearch/advanced'); ?>" class="label">
+                <span><?= __('Search'); ?></span>
+            </a>
+            <div class="control">
+                <a href="<?= $block->getUrl('catalogsearch/advanced'); ?>" id="advanced_search_block">
+                    <span><?= __('Advanced Search'); ?></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,111 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/** @var  $block \Magento\Sales\Block\Order\Item\Renderer\DefaultRenderer */
+$_item = $block->getItem();
+/** @var  $optionHelper \MemorialBracelets\CheckHandling\Helper\Data */
+$optionHelper = $this->helper('MemorialBracelets\CheckHandling\Helper\Data');
+?>
+<tr id="order-item-row-<?= $_item->getId() ?>">
+    <td colspan="2" class="col name" data-th="<?php echo $block->escapeHtml(__('Product Name')); ?>">
+        <strong class="product name product-item-name"><?php echo $block->escapeHtml($_item->getName()) ?></strong>
+
+        <?php $addtInfoBlock = $block->getProductAdditionalInformationBlock(); ?>
+        <?php if ($addtInfoBlock) :?>
+            <?php echo $addtInfoBlock->setItem($_item)->toHtml(); ?>
+        <?php endif; ?>
+        <?php echo $block->escapeHtml($_item->getDescription()) ?>
+    </td>
+    <td class="col price" data-th="<?php echo $block->escapeHtml(__('Price')); ?>">
+        <?php echo $block->getItemPriceHtml(); ?>
+    </td>
+    <td class="col qty" data-th="<?php echo $block->escapeHtml(__('Qty')); ?>">
+        <ul class="items-qty">
+        <?php if ($block->getItem()->getQtyOrdered() > 0): ?>
+            <li class="item">
+                <span class="title"><?= __('Ordered'); ?></span>
+                <span class="content"><?= $block->getItem()->getQtyOrdered()*1 ?></span>
+            </li>
+        <?php endif; ?>
+        <?php if ($block->getItem()->getQtyShipped() > 0): ?>
+            <li class="item">
+                <span class="title"><?= __('Shipped'); ?></span>
+                <span class="content"><?= $block->getItem()->getQtyShipped()*1 ?></span>
+            </li>
+        <?php endif; ?>
+        <?php if ($block->getItem()->getQtyCanceled() > 0): ?>
+            <li class="item">
+                <span class="title"><?= __('Canceled'); ?></span>
+                <span class="content"><?= $block->getItem()->getQtyCanceled()*1 ?></span>
+            </li>
+        <?php endif; ?>
+        <?php if ($block->getItem()->getQtyRefunded() > 0): ?>
+            <li class="item">
+                <span class="title"><?= __('Refunded'); ?></span>
+                <span class="content"><?= $block->getItem()->getQtyRefunded()*1 ?></span>
+            </li>
+        <?php endif; ?>
+        </ul>
+    </td>
+    <td class="col subtotal" data-th="<?php echo $block->escapeHtml(__('Subtotal')); ?>">
+        <?php echo $block->getItemRowTotalHtml(); ?>
+    </td>
+</tr>
+<?php if ($_options = $block->getItemOptions()): ?>
+    <?php if ($_item->getProductType() == 'aw_giftcard'):?>
+        <?php
+            //We don't need the giftcard design name.
+            unset($_options[0]);
+        ?>
+        <?php foreach ($_options as $_option) : ?>
+            <tr class="item-options" >
+                <td class="col name" colspan="2">
+                    <div style="font-weight: bold; float: left"><?php echo $block->escapeHtml($_option['label']) ?>: </div>
+                    <span style="float: left;">&nbsp <?= $block->escapeHtml($_option['value']);?></span>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <?php foreach ($_options as $_option) : ?>
+            <?php
+            $engravingClass = null;
+            if ($_option['option_type'] == 'engraving') {
+                $engravingClass = 'prod-engraving-lines';
+            }
+            ?>
+            <?php $_formatedOptionValue = $block->getFormatedOptionValue($_option) ?>
+            <?php if (isset($_formatedOptionValue['full_view']) || !empty($_formatedOptionValue['value'])): ?>
+                <tr class="item-options" >
+                    <td class="col name" colspan="2">
+                        <div style="font-weight: bold; float: left"><?php echo $block->escapeHtml($_option['label']) ?>: </div>
+                        <?php if (!$block->getPrintStatus()): ?>
+                            <span style="float: left; margin-left: 5px;" class="<?=$engravingClass?>">
+                                <?php if (isset($_formatedOptionValue['full_view'])): ?>
+                                    <?= $_formatedOptionValue['full_view'] ?>
+                                <?php else: ?>
+                                    <?= $_formatedOptionValue['value'] ?>
+                                <?php endif; ?>
+                        </span>
+                        <?php else: ?>
+                            <span style="float: left; margin-left: 5px;" class="<?=$engravingClass?>">
+                                <?php if($_option['option_type'] =='iconpicker' || $_option['option_type'] =='picker') : ?>
+                                    <?php echo nl2br($block->escapeHtml($_option['value'])) ?>
+                                <?php else : ?>
+                                    <?php echo nl2br($block->escapeHtml((isset($_option['print_value']) ? $_option['print_value'] : $_option['value']))) ?>
+                                <?php endif ?>
+                        </span>
+                        <?php endif; ?>
+                    </td>
+                    <td class="col price"><?= $optionHelper->getOptionPrice($_item, $_option) ?></td>
+                    <td class="col qty">&nbsp;</td>
+                    <td class="col subtotal">&nbsp;</td>
+                </tr>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    <?php endif; ?>
+<?php endif; ?>

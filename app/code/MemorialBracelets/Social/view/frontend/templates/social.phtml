@@ -1,0 +1,78 @@
+<?php
+/** @var $this MemorialBracelets\Social\Block\Social */
+$socialLinks = $this->getSocialIcons();
+?>
+<?php if ($socialLinks) : ?>
+    <ul class="link-container">
+        <?php foreach ($socialLinks as $link) : ?>
+            <li class="social-item">
+                <a href="<?= $link['url'] ?: '' ?>" class="link"
+                   target="<?= $link['target'] ?: '' ?>"
+                   title="<?= $link['title'] ?: '' ?>">
+                    <i class="<?= $link['icon-class'] ?: '' ?>"></i>
+                </a>
+            </li>
+        <?php endforeach ?>
+    </ul>
+    <div class="error-wrapper">
+        <div class="error">
+            <p><?= __('Please Login to email a friend')?></p>
+        </div>
+    </div>
+
+    <div id="email-friend-container" style="display: none">
+        <div class="top-button-row">
+            <i title="<?= __('Close Form') ?>" class="close-button"></i>
+        </div>
+        <div class="title-container">
+            <h2><?= __('Email to a Friend') ?></h2>
+        </div>
+        <div class="content"></div>
+    </div>
+    <script>
+        require([
+            'jquery',
+            'domReady!',
+            'ko'
+        ], function ($) {
+            $(document).ready(function () {
+                var target = $('#email-friend-container');
+                $('.icon-email-circle').closest('a').click(function (event) {
+                    event.preventDefault();
+
+                    if($('.panel.header .header.links .authorization-link > a').text() === '<?= __('Sign In') ?>') {
+                        displayLoginError();
+                    } else {
+                        $.ajax({
+                            url: $(this).attr('href'),
+                            type: 'POST',
+                            dataType: 'json',
+                            showLoader: true,
+                            cache: false,
+                            data: {isAjax: true},
+                            success: function (response) {
+                                if (response.output){
+                                    $(target).find('.content').empty().append(response.output);
+                                    $('#product-sendtofriend-form').trigger('contentUpdated');
+                                    $(target).show('fast');
+                                    $('html,body').animate({scrollTop: 0},'slow');
+                                } else {
+                                    displayLoginError();
+                                }
+                            }
+                        });
+                    }
+                });
+
+                $(target).find('.close-button').click(function () {
+                    $(target).hide('fast');
+                    $(target).find('.content').empty();
+                });
+
+                function displayLoginError() {
+                    $('.product-social-links .error').show('fast').delay(3000).hide('fast');
+                }
+            });
+        });
+    </script>
+<?php endif ?>

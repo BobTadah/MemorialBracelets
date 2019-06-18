@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Catalog\Block\Category\View" type="MemorialBracelets\CategoryLandingPage\Block\Category\View" />
+    <type name="Magento\Catalog\Model\Category\Attribute\Source\Mode">
+        <plugin name="MemorialBracelets_CategoryLandingPage_Category_Attribute_Source_Mode_Override" type="MemorialBracelets\CategoryLandingPage\Plugin\Mode" sortOrder="1" disabled="false" />
+    </type>
+    <type name="Magento\Catalog\Block\Product\ListProduct">
+        <plugin name="ToolBar_Bug_fix" type="MemorialBracelets\CategoryLandingPage\Plugin\ListProduct" sortOrder="1" disabled="false" />
+    </type>
+</config>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="product.info.media">
+            <container name="product.info.media.floater" htmlTag="div" htmlClass="media-floater">
+                <block class="MemorialBracelets\BraceletPreview\Block\Product\View\Preview"
+                       name="product.view.preview.overlay"
+                       template="MemorialBracelets_BraceletPreview::product/view/preview.phtml"
+                       after="-"/>
+            </container>
+        </referenceContainer>
+        <move element="product.info.media.image" destination="product.info.media.floater" before="product.view.preview.overlay"/>
+    </body>
+</page>

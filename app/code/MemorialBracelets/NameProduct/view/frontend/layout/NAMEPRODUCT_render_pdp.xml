@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <attribute name="class" value="page-product-name"/>
+        <referenceBlock name="product.info">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">MemorialBracelets_NameProduct::product/view/form.phtml</argument>
+            </action>
+            <container name="product.name.subproduct.form" as="form_top">
+                <block class="MemorialBracelets\NameProduct\Block\Product\View\Type\Name" name="product.info.name" before="product.info.addtocart" template="product/view/type/name.phtml"/>
+                <block class="MemorialBracelets\NameProduct\Block\Product\View" name="product.name.details" template="MemorialBracelets_NameProduct::product/view/details.phtml"/>
+                <container name="product.info.name.extra" after="product.info.name" before="product.info.name" as="product_type_data_extra" label="Product Extra Info"/>
+            </container>
+        </referenceBlock>
+        <referenceContainer name="product.info.form.options">
+            <referenceBlock name="product.info.options.wrapper" remove="true"/>
+            <block class="MemorialBracelets\NameProduct\Block\Product\View" name="product.info.name.options.wrapper" template="product/view/options/wrapper.phtml" before="product_options_wrapper_bottom">
+                <block class="MemorialBracelets\ExtensibleCustomOption\Block\Product\View\Options" name="product.info.name.options" as="product_options" template="MemorialBracelets_NameProduct::product/view/options.phtml">
+                    <block class="Magento\Catalog\Block\Product\View\Options\Type\DefaultType" as="default" template="product/view/options/type/default.phtml"/>
+                    <block class="Magento\Catalog\Block\Product\View\Options\Type\Text" as="text" template="product/view/options/type/text.phtml"/>
+                    <block class="Magento\Catalog\Block\Product\View\Options\Type\File" as="file" template="product/view/options/type/file.phtml"/>
+                    <block class="Magento\Catalog\Block\Product\View\Options\Type\Select" as="select" template="product/view/options/type/select.phtml"/>
+                    <block class="Magento\Catalog\Block\Product\View\Options\Type\Date" as="date" template="product/view/options/type/date.phtml"/>
+                </block>
+                <block class="Magento\Framework\View\Element\Html\Calendar" name="html_calendar" as="html_calendar" template="Magento_Theme::js/calendar.phtml"/>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="product.info.type">
+            <block class="MemorialBracelets\NameProduct\Block\Product\View\Type\Name" as="product.info.name" template="product/view/type/default.phtml"/>
+            <referenceBlock name="product.info.sku" remove="true" />
+        </referenceContainer>
+        <move element="product.info.price" destination="product.name.subproduct.form" after="product.info.name"/>
+    </body>
+</page>

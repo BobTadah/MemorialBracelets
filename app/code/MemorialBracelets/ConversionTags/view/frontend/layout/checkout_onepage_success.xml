@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="head.additional">
+            <block class="MemorialBracelets\ConversionTags\Block\ConversionTags" name="conversion.tags.homepage.head" template="conversion-tags.phtml">
+                <arguments>
+                    <argument name="script_location" xsi:type="string">head</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <block class="MemorialBracelets\ConversionTags\Block\ConversionTags" name="conversion.tags.homepage.body" template="conversion-tags.phtml">
+                <arguments>
+                    <argument name="script_location" xsi:type="string">body</argument>
+                    <argument name="success_page" xsi:type="boolean">true</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,19 @@
+<?php
+/** @var MemorialBracelets\CheckHandling\Block\InstructionLink $this */
+
+$checkInstructionUrl = $this->getUrl('check/index/index', ['order_id' => $this->getData('order_real_id')]);
+$continueShoppingUrl = $block->getUrl();
+?>
+<br/>
+<div class="actions-toolbar">
+    <div class="primary">
+        <?php if($block->isOrderCheck()): ?>
+            <a class="action primary continue" href="<?= /* @escapeNotVerified */ $checkInstructionUrl?>" target="_blank"><span><?= /* @escapeNotVerified */ __('Print Order to Mail with Check'); ?></span></a>
+        <?php else: ?>
+            <a class="action primary continue" href="<?= /* @escapeNotVerified */ $continueShoppingUrl ?>"><span><?= /* @escapeNotVerified */ __('Continue Shopping') ?></span></a>
+        <?php endif; ?>
+    </div>
+</div>
+<?php if($block->isOrderCheck()): ?>
+<p><em><?= /* @escapeNotVerified */ __('Products are not engraved until check is received.'); ?></em></p>
+<?php endif; ?>

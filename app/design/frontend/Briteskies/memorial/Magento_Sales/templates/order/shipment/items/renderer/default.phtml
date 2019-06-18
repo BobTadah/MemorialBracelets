@@ -1,0 +1,53 @@
+<?php
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php $_item = $block->getItem() ?>
+<?php $_order = $block->getItem()->getOrderItem()->getOrder() ?>
+<?php
+    //Remove the additional options since we don't want to display them here.
+    $pOptions = $_item->getOrderItem()->getProductOptions();
+    unset($pOptions['additional_options']);
+    $_item->getOrderItem()->setProductOptions($pOptions);
+?>
+<tr id="order-item-row-<?php /* @escapeNotVerified */ echo $_item->getId() ?>">
+    <td class="col name" data-th="<?php echo $block->escapeHtml(__('Product Name')); ?>">
+        <strong class="product name product-item-name"><?php echo $block->escapeHtml($_item->getName()) ?></strong>
+        <?php if ($_options = $block->getItemOptions()): ?>
+
+        <dl class="item options">
+        <?php foreach ($_options as $_option) : ?>
+            <dt <?php if ($_option['option_type'] == 'engraving'): ?> style="float: left;"<?php endif; ?>><?php echo $block->escapeHtml($_option['label']) ?></dt>
+            <?php if (!$block->getPrintStatus()): ?>
+                <?php $_formatedOptionValue = $block->getFormatedOptionValue($_option) ?>
+                <dd<?php if (isset($_formatedOptionValue['full_view'])): ?> class="tooltip wrapper"<?php endif; if ($_option['option_type'] == 'engraving'): ?> style="float: left; margin-left: 5px;"<?php endif; ?>>
+                    <?php /* @escapeNotVerified */ echo $_formatedOptionValue['value'] ?>
+                    <?php if (isset($_formatedOptionValue['full_view'])): ?>
+                    <div class="tooltip content">
+                        <dl class="item options">
+                            <dt><?php echo $block->escapeHtml($_option['label']) ?></dt>
+                            <dd><?php /* @escapeNotVerified */ echo $_formatedOptionValue['full_view'] ?></dd>
+                        </dl>
+                    </div>
+                    <?php endif; ?>
+                </dd>
+            <?php else: ?>
+                <dd <?php if ($_option['option_type'] == 'engraving'): ?> style="float: left; margin-left: 5px;"<?php endif; ?>><?php echo (isset($_option['print_value']) ? $_option['print_value'] : $_option['value']) ?></dd>
+            <?php endif; ?>
+        <?php endforeach; ?>
+        </dl>
+        <?php endif; ?>
+        <?php $addInfoBlock = $block->getProductAdditionalInformationBlock(); ?>
+        <?php if ($addInfoBlock) :?>
+            <?php echo $addInfoBlock->setItem($_item->getOrderItem())->toHtml(); ?>
+        <?php endif; ?>
+        <?php echo $block->escapeHtml($_item->getDescription()) ?>
+    </td>
+    <td class="col sku" data-th="<?php echo $block->escapeHtml(__('SKU')); ?>"><?php /* @escapeNotVerified */ echo $block->prepareSku($block->getSku()) ?></td>
+    <td class="col qty" data-th="<?php echo $block->escapeHtml(__('Qty Shipped')); ?>"><?php /* @escapeNotVerified */ echo $_item->getQty()*1 ?></td>
+</tr>

@@ -1,0 +1,65 @@
+<?php /** @var $this MemorialBracelets\FavoriteProducts\Block\Favorites */ ?>
+<?php $products = $this->getProducts() ?>
+<?php $maxLength = 55 ?>
+<?php if ($products) : ?>
+    <div id="favorites-product-slider" class="slider">
+        <div class="title-container">
+            <h3><?= $this->getTitle() ?></h3>
+        </div>
+        <div id="favorites-slider" class="slider-container owl-carousel" data-count="<?= count($products) ?>">
+            <?php foreach ($products as $product) : ?>
+                <?php $wishlistSubmitParams = $this->getWishlistHelper()->getAddParams($product) ?>
+                <div class="item" title="<?= $this->escapeHtml($product->getName()) ?>">
+                    <div class="top">
+                        <a class="image-wrapper" href="<?= $product->getProductUrl() ?>">
+                            <img src="<?= $this->getImageHelper()->init($product, 'product_base_image')->getUrl() ?>"
+                                 alt="<?= $this->escapeHtml($product->getName()) ?>" />
+                        </a>
+
+                        <div class="info">
+                            <?php
+                            // name truncation:
+                            $prodName = $product->getName();
+                            if(strlen($prodName) > $maxLength) {
+                                $prodName = substr($prodName, 0, $maxLength) . '...';
+                            }
+                            ?>
+                            <a class="name" href="<?= $product->getProductUrl() ?>"><?= $prodName ?></a>
+                            <p class="price"><?= $this->getPriceHelper()->
+                                currency($product->getPrice(), true, false) ?></p>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="buttons">
+                                <a class="button btn button-customize" href="<?= $product->getProductUrl() ?>"
+                                ><?= __('Customize') ?></a>
+                            <div class="links">
+                                <a class="button btn button-compare" href="#" data-post='<?=
+                                $this->getCompareHelper()->getPostDataParams($product) ?>'>
+                                    <i class="icon-compare"></i>
+                                    <span class="text"><?= __('Compare') ?></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach ?>
+        </div>
+    </div>
+    <?php /** url for OwlCarousel options: http://owlgraphic.com/owlcarousel/#customizing.  */ ?>
+    <script type="text/x-magento-init">
+     {
+         "#favorites-slider": {
+             "OwlCarousel": {
+                 "items": 5,
+                 "itemsDesktop": [1199,4],
+                 "itemsDesktopSmall": [980,3],
+                 "itemsTablet": [770,2],
+                 "itemsMobile": [479,1],
+                 "pagination": true,
+                 "paginationNumbers": false
+             }
+         }
+     }
+     </script>
+<?php endif ?>
