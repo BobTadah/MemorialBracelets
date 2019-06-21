@@ -1,0 +1,60 @@
+image: briteskiesnavarr/magento2-for-bitbucket-pipelines:php-5.6
+pipelines:
+  default:
+    - step:
+        caches:
+          - composer
+        script:
+          - start
+          - bash dev/tools/deployment/prepare-pipelines.sh
+          - bash dev/tools/Briteskies/run-tests.sh
+          - bash dev/tools/deployment/prepare.sh
+  branches:
+    dev:
+      - step:
+          caches:
+            - composer
+          script:
+            - start
+            - export DEPLOYMENT_SERVER=$DEV_SERVER
+            - export DEPLOYMENT_DIR=$DEV_DIR
+            - export DEPLOYMENT_PORT=$DEV_PORT
+            - bash dev/tools/deployment/prepare-pipelines.sh
+            - bash dev/tools/Briteskies/run-tests.sh
+            - bash dev/tools/deployment/prepare.sh
+            - bash dev/tools/deployment/upload-candidate.sh
+            - bash dev/tools/deployment/deploy.sh
+    master:
+      - step:
+          caches:
+            - composer
+          script:
+            - start
+            - export DEPLOYMENT_SERVER=$PROD_SERVER
+            - export DEPLOYMENT_DIR=$PROD_DIR
+            - export DEPLOYMENT_PORT=$PROD_PORT
+            - bash dev/tools/deployment/prepare-pipelines.sh
+            - bash dev/tools/Briteskies/run-tests.sh
+            - bash dev/tools/deployment/prepare.sh
+            - bash dev/tools/deployment/upload-candidate.sh
+  custom:
+    master-deploy-candidate:
+      - step:
+          script:
+            - start
+            - export DEPLOYMENT_SERVER=$PROD_SERVER
+            - export DEPLOYMENT_DIR=$PROD_DIR
+            - export DEPLOYMENT_PORT=$PROD_PORT
+            - bash dev/tools/deployment/prepare-pipelines.sh
+            - bash dev/tools/deployment/deploy.sh
+    gather-debug-info:
+      - step:
+          name: Gather Debug Info
+          script:
+            - start
+            - curl -s https://4.ifcfg.me/ || true # Current IP
+            - pwd || true # Current directory
+            - printenv | sort || true # Show all environmental variables
+            - ls -lahr /opt/atlassian/pipelines/agent/data || true # List ssh files
+            - cat /opt/atlassian/pipelines/agent/data/id_rsa || true # Print Private Key
+            - cat /opt/atlassian/pipelines/agent/data/known_hosts || true # Print known hosts

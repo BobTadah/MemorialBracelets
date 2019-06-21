@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Aheadworks_Giftcard::css/style.css"/>
+    </head>
+    <body>
+        <remove name="product.info.price"/>
+        <attribute name="class" value="page-product-giftcard"/>
+        <referenceContainer name="product.info.main">
+            <block class="Aheadworks\Giftcard\Block\Product\View" name="product.info" template="Aheadworks_Giftcard::product/view/form.phtml" after="alert.urls" cacheable="false">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="product_addtocart_form" xsi:type="array">
+                                <item name="component" xsi:type="string">Aheadworks_Giftcard/js/view/product/form</item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+                <container name="product.info.form.content" as="product_info_form_content">
+                    <block class="Magento\Catalog\Block\Product\View" name="product.info.addtocart" as="addtocart" template="Aheadworks_Giftcard::product/view/addtocart.phtml" cacheable="false"/>
+                </container>
+                <block class="Aheadworks\Giftcard\Block\Product\View" name="product.info.giftcard.description" as="giftcard_description" template="Aheadworks_Giftcard::product/view/description.phtml" cacheable="false" />
+                <block class="Aheadworks\Giftcard\Block\Product\View" name="product.info.giftcard.options" as="giftcard_options" template="Aheadworks_Giftcard::product/view/options.phtml" cacheable="false">
+                    <block class="Magento\Catalog\Pricing\Render" name="product.price.final" as="giftcard_price" cacheable="false">
+                        <arguments>
+                            <argument name="price_render" xsi:type="string">product.price.render.default</argument>
+                            <argument name="price_type_code" xsi:type="string">final_price</argument>
+                            <argument name="zone" xsi:type="string">item_view</argument>
+                        </arguments>
+                    </block>
+                </block>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="product.info.type">
+            <block class="Magento\Catalog\Block\Product\View\Type\Simple" name="product.info.simple" as="product_type_data" template="product/view/type/default.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

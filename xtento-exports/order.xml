@@ -1,0 +1,2644 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="./engraving-paracord.xslt"?>
+<objects>
+    <object>
+        <store_name_orig>Main Website
+            Main Website Store
+        </store_name_orig>
+        <store_name>Main Website - Main Website Store - </store_name>
+        <state>new</state>
+        <status>payment_waiting</status>
+        <coupon_code></coupon_code>
+        <protect_code>d6cf1d</protect_code>
+        <shipping_description>Flat Rate - Fixed</shipping_description>
+        <is_virtual>0</is_virtual>
+        <store_id>1</store_id>
+        <customer_id>10</customer_id>
+        <base_discount_amount>0.0000</base_discount_amount>
+        <base_discount_canceled></base_discount_canceled>
+        <base_discount_invoiced></base_discount_invoiced>
+        <base_discount_refunded></base_discount_refunded>
+        <base_grand_total>220.3300</base_grand_total>
+        <base_shipping_amount>35.0000</base_shipping_amount>
+        <base_shipping_canceled></base_shipping_canceled>
+        <base_shipping_invoiced></base_shipping_invoiced>
+        <base_shipping_refunded></base_shipping_refunded>
+        <base_shipping_tax_amount>0.0000</base_shipping_tax_amount>
+        <base_shipping_tax_refunded></base_shipping_tax_refunded>
+        <base_subtotal>185.3300</base_subtotal>
+        <base_subtotal_canceled></base_subtotal_canceled>
+        <base_subtotal_invoiced></base_subtotal_invoiced>
+        <base_subtotal_refunded></base_subtotal_refunded>
+        <base_tax_amount>0.0000</base_tax_amount>
+        <base_tax_canceled></base_tax_canceled>
+        <base_tax_invoiced></base_tax_invoiced>
+        <base_tax_refunded></base_tax_refunded>
+        <base_to_global_rate>1.0000</base_to_global_rate>
+        <base_to_order_rate>1.0000</base_to_order_rate>
+        <base_total_canceled></base_total_canceled>
+        <base_total_invoiced></base_total_invoiced>
+        <base_total_invoiced_cost></base_total_invoiced_cost>
+        <base_total_offline_refunded></base_total_offline_refunded>
+        <base_total_online_refunded></base_total_online_refunded>
+        <base_total_paid></base_total_paid>
+        <base_total_qty_ordered></base_total_qty_ordered>
+        <base_total_refunded></base_total_refunded>
+        <discount_amount>0.0000</discount_amount>
+        <discount_canceled></discount_canceled>
+        <discount_invoiced></discount_invoiced>
+        <discount_refunded></discount_refunded>
+        <grand_total>220.3300</grand_total>
+        <shipping_amount>35.0000</shipping_amount>
+        <shipping_canceled></shipping_canceled>
+        <shipping_invoiced></shipping_invoiced>
+        <shipping_refunded></shipping_refunded>
+        <shipping_tax_amount>0.0000</shipping_tax_amount>
+        <shipping_tax_refunded></shipping_tax_refunded>
+        <store_to_base_rate>0.0000</store_to_base_rate>
+        <store_to_order_rate>0.0000</store_to_order_rate>
+        <subtotal>185.3300</subtotal>
+        <subtotal_canceled></subtotal_canceled>
+        <subtotal_invoiced></subtotal_invoiced>
+        <subtotal_refunded></subtotal_refunded>
+        <tax_amount>0.0000</tax_amount>
+        <tax_canceled></tax_canceled>
+        <tax_invoiced></tax_invoiced>
+        <tax_refunded></tax_refunded>
+        <total_canceled></total_canceled>
+        <total_invoiced></total_invoiced>
+        <total_offline_refunded></total_offline_refunded>
+        <total_online_refunded></total_online_refunded>
+        <total_paid></total_paid>
+        <total_qty_ordered>7.0000</total_qty_ordered>
+        <total_refunded></total_refunded>
+        <can_ship_partially></can_ship_partially>
+        <can_ship_partially_item></can_ship_partially_item>
+        <customer_is_guest>0</customer_is_guest>
+        <customer_note_notify>1</customer_note_notify>
+        <billing_address_id>102</billing_address_id>
+        <customer_group_id>1</customer_group_id>
+        <edit_increment></edit_increment>
+        <email_sent>1</email_sent>
+        <send_email>1</send_email>
+        <forced_shipment_with_invoice></forced_shipment_with_invoice>
+        <payment_auth_expiration></payment_auth_expiration>
+        <quote_address_id></quote_address_id>
+        <quote_id>132</quote_id>
+        <shipping_address_id>101</shipping_address_id>
+        <adjustment_negative></adjustment_negative>
+        <adjustment_positive></adjustment_positive>
+        <base_adjustment_negative></base_adjustment_negative>
+        <base_adjustment_positive></base_adjustment_positive>
+        <base_shipping_discount_amount>0.0000</base_shipping_discount_amount>
+        <base_subtotal_incl_tax>185.3300</base_subtotal_incl_tax>
+        <base_total_due>220.3300</base_total_due>
+        <payment_authorization_amount></payment_authorization_amount>
+        <shipping_discount_amount>0.0000</shipping_discount_amount>
+        <subtotal_incl_tax>185.3300</subtotal_incl_tax>
+        <total_due>220.3300</total_due>
+        <weight>3.5000</weight>
+        <customer_dob></customer_dob>
+        <increment_id>000000052</increment_id>
+        <applied_rule_ids></applied_rule_ids>
+        <base_currency_code>USD</base_currency_code>
+        <customer_email>matt.trimmer@briteskies.com</customer_email>
+        <customer_firstname>Matt</customer_firstname>
+        <customer_lastname>Trimmer</customer_lastname>
+        <customer_middlename></customer_middlename>
+        <customer_prefix></customer_prefix>
+        <customer_suffix></customer_suffix>
+        <customer_taxvat></customer_taxvat>
+        <discount_description></discount_description>
+        <ext_customer_id></ext_customer_id>
+        <ext_order_id></ext_order_id>
+        <global_currency_code>USD</global_currency_code>
+        <hold_before_state></hold_before_state>
+        <hold_before_status></hold_before_status>
+        <order_currency_code>USD</order_currency_code>
+        <original_increment_id></original_increment_id>
+        <relation_child_id></relation_child_id>
+        <relation_child_real_id></relation_child_real_id>
+        <relation_parent_id></relation_parent_id>
+        <relation_parent_real_id></relation_parent_real_id>
+        <remote_ip>207.89.38.26</remote_ip>
+        <shipping_method>flatrate_flatrate</shipping_method>
+        <store_currency_code>USD</store_currency_code>
+        <x_forwarded_for></x_forwarded_for>
+        <customer_note></customer_note>
+        <created_at>2017-02-07 17:39:32</created_at>
+        <updated_at>2017-02-07 17:39:43</updated_at>
+        <total_item_count>7</total_item_count>
+        <customer_gender></customer_gender>
+        <discount_tax_compensation_amount>0.0000</discount_tax_compensation_amount>
+        <base_discount_tax_compensation_amount>0.0000</base_discount_tax_compensation_amount>
+        <shipping_discount_tax_compensation_amount>0.0000</shipping_discount_tax_compensation_amount>
+        <base_shipping_discount_tax_compensation_amnt></base_shipping_discount_tax_compensation_amnt>
+        <discount_tax_compensation_invoiced></discount_tax_compensation_invoiced>
+        <base_discount_tax_compensation_invoiced></base_discount_tax_compensation_invoiced>
+        <discount_tax_compensation_refunded></discount_tax_compensation_refunded>
+        <base_discount_tax_compensation_refunded></base_discount_tax_compensation_refunded>
+        <shipping_incl_tax>35.0000</shipping_incl_tax>
+        <base_shipping_incl_tax>35.0000</base_shipping_incl_tax>
+        <coupon_rule_name></coupon_rule_name>
+        <paypal_ipn_customer_notified>0</paypal_ipn_customer_notified>
+        <gift_message_id></gift_message_id>
+        <gift_message_sender></gift_message_sender>
+        <gift_message_recipient></gift_message_recipient>
+        <gift_message></gift_message>
+        <giftcards/>
+        <created_at_timestamp>1486471172</created_at_timestamp>
+        <updated_at_timestamp>1486471183</updated_at_timestamp>
+        <order_line_number>1</order_line_number>
+        <order_count>1</order_count>
+        <line_number>1</line_number>
+        <count>1</count>
+        <export_id>0</export_id>
+        <entity_id>52</entity_id>
+        <billing>
+            <entity_id>102</entity_id>
+            <parent_id>52</parent_id>
+            <customer_address_id>8</customer_address_id>
+            <quote_address_id></quote_address_id>
+            <region_id>47</region_id>
+            <customer_id></customer_id>
+            <fax></fax>
+            <region>Ohio</region>
+            <postcode>44131</postcode>
+            <lastname>Trimmer</lastname>
+            <street>6155 Rockside Rd</street>
+            <city>Independence</city>
+            <email>matt.trimmer@briteskies.com</email>
+            <telephone>2163693600</telephone>
+            <country_id>US</country_id>
+            <firstname>Matt</firstname>
+            <address_type>billing</address_type>
+            <prefix></prefix>
+            <middlename></middlename>
+            <suffix></suffix>
+            <company></company>
+            <vat_id></vat_id>
+            <vat_is_valid></vat_is_valid>
+            <vat_request_id></vat_request_id>
+            <vat_request_date></vat_request_date>
+            <vat_request_success></vat_request_success>
+            <street1>6155 Rockside Rd</street1>
+            <region_code>OH</region_code>
+            <country_name>United States</country_name>
+            <country_iso3>USA</country_iso3>
+        </billing>
+        <shipping>
+            <entity_id>101</entity_id>
+            <parent_id>52</parent_id>
+            <customer_address_id>8</customer_address_id>
+            <quote_address_id></quote_address_id>
+            <region_id>47</region_id>
+            <customer_id></customer_id>
+            <fax></fax>
+            <region>Ohio</region>
+            <postcode>44131</postcode>
+            <lastname>Trimmer</lastname>
+            <street>6155 Rockside Rd</street>
+            <city>Independence</city>
+            <email>matt.trimmer@briteskies.com</email>
+            <telephone>2163693600</telephone>
+            <country_id>US</country_id>
+            <firstname>Matt</firstname>
+            <address_type>shipping</address_type>
+            <prefix></prefix>
+            <middlename></middlename>
+            <suffix></suffix>
+            <company></company>
+            <vat_id></vat_id>
+            <vat_is_valid></vat_is_valid>
+            <vat_request_id></vat_request_id>
+            <vat_request_date></vat_request_date>
+            <vat_request_success></vat_request_success>
+            <street1>6155 Rockside Rd</street1>
+            <region_code>OH</region_code>
+            <country_name>United States</country_name>
+            <country_iso3>USA</country_iso3>
+        </shipping>
+        <payment>
+            <entity_id>52</entity_id>
+            <parent_id>52</parent_id>
+            <base_shipping_captured></base_shipping_captured>
+            <shipping_captured></shipping_captured>
+            <amount_refunded></amount_refunded>
+            <base_amount_paid></base_amount_paid>
+            <amount_canceled></amount_canceled>
+            <base_amount_authorized></base_amount_authorized>
+            <base_amount_paid_online></base_amount_paid_online>
+            <base_amount_refunded_online></base_amount_refunded_online>
+            <base_shipping_amount>35.0000</base_shipping_amount>
+            <shipping_amount>35.0000</shipping_amount>
+            <amount_paid></amount_paid>
+            <amount_authorized></amount_authorized>
+            <base_amount_ordered>220.3300</base_amount_ordered>
+            <base_shipping_refunded></base_shipping_refunded>
+            <shipping_refunded></shipping_refunded>
+            <base_amount_refunded></base_amount_refunded>
+            <amount_ordered>220.3300</amount_ordered>
+            <base_amount_canceled></base_amount_canceled>
+            <quote_payment_id></quote_payment_id>
+            <additional_data></additional_data>
+            <cc_exp_month></cc_exp_month>
+            <cc_ss_start_year></cc_ss_start_year>
+            <echeck_bank_name></echeck_bank_name>
+            <method>checkmo</method>
+            <cc_debug_request_body></cc_debug_request_body>
+            <cc_secure_verify></cc_secure_verify>
+            <protection_eligibility></protection_eligibility>
+            <cc_approval></cc_approval>
+            <cc_last_4></cc_last_4>
+            <cc_status_description></cc_status_description>
+            <echeck_type></echeck_type>
+            <cc_debug_response_serialized></cc_debug_response_serialized>
+            <cc_ss_start_month></cc_ss_start_month>
+            <echeck_account_type></echeck_account_type>
+            <last_trans_id></last_trans_id>
+            <cc_cid_status></cc_cid_status>
+            <cc_owner></cc_owner>
+            <cc_type></cc_type>
+            <po_number></po_number>
+            <cc_exp_year></cc_exp_year>
+            <cc_status></cc_status>
+            <echeck_routing_number></echeck_routing_number>
+            <account_status></account_status>
+            <anet_trans_method></anet_trans_method>
+            <cc_debug_response_body></cc_debug_response_body>
+            <cc_ss_issue></cc_ss_issue>
+            <echeck_account_name></echeck_account_name>
+            <cc_avs_status></cc_avs_status>
+            <cc_number_enc></cc_number_enc>
+            <cc_trans_id></cc_trans_id>
+            <address_status></address_status>
+            <method_title>Check</method_title>
+            <additional_fields>
+                <method_title>Check</method_title>
+                <payable_to></payable_to>
+                <mailing_address></mailing_address>
+            </additional_fields>
+            <cc_number_dec></cc_number_dec>
+            <cc_cvv2></cc_cvv2>
+            <cc_cvv2_dec></cc_cvv2_dec>
+        </payment>
+        <order_status_history></order_status_history>
+        <salesrules></salesrules>
+        <customer>
+            <is_subscribed>0</is_subscribed>
+            <website_id>1</website_id>
+            <email>matt.trimmer@briteskies.com</email>
+            <group_id>1</group_id>
+            <increment_id></increment_id>
+            <store_id>1</store_id>
+            <created_at>2017-01-26 18:03:26</created_at>
+            <updated_at>2017-02-07 17:41:40</updated_at>
+            <is_active>1</is_active>
+            <disable_auto_group_change>0</disable_auto_group_change>
+            <created_in>Default Store View</created_in>
+            <prefix></prefix>
+            <firstname>Matt</firstname>
+            <middlename></middlename>
+            <lastname>Trimmer</lastname>
+            <suffix></suffix>
+            <dob></dob>
+            <password_hash>00c090467bea519b122a17fcd3c33e9d8dd515e46bd35856dbe7b8343d697143:rZ1dTc3v8alpyueEmxhJ4STrMIrv2JCR:1</password_hash>
+            <rp_token></rp_token>
+            <rp_token_created_at></rp_token_created_at>
+            <default_billing>0</default_billing>
+            <default_shipping>8</default_shipping>
+            <taxvat></taxvat>
+            <confirmation></confirmation>
+            <gender></gender>
+            <failures_num>0</failures_num>
+            <first_failure></first_failure>
+            <lock_expires></lock_expires>
+            <customer_group>General</customer_group>
+            <has_purchased>1</has_purchased>
+            <order_count>4</order_count>
+            <first_order_timestamp>1486136563</first_order_timestamp>
+            <last_order_timestamp>1486471301</last_order_timestamp>
+            <addresses>
+                <address>
+                    <entity_id>8</entity_id>
+                    <increment_id></increment_id>
+                    <parent_id>10</parent_id>
+                    <created_at>2017-02-03 20:42:43</created_at>
+                    <updated_at>2017-02-07 17:41:41</updated_at>
+                    <is_active>1</is_active>
+                    <city>Independence</city>
+                    <company></company>
+                    <country_id>US</country_id>
+                    <fax></fax>
+                    <firstname>Matt</firstname>
+                    <lastname>Trimmer</lastname>
+                    <middlename></middlename>
+                    <postcode>44131</postcode>
+                    <prefix></prefix>
+                    <region>Ohio</region>
+                    <region_id>47</region_id>
+                    <street>6155 Rockside Rd</street>
+                    <suffix></suffix>
+                    <telephone>2163693600</telephone>
+                    <vat_id></vat_id>
+                    <vat_is_valid></vat_is_valid>
+                    <vat_request_date></vat_request_date>
+                    <vat_request_id></vat_request_id>
+                    <vat_request_success></vat_request_success>
+                    <customer_id>10</customer_id>
+                    <street1>6155 Rockside Rd</street1>
+                    <region_code>OH</region_code>
+                    <country_name>United States</country_name>
+                    <country_iso3>USA</country_iso3>
+                    <address_type>default_shipping</address_type>
+                </address>
+            </addresses>
+        </customer>
+        <items>
+            <item>
+                <qty_ordered>1.0000</qty_ordered>
+                <qty>1.0000</qty>
+                <item_number>1</item_number>
+                <order_product_number>1</order_product_number>
+                <item_id>70</item_id>
+                <order_id>52</order_id>
+                <parent_item_id></parent_item_id>
+                <quote_item_id>217</quote_item_id>
+                <store_id>1</store_id>
+                <created_at>2017-02-07 17:39:32</created_at>
+                <updated_at>2017-02-07 17:39:32</updated_at>
+                <product_id>67039</product_id>
+                <product_type>name</product_type>
+                <weight>0.5000</weight>
+                <is_virtual>0</is_virtual>
+                <sku>21</sku>
+                <name>Cuff Bracelet - Colored Aluminum</name>
+                <description></description>
+                <applied_rule_ids></applied_rule_ids>
+                <additional_data></additional_data>
+                <is_qty_decimal>0</is_qty_decimal>
+                <no_discount>0</no_discount>
+                <qty_backordered></qty_backordered>
+                <qty_canceled>0.0000</qty_canceled>
+                <qty_invoiced>0.0000</qty_invoiced>
+                <qty_refunded>0.0000</qty_refunded>
+                <qty_shipped>0.0000</qty_shipped>
+                <base_cost></base_cost>
+                <price>22.8900</price>
+                <base_price>22.8900</base_price>
+                <original_price>16.9900</original_price>
+                <base_original_price>16.9900</base_original_price>
+                <tax_percent>0.0000</tax_percent>
+                <tax_amount>0.0000</tax_amount>
+                <base_tax_amount>0.0000</base_tax_amount>
+                <tax_invoiced>0.0000</tax_invoiced>
+                <base_tax_invoiced>0.0000</base_tax_invoiced>
+                <discount_percent>0.0000</discount_percent>
+                <discount_amount>0.0000</discount_amount>
+                <base_discount_amount>0.0000</base_discount_amount>
+                <discount_invoiced>0.0000</discount_invoiced>
+                <base_discount_invoiced>0.0000</base_discount_invoiced>
+                <amount_refunded>0.0000</amount_refunded>
+                <base_amount_refunded>0.0000</base_amount_refunded>
+                <row_total>22.8900</row_total>
+                <base_row_total>22.8900</base_row_total>
+                <row_invoiced>0.0000</row_invoiced>
+                <base_row_invoiced>0.0000</base_row_invoiced>
+                <row_weight>0.5000</row_weight>
+                <base_tax_before_discount></base_tax_before_discount>
+                <tax_before_discount></tax_before_discount>
+                <ext_order_item_id></ext_order_item_id>
+                <locked_do_invoice></locked_do_invoice>
+                <locked_do_ship></locked_do_ship>
+                <price_incl_tax>22.8900</price_incl_tax>
+                <base_price_incl_tax>22.8900</base_price_incl_tax>
+                <row_total_incl_tax>22.8900</row_total_incl_tax>
+                <base_row_total_incl_tax>22.8900</base_row_total_incl_tax>
+                <discount_tax_compensation_amount>0.0000</discount_tax_compensation_amount>
+                <base_discount_tax_compensation_amount>0.0000</base_discount_tax_compensation_amount>
+                <discount_tax_compensation_invoiced></discount_tax_compensation_invoiced>
+                <base_discount_tax_compensation_invoiced></base_discount_tax_compensation_invoiced>
+                <discount_tax_compensation_refunded></discount_tax_compensation_refunded>
+                <base_discount_tax_compensation_refunded></base_discount_tax_compensation_refunded>
+                <tax_canceled></tax_canceled>
+                <discount_tax_compensation_canceled></discount_tax_compensation_canceled>
+                <tax_refunded></tax_refunded>
+                <base_tax_refunded></base_tax_refunded>
+                <discount_refunded></discount_refunded>
+                <base_discount_refunded></base_discount_refunded>
+                <free_shipping>0</free_shipping>
+                <gift_message_id></gift_message_id>
+                <gift_message_available>2</gift_message_available>
+                <weee_tax_applied></weee_tax_applied>
+                <weee_tax_applied_amount></weee_tax_applied_amount>
+                <weee_tax_applied_row_amount></weee_tax_applied_row_amount>
+                <weee_tax_disposition></weee_tax_disposition>
+                <weee_tax_row_disposition></weee_tax_row_disposition>
+                <base_weee_tax_applied_amount></base_weee_tax_applied_amount>
+                <base_weee_tax_applied_row_amnt></base_weee_tax_applied_row_amnt>
+                <base_weee_tax_disposition></base_weee_tax_disposition>
+                <base_weee_tax_row_disposition></base_weee_tax_row_disposition>
+                <qty_in_stock>1000</qty_in_stock>
+                <sku_repeated_by_qty>21</sku_repeated_by_qty>
+                <gift_message_sender></gift_message_sender>
+                <gift_message_recipient></gift_message_recipient>
+                <gift_message></gift_message>
+                <product_options_data>
+                    <info_buyRequest>
+                        <uenc>aHR0cHM6Ly9wcm9kdWN0aW9uLm1iLmRldi5icml0ZXNraWVzLmNvbS9tb25pY2Etcm9kcmlndWV6LXNtaXRo</uenc>
+                        <product>66704</product>
+                        <selected_configurable_option></selected_configurable_option>
+                        <related_product></related_product>
+                        <qty>1</qty>
+                        <name_string>Monica Rodriguez Smith  NY  US
+                            1993 WTC Bombing  26 Feb 93  VOT</name_string>
+                    </info_buyRequest>
+                    <super_product_config>
+                        <product_code>product_type</product_code>
+                        <product_type>name</product_type>
+                        <product_id>66704</product_id>
+                    </super_product_config>
+                </product_options_data>
+                <product_attributes>
+                    <type_id>simple</type_id>
+                    <type_id_store>simple</type_id_store>
+                    <attribute_set_name>Product Product</attribute_set_name>
+                    <attribute_set_id>10</attribute_set_id>
+                    <attribute_set_id_store>10</attribute_set_id_store>
+                    <entity_id>67039</entity_id>
+                    <entity_id_store>67039</entity_id_store>
+                    <status>Enabled</status>
+                    <status_store>Enabled</status_store>
+                    <name>Cuff Bracelet - Colored Aluminum</name>
+                    <name_store>Cuff Bracelet - Colored Aluminum</name_store>
+                    <product_type>Other Engraveable</product_type>
+                    <product_type_store>Other Engraveable</product_type_store>
+                    <sku>21</sku>
+                    <sku_store>21</sku_store>
+                    <sku_type></sku_type>
+                    <sku_type_store></sku_type_store>
+                    <price>16.9900</price>
+                    <price_store>16.9900</price_store>
+                    <old_id></old_id>
+                    <old_id_store></old_id_store>
+                    <price_type></price_type>
+                    <price_type_store></price_type_store>
+                    <tax_class_id>Taxable Goods</tax_class_id>
+                    <tax_class_id_store>Taxable Goods</tax_class_id_store>
+                    <quantity_and_stock_status>
+                        <is_in_stock>1</is_in_stock>
+                        <qty>1000</qty>
+                    </quantity_and_stock_status>
+                    <quantity_and_stock_status_store>
+                        <is_in_stock>1</is_in_stock>
+                        <qty>1000</qty>
+                    </quantity_and_stock_status_store>
+                    <weight>0.5000</weight>
+                    <weight_store>0.5000</weight_store>
+                    <weight_type></weight_type>
+                    <weight_type_store></weight_type_store>
+                    <url_path></url_path>
+                    <url_path_store></url_path_store>
+                    <visibility>Catalog, Search</visibility>
+                    <visibility_store>Catalog, Search</visibility_store>
+                    <required_options>1</required_options>
+                    <required_options_store>1</required_options_store>
+                    <has_options>1</has_options>
+                    <has_options_store>1</has_options_store>
+                    <manufacturer>Stemarco</manufacturer>
+                    <manufacturer_store>Stemarco</manufacturer_store>
+                    <material>Annodized Colored Aluminum</material>
+                    <material_store>Annodized Colored Aluminum</material_store>
+                    <image_label></image_label>
+                    <image_label_store></image_label_store>
+                    <small_image_label></small_image_label>
+                    <small_image_label_store></small_image_label_store>
+                    <news_from_date></news_from_date>
+                    <news_from_date_store></news_from_date_store>
+                    <news_to_date></news_to_date>
+                    <news_to_date_store></news_to_date_store>
+                    <thumbnail_label></thumbnail_label>
+                    <thumbnail_label_store></thumbnail_label_store>
+                    <country_of_manufacture>United States</country_of_manufacture>
+                    <country_of_manufacture_store>United States</country_of_manufacture_store>
+                    <created_at>2016-08-31 17:14:38</created_at>
+                    <created_at_store>2016-08-31 17:14:38</created_at_store>
+                    <updated_at>2016-12-20 15:15:22</updated_at>
+                    <updated_at_store>2016-12-20 15:15:22</updated_at_store>
+                    <favorite_product>1</favorite_product>
+                    <favorite_product_store>1</favorite_product_store>
+                    <links_purchased_separately></links_purchased_separately>
+                    <links_purchased_separately_store></links_purchased_separately_store>
+                    <samples_title></samples_title>
+                    <samples_title_store></samples_title_store>
+                    <links_title></links_title>
+                    <links_title_store></links_title_store>
+                    <links_exist></links_exist>
+                    <links_exist_store></links_exist_store>
+                    <description></description>
+                    <description_store></description_store>
+                    <short_description></short_description>
+                    <short_description_store></short_description_store>
+                    <shipment_type></shipment_type>
+                    <shipment_type_store></shipment_type_store>
+                    <image_raw>/c/u/cuff.jpg</image_raw>
+                    <image>https://production.mb.dev.briteskies.com/media/catalog/product/c/u/cuff.jpg</image>
+                    <small_image_raw>/c/u/cuff.jpg</small_image_raw>
+                    <small_image>https://production.mb.dev.briteskies.com/media/catalog/product/c/u/cuff.jpg</small_image>
+                    <thumbnail_raw>/c/u/cuff.jpg</thumbnail_raw>
+                    <thumbnail>https://production.mb.dev.briteskies.com/media/catalog/product/c/u/cuff.jpg</thumbnail>
+                    <swatch_image>/c/u/cuff.jpg</swatch_image>
+                    <swatch_image_store>/c/u/cuff.jpg</swatch_image_store>
+                    <gallery></gallery>
+                    <gallery_store></gallery_store>
+                    <url_key>cuff-bracelet</url_key>
+                    <url_key_store>cuff-bracelet</url_key_store>
+                    <meta_title>Cuff Bracelet</meta_title>
+                    <meta_title_store>Cuff Bracelet</meta_title_store>
+                    <meta_keyword>Cuff Bracelet</meta_keyword>
+                    <meta_keyword_store>Cuff Bracelet</meta_keyword_store>
+                    <meta_description>Cuff Bracelet </meta_description>
+                    <meta_description_store>Cuff Bracelet </meta_description_store>
+                    <special_price></special_price>
+                    <special_price_store></special_price_store>
+                    <special_from_date></special_from_date>
+                    <special_from_date_store></special_from_date_store>
+                    <special_to_date></special_to_date>
+                    <special_to_date_store></special_to_date_store>
+                    <cost></cost>
+                    <cost_store></cost_store>
+                    <msrp></msrp>
+                    <msrp_store></msrp_store>
+                    <msrp_display_actual_price_type></msrp_display_actual_price_type>
+                    <msrp_display_actual_price_type_store></msrp_display_actual_price_type_store>
+                    <price_view></price_view>
+                    <price_view_store></price_view_store>
+                    <minimal_price></minimal_price>
+                    <minimal_price_store></minimal_price_store>
+                    <page_layout></page_layout>
+                    <page_layout_store></page_layout_store>
+                    <options_container>Block after Info Column</options_container>
+                    <options_container_store>Block after Info Column</options_container_store>
+                    <custom_layout_update></custom_layout_update>
+                    <custom_layout_update_store></custom_layout_update_store>
+                    <custom_design_from></custom_design_from>
+                    <custom_design_from_store></custom_design_from_store>
+                    <custom_design_to></custom_design_to>
+                    <custom_design_to_store></custom_design_to_store>
+                    <custom_design></custom_design>
+                    <custom_design_store></custom_design_store>
+                    <custom_layout></custom_layout>
+                    <custom_layout_store></custom_layout_store>
+                    <gift_message_available>Use config</gift_message_available>
+                    <gift_message_available_store>Use config</gift_message_available_store>
+                    <aw_gc_type></aw_gc_type>
+                    <aw_gc_type_store></aw_gc_type_store>
+                    <aw_gc_description></aw_gc_description>
+                    <aw_gc_description_store></aw_gc_description_store>
+                    <aw_gc_expire></aw_gc_expire>
+                    <aw_gc_expire_store></aw_gc_expire_store>
+                    <aw_gc_allow_message></aw_gc_allow_message>
+                    <aw_gc_allow_message_store></aw_gc_allow_message_store>
+                    <aw_gc_email_templates></aw_gc_email_templates>
+                    <aw_gc_email_templates_store></aw_gc_email_templates_store>
+                    <aw_gc_amounts></aw_gc_amounts>
+                    <aw_gc_amounts_store></aw_gc_amounts_store>
+                    <aw_gc_allow_open_amount></aw_gc_allow_open_amount>
+                    <aw_gc_allow_open_amount_store></aw_gc_allow_open_amount_store>
+                    <aw_gc_open_amount_min></aw_gc_open_amount_min>
+                    <aw_gc_open_amount_min_store></aw_gc_open_amount_min_store>
+                    <aw_gc_open_amount_max></aw_gc_open_amount_max>
+                    <aw_gc_open_amount_max_store></aw_gc_open_amount_max_store>
+                    <uss_cole></uss_cole>
+                    <uss_cole_store></uss_cole_store>
+                    <category_ids>|46|47|51|54|55|56|57|58|59|111|105|127|128|109|143|</category_ids>
+                    <category_names>|Customize A Product|Bracelets|Active Duty|First Responders|Friend or Family|Infant or Child|Military|Pet|Prayer|Colored Aluminum Cuff Bracelet|Types of Products|Select Name by Event|Create Message by Category|Cancer|Inspirational|</category_names>
+                    <product_url>https://production.mb.dev.briteskies.com/cuff-bracelet</product_url>
+                    <product_total_cost>0</product_total_cost>
+                    <name_product>
+                        <entity_id>66704</entity_id>
+                        <attribute_set_id>9</attribute_set_id>
+                        <type_id>name</type_id>
+                        <sku>85645</sku>
+                        <has_options>0</has_options>
+                        <required_options>0</required_options>
+                        <created_at>2016-08-25 19:38:47</created_at>
+                        <updated_at>2017-01-12 23:13:43</updated_at>
+                        <status>Enabled</status>
+                        <visibility>Catalog, Search</visibility>
+                        <quantity_and_stock_status>In Stock</quantity_and_stock_status>
+                        <favorite_product>0</favorite_product>
+                        <state>NY</state>
+                        <country>US</country>
+                        <name_status>VOT</name_status>
+                        <event>1993 WTC Bombing</event>
+                        <name>Monica Rodriguez Smith</name>
+                        <options_container>Block after Info Column</options_container>
+                        <url_key>monica-rodriguez-smith</url_key>
+                        <gift_message_available>Use config</gift_message_available>
+                        <city>Seaford</city>
+                        <first_name>Monica</first_name>
+                        <last_name>Rodriguez Smith</last_name>
+                        <age>35</age>
+                        <date>1993-02-26 00:00:00</date>
+                    </name_product>
+                </product_attributes>
+                <custom_options>
+                    <custom_option>
+                        <name>Color</name>
+                        <value>Blue</value>
+                        <sku></sku>
+                        <option_id>1199</option_id>
+                        <bracelet_piece>material_color</bracelet_piece>
+                    </custom_option>
+                    <custom_option>
+                        <name>Size</name>
+                        <value>Large</value>
+                        <sku></sku>
+                        <option_id>1200</option_id>
+                        <bracelet_piece>size</bracelet_piece>
+                    </custom_option>
+                    <custom_option>
+                        <name>Left Icon</name>
+                        <value>US Air Force</value>
+                        <sku></sku>
+                        <option_id>1201</option_id>
+                        <bracelet_piece>icon_left</bracelet_piece>
+                    </custom_option>
+                    <custom_option>
+                        <name>Right Icon</name>
+                        <value>US Army National Guard</value>
+                        <sku></sku>
+                        <option_id>1202</option_id>
+                        <bracelet_piece>icon_right</bracelet_piece>
+                    </custom_option>
+                    <custom_option>
+                        <name>Engraving Style</name>
+                        <value>Recessed Engraving</value>
+                        <sku></sku>
+                        <option_id>1203</option_id>
+                        <bracelet_piece>engraving_style</bracelet_piece>
+                    </custom_option>
+                    <custom_option>
+                        <name>Custom Engraving</name>
+                        <value>Monica Rodriguez Smith  NY  US
+                            1993 WTC Bombing  26 Feb 93  VOT</value>
+                        <sku></sku>
+                        <option_id>1204</option_id>
+                        <type>name</type>
+                        <text>Monica Rodriguez Smith  NY  US
+                            1993 WTC Bombing  26 Feb 93  VOT</text>
+                        <bracelet_piece>engraving</bracelet_piece>
+                    </custom_option>
+                </custom_options>
+            </item>
+            <item>
+                <qty_ordered>1.0000</qty_ordered>
+                <qty>1.0000</qty>
+                <item_number>2</item_number>
+                <order_product_number>2</order_product_number>
+                <item_id>71</item_id>
+                <order_id>52</order_id>
+                <parent_item_id></parent_item_id>
+                <quote_item_id>218</quote_item_id>
+                <store_id>1</store_id>
+                <created_at>2017-02-07 17:39:32</created_at>
+                <updated_at>2017-02-07 17:39:32</updated_at>
+                <product_id>67039</product_id>
+                <product_type>name</product_type>
+                <weight>0.5000</weight>
+                <is_virtual>0</is_virtual>
+                <sku>21</sku>
+                <name>Cuff Bracelet - Colored Aluminum</name>
+                <description></description>
+                <applied_rule_ids></applied_rule_ids>
+                <additional_data></additional_data>
+                <is_qty_decimal>0</is_qty_decimal>
+                <no_discount>0</no_discount>
+                <qty_backordered></qty_backordered>
+                <qty_canceled>0.0000</qty_canceled>
+                <qty_invoiced>0.0000</qty_invoiced>
+                <qty_refunded>0.0000</qty_refunded>
+                <qty_shipped>0.0000</qty_shipped>
+                <base_cost></base_cost>
+                <price>22.8900</price>
+                <base_price>22.8900</base_price>
+                <original_price>16.9900</original_price>
+                <base_original_price>16.9900</base_original_price>
+                <tax_percent>0.0000</tax_percent>
+                <tax_amount>0.0000</tax_amount>
+                <base_tax_amount>0.0000</base_tax_amount>
+                <tax_invoiced>0.0000</tax_invoiced>
+                <base_tax_invoiced>0.0000</base_tax_invoiced>
+                <discount_percent>0.0000</discount_percent>
+                <discount_amount>0.0000</discount_amount>
+                <base_discount_amount>0.0000</base_discount_amount>
+                <discount_invoiced>0.0000</discount_invoiced>
+                <base_discount_invoiced>0.0000</base_discount_invoiced>
+                <amount_refunded>0.0000</amount_refunded>
+                <base_amount_refunded>0.0000</base_amount_refunded>
+                <row_total>22.8900</row_total>
+                <base_row_total>22.8900</base_row_total>
+                <row_invoiced>0.0000</row_invoiced>
+                <base_row_invoiced>0.0000</base_row_invoiced>
+                <row_weight>0.5000</row_weight>
+                <base_tax_before_discount></base_tax_before_discount>
+                <tax_before_discount></tax_before_discount>
+                <ext_order_item_id></ext_order_item_id>
+                <locked_do_invoice></locked_do_invoice>
+                <locked_do_ship></locked_do_ship>
+                <price_incl_tax>22.8900</price_incl_tax>
+                <base_price_incl_tax>22.8900</base_price_incl_tax>
+                <row_total_incl_tax>22.8900</row_total_incl_tax>
+                <base_row_total_incl_tax>22.8900</base_row_total_incl_tax>
+                <discount_tax_compensation_amount>0.0000</discount_tax_compensation_amount>
+                <base_discount_tax_compensation_amount>0.0000</base_discount_tax_compensation_amount>
+                <discount_tax_compensation_invoiced></discount_tax_compensation_invoiced>
+                <base_discount_tax_compensation_invoiced></base_discount_tax_compensation_invoiced>
+                <discount_tax_compensation_refunded></discount_tax_compensation_refunded>
+                <base_discount_tax_compensation_refunded></base_discount_tax_compensation_refunded>
+                <tax_canceled></tax_canceled>
+                <discount_tax_compensation_canceled></discount_tax_compensation_canceled>
+                <tax_refunded></tax_refunded>
+                <base_tax_refunded></base_tax_refunded>
+                <discount_refunded></discount_refunded>
+                <base_discount_refunded></base_discount_refunded>
+                <free_shipping>0</free_shipping>
+                <gift_message_id></gift_message_id>
+                <gift_message_available>2</gift_message_available>
+                <weee_tax_applied></weee_tax_applied>
+                <weee_tax_applied_amount></weee_tax_applied_amount>
+                <weee_tax_applied_row_amount></weee_tax_applied_row_amount>
+                <weee_tax_disposition></weee_tax_disposition>
+                <weee_tax_row_disposition></weee_tax_row_disposition>
+                <base_weee_tax_applied_amount></base_weee_tax_applied_amount>
+                <base_weee_tax_applied_row_amnt></base_weee_tax_applied_row_amnt>
+                <base_weee_tax_disposition></base_weee_tax_disposition>
+                <base_weee_tax_row_disposition></base_weee_tax_row_disposition>
+                <qty_in_stock>1000</qty_in_stock>
+                <sku_repeated_by_qty>21</sku_repeated_by_qty>
+                <gift_message_sender></gift_message_sender>
+                <gift_message_recipient></gift_message_recipient>
+                <gift_message></gift_message>
+                <product_options_data>
+                    <info_buyRequest>
+                        <uenc>aHR0cHM6Ly9wcm9kdWN0aW9uLm1iLmRldi5icml0ZXNraWVzLmNvbS9qYW1lcy1hZGFtcw,,</uenc>
+                        <product>66657</product>
+                        <selected_configurable_option></selected_configurable_option>
+                        <related_product></related_product>
+                        <qty>1</qty>
+                        <name_string>JAMES ADAMS    GB
+                            7/7 London Bombings  07 Jul 05  VOT</name_string>
+                    </info_buyRequest>
+                    <super_product_config>
+                        <product_code>product_type</product_code>
+                        <product_type>name</product_type>
+                        <product_id>66657</product_id>
+                    </super_product_config>
+                </product_options_data>
+                <product_attributes>
+                    <type_id>simple</type_id>
+                    <type_id_store>simple</type_id_store>
+                    <attribute_set_name>Product Product</attribute_set_name>
+                    <attribute_set_id>10</attribute_set_id>
+                    <attribute_set_id_store>10</attribute_set_id_store>
+                    <entity_id>67039</entity_id>
+                    <entity_id_store>67039</entity_id_store>
+                    <status>Enabled</status>
+                    <status_store>Enabled</status_store>
+                    <name>Cuff Bracelet - Colored Aluminum</name>
+                    <name_store>Cuff Bracelet - Colored Aluminum</name_store>
+                    <product_type>Other Engraveable</product_type>
+                    <product_type_store>Other Engraveable</product_type_store>
+                    <sku>21</sku>
+                    <sku_store>21</sku_store>
+                    <sku_type></sku_type>
+                    <sku_type_store></sku_type_store>
+                    <price>16.9900</price>
+                    <price_store>16.9900</price_store>
+                    <old_id></old_id>
+                    <old_id_store></old_id_store>
+                    <price_type></price_type>
+                    <price_type_store></price_type_store>
+                    <tax_class_id>Taxable Goods</tax_class_id>
+                    <tax_class_id_store>Taxable Goods</tax_class_id_store>
+                    <quantity_and_stock_status>
+                        <is_in_stock>1</is_in_stock>
+                        <qty>1000</qty>
+                    </quantity_and_stock_status>
+                    <quantity_and_stock_status_store>
+                        <is_in_stock>1</is_in_stock>
+                        <qty>1000</qty>
+                    </quantity_and_stock_status_store>
+                    <weight>0.5000</weight>
+                    <weight_store>0.5000</weight_store>
+                    <weight_type></weight_type>
+                    <weight_type_store></weight_type_store>
+                    <url_path></url_path>
+                    <url_path_store></url_path_store>
+                    <visibility>Catalog, Search</visibility>
+                    <visibility_store>Catalog, Search</visibility_store>
+                    <required_options>1</required_options>
+                    <required_options_store>1</required_options_store>
+                    <has_options>1</has_options>
+                    <has_options_store>1</has_options_store>
+                    <manufacturer>Stemarco</manufacturer>
+                    <manufacturer_store>Stemarco</manufacturer_store>
+                    <material>Annodized Colored Aluminum</material>
+                    <material_store>Annodized Colored Aluminum</material_store>
+                    <image_label></image_label>
+                    <image_label_store></image_label_store>
+                    <small_image_label></small_image_label>
+                    <small_image_label_store></small_image_label_store>
+                    <news_from_date></news_from_date>
+                    <news_from_date_store></news_from_date_store>
+                    <news_to_date></news_to_date>
+                    <news_to_date_store></news_to_date_store>
+                    <thumbnail_label></thumbnail_label>
+                    <thumbnail_label_store></thumbnail_label_store>
+                    <country_of_manufacture>United States</country_of_manufacture>
+                    <country_of_manufacture_store>United States</country_of_manufacture_store>
+                    <created_at>2016-08-31 17:14:38</created_at>
+                    <created_at_store>2016-08-31 17:14:38</created_at_store>
+                    <updated_at>2016-12-20 15:15:22</updated_at>
+                    <updated_at_store>2016-12-20 15:15:22</updated_at_store>
+                    <favorite_product>1</favorite_product>
+                    <favorite_product_store>1</favorite_product_store>
+                    <links_purchased_separately></links_purchased_separately>
+                    <links_purchased_separately_store></links_purchased_separately_store>
+                    <samples_title></samples_title>
+                    <samples_title_store></samples_title_store>
+                    <links_title></links_title>
+                    <links_title_store></links_title_store>
+                    <links_exist></links_exist>
+                    <links_exist_store></links_exist_store>
+                    <description></description>
+                    <description_store></description_store>
+                    <short_description></short_description>
+                    <short_description_store></short_description_store>
+                    <shipment_type></shipment_type>
+                    <shipment_type_store></shipment_type_store>
+                    <image_raw>/c/u/cuff.jpg</image_raw>
+                    <image>https://production.mb.dev.briteskies.com/media/catalog/product/c/u/cuff.jpg</image>
+                    <small_image_raw>/c/u/cuff.jpg</small_image_raw>
+                    <small_image>https://production.mb.dev.briteskies.com/media/catalog/product/c/u/cuff.jpg</small_image>
+                    <thumbnail_raw>/c/u/cuff.jpg</thumbnail_raw>
+                    <thumbnail>https://production.mb.dev.briteskies.com/media/catalog/product/c/u/cuff.jpg</thumbnail>
+                    <swatch_image>/c/u/cuff.jpg</swatch_image>
+                    <swatch_image_store>/c/u/cuff.jpg</swatch_image_store>
+                    <gallery></gallery>
+                    <gallery_store></gallery_store>
+                    <url_key>cuff-bracelet</url_key>
+                    <url_key_store>cuff-bracelet</url_key_store>
+                    <meta_title>Cuff Bracelet</meta_title>
+                    <meta_title_store>Cuff Bracelet</meta_title_store>
+                    <meta_keyword>Cuff Bracelet</meta_keyword>
+                    <meta_keyword_store>Cuff Bracelet</meta_keyword_store>
+                    <meta_description>Cuff Bracelet </meta_description>
+                    <meta_description_store>Cuff Bracelet </meta_description_store>
+                    <special_price></special_price>
+                    <special_price_store></special_price_store>
+                    <special_from_date></special_from_date>
+                    <special_from_date_store></special_from_date_store>
+                    <special_to_date></special_to_date>
+                    <special_to_date_store></special_to_date_store>
+                    <cost></cost>
+                    <cost_store></cost_store>
+                    <msrp></msrp>
+                    <msrp_store></msrp_store>
+                    <msrp_display_actual_price_type></msrp_display_actual_price_type>
+                    <msrp_display_actual_price_type_store></msrp_display_actual_price_type_store>
+                    <price_view></price_view>
+                    <price_view_store></price_view_store>
+                    <minimal_price></minimal_price>
+                    <minimal_price_store></minimal_price_store>
+                    <page_layout></page_layout>
+                    <page_layout_store></page_layout_store>
+                    <options_container>Block after Info Column</options_container>
+                    <options_container_store>Block after Info Column</options_container_store>
+                    <custom_layout_update></custom_layout_update>
+                    <custom_layout_update_store></custom_layout_update_store>
+                    <custom_design_from></custom_design_from>
+                    <custom_design_from_store></custom_design_from_store>
+                    <custom_design_to></custom_design_to>
+                    <custom_design_to_store></custom_design_to_store>
+                    <custom_design></custom_design>
+                    <custom_design_store></custom_design_store>
+                    <custom_layout></custom_layout>
+                    <custom_layout_store></custom_layout_store>
+                    <gift_message_available>Use config</gift_message_available>
+                    <gift_message_available_store>Use config</gift_message_available_store>
+                    <aw_gc_type></aw_gc_type>
+                    <aw_gc_type_store></aw_gc_type_store>
+                    <aw_gc_description></aw_gc_description>
+                    <aw_gc_description_store></aw_gc_description_store>
+                    <aw_gc_expire></aw_gc_expire>
+                    <aw_gc_expire_store></aw_gc_expire_store>
+                    <aw_gc_allow_message></aw_gc_allow_message>
+                    <aw_gc_allow_message_store></aw_gc_allow_message_store>
+                    <aw_gc_email_templates></aw_gc_email_templates>
+                    <aw_gc_email_templates_store></aw_gc_email_templates_store>
+                    <aw_gc_amounts></aw_gc_amounts>
+                    <aw_gc_amounts_store></aw_gc_amounts_store>
+                    <aw_gc_allow_open_amount></aw_gc_allow_open_amount>
+                    <aw_gc_allow_open_amount_store></aw_gc_allow_open_amount_store>
+                    <aw_gc_open_amount_min></aw_gc_open_amount_min>
+                    <aw_gc_open_amount_min_store></aw_gc_open_amount_min_store>
+                    <aw_gc_open_amount_max></aw_gc_open_amount_max>
+                    <aw_gc_open_amount_max_store></aw_gc_open_amount_max_store>
+                    <uss_cole></uss_cole>
+                    <uss_cole_store></uss_cole_store>
+                    <category_ids>|46|47|51|54|55|56|57|58|59|111|105|127|128|109|143|</category_ids>
+                    <category_names>|Customize A Product|Bracelets|Active Duty|First Responders|Friend or Family|Infant or Child|Military|Pet|Prayer|Colored Aluminum Cuff Bracelet|Types of Products|Select Name by Event|Create Message by Category|Cancer|Inspirational|</category_names>
+                    <product_url>https://production.mb.dev.briteskies.com/cuff-bracelet</product_url>
+                    <product_total_cost>0</product_total_cost>
+                    <name_product>
+                        <entity_id>66657</entity_id>
+                        <attribute_set_id>9</attribute_set_id>
+                        <type_id>name</type_id>
+                        <sku>87210</sku>
+                        <has_options>0</has_options>
+                        <required_options>0</required_options>
+                        <created_at>2016-08-25 19:38:47</created_at>
+                        <updated_at>2017-01-12 23:13:43</updated_at>
+                        <status>Enabled</status>
+                        <visibility>Catalog, Search</visibility>
+                        <quantity_and_stock_status>In Stock</quantity_and_stock_status>
+                        <favorite_product>0</favorite_product>
+                        <country>GB</country>
+                        <name_status>VOT</name_status>
+                        <event>7/7 London Bombings</event>
+                        <name>JAMES ADAMS</name>
+                        <options_container>Block after Info Column</options_container>
+                        <url_key>james-adams</url_key>
+                        <gift_message_available>Use config</gift_message_available>
+                        <city>PETERBOROUGH</city>
+                        <location>LONDON</location>
+                        <first_name>JAMES</first_name>
+                        <last_name>ADAMS</last_name>
+                        <age>32</age>
+                        <date>2005-07-07 00:00:00</date>
+                    </name_product>
+                </product_attributes>
+                <custom_options>
+                    <custom_option>
+                        <name>Color</name>
+                        <value>Black</value>
+                        <sku></sku>
+                        <option_id>1199</option_id>
+                        <bracelet_piece>material_color</bracelet_piece>
+                    </custom_option>
+                    <custom_option>
+                        <name>Size</name>
+                        <value>Medium</value>
+                        <sku></sku>
+                        <option_id>1200</option_id>
+                        <bracelet_piece>size</bracelet_piece>
+                    </custom_option>
+                    <custom_option>
+                        <name>Left Icon</name>
+                        <value>US Air Force</value>
+                        <sku></sku>
+                        <option_id>1201</option_id>
+                        <bracelet_piece>icon_left</bracelet_piece>
+                    </custom_option>
+                    <custom_option>
+                        <name>Right Icon</name>
+                        <value>US Coast Guard</value>
+                        <sku></sku>
+                        <option_id>1202</option_id>
+                        <bracelet_piece>icon_right</bracelet_piece>
+                    </custom_option>
+                    <custom_option>
+                        <name>Engraving Style</name>
+                        <value>Recessed Engraving</value>
+                        <sku></sku>
+                        <option_id>1203</option_id>
+                        <bracelet_piece>engraving_style</bracelet_piece>
+                    </custom_option>
+                    <custom_option>
+                        <name>Custom Engraving</name>
+                        <value>JAMES ADAMS    GB
+                            7/7 London Bombings  07 Jul 05  VOT</value>
+                        <sku></sku>
+                        <option_id>1204</option_id>
+                        <type>name</type>
+                        <text>JAMES ADAMS    GB
+                            7/7 London Bombings  07 Jul 05  VOT</text>
+                        <bracelet_piece>engraving</bracelet_piece>
+                    </custom_option>
+                </custom_options>
+            </item>
+            <item>
+                <qty_ordered>1.0000</qty_ordered>
+                <qty>1.0000</qty>
+                <item_number>3</item_number>
+                <order_product_number>3</order_product_number>
+                <item_id>72</item_id>
+                <order_id>52</order_id>
+                <parent_item_id></parent_item_id>
+                <quote_item_id>219</quote_item_id>
+                <store_id>1</store_id>
+                <created_at>2017-02-07 17:39:32</created_at>
+                <updated_at>2017-02-07 17:39:32</updated_at>
+                <product_id>67039</product_id>
+                <product_type>simple</product_type>
+                <weight>0.5000</weight>
+                <is_virtual>0</is_virtual>
+                <sku>21</sku>
+                <name>Cuff Bracelet - Colored Aluminum</name>
+                <description></description>
+                <applied_rule_ids></applied_rule_ids>
+                <additional_data></additional_data>
+                <is_qty_decimal>0</is_qty_decimal>
+                <no_discount>0</no_discount>
+                <qty_backordered></qty_backordered>
+                <qty_canceled>0.0000</qty_canceled>
+                <qty_invoiced>0.0000</qty_invoiced>
+                <qty_refunded>0.0000</qty_refunded>
+                <qty_shipped>0.0000</qty_shipped>
+                <base_cost></base_cost>
+                <price>24.8900</price>
+                <base_price>24.8900</base_price>
+                <original_price>16.9900</original_price>
+                <base_original_price>16.9900</base_original_price>
+                <tax_percent>0.0000</tax_percent>
+                <tax_amount>0.0000</tax_amount>
+                <base_tax_amount>0.0000</base_tax_amount>
+                <tax_invoiced>0.0000</tax_invoiced>
+                <base_tax_invoiced>0.0000</base_tax_invoiced>
+                <discount_percent>0.0000</discount_percent>
+                <discount_amount>0.0000</discount_amount>
+                <base_discount_amount>0.0000</base_discount_amount>
+                <discount_invoiced>0.0000</discount_invoiced>
+                <base_discount_invoiced>0.0000</base_discount_invoiced>
+                <amount_refunded>0.0000</amount_refunded>
+                <base_amount_refunded>0.0000</base_amount_refunded>
+                <row_total>24.8900</row_total>
+                <base_row_total>24.8900</base_row_total>
+                <row_invoiced>0.0000</row_invoiced>
+                <base_row_invoiced>0.0000</base_row_invoiced>
+                <row_weight>0.5000</row_weight>
+                <base_tax_before_discount></base_tax_before_discount>
+                <tax_before_discount></tax_before_discount>
+                <ext_order_item_id></ext_order_item_id>
+                <locked_do_invoice></locked_do_invoice>
+                <locked_do_ship></locked_do_ship>
+                <price_incl_tax>24.8900</price_incl_tax>
+                <base_price_incl_tax>24.8900</base_price_incl_tax>
+                <row_total_incl_tax>24.8900</row_total_incl_tax>
+                <base_row_total_incl_tax>24.8900</base_row_total_incl_tax>
+                <discount_tax_compensation_amount>0.0000</discount_tax_compensation_amount>
+                <base_discount_tax_compensation_amount>0.0000</base_discount_tax_compensation_amount>
+                <discount_tax_compensation_invoiced></discount_tax_compensation_invoiced>
+                <base_discount_tax_compensation_invoiced></base_discount_tax_compensation_invoiced>
+                <discount_tax_compensation_refunded></discount_tax_compensation_refunded>
+                <base_discount_tax_compensation_refunded></base_discount_tax_compensation_refunded>
+                <tax_canceled></tax_canceled>
+                <discount_tax_compensation_canceled></discount_tax_compensation_canceled>
+                <tax_refunded></tax_refunded>
+                <base_tax_refunded></base_tax_refunded>
+                <discount_refunded></discount_refunded>
+                <base_discount_refunded></base_discount_refunded>
+                <free_shipping>0</free_shipping>
+                <gift_message_id></gift_message_id>
+                <gift_message_available>2</gift_message_available>
+                <weee_tax_applied></weee_tax_applied>
+                <weee_tax_applied_amount></weee_tax_applied_amount>
+                <weee_tax_applied_row_amount></weee_tax_applied_row_amount>
+                <weee_tax_disposition></weee_tax_disposition>
+                <weee_tax_row_disposition></weee_tax_row_disposition>
+                <base_weee_tax_applied_amount></base_weee_tax_applied_amount>
+                <base_weee_tax_applied_row_amnt></base_weee_tax_applied_row_amnt>
+                <base_weee_tax_disposition></base_weee_tax_disposition>
+                <base_weee_tax_row_disposition></base_weee_tax_row_disposition>
+                <qty_in_stock>1000</qty_in_stock>
+                <sku_repeated_by_qty>21</sku_repeated_by_qty>
+                <gift_message_sender></gift_message_sender>
+                <gift_message_recipient></gift_message_recipient>
+                <gift_message></gift_message>
+                <product_options_data>
+                    <info_buyRequest>
+                        <uenc>aHR0cHM6Ly9wcm9kdWN0aW9uLm1iLmRldi5icml0ZXNraWVzLmNvbS9jdWZmLWJyYWNlbGV0</uenc>
+                        <product>67039</product>
+                        <selected_configurable_option></selected_configurable_option>
+                        <related_product></related_product>
+                        <qty>1</qty>
+                    </info_buyRequest>
+                </product_options_data>
+                <product_attributes>
+                    <type_id>simple</type_id>
+                    <type_id_store>simple</type_id_store>
+                    <attribute_set_name>Product Product</attribute_set_name>
+                    <attribute_set_id>10</attribute_set_id>
+                    <attribute_set_id_store>10</attribute_set_id_store>
+                    <entity_id>67039</entity_id>
+                    <entity_id_store>67039</entity_id_store>
+                    <status>Enabled</status>
+                    <status_store>Enabled</status_store>
+                    <name>Cuff Bracelet - Colored Aluminum</name>
+                    <name_store>Cuff Bracelet - Colored Aluminum</name_store>
+                    <product_type>Other Engraveable</product_type>
+                    <product_type_store>Other Engraveable</product_type_store>
+                    <sku>21</sku>
+                    <sku_store>21</sku_store>
+                    <sku_type></sku_type>
+                    <sku_type_store></sku_type_store>
+                    <price>16.9900</price>
+                    <price_store>16.9900</price_store>
+                    <old_id></old_id>
+                    <old_id_store></old_id_store>
+                    <price_type></price_type>
+                    <price_type_store></price_type_store>
+                    <tax_class_id>Taxable Goods</tax_class_id>
+                    <tax_class_id_store>Taxable Goods</tax_class_id_store>
+                    <quantity_and_stock_status>
+                        <is_in_stock>1</is_in_stock>
+                        <qty>1000</qty>
+                    </quantity_and_stock_status>
+                    <quantity_and_stock_status_store>
+                        <is_in_stock>1</is_in_stock>
+                        <qty>1000</qty>
+                    </quantity_and_stock_status_store>
+                    <weight>0.5000</weight>
+                    <weight_store>0.5000</weight_store>
+                    <weight_type></weight_type>
+                    <weight_type_store></weight_type_store>
+                    <url_path></url_path>
+                    <url_path_store></url_path_store>
+                    <visibility>Catalog, Search</visibility>
+                    <visibility_store>Catalog, Search</visibility_store>
+                    <required_options>1</required_options>
+                    <required_options_store>1</required_options_store>
+                    <has_options>1</has_options>
+                    <has_options_store>1</has_options_store>
+                    <manufacturer>Stemarco</manufacturer>
+                    <manufacturer_store>Stemarco</manufacturer_store>
+                    <material>Annodized Colored Aluminum</material>
+                    <material_store>Annodized Colored Aluminum</material_store>
+                    <image_label></image_label>
+                    <image_label_store></image_label_store>
+                    <small_image_label></small_image_label>
+                    <small_image_label_store></small_image_label_store>
+                    <news_from_date></news_from_date>
+                    <news_from_date_store></news_from_date_store>
+                    <news_to_date></news_to_date>
+                    <news_to_date_store></news_to_date_store>
+                    <thumbnail_label></thumbnail_label>
+                    <thumbnail_label_store></thumbnail_label_store>
+                    <country_of_manufacture>United States</country_of_manufacture>
+                    <country_of_manufacture_store>United States</country_of_manufacture_store>
+                    <created_at>2016-08-31 17:14:38</created_at>
+                    <created_at_store>2016-08-31 17:14:38</created_at_store>
+                    <updated_at>2016-12-20 15:15:22</updated_at>
+                    <updated_at_store>2016-12-20 15:15:22</updated_at_store>
+                    <favorite_product>1</favorite_product>
+                    <favorite_product_store>1</favorite_product_store>
+                    <links_purchased_separately></links_purchased_separately>
+                    <links_purchased_separately_store></links_purchased_separately_store>
+                    <samples_title></samples_title>
+                    <samples_title_store></samples_title_store>
+                    <links_title></links_title>
+                    <links_title_store></links_title_store>
+                    <links_exist></links_exist>
+                    <links_exist_store></links_exist_store>
+                    <description></description>
+                    <description_store></description_store>
+                    <short_description></short_description>
+                    <short_description_store></short_description_store>
+                    <shipment_type></shipment_type>
+                    <shipment_type_store></shipment_type_store>
+                    <image_raw>/c/u/cuff.jpg</image_raw>
+                    <image>https://production.mb.dev.briteskies.com/media/catalog/product/c/u/cuff.jpg</image>
+                    <small_image_raw>/c/u/cuff.jpg</small_image_raw>
+                    <small_image>https://production.mb.dev.briteskies.com/media/catalog/product/c/u/cuff.jpg</small_image>
+                    <thumbnail_raw>/c/u/cuff.jpg</thumbnail_raw>
+                    <thumbnail>https://production.mb.dev.briteskies.com/media/catalog/product/c/u/cuff.jpg</thumbnail>
+                    <swatch_image>/c/u/cuff.jpg</swatch_image>
+                    <swatch_image_store>/c/u/cuff.jpg</swatch_image_store>
+                    <gallery></gallery>
+                    <gallery_store></gallery_store>
+                    <url_key>cuff-bracelet</url_key>
+                    <url_key_store>cuff-bracelet</url_key_store>
+                    <meta_title>Cuff Bracelet</meta_title>
+                    <meta_title_store>Cuff Bracelet</meta_title_store>
+                    <meta_keyword>Cuff Bracelet</meta_keyword>
+                    <meta_keyword_store>Cuff Bracelet</meta_keyword_store>
+                    <meta_description>Cuff Bracelet </meta_description>
+                    <meta_description_store>Cuff Bracelet </meta_description_store>
+                    <special_price></special_price>
+                    <special_price_store></special_price_store>
+                    <special_from_date></special_from_date>
+                    <special_from_date_store></special_from_date_store>
+                    <special_to_date></special_to_date>
+                    <special_to_date_store></special_to_date_store>
+                    <cost></cost>
+                    <cost_store></cost_store>
+                    <msrp></msrp>
+                    <msrp_store></msrp_store>
+                    <msrp_display_actual_price_type></msrp_display_actual_price_type>
+                    <msrp_display_actual_price_type_store></msrp_display_actual_price_type_store>
+                    <price_view></price_view>
+                    <price_view_store></price_view_store>
+                    <minimal_price></minimal_price>
+                    <minimal_price_store></minimal_price_store>
+                    <page_layout></page_layout>
+                    <page_layout_store></page_layout_store>
+                    <options_container>Block after Info Column</options_container>
+                    <options_container_store>Block after Info Column</options_container_store>
+                    <custom_layout_update></custom_layout_update>
+                    <custom_layout_update_store></custom_layout_update_store>
+                    <custom_design_from></custom_design_from>
+                    <custom_design_from_store></custom_design_from_store>
+                    <custom_design_to></custom_design_to>
+                    <custom_design_to_store></custom_design_to_store>
+                    <custom_design></custom_design>
+                    <custom_design_store></custom_design_store>
+                    <custom_layout></custom_layout>
+                    <custom_layout_store></custom_layout_store>
+                    <gift_message_available>Use config</gift_message_available>
+                    <gift_message_available_store>Use config</gift_message_available_store>
+                    <aw_gc_type></aw_gc_type>
+                    <aw_gc_type_store></aw_gc_type_store>
+                    <aw_gc_description></aw_gc_description>
+                    <aw_gc_description_store></aw_gc_description_store>
+                    <aw_gc_expire></aw_gc_expire>
+                    <aw_gc_expire_store></aw_gc_expire_store>
+                    <aw_gc_allow_message></aw_gc_allow_message>
+                    <aw_gc_allow_message_store></aw_gc_allow_message_store>
+                    <aw_gc_email_templates></aw_gc_email_templates>
+                    <aw_gc_email_templates_store></aw_gc_email_templates_store>
+                    <aw_gc_amounts></aw_gc_amounts>
+                    <aw_gc_amounts_store></aw_gc_amounts_store>
+                    <aw_gc_allow_open_amount></aw_gc_allow_open_amount>
+                    <aw_gc_allow_open_amount_store></aw_gc_allow_open_amount_store>
+                    <aw_gc_open_amount_min></aw_gc_open_amount_min>
+                    <aw_gc_open_amount_min_store></aw_gc_open_amount_min_store>
+                    <aw_gc_open_amount_max></aw_gc_open_amount_max>
+                    <aw_gc_open_amount_max_store></aw_gc_open_amount_max_store>
+                    <uss_cole></uss_cole>
+                    <uss_cole_store></uss_cole_store>
+                    <category_ids>|46|47|51|54|55|56|57|58|59|111|105|127|128|109|143|</category_ids>
+                    <category_names>|Customize A Product|Bracelets|Active Duty|First Responders|Friend or Family|Infant or Child|Military|Pet|Prayer|Colored Aluminum Cuff Bracelet|Types of Products|Select Name by Event|Create Message by Category|Cancer|Inspirational|</category_names>
+                    <product_url>https://production.mb.dev.briteskies.com/cuff-bracelet</product_url>
+                    <product_total_cost>0</product_total_cost>
+                </product_attributes>
+                <custom_options>
+                    <custom_option>
+                        <name>Color</name>
+                        <value>Black</value>
+                        <sku></sku>
+                        <option_id>1199</option_id>
+                        <bracelet_piece>material_color</bracelet_piece>
+                    </custom_option>
+                    <custom_option>
+                        <name>Size</name>
+                        <value>Medium</value>
+                        <sku></sku>
+                        <option_id>1200</option_id>
+                        <bracelet_piece>size</bracelet_piece>
+                    </custom_option>
+                    <custom_option>
+                        <name>Left Icon</name>
+                        <value>US Air Force</value>
+                        <sku></sku>
+                        <option_id>1201</option_id>
+                        <bracelet_piece>icon_left</bracelet_piece>
+                    </custom_option>
+                    <custom_option>
+                        <name>Right Icon</name>
+                        <value>US Navy Corpsman Caduceus</value>
+                        <sku></sku>
+                        <option_id>1202</option_id>
+                        <bracelet_piece>icon_right</bracelet_piece>
+                    </custom_option>
+                    <custom_option>
+                        <name>Engraving Style</name>
+                        <value>Recessed Engraving</value>
+                        <sku></sku>
+                        <option_id>1203</option_id>
+                        <bracelet_piece>engraving_style</bracelet_piece>
+                    </custom_option>
+                    <custom_option>
+                        <name>Custom Engraving</name>
+                        <value>Test
+                            Test
+                            Test</value>
+                        <sku></sku>
+                        <option_id>1204</option_id>
+                        <type>custom</type>
+                        <text>Test
+                            Test
+                            Test
+                        </text>
+                        <bracelet_piece>engraving</bracelet_piece>
+                    </custom_option>
+                </custom_options>
+            </item>
+            <item>
+                <qty_ordered>1.0000</qty_ordered>
+                <qty>1.0000</qty>
+                <item_number>4</item_number>
+                <order_product_number>4</order_product_number>
+                <item_id>73</item_id>
+                <order_id>52</order_id>
+                <parent_item_id></parent_item_id>
+                <quote_item_id>228</quote_item_id>
+                <store_id>1</store_id>
+                <created_at>2017-02-07 17:39:32</created_at>
+                <updated_at>2017-02-07 17:39:32</updated_at>
+                <product_id>67039</product_id>
+                <product_type>name</product_type>
+                <weight>0.5000</weight>
+                <is_virtual>0</is_virtual>
+                <sku>21</sku>
+                <name>Cuff Bracelet - Colored Aluminum</name>
+                <description></description>
+                <applied_rule_ids></applied_rule_ids>
+                <additional_data></additional_data>
+                <is_qty_decimal>0</is_qty_decimal>
+                <no_discount>0</no_discount>
+                <qty_backordered></qty_backordered>
+                <qty_canceled>0.0000</qty_canceled>
+                <qty_invoiced>0.0000</qty_invoiced>
+                <qty_refunded>0.0000</qty_refunded>
+                <qty_shipped>0.0000</qty_shipped>
+                <base_cost></base_cost>
+                <price>22.8900</price>
+                <base_price>22.8900</base_price>
+                <original_price>16.9900</original_price>
+                <base_original_price>16.9900</base_original_price>
+                <tax_percent>0.0000</tax_percent>
+                <tax_amount>0.0000</tax_amount>
+                <base_tax_amount>0.0000</base_tax_amount>
+                <tax_invoiced>0.0000</tax_invoiced>
+                <base_tax_invoiced>0.0000</base_tax_invoiced>
+                <discount_percent>0.0000</discount_percent>
+                <discount_amount>0.0000</discount_amount>
+                <base_discount_amount>0.0000</base_discount_amount>
+                <discount_invoiced>0.0000</discount_invoiced>
+                <base_discount_invoiced>0.0000</base_discount_invoiced>
+                <amount_refunded>0.0000</amount_refunded>
+                <base_amount_refunded>0.0000</base_amount_refunded>
+                <row_total>22.8900</row_total>
+                <base_row_total>22.8900</base_row_total>
+                <row_invoiced>0.0000</row_invoiced>
+                <base_row_invoiced>0.0000</base_row_invoiced>
+                <row_weight>0.5000</row_weight>
+                <base_tax_before_discount></base_tax_before_discount>
+                <tax_before_discount></tax_before_discount>
+                <ext_order_item_id></ext_order_item_id>
+                <locked_do_invoice></locked_do_invoice>
+                <locked_do_ship></locked_do_ship>
+                <price_incl_tax>22.8900</price_incl_tax>
+                <base_price_incl_tax>22.8900</base_price_incl_tax>
+                <row_total_incl_tax>22.8900</row_total_incl_tax>
+                <base_row_total_incl_tax>22.8900</base_row_total_incl_tax>
+                <discount_tax_compensation_amount>0.0000</discount_tax_compensation_amount>
+                <base_discount_tax_compensation_amount>0.0000</base_discount_tax_compensation_amount>
+                <discount_tax_compensation_invoiced></discount_tax_compensation_invoiced>
+                <base_discount_tax_compensation_invoiced></base_discount_tax_compensation_invoiced>
+                <discount_tax_compensation_refunded></discount_tax_compensation_refunded>
+                <base_discount_tax_compensation_refunded></base_discount_tax_compensation_refunded>
+                <tax_canceled></tax_canceled>
+                <discount_tax_compensation_canceled></discount_tax_compensation_canceled>
+                <tax_refunded></tax_refunded>
+                <base_tax_refunded></base_tax_refunded>
+                <discount_refunded></discount_refunded>
+                <base_discount_refunded></base_discount_refunded>
+                <free_shipping>0</free_shipping>
+                <gift_message_id></gift_message_id>
+                <gift_message_available>2</gift_message_available>
+                <weee_tax_applied></weee_tax_applied>
+                <weee_tax_applied_amount></weee_tax_applied_amount>
+                <weee_tax_applied_row_amount></weee_tax_applied_row_amount>
+                <weee_tax_disposition></weee_tax_disposition>
+                <weee_tax_row_disposition></weee_tax_row_disposition>
+                <base_weee_tax_applied_amount></base_weee_tax_applied_amount>
+                <base_weee_tax_applied_row_amnt></base_weee_tax_applied_row_amnt>
+                <base_weee_tax_disposition></base_weee_tax_disposition>
+                <base_weee_tax_row_disposition></base_weee_tax_row_disposition>
+                <qty_in_stock>1000</qty_in_stock>
+                <sku_repeated_by_qty>21</sku_repeated_by_qty>
+                <gift_message_sender></gift_message_sender>
+                <gift_message_recipient></gift_message_recipient>
+                <gift_message></gift_message>
+                <product_options_data>
+                    <info_buyRequest>
+                        <uenc>aHR0cHM6Ly9wcm9kdWN0aW9uLm1iLmRldi5icml0ZXNraWVzLmNvbS9jYXRhbG9nL3Byb2R1Y3Qvdmlldy9pZC8zOTA0My9zL3BmYy1iaWxseS1hLWFkY29jay8,</uenc>
+                        <product>39043</product>
+                        <selected_configurable_option></selected_configurable_option>
+                        <related_product></related_product>
+                        <qty>1</qty>
+                        <name_string>PFC BILLY A. ADCOCK
+                            USA  04 Oct 68  US
+                            P-41W/L-03          TN</name_string>
+                    </info_buyRequest>
+                    <super_product_config>
+                        <product_code>product_type</product_code>
+                        <product_type>name</product_type>
+                        <product_id>39043</product_id>
+                    </super_product_config>
+                </product_options_data>
+                <product_attributes>
+                    <type_id>simple</type_id>
+                    <type_id_store>simple</type_id_store>
+                    <attribute_set_name>Product Product</attribute_set_name>
+                    <attribute_set_id>10</attribute_set_id>
+                    <attribute_set_id_store>10</attribute_set_id_store>
+                    <entity_id>67039</entity_id>
+                    <entity_id_store>67039</entity_id_store>
+                    <status>Enabled</status>
+                    <status_store>Enabled</status_store>
+                    <name>Cuff Bracelet - Colored Aluminum</name>
+                    <name_store>Cuff Bracelet - Colored Aluminum</name_store>
+                    <product_type>Other Engraveable</product_type>
+                    <product_type_store>Other Engraveable</product_type_store>
+                    <sku>21</sku>
+                    <sku_store>21</sku_store>
+                    <sku_type></sku_type>
+                    <sku_type_store></sku_type_store>
+                    <price>16.9900</price>
+                    <price_store>16.9900</price_store>
+                    <old_id></old_id>
+                    <old_id_store></old_id_store>
+                    <price_type></price_type>
+                    <price_type_store></price_type_store>
+                    <tax_class_id>Taxable Goods</tax_class_id>
+                    <tax_class_id_store>Taxable Goods</tax_class_id_store>
+                    <quantity_and_stock_status>
+                        <is_in_stock>1</is_in_stock>
+                        <qty>1000</qty>
+                    </quantity_and_stock_status>
+                    <quantity_and_stock_status_store>
+                        <is_in_stock>1</is_in_stock>
+                        <qty>1000</qty>
+                    </quantity_and_stock_status_store>
+                    <weight>0.5000</weight>
+                    <weight_store>0.5000</weight_store>
+                    <weight_type></weight_type>
+                    <weight_type_store></weight_type_store>
+                    <url_path></url_path>
+                    <url_path_store></url_path_store>
+                    <visibility>Catalog, Search</visibility>
+                    <visibility_store>Catalog, Search</visibility_store>
+                    <required_options>1</required_options>
+                    <required_options_store>1</required_options_store>
+                    <has_options>1</has_options>
+                    <has_options_store>1</has_options_store>
+                    <manufacturer>Stemarco</manufacturer>
+                    <manufacturer_store>Stemarco</manufacturer_store>
+                    <material>Annodized Colored Aluminum</material>
+                    <material_store>Annodized Colored Aluminum</material_store>
+                    <image_label></image_label>
+                    <image_label_store></image_label_store>
+                    <small_image_label></small_image_label>
+                    <small_image_label_store></small_image_label_store>
+                    <news_from_date></news_from_date>
+                    <news_from_date_store></news_from_date_store>
+                    <news_to_date></news_to_date>
+                    <news_to_date_store></news_to_date_store>
+                    <thumbnail_label></thumbnail_label>
+                    <thumbnail_label_store></thumbnail_label_store>
+                    <country_of_manufacture>United States</country_of_manufacture>
+                    <country_of_manufacture_store>United States</country_of_manufacture_store>
+                    <created_at>2016-08-31 17:14:38</created_at>
+                    <created_at_store>2016-08-31 17:14:38</created_at_store>
+                    <updated_at>2016-12-20 15:15:22</updated_at>
+                    <updated_at_store>2016-12-20 15:15:22</updated_at_store>
+                    <favorite_product>1</favorite_product>
+                    <favorite_product_store>1</favorite_product_store>
+                    <links_purchased_separately></links_purchased_separately>
+                    <links_purchased_separately_store></links_purchased_separately_store>
+                    <samples_title></samples_title>
+                    <samples_title_store></samples_title_store>
+                    <links_title></links_title>
+                    <links_title_store></links_title_store>
+                    <links_exist></links_exist>
+                    <links_exist_store></links_exist_store>
+                    <description></description>
+                    <description_store></description_store>
+                    <short_description></short_description>
+                    <short_description_store></short_description_store>
+                    <shipment_type></shipment_type>
+                    <shipment_type_store></shipment_type_store>
+                    <image_raw>/c/u/cuff.jpg</image_raw>
+                    <image>https://production.mb.dev.briteskies.com/media/catalog/product/c/u/cuff.jpg</image>
+                    <small_image_raw>/c/u/cuff.jpg</small_image_raw>
+                    <small_image>https://production.mb.dev.briteskies.com/media/catalog/product/c/u/cuff.jpg</small_image>
+                    <thumbnail_raw>/c/u/cuff.jpg</thumbnail_raw>
+                    <thumbnail>https://production.mb.dev.briteskies.com/media/catalog/product/c/u/cuff.jpg</thumbnail>
+                    <swatch_image>/c/u/cuff.jpg</swatch_image>
+                    <swatch_image_store>/c/u/cuff.jpg</swatch_image_store>
+                    <gallery></gallery>
+                    <gallery_store></gallery_store>
+                    <url_key>cuff-bracelet</url_key>
+                    <url_key_store>cuff-bracelet</url_key_store>
+                    <meta_title>Cuff Bracelet</meta_title>
+                    <meta_title_store>Cuff Bracelet</meta_title_store>
+                    <meta_keyword>Cuff Bracelet</meta_keyword>
+                    <meta_keyword_store>Cuff Bracelet</meta_keyword_store>
+                    <meta_description>Cuff Bracelet </meta_description>
+                    <meta_description_store>Cuff Bracelet </meta_description_store>
+                    <special_price></special_price>
+                    <special_price_store></special_price_store>
+                    <special_from_date></special_from_date>
+                    <special_from_date_store></special_from_date_store>
+                    <special_to_date></special_to_date>
+                    <special_to_date_store></special_to_date_store>
+                    <cost></cost>
+                    <cost_store></cost_store>
+                    <msrp></msrp>
+                    <msrp_store></msrp_store>
+                    <msrp_display_actual_price_type></msrp_display_actual_price_type>
+                    <msrp_display_actual_price_type_store></msrp_display_actual_price_type_store>
+                    <price_view></price_view>
+                    <price_view_store></price_view_store>
+                    <minimal_price></minimal_price>
+                    <minimal_price_store></minimal_price_store>
+                    <page_layout></page_layout>
+                    <page_layout_store></page_layout_store>
+                    <options_container>Block after Info Column</options_container>
+                    <options_container_store>Block after Info Column</options_container_store>
+                    <custom_layout_update></custom_layout_update>
+                    <custom_layout_update_store></custom_layout_update_store>
+                    <custom_design_from></custom_design_from>
+                    <custom_design_from_store></custom_design_from_store>
+                    <custom_design_to></custom_design_to>
+                    <custom_design_to_store></custom_design_to_store>
+                    <custom_design></custom_design>
+                    <custom_design_store></custom_design_store>
+                    <custom_layout></custom_layout>
+                    <custom_layout_store></custom_layout_store>
+                    <gift_message_available>Use config</gift_message_available>
+                    <gift_message_available_store>Use config</gift_message_available_store>
+                    <aw_gc_type></aw_gc_type>
+                    <aw_gc_type_store></aw_gc_type_store>
+                    <aw_gc_description></aw_gc_description>
+                    <aw_gc_description_store></aw_gc_description_store>
+                    <aw_gc_expire></aw_gc_expire>
+                    <aw_gc_expire_store></aw_gc_expire_store>
+                    <aw_gc_allow_message></aw_gc_allow_message>
+                    <aw_gc_allow_message_store></aw_gc_allow_message_store>
+                    <aw_gc_email_templates></aw_gc_email_templates>
+                    <aw_gc_email_templates_store></aw_gc_email_templates_store>
+                    <aw_gc_amounts></aw_gc_amounts>
+                    <aw_gc_amounts_store></aw_gc_amounts_store>
+                    <aw_gc_allow_open_amount></aw_gc_allow_open_amount>
+                    <aw_gc_allow_open_amount_store></aw_gc_allow_open_amount_store>
+                    <aw_gc_open_amount_min></aw_gc_open_amount_min>
+                    <aw_gc_open_amount_min_store></aw_gc_open_amount_min_store>
+                    <aw_gc_open_amount_max></aw_gc_open_amount_max>
+                    <aw_gc_open_amount_max_store></aw_gc_open_amount_max_store>
+                    <uss_cole></uss_cole>
+                    <uss_cole_store></uss_cole_store>
+                    <category_ids>|46|47|51|54|55|56|57|58|59|111|105|127|128|109|143|</category_ids>
+                    <category_names>|Customize A Product|Bracelets|Active Duty|First Responders|Friend or Family|Infant or Child|Military|Pet|Prayer|Colored Aluminum Cuff Bracelet|Types of Products|Select Name by Event|Create Message by Category|Cancer|Inspirational|</category_names>
+                    <product_url>https://production.mb.dev.briteskies.com/cuff-bracelet</product_url>
+                    <product_total_cost>0</product_total_cost>
+                    <name_product>
+                        <entity_id>39043</entity_id>
+                        <attribute_set_id>9</attribute_set_id>
+                        <type_id>name</type_id>
+                        <sku>51796</sku>
+                        <has_options>0</has_options>
+                        <required_options>0</required_options>
+                        <created_at>2016-08-25 19:35:32</created_at>
+                        <updated_at>2017-01-12 23:31:25</updated_at>
+                        <status>Enabled</status>
+                        <visibility>Catalog, Search</visibility>
+                        <quantity_and_stock_status>In Stock</quantity_and_stock_status>
+                        <favorite_product>0</favorite_product>
+                        <state>TN</state>
+                        <country>US</country>
+                        <affiliation>USA</affiliation>
+                        <name_status>KIA</name_status>
+                        <body_returned>Y</body_returned>
+                        <event>Vietnam War</event>
+                        <name>PFC BILLY A. ADCOCK</name>
+                        <options_container>Block after Info Column</options_container>
+                        <url_key>pfc-billy-a-adcock</url_key>
+                        <gift_message_available>Use config</gift_message_available>
+                        <city>SMITHVILLE</city>
+                        <wallnumber>P-41W/L-03</wallnumber>
+                        <incident_city>BINH DUONG</incident_city>
+                        <incident_country>SVN</incident_country>
+                        <incident_continent>ASIA</incident_continent>
+                        <how_happened>KILLED IN ACTION</how_happened>
+                        <first_name>BILLY</first_name>
+                        <name_prefix>PFC</name_prefix>
+                        <middle_name>A.</middle_name>
+                        <last_name>ADCOCK</last_name>
+                        <age>21</age>
+                        <date>1968-10-04 00:00:00</date>
+                    </name_product>
+                </product_attributes>
+                <custom_options>
+                    <custom_option>
+                        <name>Color</name>
+                        <value>Purple</value>
+                        <sku></sku>
+                        <option_id>1199</option_id>
+                        <bracelet_piece>material_color</bracelet_piece>
+                    </custom_option>
+                    <custom_option>
+                        <name>Size</name>
+                        <value>Extra Large</value>
+                        <sku></sku>
+                        <option_id>1200</option_id>
+                        <bracelet_piece>size</bracelet_piece>
+                    </custom_option>
+                    <custom_option>
+                        <name>Left Icon</name>
+                        <value>US Army</value>
+                        <sku></sku>
+                        <option_id>1201</option_id>
+                        <bracelet_piece>icon_left</bracelet_piece>
+                    </custom_option>
+                    <custom_option>
+                        <name>Right Icon</name>
+                        <value>US Army National Guard</value>
+                        <sku></sku>
+                        <option_id>1202</option_id>
+                        <bracelet_piece>icon_right</bracelet_piece>
+                    </custom_option>
+                    <custom_option>
+                        <name>Engraving Style</name>
+                        <value>Recessed Engraving</value>
+                        <sku></sku>
+                        <option_id>1203</option_id>
+                        <bracelet_piece>engraving_style</bracelet_piece>
+                    </custom_option>
+                    <custom_option>
+                        <name>Custom Engraving</name>
+                        <value>PFC BILLY A. ADCOCK
+                            USA  04 Oct 68  US
+                            P-41W/L-03          TN</value>
+                        <sku></sku>
+                        <option_id>1204</option_id>
+                        <type>name</type>
+                        <text>PFC BILLY A. ADCOCK
+                            USA  04 Oct 68  US
+                            P-41W/L-03          TN</text>
+                        <bracelet_piece>engraving</bracelet_piece>
+                    </custom_option>
+                </custom_options>
+            </item>
+            <item>
+                <qty_ordered>1.0000</qty_ordered>
+                <qty>1.0000</qty>
+                <item_number>5</item_number>
+                <order_product_number>5</order_product_number>
+                <item_id>74</item_id>
+                <order_id>52</order_id>
+                <parent_item_id></parent_item_id>
+                <quote_item_id>229</quote_item_id>
+                <store_id>1</store_id>
+                <created_at>2017-02-07 17:39:32</created_at>
+                <updated_at>2017-02-07 17:39:32</updated_at>
+                <product_id>67058</product_id>
+                <product_type>name</product_type>
+                <weight>0.5000</weight>
+                <is_virtual>0</is_virtual>
+                <sku>6</sku>
+                <name>Dog Tag - Stainless Steel - Black Lettering</name>
+                <description></description>
+                <applied_rule_ids></applied_rule_ids>
+                <additional_data></additional_data>
+                <is_qty_decimal>0</is_qty_decimal>
+                <no_discount>0</no_discount>
+                <qty_backordered></qty_backordered>
+                <qty_canceled>0.0000</qty_canceled>
+                <qty_invoiced>0.0000</qty_invoiced>
+                <qty_refunded>0.0000</qty_refunded>
+                <qty_shipped>0.0000</qty_shipped>
+                <base_cost></base_cost>
+                <price>23.9400</price>
+                <base_price>23.9400</base_price>
+                <original_price>18.9900</original_price>
+                <base_original_price>18.9900</base_original_price>
+                <tax_percent>0.0000</tax_percent>
+                <tax_amount>0.0000</tax_amount>
+                <base_tax_amount>0.0000</base_tax_amount>
+                <tax_invoiced>0.0000</tax_invoiced>
+                <base_tax_invoiced>0.0000</base_tax_invoiced>
+                <discount_percent>0.0000</discount_percent>
+                <discount_amount>0.0000</discount_amount>
+                <base_discount_amount>0.0000</base_discount_amount>
+                <discount_invoiced>0.0000</discount_invoiced>
+                <base_discount_invoiced>0.0000</base_discount_invoiced>
+                <amount_refunded>0.0000</amount_refunded>
+                <base_amount_refunded>0.0000</base_amount_refunded>
+                <row_total>23.9400</row_total>
+                <base_row_total>23.9400</base_row_total>
+                <row_invoiced>0.0000</row_invoiced>
+                <base_row_invoiced>0.0000</base_row_invoiced>
+                <row_weight>0.5000</row_weight>
+                <base_tax_before_discount></base_tax_before_discount>
+                <tax_before_discount></tax_before_discount>
+                <ext_order_item_id></ext_order_item_id>
+                <locked_do_invoice></locked_do_invoice>
+                <locked_do_ship></locked_do_ship>
+                <price_incl_tax>23.9400</price_incl_tax>
+                <base_price_incl_tax>23.9400</base_price_incl_tax>
+                <row_total_incl_tax>23.9400</row_total_incl_tax>
+                <base_row_total_incl_tax>23.9400</base_row_total_incl_tax>
+                <discount_tax_compensation_amount>0.0000</discount_tax_compensation_amount>
+                <base_discount_tax_compensation_amount>0.0000</base_discount_tax_compensation_amount>
+                <discount_tax_compensation_invoiced></discount_tax_compensation_invoiced>
+                <base_discount_tax_compensation_invoiced></base_discount_tax_compensation_invoiced>
+                <discount_tax_compensation_refunded></discount_tax_compensation_refunded>
+                <base_discount_tax_compensation_refunded></base_discount_tax_compensation_refunded>
+                <tax_canceled></tax_canceled>
+                <discount_tax_compensation_canceled></discount_tax_compensation_canceled>
+                <tax_refunded></tax_refunded>
+                <base_tax_refunded></base_tax_refunded>
+                <discount_refunded></discount_refunded>
+                <base_discount_refunded></base_discount_refunded>
+                <free_shipping>0</free_shipping>
+                <gift_message_id></gift_message_id>
+                <gift_message_available>2</gift_message_available>
+                <weee_tax_applied></weee_tax_applied>
+                <weee_tax_applied_amount></weee_tax_applied_amount>
+                <weee_tax_applied_row_amount></weee_tax_applied_row_amount>
+                <weee_tax_disposition></weee_tax_disposition>
+                <weee_tax_row_disposition></weee_tax_row_disposition>
+                <base_weee_tax_applied_amount></base_weee_tax_applied_amount>
+                <base_weee_tax_applied_row_amnt></base_weee_tax_applied_row_amnt>
+                <base_weee_tax_disposition></base_weee_tax_disposition>
+                <base_weee_tax_row_disposition></base_weee_tax_row_disposition>
+                <qty_in_stock>1000</qty_in_stock>
+                <sku_repeated_by_qty>6</sku_repeated_by_qty>
+                <gift_message_sender></gift_message_sender>
+                <gift_message_recipient></gift_message_recipient>
+                <gift_message></gift_message>
+                <product_options_data>
+                    <info_buyRequest>
+                        <uenc>aHR0cHM6Ly9wcm9kdWN0aW9uLm1iLmRldi5icml0ZXNraWVzLmNvbS9qYW1lcy1hZGFtcw,,</uenc>
+                        <product>66657</product>
+                        <selected_configurable_option></selected_configurable_option>
+                        <related_product></related_product>
+                        <qty>1</qty>
+                        <name_string>JAMES ADAMS    GB
+                            7/7 London Bombings  07 Jul 05  VOT</name_string>
+                    </info_buyRequest>
+                    <super_product_config>
+                        <product_code>product_type</product_code>
+                        <product_type>name</product_type>
+                        <product_id>66657</product_id>
+                    </super_product_config>
+                </product_options_data>
+                <product_attributes>
+                    <type_id>simple</type_id>
+                    <type_id_store>simple</type_id_store>
+                    <attribute_set_name>Product Product</attribute_set_name>
+                    <attribute_set_id>10</attribute_set_id>
+                    <attribute_set_id_store>10</attribute_set_id_store>
+                    <entity_id>67058</entity_id>
+                    <entity_id_store>67058</entity_id_store>
+                    <status>Enabled</status>
+                    <status_store>Enabled</status_store>
+                    <name>Dog Tag - Stainless Steel - Black Lettering</name>
+                    <name_store>Dog Tag - Stainless Steel - Black Lettering</name_store>
+                    <product_type>Dog Tag</product_type>
+                    <product_type_store>Dog Tag</product_type_store>
+                    <sku>6</sku>
+                    <sku_store>6</sku_store>
+                    <sku_type></sku_type>
+                    <sku_type_store></sku_type_store>
+                    <price>18.9900</price>
+                    <price_store>18.9900</price_store>
+                    <old_id></old_id>
+                    <old_id_store></old_id_store>
+                    <price_type></price_type>
+                    <price_type_store></price_type_store>
+                    <tax_class_id>Taxable Goods</tax_class_id>
+                    <tax_class_id_store>Taxable Goods</tax_class_id_store>
+                    <quantity_and_stock_status>
+                        <is_in_stock>1</is_in_stock>
+                        <qty>1000</qty>
+                    </quantity_and_stock_status>
+                    <quantity_and_stock_status_store>
+                        <is_in_stock>1</is_in_stock>
+                        <qty>1000</qty>
+                    </quantity_and_stock_status_store>
+                    <weight>0.5000</weight>
+                    <weight_store>0.5000</weight_store>
+                    <weight_type></weight_type>
+                    <weight_type_store></weight_type_store>
+                    <url_path></url_path>
+                    <url_path_store></url_path_store>
+                    <visibility>Catalog, Search</visibility>
+                    <visibility_store>Catalog, Search</visibility_store>
+                    <required_options>1</required_options>
+                    <required_options_store>1</required_options_store>
+                    <has_options>1</has_options>
+                    <has_options_store>1</has_options_store>
+                    <manufacturer>Inland Products</manufacturer>
+                    <manufacturer_store>Inland Products</manufacturer_store>
+                    <material>Stainless Steel</material>
+                    <material_store>Stainless Steel</material_store>
+                    <image_label></image_label>
+                    <image_label_store></image_label_store>
+                    <small_image_label></small_image_label>
+                    <small_image_label_store></small_image_label_store>
+                    <news_from_date></news_from_date>
+                    <news_from_date_store></news_from_date_store>
+                    <news_to_date></news_to_date>
+                    <news_to_date_store></news_to_date_store>
+                    <thumbnail_label></thumbnail_label>
+                    <thumbnail_label_store></thumbnail_label_store>
+                    <country_of_manufacture>United States</country_of_manufacture>
+                    <country_of_manufacture_store>United States</country_of_manufacture_store>
+                    <created_at>2016-09-01 18:08:08</created_at>
+                    <created_at_store>2016-09-01 18:08:08</created_at_store>
+                    <updated_at>2016-09-21 18:35:03</updated_at>
+                    <updated_at_store>2016-09-21 18:35:03</updated_at_store>
+                    <favorite_product>1</favorite_product>
+                    <favorite_product_store>1</favorite_product_store>
+                    <links_purchased_separately></links_purchased_separately>
+                    <links_purchased_separately_store></links_purchased_separately_store>
+                    <samples_title></samples_title>
+                    <samples_title_store></samples_title_store>
+                    <links_title></links_title>
+                    <links_title_store></links_title_store>
+                    <links_exist></links_exist>
+                    <links_exist_store></links_exist_store>
+                    <description></description>
+                    <description_store></description_store>
+                    <short_description></short_description>
+                    <short_description_store></short_description_store>
+                    <shipment_type></shipment_type>
+                    <shipment_type_store></shipment_type_store>
+                    <image_raw>/s/t/stainless_steel_black_lettering_active_duty_dog_tag.jpg</image_raw>
+                    <image>https://production.mb.dev.briteskies.com/media/catalog/product/s/t/stainless_steel_black_lettering_active_duty_dog_tag.jpg</image>
+                    <small_image_raw>/s/t/stainless_steel_black_lettering_active_duty_dog_tag.jpg</small_image_raw>
+                    <small_image>https://production.mb.dev.briteskies.com/media/catalog/product/s/t/stainless_steel_black_lettering_active_duty_dog_tag.jpg</small_image>
+                    <thumbnail_raw>/s/t/stainless_steel_black_lettering_active_duty_dog_tag.jpg</thumbnail_raw>
+                    <thumbnail>https://production.mb.dev.briteskies.com/media/catalog/product/s/t/stainless_steel_black_lettering_active_duty_dog_tag.jpg</thumbnail>
+                    <swatch_image>/s/t/stainless_steel_black_lettering_active_duty_dog_tag.jpg</swatch_image>
+                    <swatch_image_store>/s/t/stainless_steel_black_lettering_active_duty_dog_tag.jpg</swatch_image_store>
+                    <gallery></gallery>
+                    <gallery_store></gallery_store>
+                    <url_key>dog-tag-stainless-steel</url_key>
+                    <url_key_store>dog-tag-stainless-steel</url_key_store>
+                    <meta_title></meta_title>
+                    <meta_title_store></meta_title_store>
+                    <meta_keyword></meta_keyword>
+                    <meta_keyword_store></meta_keyword_store>
+                    <meta_description></meta_description>
+                    <meta_description_store></meta_description_store>
+                    <special_price></special_price>
+                    <special_price_store></special_price_store>
+                    <special_from_date></special_from_date>
+                    <special_from_date_store></special_from_date_store>
+                    <special_to_date></special_to_date>
+                    <special_to_date_store></special_to_date_store>
+                    <cost></cost>
+                    <cost_store></cost_store>
+                    <msrp></msrp>
+                    <msrp_store></msrp_store>
+                    <msrp_display_actual_price_type></msrp_display_actual_price_type>
+                    <msrp_display_actual_price_type_store></msrp_display_actual_price_type_store>
+                    <price_view></price_view>
+                    <price_view_store></price_view_store>
+                    <minimal_price></minimal_price>
+                    <minimal_price_store></minimal_price_store>
+                    <page_layout></page_layout>
+                    <page_layout_store></page_layout_store>
+                    <options_container>Block after Info Column</options_container>
+                    <options_container_store>Block after Info Column</options_container_store>
+                    <custom_layout_update></custom_layout_update>
+                    <custom_layout_update_store></custom_layout_update_store>
+                    <custom_design_from></custom_design_from>
+                    <custom_design_from_store></custom_design_from_store>
+                    <custom_design_to></custom_design_to>
+                    <custom_design_to_store></custom_design_to_store>
+                    <custom_design></custom_design>
+                    <custom_design_store></custom_design_store>
+                    <custom_layout></custom_layout>
+                    <custom_layout_store></custom_layout_store>
+                    <gift_message_available>Use config</gift_message_available>
+                    <gift_message_available_store>Use config</gift_message_available_store>
+                    <aw_gc_type></aw_gc_type>
+                    <aw_gc_type_store></aw_gc_type_store>
+                    <aw_gc_description></aw_gc_description>
+                    <aw_gc_description_store></aw_gc_description_store>
+                    <aw_gc_expire></aw_gc_expire>
+                    <aw_gc_expire_store></aw_gc_expire_store>
+                    <aw_gc_allow_message></aw_gc_allow_message>
+                    <aw_gc_allow_message_store></aw_gc_allow_message_store>
+                    <aw_gc_email_templates></aw_gc_email_templates>
+                    <aw_gc_email_templates_store></aw_gc_email_templates_store>
+                    <aw_gc_amounts></aw_gc_amounts>
+                    <aw_gc_amounts_store></aw_gc_amounts_store>
+                    <aw_gc_allow_open_amount></aw_gc_allow_open_amount>
+                    <aw_gc_allow_open_amount_store></aw_gc_allow_open_amount_store>
+                    <aw_gc_open_amount_min></aw_gc_open_amount_min>
+                    <aw_gc_open_amount_min_store></aw_gc_open_amount_min_store>
+                    <aw_gc_open_amount_max></aw_gc_open_amount_max>
+                    <aw_gc_open_amount_max_store></aw_gc_open_amount_max_store>
+                    <uss_cole></uss_cole>
+                    <uss_cole_store></uss_cole_store>
+                    <category_ids>|46|48|60|61|62|63|64|65|66|105|117|129|130|</category_ids>
+                    <category_names>|Customize A Product|Dog Tags|Active Duty|First Responders|Friend or Family|Infant or Child|Military|Pet|Prayer|Types of Products|Stainless Steel Dog Tag|Select Name by Event|Create Message by Category|</category_names>
+                    <product_url>https://production.mb.dev.briteskies.com/dog-tag-stainless-steel</product_url>
+                    <product_total_cost>0</product_total_cost>
+                    <name_product>
+                        <entity_id>66657</entity_id>
+                        <attribute_set_id>9</attribute_set_id>
+                        <type_id>name</type_id>
+                        <sku>87210</sku>
+                        <has_options>0</has_options>
+                        <required_options>0</required_options>
+                        <created_at>2016-08-25 19:38:47</created_at>
+                        <updated_at>2017-01-12 23:13:43</updated_at>
+                        <status>Enabled</status>
+                        <visibility>Catalog, Search</visibility>
+                        <quantity_and_stock_status>In Stock</quantity_and_stock_status>
+                        <favorite_product>0</favorite_product>
+                        <country>GB</country>
+                        <name_status>VOT</name_status>
+                        <event>7/7 London Bombings</event>
+                        <name>JAMES ADAMS</name>
+                        <options_container>Block after Info Column</options_container>
+                        <url_key>james-adams</url_key>
+                        <gift_message_available>Use config</gift_message_available>
+                        <city>PETERBOROUGH</city>
+                        <location>LONDON</location>
+                        <first_name>JAMES</first_name>
+                        <last_name>ADAMS</last_name>
+                        <age>32</age>
+                        <date>2005-07-07 00:00:00</date>
+                    </name_product>
+                </product_attributes>
+                <custom_options>
+                    <custom_option>
+                        <name>Color</name>
+                        <value>Stainless</value>
+                        <sku></sku>
+                        <option_id>1262</option_id>
+                        <bracelet_piece>material_color</bracelet_piece>
+                    </custom_option>
+                    <custom_option>
+                        <name>Top Icon</name>
+                        <value>US Air Force</value>
+                        <sku></sku>
+                        <option_id>1263</option_id>
+                        <bracelet_piece>icon_top</bracelet_piece>
+                    </custom_option>
+                    <custom_option>
+                        <name>Engraving Style</name>
+                        <value>Black Engraving</value>
+                        <sku></sku>
+                        <option_id>1264</option_id>
+                        <bracelet_piece>engraving_style</bracelet_piece>
+                    </custom_option>
+                    <custom_option>
+                        <name>Custom Engraving</name>
+                        <value>JAMES ADAMS    GB
+                            7/7 London Bombings  07 Jul 05
+                            Test</value>
+                        <sku></sku>
+                        <option_id>1265</option_id>
+                        <type>custom</type>
+                        <text>JAMES ADAMS    GB
+                            7/7 London Bombings  07 Jul 05
+                            Test
+                        </text>
+                        <bracelet_piece>engraving</bracelet_piece>
+                    </custom_option>
+                </custom_options>
+            </item>
+            <item>
+                <qty_ordered>1.0000</qty_ordered>
+                <qty>1.0000</qty>
+                <item_number>6</item_number>
+                <order_product_number>6</order_product_number>
+                <item_id>75</item_id>
+                <order_id>52</order_id>
+                <parent_item_id></parent_item_id>
+                <quote_item_id>230</quote_item_id>
+                <store_id>1</store_id>
+                <created_at>2017-02-07 17:39:32</created_at>
+                <updated_at>2017-02-07 17:39:32</updated_at>
+                <product_id>67059</product_id>
+                <product_type>simple</product_type>
+                <weight>0.5000</weight>
+                <is_virtual>0</is_virtual>
+                <sku>7</sku>
+                <name>ID Bracelet - Rectangle</name>
+                <description></description>
+                <applied_rule_ids></applied_rule_ids>
+                <additional_data></additional_data>
+                <is_qty_decimal>0</is_qty_decimal>
+                <no_discount>0</no_discount>
+                <qty_backordered></qty_backordered>
+                <qty_canceled>0.0000</qty_canceled>
+                <qty_invoiced>0.0000</qty_invoiced>
+                <qty_refunded>0.0000</qty_refunded>
+                <qty_shipped>0.0000</qty_shipped>
+                <base_cost></base_cost>
+                <price>28.9400</price>
+                <base_price>28.9400</base_price>
+                <original_price>23.9900</original_price>
+                <base_original_price>23.9900</base_original_price>
+                <tax_percent>0.0000</tax_percent>
+                <tax_amount>0.0000</tax_amount>
+                <base_tax_amount>0.0000</base_tax_amount>
+                <tax_invoiced>0.0000</tax_invoiced>
+                <base_tax_invoiced>0.0000</base_tax_invoiced>
+                <discount_percent>0.0000</discount_percent>
+                <discount_amount>0.0000</discount_amount>
+                <base_discount_amount>0.0000</base_discount_amount>
+                <discount_invoiced>0.0000</discount_invoiced>
+                <base_discount_invoiced>0.0000</base_discount_invoiced>
+                <amount_refunded>0.0000</amount_refunded>
+                <base_amount_refunded>0.0000</base_amount_refunded>
+                <row_total>28.9400</row_total>
+                <base_row_total>28.9400</base_row_total>
+                <row_invoiced>0.0000</row_invoiced>
+                <base_row_invoiced>0.0000</base_row_invoiced>
+                <row_weight>0.5000</row_weight>
+                <base_tax_before_discount></base_tax_before_discount>
+                <tax_before_discount></tax_before_discount>
+                <ext_order_item_id></ext_order_item_id>
+                <locked_do_invoice></locked_do_invoice>
+                <locked_do_ship></locked_do_ship>
+                <price_incl_tax>28.9400</price_incl_tax>
+                <base_price_incl_tax>28.9400</base_price_incl_tax>
+                <row_total_incl_tax>28.9400</row_total_incl_tax>
+                <base_row_total_incl_tax>28.9400</base_row_total_incl_tax>
+                <discount_tax_compensation_amount>0.0000</discount_tax_compensation_amount>
+                <base_discount_tax_compensation_amount>0.0000</base_discount_tax_compensation_amount>
+                <discount_tax_compensation_invoiced></discount_tax_compensation_invoiced>
+                <base_discount_tax_compensation_invoiced></base_discount_tax_compensation_invoiced>
+                <discount_tax_compensation_refunded></discount_tax_compensation_refunded>
+                <base_discount_tax_compensation_refunded></base_discount_tax_compensation_refunded>
+                <tax_canceled></tax_canceled>
+                <discount_tax_compensation_canceled></discount_tax_compensation_canceled>
+                <tax_refunded></tax_refunded>
+                <base_tax_refunded></base_tax_refunded>
+                <discount_refunded></discount_refunded>
+                <base_discount_refunded></base_discount_refunded>
+                <free_shipping>0</free_shipping>
+                <gift_message_id></gift_message_id>
+                <gift_message_available>2</gift_message_available>
+                <weee_tax_applied></weee_tax_applied>
+                <weee_tax_applied_amount></weee_tax_applied_amount>
+                <weee_tax_applied_row_amount></weee_tax_applied_row_amount>
+                <weee_tax_disposition></weee_tax_disposition>
+                <weee_tax_row_disposition></weee_tax_row_disposition>
+                <base_weee_tax_applied_amount></base_weee_tax_applied_amount>
+                <base_weee_tax_applied_row_amnt></base_weee_tax_applied_row_amnt>
+                <base_weee_tax_disposition></base_weee_tax_disposition>
+                <base_weee_tax_row_disposition></base_weee_tax_row_disposition>
+                <qty_in_stock>1000</qty_in_stock>
+                <sku_repeated_by_qty>7</sku_repeated_by_qty>
+                <gift_message_sender></gift_message_sender>
+                <gift_message_recipient></gift_message_recipient>
+                <gift_message></gift_message>
+                <product_options_data>
+                    <info_buyRequest>
+                        <uenc>aHR0cHM6Ly9wcm9kdWN0aW9uLm1iLmRldi5icml0ZXNraWVzLmNvbS9pZC1icmFjZWxldC1yZWN0YW5nbGU,</uenc>
+                        <product>67059</product>
+                        <selected_configurable_option></selected_configurable_option>
+                        <related_product></related_product>
+                        <qty>1</qty>
+                    </info_buyRequest>
+                </product_options_data>
+                <product_attributes>
+                    <type_id>simple</type_id>
+                    <type_id_store>simple</type_id_store>
+                    <attribute_set_name>Product Product</attribute_set_name>
+                    <attribute_set_id>10</attribute_set_id>
+                    <attribute_set_id_store>10</attribute_set_id_store>
+                    <entity_id>67059</entity_id>
+                    <entity_id_store>67059</entity_id_store>
+                    <status>Enabled</status>
+                    <status_store>Enabled</status_store>
+                    <name>ID Bracelet - Rectangle</name>
+                    <name_store>ID Bracelet - Rectangle</name_store>
+                    <product_type>Other Engraveable</product_type>
+                    <product_type_store>Other Engraveable</product_type_store>
+                    <sku>7</sku>
+                    <sku_store>7</sku_store>
+                    <sku_type></sku_type>
+                    <sku_type_store></sku_type_store>
+                    <price>23.9900</price>
+                    <price_store>23.9900</price_store>
+                    <old_id></old_id>
+                    <old_id_store></old_id_store>
+                    <price_type></price_type>
+                    <price_type_store></price_type_store>
+                    <tax_class_id>Taxable Goods</tax_class_id>
+                    <tax_class_id_store>Taxable Goods</tax_class_id_store>
+                    <quantity_and_stock_status>
+                        <is_in_stock>1</is_in_stock>
+                        <qty>1000</qty>
+                    </quantity_and_stock_status>
+                    <quantity_and_stock_status_store>
+                        <is_in_stock>1</is_in_stock>
+                        <qty>1000</qty>
+                    </quantity_and_stock_status_store>
+                    <weight>0.5000</weight>
+                    <weight_store>0.5000</weight_store>
+                    <weight_type></weight_type>
+                    <weight_type_store></weight_type_store>
+                    <url_path></url_path>
+                    <url_path_store></url_path_store>
+                    <visibility>Catalog, Search</visibility>
+                    <visibility_store>Catalog, Search</visibility_store>
+                    <required_options>1</required_options>
+                    <required_options_store>1</required_options_store>
+                    <has_options>1</has_options>
+                    <has_options_store>1</has_options_store>
+                    <manufacturer>Engraving Specialties</manufacturer>
+                    <manufacturer_store>Engraving Specialties</manufacturer_store>
+                    <material>Stainless Steel</material>
+                    <material_store>Stainless Steel</material_store>
+                    <image_label></image_label>
+                    <image_label_store></image_label_store>
+                    <small_image_label></small_image_label>
+                    <small_image_label_store></small_image_label_store>
+                    <news_from_date></news_from_date>
+                    <news_from_date_store></news_from_date_store>
+                    <news_to_date></news_to_date>
+                    <news_to_date_store></news_to_date_store>
+                    <thumbnail_label></thumbnail_label>
+                    <thumbnail_label_store></thumbnail_label_store>
+                    <country_of_manufacture>United States</country_of_manufacture>
+                    <country_of_manufacture_store>United States</country_of_manufacture_store>
+                    <created_at>2016-09-01 18:08:08</created_at>
+                    <created_at_store>2016-09-01 18:08:08</created_at_store>
+                    <updated_at>2016-12-20 15:15:22</updated_at>
+                    <updated_at_store>2016-12-20 15:15:22</updated_at_store>
+                    <favorite_product>0</favorite_product>
+                    <favorite_product_store>0</favorite_product_store>
+                    <links_purchased_separately></links_purchased_separately>
+                    <links_purchased_separately_store></links_purchased_separately_store>
+                    <samples_title></samples_title>
+                    <samples_title_store></samples_title_store>
+                    <links_title></links_title>
+                    <links_title_store></links_title_store>
+                    <links_exist></links_exist>
+                    <links_exist_store></links_exist_store>
+                    <description></description>
+                    <description_store></description_store>
+                    <short_description></short_description>
+                    <short_description_store></short_description_store>
+                    <shipment_type></shipment_type>
+                    <shipment_type_store></shipment_type_store>
+                    <image_raw>/i/d/id_black_lettering_inspirational_bracelet.jpg</image_raw>
+                    <image>https://production.mb.dev.briteskies.com/media/catalog/product/i/d/id_black_lettering_inspirational_bracelet.jpg</image>
+                    <small_image_raw>/i/d/id_black_lettering_inspirational_bracelet.jpg</small_image_raw>
+                    <small_image>https://production.mb.dev.briteskies.com/media/catalog/product/i/d/id_black_lettering_inspirational_bracelet.jpg</small_image>
+                    <thumbnail_raw>/i/d/id_black_lettering_inspirational_bracelet.jpg</thumbnail_raw>
+                    <thumbnail>https://production.mb.dev.briteskies.com/media/catalog/product/i/d/id_black_lettering_inspirational_bracelet.jpg</thumbnail>
+                    <swatch_image>/i/d/id_black_lettering_inspirational_bracelet.jpg</swatch_image>
+                    <swatch_image_store>/i/d/id_black_lettering_inspirational_bracelet.jpg</swatch_image_store>
+                    <gallery></gallery>
+                    <gallery_store></gallery_store>
+                    <url_key>id-bracelet-rectangle</url_key>
+                    <url_key_store>id-bracelet-rectangle</url_key_store>
+                    <meta_title></meta_title>
+                    <meta_title_store></meta_title_store>
+                    <meta_keyword></meta_keyword>
+                    <meta_keyword_store></meta_keyword_store>
+                    <meta_description></meta_description>
+                    <meta_description_store></meta_description_store>
+                    <special_price></special_price>
+                    <special_price_store></special_price_store>
+                    <special_from_date></special_from_date>
+                    <special_from_date_store></special_from_date_store>
+                    <special_to_date></special_to_date>
+                    <special_to_date_store></special_to_date_store>
+                    <cost></cost>
+                    <cost_store></cost_store>
+                    <msrp></msrp>
+                    <msrp_store></msrp_store>
+                    <msrp_display_actual_price_type></msrp_display_actual_price_type>
+                    <msrp_display_actual_price_type_store></msrp_display_actual_price_type_store>
+                    <price_view></price_view>
+                    <price_view_store></price_view_store>
+                    <minimal_price></minimal_price>
+                    <minimal_price_store></minimal_price_store>
+                    <page_layout></page_layout>
+                    <page_layout_store></page_layout_store>
+                    <options_container>Block after Info Column</options_container>
+                    <options_container_store>Block after Info Column</options_container_store>
+                    <custom_layout_update></custom_layout_update>
+                    <custom_layout_update_store></custom_layout_update_store>
+                    <custom_design_from></custom_design_from>
+                    <custom_design_from_store></custom_design_from_store>
+                    <custom_design_to></custom_design_to>
+                    <custom_design_to_store></custom_design_to_store>
+                    <custom_design></custom_design>
+                    <custom_design_store></custom_design_store>
+                    <custom_layout></custom_layout>
+                    <custom_layout_store></custom_layout_store>
+                    <gift_message_available>Use config</gift_message_available>
+                    <gift_message_available_store>Use config</gift_message_available_store>
+                    <aw_gc_type></aw_gc_type>
+                    <aw_gc_type_store></aw_gc_type_store>
+                    <aw_gc_description></aw_gc_description>
+                    <aw_gc_description_store></aw_gc_description_store>
+                    <aw_gc_expire></aw_gc_expire>
+                    <aw_gc_expire_store></aw_gc_expire_store>
+                    <aw_gc_allow_message></aw_gc_allow_message>
+                    <aw_gc_allow_message_store></aw_gc_allow_message_store>
+                    <aw_gc_email_templates></aw_gc_email_templates>
+                    <aw_gc_email_templates_store></aw_gc_email_templates_store>
+                    <aw_gc_amounts></aw_gc_amounts>
+                    <aw_gc_amounts_store></aw_gc_amounts_store>
+                    <aw_gc_allow_open_amount></aw_gc_allow_open_amount>
+                    <aw_gc_allow_open_amount_store></aw_gc_allow_open_amount_store>
+                    <aw_gc_open_amount_min></aw_gc_open_amount_min>
+                    <aw_gc_open_amount_min_store></aw_gc_open_amount_min_store>
+                    <aw_gc_open_amount_max></aw_gc_open_amount_max>
+                    <aw_gc_open_amount_max_store></aw_gc_open_amount_max_store>
+                    <uss_cole></uss_cole>
+                    <uss_cole_store></uss_cole_store>
+                    <category_ids>|46|47|51|54|55|56|57|58|59|</category_ids>
+                    <category_names>|Customize A Product|Bracelets|Active Duty|First Responders|Friend or Family|Infant or Child|Military|Pet|Prayer|</category_names>
+                    <product_url>https://production.mb.dev.briteskies.com/id-bracelet-rectangle</product_url>
+                    <product_total_cost>0</product_total_cost>
+                </product_attributes>
+                <custom_options>
+                    <custom_option>
+                        <name>Color</name>
+                        <value>Stainless</value>
+                        <sku></sku>
+                        <option_id>1211</option_id>
+                        <bracelet_piece>material_color</bracelet_piece>
+                    </custom_option>
+                    <custom_option>
+                        <name>Size</name>
+                        <value>Large</value>
+                        <sku></sku>
+                        <option_id>1212</option_id>
+                        <bracelet_piece>size</bracelet_piece>
+                    </custom_option>
+                    <custom_option>
+                        <name>Right Icon</name>
+                        <value>US Army National Guard</value>
+                        <sku></sku>
+                        <option_id>1213</option_id>
+                        <bracelet_piece>icon_right</bracelet_piece>
+                    </custom_option>
+                    <custom_option>
+                        <name>Engraving Style</name>
+                        <value>Black Engraving</value>
+                        <sku></sku>
+                        <option_id>1214</option_id>
+                        <bracelet_piece>engraving_style</bracelet_piece>
+                    </custom_option>
+                    <custom_option>
+                        <name>Custom Engraving</name>
+                        <value>DECEMBER 7, 1941
+                            DIVIDED WE FALL
+                            BROTHERS FOREVER</value>
+                        <sku></sku>
+                        <option_id>1215</option_id>
+                        <type>supportive</type>
+                        <text>DECEMBER 7, 1941
+                            DIVIDED WE FALL
+                            BROTHERS FOREVER
+                        </text>
+                        <bracelet_piece>engraving</bracelet_piece>
+                    </custom_option>
+                </custom_options>
+            </item>
+            <item>
+                <qty_ordered>1.0000</qty_ordered>
+                <qty>1.0000</qty>
+                <item_number>7</item_number>
+                <order_product_number>7</order_product_number>
+                <item_id>76</item_id>
+                <order_id>52</order_id>
+                <parent_item_id></parent_item_id>
+                <quote_item_id>231</quote_item_id>
+                <store_id>1</store_id>
+                <created_at>2017-02-07 17:39:32</created_at>
+                <updated_at>2017-02-07 17:39:32</updated_at>
+                <product_id>67068</product_id>
+                <product_type>simple</product_type>
+                <weight>0.5000</weight>
+                <is_virtual>0</is_virtual>
+                <sku>16</sku>
+                <name>Paracord Bracelet - Colored Aluminum</name>
+                <description></description>
+                <applied_rule_ids></applied_rule_ids>
+                <additional_data></additional_data>
+                <is_qty_decimal>0</is_qty_decimal>
+                <no_discount>0</no_discount>
+                <qty_backordered></qty_backordered>
+                <qty_canceled>0.0000</qty_canceled>
+                <qty_invoiced>0.0000</qty_invoiced>
+                <qty_refunded>0.0000</qty_refunded>
+                <qty_shipped>0.0000</qty_shipped>
+                <base_cost></base_cost>
+                <price>38.8900</price>
+                <base_price>38.8900</base_price>
+                <original_price>26.9900</original_price>
+                <base_original_price>26.9900</base_original_price>
+                <tax_percent>0.0000</tax_percent>
+                <tax_amount>0.0000</tax_amount>
+                <base_tax_amount>0.0000</base_tax_amount>
+                <tax_invoiced>0.0000</tax_invoiced>
+                <base_tax_invoiced>0.0000</base_tax_invoiced>
+                <discount_percent>0.0000</discount_percent>
+                <discount_amount>0.0000</discount_amount>
+                <base_discount_amount>0.0000</base_discount_amount>
+                <discount_invoiced>0.0000</discount_invoiced>
+                <base_discount_invoiced>0.0000</base_discount_invoiced>
+                <amount_refunded>0.0000</amount_refunded>
+                <base_amount_refunded>0.0000</base_amount_refunded>
+                <row_total>38.8900</row_total>
+                <base_row_total>38.8900</base_row_total>
+                <row_invoiced>0.0000</row_invoiced>
+                <base_row_invoiced>0.0000</base_row_invoiced>
+                <row_weight>0.5000</row_weight>
+                <base_tax_before_discount></base_tax_before_discount>
+                <tax_before_discount></tax_before_discount>
+                <ext_order_item_id></ext_order_item_id>
+                <locked_do_invoice></locked_do_invoice>
+                <locked_do_ship></locked_do_ship>
+                <price_incl_tax>38.8900</price_incl_tax>
+                <base_price_incl_tax>38.8900</base_price_incl_tax>
+                <row_total_incl_tax>38.8900</row_total_incl_tax>
+                <base_row_total_incl_tax>38.8900</base_row_total_incl_tax>
+                <discount_tax_compensation_amount>0.0000</discount_tax_compensation_amount>
+                <base_discount_tax_compensation_amount>0.0000</base_discount_tax_compensation_amount>
+                <discount_tax_compensation_invoiced></discount_tax_compensation_invoiced>
+                <base_discount_tax_compensation_invoiced></base_discount_tax_compensation_invoiced>
+                <discount_tax_compensation_refunded></discount_tax_compensation_refunded>
+                <base_discount_tax_compensation_refunded></base_discount_tax_compensation_refunded>
+                <tax_canceled></tax_canceled>
+                <discount_tax_compensation_canceled></discount_tax_compensation_canceled>
+                <tax_refunded></tax_refunded>
+                <base_tax_refunded></base_tax_refunded>
+                <discount_refunded></discount_refunded>
+                <base_discount_refunded></base_discount_refunded>
+                <free_shipping>0</free_shipping>
+                <gift_message_id></gift_message_id>
+                <gift_message_available>2</gift_message_available>
+                <weee_tax_applied></weee_tax_applied>
+                <weee_tax_applied_amount></weee_tax_applied_amount>
+                <weee_tax_applied_row_amount></weee_tax_applied_row_amount>
+                <weee_tax_disposition></weee_tax_disposition>
+                <weee_tax_row_disposition></weee_tax_row_disposition>
+                <base_weee_tax_applied_amount></base_weee_tax_applied_amount>
+                <base_weee_tax_applied_row_amnt></base_weee_tax_applied_row_amnt>
+                <base_weee_tax_disposition></base_weee_tax_disposition>
+                <base_weee_tax_row_disposition></base_weee_tax_row_disposition>
+                <qty_in_stock>100</qty_in_stock>
+                <sku_repeated_by_qty>16</sku_repeated_by_qty>
+                <gift_message_sender></gift_message_sender>
+                <gift_message_recipient></gift_message_recipient>
+                <gift_message></gift_message>
+                <product_options_data>
+                    <info_buyRequest>
+                        <uenc>aHR0cHM6Ly9wcm9kdWN0aW9uLm1iLmRldi5icml0ZXNraWVzLmNvbS9wYXJhY29yZC1icmFjZWxldC1hbHVtaW51bQ,,</uenc>
+                        <product>67068</product>
+                        <selected_configurable_option></selected_configurable_option>
+                        <related_product></related_product>
+                        <qty>1</qty>
+                    </info_buyRequest>
+                </product_options_data>
+                <product_attributes>
+                    <type_id>simple</type_id>
+                    <type_id_store>simple</type_id_store>
+                    <attribute_set_name>Product Product</attribute_set_name>
+                    <attribute_set_id>10</attribute_set_id>
+                    <attribute_set_id_store>10</attribute_set_id_store>
+                    <entity_id>67068</entity_id>
+                    <entity_id_store>67068</entity_id_store>
+                    <status>Enabled</status>
+                    <status_store>Enabled</status_store>
+                    <name>Paracord Bracelet - Colored Aluminum</name>
+                    <name_store>Paracord Bracelet - Colored Aluminum</name_store>
+                    <product_type>Paracord</product_type>
+                    <product_type_store>Paracord</product_type_store>
+                    <sku>16</sku>
+                    <sku_store>16</sku_store>
+                    <sku_type></sku_type>
+                    <sku_type_store></sku_type_store>
+                    <price>26.9900</price>
+                    <price_store>26.9900</price_store>
+                    <old_id></old_id>
+                    <old_id_store></old_id_store>
+                    <price_type></price_type>
+                    <price_type_store></price_type_store>
+                    <tax_class_id>Taxable Goods</tax_class_id>
+                    <tax_class_id_store>Taxable Goods</tax_class_id_store>
+                    <quantity_and_stock_status>
+                        <is_in_stock>1</is_in_stock>
+                        <qty>100</qty>
+                    </quantity_and_stock_status>
+                    <quantity_and_stock_status_store>
+                        <is_in_stock>1</is_in_stock>
+                        <qty>100</qty>
+                    </quantity_and_stock_status_store>
+                    <weight>0.5000</weight>
+                    <weight_store>0.5000</weight_store>
+                    <weight_type></weight_type>
+                    <weight_type_store></weight_type_store>
+                    <url_path></url_path>
+                    <url_path_store></url_path_store>
+                    <visibility>Catalog, Search</visibility>
+                    <visibility_store>Catalog, Search</visibility_store>
+                    <required_options>1</required_options>
+                    <required_options_store>1</required_options_store>
+                    <has_options>1</has_options>
+                    <has_options_store>1</has_options_store>
+                    <manufacturer></manufacturer>
+                    <manufacturer_store></manufacturer_store>
+                    <material>Annodized Colored Aluminum</material>
+                    <material_store>Annodized Colored Aluminum</material_store>
+                    <image_label></image_label>
+                    <image_label_store></image_label_store>
+                    <small_image_label></small_image_label>
+                    <small_image_label_store></small_image_label_store>
+                    <news_from_date></news_from_date>
+                    <news_from_date_store></news_from_date_store>
+                    <news_to_date></news_to_date>
+                    <news_to_date_store></news_to_date_store>
+                    <thumbnail_label></thumbnail_label>
+                    <thumbnail_label_store></thumbnail_label_store>
+                    <country_of_manufacture></country_of_manufacture>
+                    <country_of_manufacture_store></country_of_manufacture_store>
+                    <created_at>2016-09-01 18:08:08</created_at>
+                    <created_at_store>2016-09-01 18:08:08</created_at_store>
+                    <updated_at>2016-12-20 15:15:22</updated_at>
+                    <updated_at_store>2016-12-20 15:15:22</updated_at_store>
+                    <favorite_product>0</favorite_product>
+                    <favorite_product_store>0</favorite_product_store>
+                    <links_purchased_separately></links_purchased_separately>
+                    <links_purchased_separately_store></links_purchased_separately_store>
+                    <samples_title></samples_title>
+                    <samples_title_store></samples_title_store>
+                    <links_title></links_title>
+                    <links_title_store></links_title_store>
+                    <links_exist></links_exist>
+                    <links_exist_store></links_exist_store>
+                    <description></description>
+                    <description_store></description_store>
+                    <short_description></short_description>
+                    <short_description_store></short_description_store>
+                    <shipment_type></shipment_type>
+                    <shipment_type_store></shipment_type_store>
+                    <image_raw>/c/a/camo_paracord_black_tag_chattanooga_bracelet.jpg</image_raw>
+                    <image>https://production.mb.dev.briteskies.com/media/catalog/product/c/a/camo_paracord_black_tag_chattanooga_bracelet.jpg</image>
+                    <small_image_raw>/c/a/camo_paracord_black_tag_chattanooga_bracelet.jpg</small_image_raw>
+                    <small_image>https://production.mb.dev.briteskies.com/media/catalog/product/c/a/camo_paracord_black_tag_chattanooga_bracelet.jpg</small_image>
+                    <thumbnail_raw>/c/a/camo_paracord_black_tag_chattanooga_bracelet.jpg</thumbnail_raw>
+                    <thumbnail>https://production.mb.dev.briteskies.com/media/catalog/product/c/a/camo_paracord_black_tag_chattanooga_bracelet.jpg</thumbnail>
+                    <swatch_image>/c/a/camo_paracord_black_tag_chattanooga_bracelet.jpg</swatch_image>
+                    <swatch_image_store>/c/a/camo_paracord_black_tag_chattanooga_bracelet.jpg</swatch_image_store>
+                    <gallery></gallery>
+                    <gallery_store></gallery_store>
+                    <url_key>paracord-bracelet-aluminum</url_key>
+                    <url_key_store>paracord-bracelet-aluminum</url_key_store>
+                    <meta_title></meta_title>
+                    <meta_title_store></meta_title_store>
+                    <meta_keyword></meta_keyword>
+                    <meta_keyword_store></meta_keyword_store>
+                    <meta_description></meta_description>
+                    <meta_description_store></meta_description_store>
+                    <special_price></special_price>
+                    <special_price_store></special_price_store>
+                    <special_from_date></special_from_date>
+                    <special_from_date_store></special_from_date_store>
+                    <special_to_date></special_to_date>
+                    <special_to_date_store></special_to_date_store>
+                    <cost></cost>
+                    <cost_store></cost_store>
+                    <msrp></msrp>
+                    <msrp_store></msrp_store>
+                    <msrp_display_actual_price_type></msrp_display_actual_price_type>
+                    <msrp_display_actual_price_type_store></msrp_display_actual_price_type_store>
+                    <price_view></price_view>
+                    <price_view_store></price_view_store>
+                    <minimal_price></minimal_price>
+                    <minimal_price_store></minimal_price_store>
+                    <page_layout></page_layout>
+                    <page_layout_store></page_layout_store>
+                    <options_container>Block after Info Column</options_container>
+                    <options_container_store>Block after Info Column</options_container_store>
+                    <custom_layout_update></custom_layout_update>
+                    <custom_layout_update_store></custom_layout_update_store>
+                    <custom_design_from></custom_design_from>
+                    <custom_design_from_store></custom_design_from_store>
+                    <custom_design_to></custom_design_to>
+                    <custom_design_to_store></custom_design_to_store>
+                    <custom_design></custom_design>
+                    <custom_design_store></custom_design_store>
+                    <custom_layout></custom_layout>
+                    <custom_layout_store></custom_layout_store>
+                    <gift_message_available>Use config</gift_message_available>
+                    <gift_message_available_store>Use config</gift_message_available_store>
+                    <aw_gc_type></aw_gc_type>
+                    <aw_gc_type_store></aw_gc_type_store>
+                    <aw_gc_description></aw_gc_description>
+                    <aw_gc_description_store></aw_gc_description_store>
+                    <aw_gc_expire></aw_gc_expire>
+                    <aw_gc_expire_store></aw_gc_expire_store>
+                    <aw_gc_allow_message></aw_gc_allow_message>
+                    <aw_gc_allow_message_store></aw_gc_allow_message_store>
+                    <aw_gc_email_templates></aw_gc_email_templates>
+                    <aw_gc_email_templates_store></aw_gc_email_templates_store>
+                    <aw_gc_amounts></aw_gc_amounts>
+                    <aw_gc_amounts_store></aw_gc_amounts_store>
+                    <aw_gc_allow_open_amount></aw_gc_allow_open_amount>
+                    <aw_gc_allow_open_amount_store></aw_gc_allow_open_amount_store>
+                    <aw_gc_open_amount_min></aw_gc_open_amount_min>
+                    <aw_gc_open_amount_min_store></aw_gc_open_amount_min_store>
+                    <aw_gc_open_amount_max></aw_gc_open_amount_max>
+                    <aw_gc_open_amount_max_store></aw_gc_open_amount_max_store>
+                    <uss_cole></uss_cole>
+                    <uss_cole_store></uss_cole_store>
+                    <category_ids>|46|47|51|54|55|56|57|58|59|106|</category_ids>
+                    <category_names>|Customize A Product|Bracelets|Active Duty|First Responders|Friend or Family|Infant or Child|Military|Pet|Prayer|Paracord Bracelet|</category_names>
+                    <product_url>https://production.mb.dev.briteskies.com/paracord-bracelet-aluminum</product_url>
+                    <product_total_cost>0</product_total_cost>
+                </product_attributes>
+                <custom_options>
+                    <custom_option>
+                        <name>Metal Color</name>
+                        <value>Black</value>
+                        <sku></sku>
+                        <option_id>1266</option_id>
+                        <bracelet_piece>material_color</bracelet_piece>
+                    </custom_option>
+                    <custom_option>
+                        <name>Paracord Color</name>
+                        <value>Brown</value>
+                        <sku></sku>
+                        <option_id>1267</option_id>
+                        <bracelet_piece>paracord_color</bracelet_piece>
+                    </custom_option>
+                    <custom_option>
+                        <name>Size</name>
+                        <value>Medium</value>
+                        <sku></sku>
+                        <option_id>1268</option_id>
+                        <bracelet_piece>size</bracelet_piece>
+                    </custom_option>
+                    <custom_option>
+                        <name>Top Icon</name>
+                        <value>US Navy</value>
+                        <sku></sku>
+                        <option_id>1269</option_id>
+                        <bracelet_piece>icon_top</bracelet_piece>
+                    </custom_option>
+                    <custom_option>
+                        <name>Left Charm</name>
+                        <value>Cross</value>
+                        <sku></sku>
+                        <option_id>1270</option_id>
+                        <bracelet_piece>charm_left</bracelet_piece>
+                    </custom_option>
+                    <custom_option>
+                        <name>Right Charm</name>
+                        <value>Mom and Dad</value>
+                        <sku></sku>
+                        <option_id>1271</option_id>
+                        <bracelet_piece>charm_right</bracelet_piece>
+                    </custom_option>
+                    <custom_option>
+                        <name>Engraving Style</name>
+                        <value>Recessed Engraving</value>
+                        <sku></sku>
+                        <option_id>1272</option_id>
+                        <bracelet_piece>engraving_style</bracelet_piece>
+                    </custom_option>
+                    <custom_option>
+                        <name>Custom Engraving</name>
+                        <value>DECEMBER 7, 1941
+                            l
+                            DIVIDED WE FALL</value>
+                        <sku></sku>
+                        <option_id>1273</option_id>
+                        <type>custom</type>
+                        <text>DECEMBER 7, 1941
+                            l
+                            DIVIDED WE FALL
+                        </text>
+                        <bracelet_piece>engraving</bracelet_piece>
+                    </custom_option>
+                </custom_options>
+            </item>
+        </items>
+        <export_total_qty_ordered>7</export_total_qty_ordered>
+        <products_total_cost>0</products_total_cost>
+        <tax_rates>
+            <tax_rate>
+                <rate>0.0000</rate>
+                <amount>0.0000</amount>
+                <base>220.3300</base>
+            </tax_rate>
+        </tax_rates>
+        <order_tax_rates/>
+    </object>
+</objects>

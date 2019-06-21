@@ -1,0 +1,133 @@
+From 240e2cc9107015b790a93807ee75f89427766469 Mon Sep 17 00:00:00 2001
+From: Ievgen Sentiabov <isentiabov@magento.com>
+Date: Wed, 6 Sep 2017 16:15:32 +0300
+Subject: [PATCH 1/2] MAGETWO-72305: USPS First-Class Mail Parcel method no
+ longer displaying checkout
+
+ - Renamed "First-Class Mail Parcel" to "First-Class Package Service - Retail" according to USPS API changes
+---
+ Model/Carrier.php     | 4 ++--
+ Setup/InstallData.php | 1 +
+ i18n/en_US.csv        | 2 +-
+ 3 files changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/Model/Carrier.php b/Model/Carrier.php
+index e7ffe5970ecd..1233c6ede491 100644
+--- a/Model/Carrier.php
++++ b/Model/Carrier.php
+@@ -643,7 +643,7 @@ public function getCode($type, $code = '')
+             'method' => [
+                 '0_FCLE' => __('First-Class Mail Large Envelope'),
+                 '0_FCL' => __('First-Class Mail Letter'),
+-                '0_FCP' => __('First-Class Mail Parcel'),
++                '0_FCP' => __('First-Class Package Service - Retail'),
+                 '0_FCPC' => __('First-Class Mail Postcards'),
+                 '1' => __('Priority Mail'),
+                 '2' => __('Priority Mail Express Hold For Pickup'),
+@@ -795,7 +795,7 @@ public function getCode($type, $code = '')
+             'method_to_code' => [
+                 'First-Class Mail Large Envelope' => '0_FCLE',
+                 'First-Class Mail Letter' => '0_FCL',
+-                'First-Class Mail Parcel' => '0_FCP',
++                'First-Class Package Service - Retail' => '0_FCP',
+             ],
+             'first_class_mail_type' => ['LETTER' => __('Letter'), 'FLAT' => __('Flat'), 'PARCEL' => __('Parcel')],
+             'container' => [
+diff --git a/Setup/InstallData.php b/Setup/InstallData.php
+index bea1aa665c1b..6ed70588f65a 100644
+--- a/Setup/InstallData.php
++++ b/Setup/InstallData.php
+@@ -39,6 +39,7 @@ public function install(ModuleDataSetupInterface $setup, ModuleContextInterface
+             'First-Class Mail Letter' => '0_FCL',
+             'First-Class Mail Parcel' => '0_FCP',
+             'First-Class Mail Package' => '0_FCP',
++            'First-Class Package Service - Retail' => '0_FCP',
+             'Parcel Post' => '4',
+             'Retail Ground' => '4',
+             'Media Mail' => '6',
+diff --git a/i18n/en_US.csv b/i18n/en_US.csv
+index 97c558d45d8c..ab1a11155fe0 100644
+--- a/i18n/en_US.csv
++++ b/i18n/en_US.csv
+@@ -1,6 +1,6 @@
+ "First-Class Mail Large Envelope","First-Class Mail Large Envelope"
+ "First-Class Mail Letter","First-Class Mail Letter"
+-"First-Class Mail Parcel","First-Class Mail Parcel"
++"First-Class Package Service - Retail","First-Class Package Service - Retail"
+ "First-Class Mail Postcards","First-Class Mail Postcards"
+ "Priority Mail","Priority Mail"
+ "Priority Mail Express Hold For Pickup","Priority Mail Express Hold For Pickup"
+
+From ab18b6cc27bed16be132993bf8c50af4d37593f7 Mon Sep 17 00:00:00 2001
+From: Ievgen Sentiabov <isentiabov@magento.com>
+Date: Thu, 7 Sep 2017 15:26:50 +0300
+Subject: [PATCH 2/2] MAGETWO-72305: USPS First-Class Mail Parcel method no
+ longer displaying checkout
+
+ - Moved update for shipping methods with outdated format to upgrade data script
+---
+ .../Setup/{InstallData.php => UpgradeData.php}     | 36 ++++++++++++++--------
+ etc/module.xml               |  2 +-
+ 2 files changed, 24 insertions(+), 14 deletions(-)
+ rename Setup/{InstallData.php => UpgradeData.php} (83%)
+
+diff --git a/Setup/InstallData.php b/Setup/UpgradeData.php
+similarity index 83%
+rename from Setup/InstallData.php
+rename to Setup/UpgradeData.php
+index 6ed70588f65a..f8a15d170b3f 100644
+--- a/Setup/InstallData.php
++++ b/Setup/UpgradeData.php
+@@ -6,19 +6,29 @@
+ 
+ namespace Magento\Usps\Setup;
+ 
+-use Magento\Framework\Setup\InstallDataInterface;
+ use Magento\Framework\Setup\ModuleContextInterface;
+ use Magento\Framework\Setup\ModuleDataSetupInterface;
++use Magento\Framework\Setup\UpgradeDataInterface;
+ 
+-/**
+- * @codeCoverageIgnore
+- */
+-class InstallData implements InstallDataInterface
++class UpgradeData implements UpgradeDataInterface
+ {
+     /**
+-     * {@inheritdoc}
++     * @inheritdoc
++     */
++    public function upgrade(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
++    {
++        if (version_compare($context->getVersion(), '2.0.1', '<')) {
++            $this->updateAllowedMethods($setup);
++        }
++    }
++
++    /**
++     * Replaces titles of allowed shipping methods to their codes.
++     *
++     * @param ModuleDataSetupInterface $setup
++     * @return void
+      */
+-    public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
++    private function updateAllowedMethods(ModuleDataSetupInterface $setup)
+     {
+         $installer = $setup;
+         $configDataTable = $installer->getTable('core_config_data');
+
+         $oldConfigValues = $connection->fetchAll($select);
+ 
+         foreach ($oldConfigValues as $oldValue) {
+diff --git a/etc/module.xml b/etc/module.xml
+index 8283e9149fac..8a1ec284c633 100644
+--- a/etc/module.xml
++++ b/etc/module.xml
+@@ -6,6 +6,6 @@
+  */
+ -->
+ <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+-    <module name="Magento_Usps" setup_version="2.0.0">
++    <module name="Magento_Usps" setup_version="2.0.1">
+     </module>
+ </config>

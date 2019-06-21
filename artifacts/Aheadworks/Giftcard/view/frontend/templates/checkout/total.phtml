@@ -1,0 +1,14 @@
+<?php
+/** @var $block \Aheadworks\Giftcard\Block\Checkout\Total */
+?>
+<?php foreach ($block->getGiftCards() as $giftCard): ?>
+    <tr class="totals aw-gc-totals">
+        <?php /** @var $giftCard \Aheadworks\Giftcard\Model\Giftcard */ ?>
+        <th style="<?php echo $block->getStyle() ?>" class="mark" colspan="<?php echo $block->getColspan(); ?>" scope="row">
+            <a href="<?php echo $block->getRemoveUrl($giftCard) ?>" title="<?php echo __('Remove') ?>"><span class="action-delete-icon"></span></a><?php echo $block->getTitle() ?> <span class="giftcard-code">(<?php echo $block->escapeHtml($giftCard->getCode()) ?>)<span>
+        </th>
+        <td style="<?php echo $block->getStyle() ?>" class="amount" data-th="<?php echo $block->escapeHtml($block->getTitle()); ?>">
+            -<?php echo $block->formatPrice($giftCard->getGiftcardAmount()) ?>
+        </td>
+    </tr>
+<?php endforeach; ?>

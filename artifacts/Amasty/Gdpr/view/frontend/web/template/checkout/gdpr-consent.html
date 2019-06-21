@@ -1,0 +1,11 @@
+<div data-role="amasty-gdpr-consent" data-bind="visible: isVisible">
+    <input type="checkbox"
+           id="amgdpr_agree"
+           name="amgdpr_agree"
+           value="1"
+           data-bind="attr: {title: $t('Accept privacy policy')}"
+           data-validate="{required:true}" />
+    <label for="amgdpr_agree">
+        <span class="action" data-bind="html: checkboxText, afterRender: initModal"></span>
+    </label>
+</div>

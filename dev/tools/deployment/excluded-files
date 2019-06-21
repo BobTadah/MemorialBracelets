@@ -1,0 +1,37 @@
+# Files we don't want to override
+/app/etc/env.php
+/app/etc/config.local.php
+/var/logs
+/var/page_cache
+/var/report
+/var/tmp
+/var/cache
+/pub/media/*
+/sitemap.xml
+/pub/sitemap.xml
+/robots.txt
+/pub/robots.txt
+/pub/.user.ini
+
+# Files we don't want on the server
+/dev
+.git
+.gitignore
+/auth.json
+/artifacts
+/php.ini.sample
+/Vagrantfile
+/package.json
+/package.json.sample
+/nginx.conf.sample
+/Gruntfile.js
+/Gruntfile.js.sample
+/ISSUE_TEMPLATE.md
+/CONTRIBUTING.md
+/CHANGELOG.md
+/bitbucket-pipelines.yml
+/phpserver
+/patches
+/.travis.yml
+/.php_cs
+/.htaccess.sample

@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <virtualType name="Aheadworks\Giftcard\Pricing\Adjustment\Collection" type="Magento\Framework\Pricing\Adjustment\Collection" />
+    <virtualType name="Aheadworks\Giftcard\Pricing\Price\TierPrice" type="Magento\Catalog\Pricing\Price\TierPrice" />
+    <virtualType name="Aheadworks\Giftcard\Pricing\Price\MsrpPrice" type="Magento\Msrp\Pricing\Price\MsrpPrice" />
+    <virtualType name="Aheadworks\Giftcard\Pricing\PriceInfo" type="Magento\Framework\Pricing\PriceInfo\Base">
+        <arguments>
+            <argument name="adjustmentCollection" xsi:type="object">Aheadworks\Giftcard\Pricing\Adjustment\Collection</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Aheadworks\Giftcard\Pricing\Price\Pool" type="Magento\Framework\Pricing\Price\Pool">
+        <arguments>
+            <argument name="prices" xsi:type="array">
+                <item name="final_price" xsi:type="string">Aheadworks\Giftcard\Pricing\Price\FinalPrice</item>
+                <item name="configured_price" xsi:type="string">Aheadworks\Giftcard\Pricing\Price\ConfiguredPrice</item>
+                <!-- todo: remove tier_price, msrp_price -->
+                <item name="tier_price" xsi:type="string">Aheadworks\Giftcard\Pricing\Price\TierPrice</item>
+                <item name="msrp_price" xsi:type="string">Aheadworks\Giftcard\Pricing\Price\MsrpPrice</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Aheadworks\Giftcard\Pricing\Price\Collection" type="Magento\Framework\Pricing\Price\Collection">
+        <arguments>
+            <argument name="pool" xsi:type="object">Aheadworks\Giftcard\Pricing\Price\Pool</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\Pricing\PriceInfo\Factory">
+        <arguments>
+            <argument name="types" xsi:type="array">
+                <item name="aw_giftcard" xsi:type="array">
+                    <item name="infoClass" xsi:type="string">Aheadworks\Giftcard\Pricing\PriceInfo</item>
+                    <item name="prices" xsi:type="string">Aheadworks\Giftcard\Pricing\Price\Collection</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Sales\Model\Order">
+        <plugin name="aw-giftcard-order-plugin" type="Aheadworks\Giftcard\Model\Plugin\Order" sortOrder="1" disabled="false" />
+    </type>
+    <type name="Magento\Sales\Model\ResourceModel\Order">
+        <plugin name="aw-giftcard-resource-order-plugin" type="Aheadworks\Giftcard\Model\Plugin\ResourceModel\Order" sortOrder="1" disabled="false" />
+    </type>
+    <type name="Magento\Quote\Model\Quote">
+        <plugin name="aw-giftcard-quote-plugin" type="Aheadworks\Giftcard\Model\Plugin\Quote" sortOrder="1" disabled="false" />
+    </type>
+    <type name="Magento\Sales\Model\Order\Item">
+        <plugin name="aw-giftcard-order-item-plugin" type="Aheadworks\Giftcard\Model\Plugin\Order\Item" sortOrder="1" disabled="false" />
+    </type>
+    <type name="Magento\Sales\Model\Order\Invoice">
+        <plugin name="aw-giftcard-invoice-plugin" type="Aheadworks\Giftcard\Model\Plugin\Order\Invoice" sortOrder="1" disabled="false" />
+    </type>
+    <type name="Magento\Sales\Model\Order\Creditmemo">
+        <plugin name="aw-giftcard-creditmemo-plugin" type="Aheadworks\Giftcard\Model\Plugin\Order\Creditmemo" sortOrder="1" disabled="false" />
+    </type>
+    <type name="Magento\Sales\Model\Order\CreditmemoRepository">
+        <plugin name="aw-giftcard-creditmemo-repository-plugin" type="Aheadworks\Giftcard\Model\Plugin\Order\CreditmemoRepository" sortOrder="1" disabled="false" />
+    </type>
+    <type name="Magento\Sales\Model\Service\CreditmemoService">
+        <plugin name="aw-giftcard-creditmemo-service-plugin" type="Aheadworks\Giftcard\Model\Plugin\Sales\Service\CreditmemoService" sortOrder="1" disabled="false" />
+    </type>
+    <type name="Magento\Framework\View\Element\Html\Links">
+        <plugin name="aw-giftcard-links-plugin" type="Aheadworks\Giftcard\Model\Plugin\View\Element\Html\Links" sortOrder="1" disabled="false" />
+    </type>
+    <preference for="Aheadworks\Giftcard\Api\GiftcardManagerInterface" type="Aheadworks\Giftcard\Model\GiftcardManager" />
+    <preference for="Aheadworks\Giftcard\Api\ConfigProviderInterface" type="Aheadworks\Giftcard\Model\ConfigProvider" />
+</config>

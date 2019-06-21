@@ -1,0 +1,272 @@
+/* Gift Card Product edit page */
+.admin__scope-old .field-aw_gc_open_amount_min .addon,
+.admin__scope-old .field-aw_gc_open_amount_max .addon {
+    direction: rtl;
+}
+.admin__scope-old .field-aw_gc_open_amount_min .addon > *,
+.admin__scope-old .field-aw_gc_open_amount_max .addon > * {
+    direction: ltr;
+}
+.admin__scope-old .field-aw_gc_open_amount_min .addon .addafter,
+.admin__scope-old .field-aw_gc_open_amount_max .addon .addafter {
+    border-width: 1px 0 1px 1px;
+    border-radius: 1px 0 0 1px;
+}
+.admin__scope-old .field-aw_gc_open_amount_min .addon input[type="text"] ~ .addafter strong,
+.admin__scope-old .field-aw_gc_open_amount_max .addon input[type="text"] ~ .addafter strong {
+    font-size: 18px;
+}
+.admin__scope-old .field-aw_gc_open_amount_min .addon,
+.admin__scope-old .field-aw_gc_open_amount_max .addon {
+    direction: rtl;
+}
+.admin__scope-old .field-aw_gc_open_amount_min .addon > *,
+.admin__scope-old .field-aw_gc_open_amount_max .addon > * {
+    direction: ltr;
+}
+.admin__scope-old .field-aw_gc_open_amount_min .addon > input,
+.admin__scope-old .field-aw_gc_open_amount_max .addon > input {
+    width: 99px;
+    float: left;
+}
+#aw-giftcard-amounts-table th.required:after {
+    color: #eb5202;
+    content: '*';
+    display: inline-block;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1;
+    margin-left: 5px;
+    position: absolute;
+    top: 1.2rem;
+    z-index: 1;
+}
+.aw_gc_template_image .image-placeholder::before {
+    position: absolute;
+    top: 24px;
+    width: 100%;
+    z-index: 1;
+}
+.aw_gc_template_image .image-placeholder::before {
+    color: #ccc;
+    content: "";
+    display: inline-block;
+    font-family: "Admin Icons";
+    font-size: 4rem;
+    font-weight: normal;
+    line-height: inherit;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+}
+.aw_gc_template_image .image-placeholder input[type="file"] {
+    border: 1px;
+    font-size: 1em;
+}
+.aw_gc_template_image  .file-uploader-preview {
+    margin-bottom: 0px
+}
+.aw_gc_template_image  .image {
+    margin: 0px
+}
+
+/* Gift Card Product grid */
+.aw-gc-product-grid-cell.templates ul {
+    list-style: none;
+}
+.aw-gc-product-grid-cell.templates ul li {
+    margin-bottom: 5px;
+}
+
+/* Menu */
+.aw-gc-menu {
+    color: #41362f;
+    float: left;
+    font-size: 1.6rem;
+    margin-top: .7rem;
+}
+.page-main-actions._hidden .aw-gc-menu {
+    display: none;
+}
+.aw-gc-menu .dropdown {
+    display: inline-block;
+    position: relative;
+}
+.aw-gc-menu .dropdown:before, .aw-gc-menu .dropdown:after {
+    content: "";
+    display: table;
+}
+.aw-gc-menu .admin__action-dropdown {
+    font-size: 1.6rem;
+    letter-spacing: .025em;
+    background-color: #f8f8f8;
+    z-index: 520;
+    transition: border-color 0.15s ease;
+}
+.aw-gc-menu .dropdown .dropdown-menu {
+    margin: 0;
+    padding: 6px 0 3px 0;
+    list-style: none none;
+    box-sizing: border-box;
+    background: #ffffff;
+    border: 1px #adadad solid;
+    position: absolute;
+    z-index: 500;
+    top: 100%;
+    line-height: 1.36;
+    min-width: 20.5rem;
+    margin-top: -1px;
+    display: none;
+    transition: all 0.15s ease;
+    visibility: hidden;
+    opacity: 0;
+}
+.aw-gc-menu .dropdown.active .admin__action-dropdown-text:after {
+    background-color: #ffffff;
+    content: '';
+    height: 6px;
+    position: absolute;
+    top: 100%;
+    right: -6px;
+    left: 0;
+}
+.aw-gc-menu .dropdown.active .admin__action-dropdown,
+.aw-gc-menu .dropdown.active .dropdown-menu {
+    border-color: #adadad;
+    background-color: #fff;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+.aw-gc-menu .dropdown.active .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+.aw-gc-menu .dropdown .dropdown-menu li:hover,
+.aw-gc-menu .dropdown .dropdown-menu li.current {
+    background: #e9e9e9;
+    cursor: pointer;
+}
+.aw-gc-menu .dropdown-menu li {
+    margin: 0;
+    border: 0;
+    cursor: default;
+    font-size: 1.4rem;
+}
+.aw-gc-menu .dropdown-menu li a {
+    text-decoration: none;
+    color: #41362f;
+    display: block;
+    padding: .6rem 1.8rem;
+}
+.aw-gc-menu .dropdown-menu li.separator {
+    border-top: 1px #adadad solid;
+}
+.aw-gc-menu .dropdown-menu li.separator a {
+    padding-top: .8rem;
+}
+
+/* Breadcrumbs */
+.aw-gc-breadcrumbs {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0px 0px 2rem;
+}
+.aw-gc-breadcrumbs .items {
+    font-size: 1.4rem;
+    color: #41362f;
+    margin: 0;
+    padding: 0;
+    list-style: none none;
+}
+.aw-gc-breadcrumbs .items > li {
+    display: inline-block;
+    vertical-align: top;
+}
+.aw-gc-breadcrumbs .item:not(:last-child) {
+    display: inline-block;
+    text-decoration: none;
+}
+.aw-gc-breadcrumbs .item:not(:last-child):after {
+    content: '>';
+    font-size: 1.4rem;
+    line-height: 20px;
+    overflow: hidden;
+    speak: none;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    margin: 0 1px;
+}
+.aw-gc-breadcrumbs a {
+    color: #007bdb;
+    text-decoration: underline;
+}
+.aw-gc-breadcrumbs a:hover {
+    text-decoration: underline;
+}
+.aw-gc-breadcrumbs strong {
+    font-weight: 400;
+}
+.aw-giftcard-admin-giftcard-edit .fieldset > .legend {
+    border-bottom: 1px solid #cac3b4;
+}
+.aw-giftcard-admin-giftcard-edit .fieldset > .legend span {
+    padding: 7px 0 10px;
+    display: inline-block;
+}
+.aw-giftcard-admin-giftcard-edit .fieldset#giftcard_base_fieldset {
+    float: left;
+    width: calc( (100%) * .5 - 30px );
+    background: #f1f1f1;
+    padding: 3rem;
+}
+.aw-giftcard-admin-giftcard-edit .fieldset#giftcard_sender_fieldset,
+.aw-giftcard-admin-giftcard-edit .fieldset#giftcard_order_fieldset
+{
+    float: right;
+    width: calc( (100%) * .5 - 30px );
+    padding: 3rem;
+}
+.aw-giftcard-admin-giftcard-edit .fieldset#giftcard_recipient_fieldset {
+    clear: both;
+    padding-top: 3rem;
+}
+.aw-giftcard-admin-giftcard-edit .control .control-value {
+    display: inline-block;
+    padding: 6px 0 0;
+    vertical-align: top;
+}
+.aw-giftcard-admin-giftcard-edit .admin__field-label span {
+    font-weight: 400;
+}
+.aw-giftcard-admin-giftcard-edit .admin__fieldset .admin__control-select {
+    width: 100%;
+}
+.aw-giftcard-admin-giftcard-edit .admin__fieldset .hasDatepicker {
+    width: 90%;
+}
+.aw-giftcard-admin-giftcard-edit .fieldset#giftcard_base_fieldset .field-code .control-value {
+    font-weight: 600;
+}
+.aw-giftcard-admin-giftcard-edit .fieldset#giftcard_recipient_fieldset .field:nth-child(even) {
+    clear: both;
+    float: left;
+    width: calc( (100%) * .5 - 30px );
+    margin-top: 0;
+}
+.aw-giftcard-admin-giftcard-edit .fieldset#giftcard_recipient_fieldset .field:nth-child(odd) {
+    float: right;
+    width: calc( (100%) * .5 - 30px );
+    margin-top: 0;
+}
+.aw-giftcard-admin-giftcard-edit .fieldset#giftcard_base_fieldset input.hasDatepicker {
+    padding: 4px 10px;
+}
+.aw-giftcard-admin-giftcard-edit .fieldset#giftcard_base_fieldset button.ui-datepicker-trigger {
+    margin-left: .8rem;
+}
+.aw-giftcard-admin-giftcard-edit .fieldset#giftcard_order_fieldset .field a {
+    line-height: 3.2rem;
+}

@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Xtento\OrderExport\Logger\Handler">
+        <arguments>
+            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+        </arguments>
+    </type>
+    <type name="Xtento\OrderExport\Logger\Logger">
+        <arguments>
+            <argument name="name" xsi:type="string">xtentoLogger</argument>
+            <argument name="handlers" xsi:type="array">
+                <item name="system" xsi:type="object">Xtento\OrderExport\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="xtentoOrderExportExportCommand" xsi:type="object">Xtento\OrderExport\Console\Command\ExportCommand</item>
+                <item name="xtentoOrderExportConfigExportCommand" xsi:type="object">Xtento\OrderExport\Console\Command\ConfigExportCommand</item>
+                <item name="xtentoOrderExportConfigImportCommand" xsi:type="object">Xtento\OrderExport\Console\Command\ConfigImportCommand</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="XtentoOrderExportConfigData" type="Magento\Framework\Config\Data">
+        <arguments>
+            <argument name="reader" xsi:type="object">XtentoOrderExportConfigDataReader</argument>
+            <argument name="cacheId" xsi:type="string">xtento_order_export_config_data</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="XtentoOrderExportConfigDataReader" type="Magento\Framework\Config\Reader\Filesystem">
+        <arguments>
+            <argument name="idAttributes" xsi:type="array">
+                <item name="/config/data/export" xsi:type="string">id</item>
+            </argument>
+            <argument name="fileName" xsi:type="string">xtento/orderexport_data.xml</argument>
+            <argument name="converter" xsi:type="object">\Xtento\OrderExport\Model\Export\Config\ConfigDataConverter</argument>
+            <argument name="schemaLocator" xsi:type="object">\Xtento\OrderExport\Model\Export\Config\SchemaLocator</argument>
+        </arguments>
+    </virtualType>
+    <type name="Xtento\OrderExport\Model\Export\Data">
+        <arguments>
+            <argument name="exportConfig" xsi:type="object">XtentoOrderExportConfigData</argument>
+        </arguments>
+    </type>
+</config>
+<!--
+/**
+ * Product:       Xtento_OrderExport (2.2.5)
+ * ID:            %!uniqueid!%
+ * Packaged:      %!packaged!%
+ * Last Modified: 2017-04-27T13:59:35+00:00
+ * File:          app/code/Xtento/OrderExport/etc/di.xml
+ * Copyright:     Copyright (c) 2017 XTENTO GmbH & Co. KG <info@xtento.com> / All rights reserved.
+ */
+-->

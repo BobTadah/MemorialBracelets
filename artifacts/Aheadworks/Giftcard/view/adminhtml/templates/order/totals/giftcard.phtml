@@ -1,0 +1,14 @@
+<?php
+/** @var $block \Aheadworks\Giftcard\Block\Adminhtml\Order\Totals\Giftcard */
+?>
+<?php foreach($block->getGiftCardItems() as $giftCardItem): ?>
+    <?php /** @var $giftCardItem \Aheadworks\Giftcard\Model\Giftcard */ ?>
+    <tr class="col-aw-giftcard-<?php echo $giftCardItem->getId() ?>">
+        <td class="label">
+            <?php echo __('Gift Card Code (%1)', $giftCardItem->getCode()); ?>
+        </td>
+        <td>
+            <?php echo $block->displayPrices(-$giftCardItem->getBaseGiftcardAmount(), -$giftCardItem->getGiftcardAmount()) ?>
+        </td>
+    </tr>
+<?php endforeach; ?>

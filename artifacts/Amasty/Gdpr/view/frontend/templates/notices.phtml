@@ -1,0 +1,57 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2018 Amasty (https://www.amasty.com)
+ * @package Amasty_Gdpr
+ */
+?>
+<?php
+/** @var \Amasty\Gdpr\Block\Notices $block */
+
+if ($cookiePrivacyText = $block->getCookiePolicyText()) : ?>
+    <div data-role="gdpr-cookie-container" data-bind="scope: 'gdpr-cookie-container'">
+        <!-- ko template: getTemplate() --><!-- /ko -->
+    </div>
+    <script type="text/x-magento-init">
+    {
+        "[data-role=gdpr-cookie-container]": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "gdpr-cookie-container": {
+                        "component": "Amasty_Gdpr/js/model/cookies",
+                        "noticeType": <?= $block->escapeHtml($block->getNoticeType()); ?>,
+                        "policyText": <?= /** @escapeNotVerified */ $cookiePrivacyText; ?>,
+                        "allowLink": "<?= $block->escapeUrl($block->getAllowLink()) ?>",
+                        "disallowLink": "<?= $block->escapeUrl($block->getDisallowLink()) ?>"
+                    }
+                }
+            }
+        }
+    }
+    </script>
+
+    <style>
+        .message.global.cookie.am-cookie {
+            background-color: <?= /* @escapeNotVerified */ $block->getBackgroundBarCollor() ?>;
+        }
+
+        .content p {
+            color: <?= /* @escapeNotVerified */ $block->getTextBarCollor() ?>;
+        }
+
+        .message.global.cookie a, .message.global.cookie a:hover {
+            color: <?= /* @escapeNotVerified */ $block->getLinksBarCollor() ?>;
+        }
+
+        .actions button.action.primary.cookiebar {
+            background-color: <?= /* @escapeNotVerified */ $block->getButtonsBarCollor() ?>;
+            border-color: <?= /* @escapeNotVerified */ $block->getButtonsBarCollor() ?>;
+            color: <?= /* @escapeNotVerified */ $block->getButtonTextBarCollor() ?>;
+        }
+
+        .actions button.action.primary.cookiebar:hover {
+            opacity: 0.9;
+        }
+    </style>
+
+<?php endif; ?>
