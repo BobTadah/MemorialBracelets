@@ -28,18 +28,6 @@
             "options": {
                 "symlink": false
             }
-        },
-        "briteskies-local-docker": {
-            "type": "vcs",
-            "url": "git@bitbucket.org:briteskies/local-docker.git"
-        },
-        "briteskies-magento-pipelines": {
-            "type": "vcs",
-            "url": "git@bitbucket.org:briteskies/magento-pipelines.git"
-        },
-        "briteskies-module-paypalpartnerid": {
-            "type": "vcs",
-            "url": "git@bitbucket.org:briteskies/module-paypalpartnerid.git"
         }
     },
     "require": {
@@ -66,9 +54,7 @@
         "amasty/base": "^1.4",
         "amasty/shiprestriction": "^1.0.7",
         "amasty/geoip": "^1.3.6",
-        "amasty/module-gdpr": "^1.1.7",
-        "briteskies/local-docker": "dev-2_1 as 2.1.0",
-        "briteskies/module-paypalpartnerid": "^0.1"
+        "amasty/module-gdpr": "^1.1.7"
     },
     "require-dev": {
         "phpunit/phpunit": "4.1.0",

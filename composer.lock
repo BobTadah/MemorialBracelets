@@ -211,53 +211,6 @@
             "time": "2015-11-19T19:14:47+00:00"
         },
         {
-            "name": "briteskies/local-docker",
-            "version": "dev-2_1",
-            "source": {
-                "type": "git",
-                "url": "git@bitbucket.org:briteskies/local-docker.git",
-                "reference": "5d7f80258ff1363dabf95684e731b457dab05ae5"
-            },
-            "require": {
-                "composer/installers": "~1.0",
-                "magento/magento-composer-installer": "*"
-            },
-            "type": "magento2-component",
-            "extra": {
-                "map": [
-                    [
-                        "*",
-                        ".docker"
-                    ]
-                ]
-            },
-            "description": "Local Docker Development Environment",
-            "time": "2019-02-06T00:16:45+00:00"
-        },
-        {
-            "name": "briteskies/module-paypalpartnerid",
-            "version": "0.1.2",
-            "source": {
-                "type": "git",
-                "url": "git@bitbucket.org:briteskies/module-paypalpartnerid.git",
-                "reference": "e77771c72501d22738010d13df189ca80d3f3e85"
-            },
-            "require": {
-                "magento/magento-composer-installer": "*",
-                "php": "~5.5.0|~5.6.0|~7.0.0"
-            },
-            "type": "magento2-module",
-            "autoload": {
-                "files": [
-                    "registration.php"
-                ],
-                "psr-4": {
-                    "Briteskies\\PayPalPartnerId\\": ""
-                }
-            },
-            "time": "2019-04-02T18:54:52+00:00"
-        },
-        {
             "name": "colinmollenhour/cache-backend-file",
             "version": "1.4",
             "source": {
@@ -10187,8 +10140,7 @@
     ],
     "minimum-stability": "alpha",
     "stability-flags": {
-        "composer/composer": 15,
-        "briteskies/local-docker": 20
+        "composer/composer": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,
