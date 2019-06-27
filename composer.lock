@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "39f7d3bb1d15a3ae0317f965c33e2e12",
+    "content-hash": "20d5a290efb9d65b04939e89e405b195",
     "packages": [
         {
             "name": "aheadworks/module-giftcard",
@@ -211,53 +211,6 @@
             "time": "2015-11-19T19:14:47+00:00"
         },
         {
-            "name": "briteskies/local-docker",
-            "version": "dev-2_1",
-            "source": {
-                "type": "git",
-                "url": "git@bitbucket.org:briteskies/local-docker.git",
-                "reference": "5d7f80258ff1363dabf95684e731b457dab05ae5"
-            },
-            "require": {
-                "composer/installers": "~1.0",
-                "magento/magento-composer-installer": "*"
-            },
-            "type": "magento2-component",
-            "extra": {
-                "map": [
-                    [
-                        "*",
-                        ".docker"
-                    ]
-                ]
-            },
-            "description": "Local Docker Development Environment",
-            "time": "2019-02-06T00:16:45+00:00"
-        },
-        {
-            "name": "briteskies/module-paypalpartnerid",
-            "version": "0.1.2",
-            "source": {
-                "type": "git",
-                "url": "git@bitbucket.org:briteskies/module-paypalpartnerid.git",
-                "reference": "e77771c72501d22738010d13df189ca80d3f3e85"
-            },
-            "require": {
-                "magento/magento-composer-installer": "*",
-                "php": "~5.5.0|~5.6.0|~7.0.0"
-            },
-            "type": "magento2-module",
-            "autoload": {
-                "files": [
-                    "registration.php"
-                ],
-                "psr-4": {
-                    "Briteskies\\PayPalPartnerId\\": ""
-                }
-            },
-            "time": "2019-04-02T18:54:52+00:00"
-        },
-        {
             "name": "colinmollenhour/cache-backend-file",
             "version": "1.4",
             "source": {
@@ -295,16 +248,16 @@
         },
         {
             "name": "colinmollenhour/cache-backend-redis",
-            "version": "1.9",
+            "version": "1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/colinmollenhour/Cm_Cache_Backend_Redis.git",
-                "reference": "6319714bb3a4fe699c5db0edb887f5e8fe40a6dc"
+                "reference": "155f4dc20240aae06dd5cb8747475f37974d053a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/colinmollenhour/Cm_Cache_Backend_Redis/zipball/6319714bb3a4fe699c5db0edb887f5e8fe40a6dc",
-                "reference": "6319714bb3a4fe699c5db0edb887f5e8fe40a6dc",
+                "url": "https://api.github.com/repos/colinmollenhour/Cm_Cache_Backend_Redis/zipball/155f4dc20240aae06dd5cb8747475f37974d053a",
+                "reference": "155f4dc20240aae06dd5cb8747475f37974d053a",
                 "shasum": ""
             },
             "require": {
@@ -327,7 +280,7 @@
             ],
             "description": "Zend_Cache backend using Redis with full support for tags.",
             "homepage": "https://github.com/colinmollenhour/Cm_Cache_Backend_Redis",
-            "time": "2016-05-02T16:23:36+00:00"
+            "time": "2016-10-03T16:55:11+00:00"
         },
         {
             "name": "colinmollenhour/credis",
@@ -480,126 +433,6 @@
                 "package"
             ],
             "time": "2016-03-03T15:15:10+00:00"
-        },
-        {
-            "name": "composer/installers",
-            "version": "v1.6.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/composer/installers.git",
-                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/cfcca6b1b60bc4974324efb5783c13dca6932b5b",
-                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.0"
-            },
-            "replace": {
-                "roundcube/plugin-installer": "*",
-                "shama/baton": "*"
-            },
-            "require-dev": {
-                "composer/composer": "1.0.*@dev",
-                "phpunit/phpunit": "^4.8.36"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "Composer\\Installers\\Plugin",
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Composer\\Installers\\": "src/Composer/Installers"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kyle Robinson Young",
-                    "email": "kyle@dontkry.com",
-                    "homepage": "https://github.com/shama"
-                }
-            ],
-            "description": "A multi-framework Composer library installer",
-            "homepage": "https://composer.github.io/installers/",
-            "keywords": [
-                "Craft",
-                "Dolibarr",
-                "Eliasis",
-                "Hurad",
-                "ImageCMS",
-                "Kanboard",
-                "Lan Management System",
-                "MODX Evo",
-                "Mautic",
-                "Maya",
-                "OXID",
-                "Plentymarkets",
-                "Porto",
-                "RadPHP",
-                "SMF",
-                "Thelia",
-                "WolfCMS",
-                "agl",
-                "aimeos",
-                "annotatecms",
-                "attogram",
-                "bitrix",
-                "cakephp",
-                "chef",
-                "cockpit",
-                "codeigniter",
-                "concrete5",
-                "croogo",
-                "dokuwiki",
-                "drupal",
-                "eZ Platform",
-                "elgg",
-                "expressionengine",
-                "fuelphp",
-                "grav",
-                "installer",
-                "itop",
-                "joomla",
-                "kohana",
-                "laravel",
-                "lavalite",
-                "lithium",
-                "magento",
-                "majima",
-                "mako",
-                "mediawiki",
-                "modulework",
-                "modx",
-                "moodle",
-                "osclass",
-                "phpbb",
-                "piwik",
-                "ppi",
-                "puppet",
-                "pxcms",
-                "reindex",
-                "roundcube",
-                "shopware",
-                "silverstripe",
-                "sydes",
-                "symfony",
-                "typo3",
-                "wordpress",
-                "yawik",
-                "zend",
-                "zikula"
-            ],
-            "time": "2018-08-27T06:10:37+00:00"
         },
         {
             "name": "composer/semver",
@@ -1101,8 +934,8 @@
             "version": "1.0.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/magento/composer/zipball/",
-                "shasum": ""
+                "url": "https://repo.magento.com/archives/magento/composer/magento-composer-1.0.3.0.zip",
+                "shasum": "2ca1c4e0d2d5e90fa1cd438e4a0775b6c7cbbe1a"
             },
             "require": {
                 "composer/composer": "1.0.0-beta1",
@@ -1118,13 +951,11 @@
                     "Magento\\Composer\\": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "OSL-3.0",
                 "AFL-3.0"
             ],
-            "description": "Magento composer library helps to instantiate Composer application and run composer commands.",
-            "time": "2016-03-08T20:50:51+00:00"
+            "description": "Magento composer library helps to instantiate Composer application and run composer commands."
         },
         {
             "name": "magento/framework",
@@ -6618,11 +6449,6 @@
                 "shasum": "b63d849a07c3b1fca303888bcdee3cb4b90da77a"
             },
             "type": "magento2-module",
-            "extra": {
-                "x-magento-ext-title": "ShippingEasy",
-                "x-magento-ext-package-link": "https://marketplace.magento.com/shippingeasy-module-fulfilment.html",
-                "x-magento-ext-type": "Extension"
-            },
             "autoload": {
                 "files": [
                     "registration.php"
@@ -8857,6 +8683,183 @@
     ],
     "packages-dev": [
         {
+            "name": "composer/installers",
+            "version": "v1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/installers.git",
+                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/installers/zipball/cfcca6b1b60bc4974324efb5783c13dca6932b5b",
+                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0"
+            },
+            "replace": {
+                "roundcube/plugin-installer": "*",
+                "shama/baton": "*"
+            },
+            "require-dev": {
+                "composer/composer": "1.0.*@dev",
+                "phpunit/phpunit": "^4.8.36"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Composer\\Installers\\Plugin",
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Composer\\Installers\\": "src/Composer/Installers"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kyle Robinson Young",
+                    "email": "kyle@dontkry.com",
+                    "homepage": "https://github.com/shama"
+                }
+            ],
+            "description": "A multi-framework Composer library installer",
+            "homepage": "https://composer.github.io/installers/",
+            "keywords": [
+                "Craft",
+                "Dolibarr",
+                "Eliasis",
+                "Hurad",
+                "ImageCMS",
+                "Kanboard",
+                "Lan Management System",
+                "MODX Evo",
+                "Mautic",
+                "Maya",
+                "OXID",
+                "Plentymarkets",
+                "Porto",
+                "RadPHP",
+                "SMF",
+                "Thelia",
+                "WolfCMS",
+                "agl",
+                "aimeos",
+                "annotatecms",
+                "attogram",
+                "bitrix",
+                "cakephp",
+                "chef",
+                "cockpit",
+                "codeigniter",
+                "concrete5",
+                "croogo",
+                "dokuwiki",
+                "drupal",
+                "eZ Platform",
+                "elgg",
+                "expressionengine",
+                "fuelphp",
+                "grav",
+                "installer",
+                "itop",
+                "joomla",
+                "kohana",
+                "laravel",
+                "lavalite",
+                "lithium",
+                "magento",
+                "majima",
+                "mako",
+                "mediawiki",
+                "modulework",
+                "modx",
+                "moodle",
+                "osclass",
+                "phpbb",
+                "piwik",
+                "ppi",
+                "puppet",
+                "pxcms",
+                "reindex",
+                "roundcube",
+                "shopware",
+                "silverstripe",
+                "sydes",
+                "symfony",
+                "typo3",
+                "wordpress",
+                "yawik",
+                "zend",
+                "zikula"
+            ],
+            "time": "2018-08-27T06:10:37+00:00"
+        },
+        {
+            "name": "deployer/recipes",
+            "version": "6.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/deployphp/recipes.git",
+                "reference": "84b3229c518c094a950e1fe785b7b8f9598770fe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/deployphp/recipes/zipball/84b3229c518c094a950e1fe785b7b8f9598770fe",
+                "reference": "84b3229c518c094a950e1fe785b7b8f9598770fe",
+                "shasum": ""
+            },
+            "require": {
+                "php": "~7.0"
+            },
+            "replace": {
+                "deployer/recipes": "self.version"
+            },
+            "require-dev": {
+                "deployer/deployer": "^6.3"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "autoload.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anton Medvedev",
+                    "email": "anton@medv.io"
+                }
+            ],
+            "description": "3rd party deployer recipes",
+            "homepage": "https://github.com/deployphp/recipes",
+            "keywords": [
+                "cachetool",
+                "cloudflare",
+                "deploy",
+                "deployer",
+                "deployment",
+                "hipchat",
+                "newrelic",
+                "rabbit",
+                "recipes",
+                "sentry",
+                "slack",
+                "yarn"
+            ],
+            "time": "2019-06-27T06:47:18+00:00"
+        },
+        {
             "name": "doctrine/instantiator",
             "version": "1.0.5",
             "source": {
@@ -9514,6 +9517,7 @@
                 "mock",
                 "xunit"
             ],
+            "abandoned": true,
             "time": "2015-10-02T06:51:40+00:00"
         },
         {
@@ -10177,18 +10181,10 @@
             "time": "2017-05-01T14:31:55+00:00"
         }
     ],
-    "aliases": [
-        {
-            "alias": "2.1.0",
-            "alias_normalized": "2.1.0.0",
-            "version": "dev-2_1",
-            "package": "briteskies/local-docker"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "alpha",
     "stability-flags": {
-        "composer/composer": 15,
-        "briteskies/local-docker": 20
+        "composer/composer": 15
     },
     "prefer-stable": true,
     "prefer-lowest": false,
