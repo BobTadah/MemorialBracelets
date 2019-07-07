@@ -18,54 +18,38 @@
             "type": "composer",
             "url": "https://repo.magento.com/"
         },
-        "artifacts": {
-            "type": "artifact",
-            "url": "artifacts"
+        "xtento": {
+            "type": "composer",
+            "url": "https://repo.xtento.com"
         },
-        "path": {
-            "type": "path",
-            "url": "artifacts/*/*",
-            "options": {
-                "symlink": false
-            }
+        "aheadworks": {
+            "type": "composer",
+            "url": "https://dist.aheadworks.com"
         }
     },
     "require": {
-        "magento/product-community-edition": "~2.1.6",
+        "magento/product-community-edition": "2.3.2",
         "composer/composer": "@alpha",
-        "fooman/googleanalyticsplus-m2": "^2.0",
-        "unirgy/m2-simple-license": "^2.0",
-        "unirgy/m2-simple-up": "^2.0",
-        "vladimirpopov/webforms": "^2.8",
-        "xtento/module-orderexport": "^2.2.5",
-        "xtento/module-trackingimport": "^2.1.6",
-        "unirgy/m2-rapidflow": "^3.0",
-        "unirgy/m2-rapidflow-pro": "^3.0",
+        "fooman/googleanalyticsplus-m2": "^3.0",
         "navarr/easy-upgrades": "^1.0",
         "cweagans/composer-patches": "^1.6.0",
         "litespeed/module-litemage": "^2.0",
-        "iwd/all": "^2.1",
-        "iwd/ordermanager": "^2.6",
-        "iwd/authcim": "^2.1",
         "shippingeasy/module-fulfilment": "^1.0",
-        "yireo/yireo_whoops": "^0.0.3",
         "ramsey/uuid": "^3.6",
-        "aheadworks/module-giftcard": "^1.0",
-        "amasty/base": "^1.4",
-        "amasty/shiprestriction": "^1.0.7",
-        "amasty/geoip": "^1.3.6",
-        "amasty/module-gdpr": "^1.1.7"
+        "aheadworks/module-giftcard": "^1.2",
+        "xtento/orderexport": "^2.10",
+        "xtento/trackingimport": "^2.7"
     },
     "require-dev": {
-        "phpunit/phpunit": "4.1.0",
-        "squizlabs/php_codesniffer": "~2.0",
+        "phpunit/phpunit": "~6.2.0",
+        "squizlabs/php_codesniffer": "3.2.2",
         "phpmd/phpmd": "2.3.*",
-        "pdepend/pdepend": "2.2.2",
-        "sjparkinson/static-review": "~4.1",
-        "friendsofphp/php-cs-fixer": "~1.2",
-        "lusitanian/oauth": "~0.3 <=0.7.0",
-        "sensiolabs/security-checker": "^3.0",
-        "deployer/recipes": "^6.2"
+        "pdepend/pdepend": "2.5.2",
+        "friendsofphp/php-cs-fixer": "~2.10.1",
+        "lusitanian/oauth": "~0.8.10",
+        "deployer/recipes": "^6.2",
+        "yireo/magento2-whoops": "^0.0.11",
+        "sebastian/phpcpd": "~3.0.0"
     },
     "config": {
         "use-include-path": true
@@ -74,7 +58,8 @@
         "psr-4": {
             "Magento\\Framework\\": "lib/internal/Magento/Framework/",
             "Magento\\Setup\\": "setup/src/Magento/Setup/",
-            "Magento\\": "app/code/Magento/"
+            "Magento\\": "app/code/Magento/",
+            "Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"
         },
         "psr-0": {
             "": "app/code/"
@@ -93,20 +78,14 @@
         }
     },
     "extra": {
+        "enable-patching": true,
         "magento-force": "override",
         "composer-exit-on-patch-failure": true,
         "patches": {
-            "magento/module-catalog": {
-                "500 product cap on categories fix - MBSUP-8": "patches/magento_catalog_fix_category_product_max_count.patch"
-            },
-            "magento/module-sales-rule": {
-                "MBSUP-241 Mage bug in price rule dates spreading '0000' timestamp to coupons": "patches/MBSUP241_nulldate_sales-rule.patch"
-            },
-            "magento/module-usps": {
-                "Fix USPS shipping option name - MBSUP-99": "patches/usps_shipping_options_patch.patch"
+        "magento/framework": {
+                "Fix setup upgrade": "patches/magento_framework_fix_setup_upgrade.patch"
             }
         }
-
     },
     "minimum-stability": "alpha",
     "prefer-stable": true,

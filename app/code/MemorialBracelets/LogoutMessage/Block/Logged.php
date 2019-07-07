@@ -24,11 +24,10 @@ class Logged extends Template
      * @param Context $context
      */
     public function __construct(
-        SessionManagerInterface $sessionManager,
         Context $context
     ) {
         parent::__construct($context);
-        $this->sessionManager = $sessionManager;
+        $this->sessionManager = $context->getSession();
     }
 
     /**

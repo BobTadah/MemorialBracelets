@@ -1,0 +1,25 @@
+<div class="action-select-wrap" css="_active: opened" outerClick="close.bind($data)">
+    <button class="action-select" attr="title: $t('Select Items')" click="toggleOpened">
+        <span translate="'Actions'"/>
+    </button>
+    <div class="action-menu-items">
+        <ul class="action-menu" each="data: actions, as: 'action'" css="_active: opened">
+            <li css="_visible: $data.visible, _parent: ($data.actions || $parent.isCustomTemplate(type))">
+
+                <!-- ko if: $parent.isCustomTemplate(type) -->
+                <span class="action-menu-item" text="label" click="$parent.hideForm(type)"/>
+                <ul class="iwd-comment" data-bind="visible: $parent[type]()">
+                    <li>
+                        <textarea class="admin__control-text" data-bind="textInput: $parent[type+'Form']"></textarea>
+                        <button click="$parent.applyActionForm.bind($parent, type, $parent[type+'Form'])">Add</button>
+                    </li>
+                </ul>
+                <!-- /ko -->
+                <!-- ko if: !$parent.isCustomTemplate(type) -->
+                <span class="action-menu-item" text="label" click="$parent.applyAction.bind($parent, type)"/>
+                <render args="name: $parent.submenuTemplate, data: $parent" if="$data.actions"/>
+                <!-- /ko -->
+            </li>
+        </ul>
+    </div>
+</div>

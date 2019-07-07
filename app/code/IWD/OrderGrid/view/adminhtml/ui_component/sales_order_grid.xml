@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <listingToolbar name="listing_top">
+        <massaction name="listing_massaction" class="IWD\OrderGrid\Ui\Component\MassAction">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">IWD_OrderGrid/js/grid/tree-massactions</item>
+                </item>
+            </argument>
+            <action name="delete">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">delete</item>
+                        <item name="label" xsi:type="string" translate="true">Delete Order(s)</item>
+                        <item name="url" xsi:type="url" path="iwdordergrid/order_massactions/delete"/>
+                        <item name="confirm" xsi:type="array">
+                            <item name="title" xsi:type="string" translate="true">Delete Items</item>
+                            <item name="message" xsi:type="string" translate="true">Are you sure you wan't to delete selected items?</item>
+                        </item>
+                    </item>
+                </argument>
+            </action>
+            <action name="status">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">status</item>
+                        <item name="label" xsi:type="string" translate="true">Change status</item>
+                    </item>
+                </argument>
+                <argument name="actions" xsi:type="configurableObject">
+                    <argument name="class" xsi:type="string">IWD\OrderGrid\Ui\Component\MassAction\Status\Options</argument>
+                    <argument name="data" xsi:type="array">
+                        <item name="urlPath" xsi:type="string">iwdordergrid/order_massactions/editstatus</item>
+                        <item name="paramName" xsi:type="string">status</item>
+                        <item name="confirm" xsi:type="array">
+                            <item name="title" xsi:type="string" translate="true">Change status</item>
+                            <item name="message" xsi:type="string" translate="true">Are you sure to change order status?</item>
+                        </item>
+                    </argument>
+                </argument>
+            </action>
+            <action name="iwd_print_orders">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">iwd_print_orders</item>
+                        <item name="label" xsi:type="string" translate="true">Print Order(s)</item>
+                        <item name="url" xsi:type="url" path="iwdordergrid/order_massactions/print"/>
+                    </item>
+                </argument>
+            </action>
+            <action name="iwd_invoices">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">iwd_invoices</item>
+                        <item name="label" xsi:type="string" translate="true">Invoice</item>
+                        <item name="url" xsi:type="url" path="iwdordergrid/invoice_massactions/create"/>
+                    </item>
+                </argument>
+            </action>
+            <action name="iwd_ship">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">iwd_ship</item>
+                        <item name="label" xsi:type="string" translate="true">Ship</item>
+                        <item name="url" xsi:type="url" path="iwdordergrid/order_massactions/ship"/>
+                    </item>
+                </argument>
+            </action>
+            <action name="iwd_invoice_create_print">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">iwd_invoice_create_print</item>
+                        <item name="label" xsi:type="string" translate="true">Invoice and Print</item>
+                        <item name="url" xsi:type="url" path="iwdordergrid/invoice_massactions/create"/>
+                    </item>
+                </argument>
+            </action>
+            <action name="iwd_invoice_ship_create">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">iwd_invoice_ship_create</item>
+                        <item name="label" xsi:type="string" translate="true">Invoice and Ship</item>
+                        <item name="url" xsi:type="url" path="iwdordergrid/invoice_massactions/invoiceShip"/>
+                    </item>
+                </argument>
+            </action>
+            <action name="iwd_ship_create_print">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">iwd_ship_create_print</item>
+                        <item name="label" xsi:type="string" translate="true">Ship and Print</item>
+                        <item name="url" xsi:type="url" path="iwdordergrid/order_massactions/ship"/>
+                    </item>
+                </argument>
+            </action>
+            <action name="iwd_invoice_ship_create_print">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">iwd_invoice_ship_create_print</item>
+                        <item name="label" xsi:type="string" translate="true">Invoice and Ship and Print</item>
+                        <item name="url" xsi:type="url" path="iwdordergrid/invoice_massactions/invoiceShip"/>
+                    </item>
+                </argument>
+            </action>
+            <action name="iwd_invoice_ship_print">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">iwd_invoice_ship_print</item>
+                        <item name="label" xsi:type="string" translate="true">Print Invoice and Ship</item>
+                        <item name="url" xsi:type="url" path="iwdordergrid/invoice_massactions/invoiceShipPrint"/>
+                    </item>
+                </argument>
+            </action>
+            <action name="iwd_order_resend">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">iwd_order_resend</item>
+                        <item name="label" xsi:type="string" translate="true">Resend Order</item>
+                        <item name="url" xsi:type="url" path="iwdordergrid/order_massactions/resend"/>
+                    </item>
+                </argument>
+            </action>
+            <action name="iwd_invoice_resend">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">iwd_invoice_resend</item>
+                        <item name="label" xsi:type="string" translate="true">Resend Invoice</item>
+                        <item name="url" xsi:type="url" path="iwdordergrid/invoice_massactions/resend"/>
+                    </item>
+                </argument>
+            </action>
+            <action name="iwd_ship_resend">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">iwd_ship_resend</item>
+                        <item name="label" xsi:type="string" translate="true">Resend shipment</item>
+                        <item name="url" xsi:type="url" path="iwdordergrid/shipment_massactions/resend"/>
+                    </item>
+                </argument>
+            </action>
+            <action name="iwd_comment">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">iwd_comment</item>
+                        <item name="label" xsi:type="string" translate="true">Add comment</item>
+                        <item name="url" xsi:type="url" path="iwdordergrid/order_massactions/comment"/>
+                    </item>
+                </argument>
+            </action>
+        </massaction>
+    </listingToolbar>
+    <columns name="sales_order_columns">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="component" xsi:type="string">IWD_OrderGrid/js/grid/listing</item>
+            </item>
+        </argument>
+        <column name="status_color" class="IWD\OrderGrid\Ui\Component\Listing\Columns\StatusColor">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="componentDisabled" xsi:type="boolean">true</item>
+                    <item name="visible" xsi:type="boolean">false</item>
+                    <item name="sortable" xsi:type="boolean">false</item>
+                </item>
+            </argument>
+        </column>
+        <column name="iwd_order_product_name" class="IWD\OrderGrid\Ui\Component\Listing\Columns\ProductName">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="bodyTmpl" xsi:type="string">IWD_OrderGrid/product/products_name.html</item>
+                    <item name="component" xsi:type="string">IWD_OrderGrid/js/grid/items</item>
+                    <item name="label" xsi:type="string" translate="true">Items Name</item>
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="disableAction" xsi:type="boolean">true</item>
+                    <item name="sortable" xsi:type="boolean">false</item>
+                    <item name="sortOrder" xsi:type="number">4</item>
+                </item>
+            </argument>
+        </column>
+        <column name="iwd_order_product_sku" class="IWD\OrderGrid\Ui\Component\Listing\Columns\ProductSku">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="bodyTmpl" xsi:type="string">IWD_OrderGrid/product/products_sku.html</item>
+                    <item name="component" xsi:type="string">IWD_OrderGrid/js/grid/items</item>
+                    <item name="label" xsi:type="string" translate="true">Items Sku</item>
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="disableAction" xsi:type="boolean">true</item>
+                    <item name="sortable" xsi:type="boolean">false</item>
+                    <item name="sortOrder" xsi:type="number">5</item>
+                </item>
+            </argument>
+        </column>
+        <column name="iwd_order_comment" class="IWD\OrderGrid\Ui\Component\Listing\Columns">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="bodyTmpl" xsi:type="string">ui/grid/cells/html</item>
+                    <item name="label" xsi:type="string" translate="true">First Comment</item>
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="sortable" xsi:type="boolean">false</item>
+                    <item name="sortOrder" xsi:type="number">6</item>
+                </item>
+            </argument>
+        </column>
+        <column name="iwd_order_comment_last" class="IWD\OrderGrid\Ui\Component\Listing\Columns">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="bodyTmpl" xsi:type="string">ui/grid/cells/html</item>
+                    <item name="label" xsi:type="string" translate="true">Last Comment</item>
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="sortable" xsi:type="boolean">false</item>
+                    <item name="sortOrder" xsi:type="number">7</item>
+                </item>
+            </argument>
+        </column>
+        <column name="iwd_invoice_total" class="IWD\OrderGrid\Ui\Component\Listing\Columns">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Invoice Total</item>
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="sortOrder" xsi:type="number">8</item>
+                    <item name="sortable" xsi:type="boolean">false</item>
+                </item>
+            </argument>
+        </column>
+        <column name="iwd_order_invoice_number" class="IWD\OrderGrid\Ui\Component\Listing\Columns\Invoice">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Invoices</item>
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="bodyTmpl" xsi:type="string">IWD_OrderGrid/product/items.html</item>
+                    <item name="component" xsi:type="string">IWD_OrderGrid/js/grid/items</item>
+                    <item name="disableAction" xsi:type="boolean">true</item>
+                    <item name="sortable" xsi:type="boolean">false</item>
+                    <item name="sortOrder" xsi:type="number">9</item>
+                </item>
+            </argument>
+        </column>
+        <column name="iwd_order_shipment_number" class="IWD\OrderGrid\Ui\Component\Listing\Columns\Shipment">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Shipments</item>
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="bodyTmpl" xsi:type="string">IWD_OrderGrid/product/items.html</item>
+                    <item name="component" xsi:type="string">IWD_OrderGrid/js/grid/items</item>
+                    <item name="disableAction" xsi:type="boolean">true</item>
+                    <item name="sortable" xsi:type="boolean">false</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                </item>
+            </argument>
+        </column>
+        <column name="iwd_order_creditmemo_number" class="IWD\OrderGrid\Ui\Component\Listing\Columns\Creditmemo">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Creditmemos</item>
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="bodyTmpl" xsi:type="string">IWD_OrderGrid/product/items.html</item>
+                    <item name="component" xsi:type="string">IWD_OrderGrid/js/grid/items</item>
+                    <item name="disableAction" xsi:type="boolean">true</item>
+                    <item name="sortable" xsi:type="boolean">false</item>
+                    <item name="sortOrder" xsi:type="number">11</item>
+                </item>
+            </argument>
+        </column>
+        <column name="iwd_order_discount_amount" class="IWD\OrderGrid\Ui\Component\Listing\Columns">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Discount Amount</item>
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="sortOrder" xsi:type="number">12</item>
+                    <item name="sortable" xsi:type="boolean">false</item>
+                </item>
+            </argument>
+        </column>
+    </columns>
+</listing>

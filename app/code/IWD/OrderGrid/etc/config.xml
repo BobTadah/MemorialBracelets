@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <iwd_ordergrid>
+            <general>
+                <enabled>1</enabled>
+            </general>
+            <total>
+                <enabled>1</enabled>
+                <sets>shipped,tax,invoiced,discount,refunded</sets>
+            </total>
+        </iwd_ordergrid>
+    </default>
+</config>

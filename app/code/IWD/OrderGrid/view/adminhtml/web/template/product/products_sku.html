@@ -1,0 +1,15 @@
+<div class="data-grid-cell-content iwd-items">
+    <ul data-bind=" style: {paddingLeft: '40px'}, foreach: { data: $col.getItems($row()), as: 'product' }">
+        <li data-bind="css: {'_hide-item': $index() > 3 && $parent.getVisible($row()._rowIndex)}">
+            <nobr><a
+                    data-bind="click: function(){return true}, clickBubble: false, attr: {href: product.url}, text: product.sku"/>
+            </nobr>
+        </li>
+    </ul>
+    <!-- ko if: isButton($row()) -->
+    <div class="iwd-items-button">
+        <i class="arrow down"
+           data-bind="click: toggleVisible($row()._rowIndex), css: {'up': !getVisible($row()._rowIndex)}"></i>
+    </div>
+    <!-- /ko -->
+</div>

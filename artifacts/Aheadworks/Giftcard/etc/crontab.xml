@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Magento/Cron/etc/crontab.xsd">
-    <group id="default">
-        <job name="aw_giftcard_cron" instance="Aheadworks\Giftcard\Model\Cron" method="run">
-            <schedule>0 1 * * *</schedule>
-        </job>
-    </group>
-</config>

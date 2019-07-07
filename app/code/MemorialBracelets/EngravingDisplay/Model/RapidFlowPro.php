@@ -6,7 +6,6 @@ use Magento\Framework\DB\Adapter\AdapterInterface;
 use Magento\Framework\DB\Select;
 use Psr\Log\LoggerInterface;
 use Unirgy\RapidFlow\Model\Profile;
-use Unirgy\RapidFlowPro\Model\ResourceModel\ProductExtra;
 
 /**
  * Class NameProduct
@@ -25,7 +24,7 @@ use Unirgy\RapidFlowPro\Model\ResourceModel\ProductExtra;
  * @property array $_rowTypeFields
  * @property array $_skus (SKU => ID)
  */
-class RapidFlowPro extends ProductExtra
+class RapidFlowPro
 {
     protected $_dataType = 'product_extra_engraving';
 

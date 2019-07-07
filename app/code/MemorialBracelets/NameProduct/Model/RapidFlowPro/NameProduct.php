@@ -25,7 +25,7 @@ use Unirgy\RapidFlow\Model\Profile;
  * @property array            $_rowTypeFields
  * @property array            $_skus (SKU => ID)
  */
-class NameProduct extends \Unirgy\RapidFlowPro\Model\ResourceModel\ProductExtra
+class NameProduct
 {
     protected $_dataType = 'nameproduct_extra';
 

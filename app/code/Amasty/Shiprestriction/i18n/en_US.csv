@@ -1,0 +1,52 @@
+"Shipping Restrictions","Shipping Restrictions"
+"Add Rule","Add Rule"
+"Save and Continue Edit","Save and Continue Edit"
+"Edit Shipping Restriction Rule `%1`","Edit Shipping Restriction Rule `%1`"
+"Add new Shipping Restriction Rule","Add new Shipping Restriction Rule"
+"Shipping Restrictions Information","Shipping Restrictions Information"
+"Shipping Methods","Shipping Methods"
+"Restrict Shipping Methods","Restrict Shipping Methods"
+"One method name per line, e.g Next Day Air","One method name per line, e.g Next Day Air"
+"Restrict ALL METHODS from Carriers","Restrict ALL METHODS from Carriers"
+"Select if you want to restrict ALL methods from the given carrirers","Select if you want to restrict ALL methods from the given carrirers"
+"Error Message","Error Message"
+"Shipping Restrictions Options","Shipping Restrictions Options"
+"Allows All","Allows All"
+"Restricts For All","Restricts For All"
+Any,Any
+"Restricts in All","Restricts in All"
+"You deleted the item.","You deleted the item."
+"We can't delete item right now. Please review the log and try again.","We can't delete item right now. Please review the log and try again."
+"We can't find a item to delete.","We can't find a item to delete."
+"Please select a rule to duplicate.","Please select a rule to duplicate."
+"This item no longer exists.","This item no longer exists."
+"The rule has been duplicated. Please feel free to activate it.","The rule has been duplicated. Please feel free to activate it."
+"Something went wrong while saving the item data. Please review the error log.","Something went wrong while saving the item data. Please review the error log."
+"You activated the rule(s).","You activated the rule(s)."
+"You inactivated the rule(s).","You inactivated the rule(s)."
+"You deleted the rule(s).","You deleted the rule(s)."
+"We can't delete rule(s) right now. Please review the log and try again.","We can't delete rule(s) right now. Please review the log and try again."
+"We can't find a rule(s) to delete.","We can't find a rule(s) to delete."
+"The wrong item is specified.","The wrong item is specified."
+"You saved the item.","You saved the item."
+"Sorry, no shipping quotes are available for the selected products and destination","Sorry, no shipping quotes are available for the selected products and destination"
+"Your coupon was successfully applied.","Your coupon was successfully applied."
+General,General
+"Include tax in subtotal","Include tax in subtotal"
+"Use subtotal after discount","Use subtotal after discount"
+"Always show error message","Always show error message"
+Activate,Activate
+"Are you sure?","Are you sure?"
+Inactivate,Inactivate
+Delete,Delete
+ID,ID
+Status,Status
+Inactive,Inactive
+Active,Active
+Name,Name
+Carriers,Carriers
+Methods,Methods
+"Customer Groups","Customer Groups"
+"Store Views","Store Views"
+Action,Action
+Duplicate,Duplicate

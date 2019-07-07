@@ -1,0 +1,18 @@
+diff --git a/Setup/Declaration/Schema/Declaration/SchemaBuilder.php  b/Setup/Declaration/Schema/Declaration/SchemaBuilder.php
+index 3ee2rd..8349152 111644
+--- a/Setup/Declaration/Schema/Declaration/SchemaBuilder.php
++++ b/Setup/Declaration/Schema/Declaration/SchemaBuilder.php
+@@ -247,8 +247,11 @@
+             $table->addConstraints($this->processConstraints($tableData, $resource, $schema, $table));
+             $schema->addTable($table);
+         }
+-
+-        return $schema->getTableByName($tableData['name']);
++        if(!is_bool($schema->getTableByName($tableData['name']))){
++            return $schema->getTableByName($tableData['name']);
++        } else {
++            return $table;
++        }
+     }
+ 
+     /**
