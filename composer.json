@@ -31,7 +31,7 @@
         }
     },
     "require": {
-        "magento/product-community-edition": "~2.1.6",
+        "magento/product-community-edition": "2.1.18",
         "composer/composer": "@alpha",
         "fooman/googleanalyticsplus-m2": "^2.0",
         "unirgy/m2-simple-license": "^2.0",
@@ -101,9 +101,6 @@
             },
             "magento/module-sales-rule": {
                 "MBSUP-241 Mage bug in price rule dates spreading '0000' timestamp to coupons": "patches/MBSUP241_nulldate_sales-rule.patch"
-            },
-            "magento/module-usps": {
-                "Fix USPS shipping option name - MBSUP-99": "patches/usps_shipping_options_patch.patch"
             }
         }
 
