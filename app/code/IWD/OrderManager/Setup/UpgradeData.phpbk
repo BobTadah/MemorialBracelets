@@ -1,0 +1,209 @@
+<?php
+
+namespace IWD\OrderManager\Setup;
+
+use IWD\OrderManager\Model\LogFactory;
+use IWD\OrderManager\Model\Order\Converter;
+use Magento\Framework\Setup\UpgradeDataInterface;
+use Magento\Framework\Setup\ModuleContextInterface;
+use Magento\Framework\Setup\ModuleDataSetupInterface;
+
+/**
+ * Class UpgradeData
+ * @package IWD\OrderManager\Setup
+ */
+class UpgradeData implements UpgradeDataInterface
+{
+    /**
+     * @var \Magento\Framework\DB\FieldDataConverterFactory
+     */
+    private $fieldDataConverterFactory;
+
+    /**
+     * @var \Magento\Framework\DB\Select\QueryModifierFactory
+     */
+    private $queryModifierFactory;
+
+    /**
+     * @var \Magento\Framework\DB\Query\Generator
+     */
+    private $queryGenerator;
+
+    /**
+     * @var LogFactory
+     */
+    private $logFactory;
+
+    protected $logger;
+
+    /**
+     * @param LogFactory $logFactory
+     * @param \Magento\Framework\DB\FieldDataConverterFactory $fieldDataConverterFactory
+     * @param \Magento\Framework\DB\Select\QueryModifierFactory $queryModifierFactory
+     * @param \Magento\Framework\DB\Query\Generator $queryGenerator
+     * @param \Psr\Log\LoggerInterface $logger
+     */
+    public function __construct(
+        LogFactory $logFactory,
+        \Magento\Framework\DB\FieldDataConverterFactory $fieldDataConverterFactory,
+        \Magento\Framework\DB\Select\QueryModifierFactory $queryModifierFactory,
+        \Magento\Framework\DB\Query\Generator $queryGenerator,
+        \Psr\Log\LoggerInterface $logger
+    ) {
+        $this->logFactory = $logFactory;
+        $this->fieldDataConverterFactory = $fieldDataConverterFactory;
+        $this->queryModifierFactory = $queryModifierFactory;
+        $this->queryGenerator = $queryGenerator;
+        $this->logger = $logger;
+    }
+
+    /**
+     * Upgrades data for a module
+     *
+     * @param ModuleDataSetupInterface $setup
+     * @param ModuleContextInterface $context
+     * @return void
+     */
+    public function upgrade(
+        ModuleDataSetupInterface $setup,
+        ModuleContextInterface $context
+    ) {
+        $setup->startSetup();
+
+        if (version_compare($context->getVersion(), '2.1.0', '<')) {
+            $this->addDataToLogTable();
+        }
+
+        if (strpos(Converter::getMagentoVersion(), '2.2.') === 0) {
+            $this->convertSerializedDataToJson($setup);
+        }
+
+        $setup->endSetup();
+    }
+
+    /**
+     * Add Data To Log Table
+     *
+     * @return void
+     */
+    private function addDataToLogTable()
+    {
+        $description = 'Congratulations! IWD\'s Order Manager was installed successfully.';
+        $this->logFactory->create()
+            ->setDescription(__($description))
+            ->save();
+    }
+
+    /**
+     * Upgrade to version 2.0.1, convert data for the sales_order_item.product_options and quote_item_option.value
+     * from serialized to JSON format
+     *
+     * @param \Magento\Framework\Setup\ModuleDataSetupInterface $setup
+     * @return void
+     */
+    private function convertSerializedDataToJson(\Magento\Framework\Setup\ModuleDataSetupInterface $setup)
+    {
+        $selectQuoteItemOptions = $setup->getConnection()
+            ->select()
+            ->from(
+                $setup->getTable('quote_item_option'),
+                ['option_id', 'value']
+            );
+
+        $selectOrderItems = $setup->getConnection()
+            ->select()
+            ->from(
+                $setup->getTable('sales_order_item'),
+                ['item_id', 'product_options']
+            );
+
+        $selectAdminUsers = $setup->getConnection()
+            ->select()
+            ->from(
+                $setup->getTable('admin_user'),
+                ['user_id', 'extra']
+            )
+            ->where ('extra LIKE ?', '%iwdordermanager%');
+
+        $rowsQuoteItemOptions = $setup->getConnection()->fetchAssoc($selectQuoteItemOptions);
+        $serializedRowsQuoteItemOptions = array_filter($rowsQuoteItemOptions, function ($row) {
+            return $this->isSerialized($row['value']);
+        });
+
+        $rowsOrderItems = $setup->getConnection()->fetchAssoc($selectOrderItems);
+        $serializedRowsOrderItems = array_filter($rowsOrderItems, function ($row) {
+            return $this->isSerialized($row['product_options']);
+        });
+
+        $rowsAdminUsers = $setup->getConnection()->fetchAssoc($selectAdminUsers);
+        $serializedRowsAdminUsers = array_filter($rowsAdminUsers, function ($row) {
+            return $this->isSerialized($row['extra']);
+        });
+
+        $fieldDataConverter =
+            $this->fieldDataConverterFactory->create(\Magento\Framework\DB\DataConverter\SerializedToJson::class);
+
+        $queryModifierQuoteItemOptions = $this->queryModifierFactory->create(
+            'in',
+            [
+                'values' => [
+                    'option_id' => array_keys($serializedRowsQuoteItemOptions)
+                ]
+            ]
+        );
+
+        $queryModifierOrderItems = $this->queryModifierFactory->create(
+            'in',
+            [
+                'values' => [
+                    'item_id' => array_keys($serializedRowsOrderItems)
+                ]
+            ]
+        );
+
+        $queryModifierAdminUsers = $this->queryModifierFactory->create(
+            'in',
+            [
+                'values' => [
+                    'user_id' => array_keys($serializedRowsAdminUsers)
+                ]
+            ]
+        );
+
+        $fieldDataConverter->convert(
+            $setup->getConnection(),
+            $setup->getTable('sales_order_item'),
+            'item_id',
+            'product_options',
+            $queryModifierOrderItems
+        );
+
+        $fieldDataConverter->convert(
+            $setup->getConnection(),
+            $setup->getTable('quote_item_option'),
+            'option_id',
+            'value',
+            $queryModifierQuoteItemOptions
+        );
+
+        $fieldDataConverter->convert(
+            $setup->getConnection(),
+            $setup->getTable('admin_user'),
+            'user_id',
+            'extra',
+            $queryModifierAdminUsers
+        );
+    }
+
+
+    /**
+     * Check if value is a serialized string
+     *
+     * @param string $value
+     * @return boolean
+     */
+    private function isSerialized($value)
+    {
+        return (boolean) preg_match('/^((s|i|d|b|a|O|C):|N;)/', $value);
+    }
+}

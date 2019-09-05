@@ -31,7 +31,7 @@
         }
     },
     "require": {
-        "magento/product-community-edition": "2.1.18",
+        "magento/product-community-edition": "2.2.4",
         "composer/composer": "@alpha",
         "fooman/googleanalyticsplus-m2": "^2.0",
         "unirgy/m2-simple-license": "^2.0",
@@ -43,11 +43,7 @@
         "navarr/easy-upgrades": "^1.0",
         "cweagans/composer-patches": "^1.6.0",
         "litespeed/module-litemage": "^2.0",
-        "iwd/all": "^2.1",
-        "iwd/ordermanager": "^2.6",
-        "iwd/authcim": "^2.1",
         "shippingeasy/module-fulfilment": "^1.0",
-        "yireo/yireo_whoops": "^0.0.3",
         "ramsey/uuid": "^3.6",
         "aheadworks/module-giftcard": "^1.0",
         "amasty/base": "^1.4",
@@ -64,7 +60,8 @@
         "friendsofphp/php-cs-fixer": "~1.2",
         "lusitanian/oauth": "~0.3 <=0.7.0",
         "sensiolabs/security-checker": "^3.0",
-        "deployer/recipes": "^6.2"
+        "deployer/recipes": "^6.2",
+        "yireo/magento2-whoops": "^0.0.11"
     },
     "config": {
         "use-include-path": true

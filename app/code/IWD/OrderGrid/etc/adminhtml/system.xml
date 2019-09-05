@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="iwd" translate="label" sortOrder="999998" class="iwd-extensions-tab">
+            <label>IWD Agency</label>
+        </tab>
+        <section id="iwd_ordergrid" translate="label" sortOrder="300" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <label>Order Grid</label>
+            <tab>iwd</tab>
+            <resource>IWD_OrderGrid::config_iwdordergrid</resource>
+
+            <group id="general" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>General</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0"
+                       showInStore="0">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable/Disable extension</comment>
+                </field>
+                <field id="colors" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0"
+                       showInStore="0">
+                    <label>Colors For Statuses</label>
+                    <source_model>Magento\Sales\Model\ResourceModel\Order\Status\Collection</source_model>
+                    <frontend_model>IWD\OrderGrid\Block\Adminhtml\Config\Multiselect</frontend_model>
+                    <comment>Specify colors for specific statuses</comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                <field id="columns" translate="label" type="multiselect" sortOrder="30" showInDefault="1"
+                       showInWebsite="0" showInStore="0">
+                    <label>Specific columns</label>
+                    <source_model>IWD\OrderGrid\Model\Config\Source\Order\Columns</source_model>
+                    <comment>Add specific columns to order grid</comment>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="total" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Total</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable Order Grid Totals</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="sets" translate="label" type="multiselect" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Order Grid Totals</label>
+                    <source_model>IWD\OrderGrid\Model\Config\Source\Order\Totals</source_model>
+                    <depends><field id="enabled">1</field></depends>
+                    <validate>required-entry</validate>
+                </field>
+            </group>
+            <group id="allow_delete" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Delete Process On Grid</label>
+                <field id="orders" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Allow Delete Order(s)</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Delete order and related information like invoices, shipments, credit memos, etc.</comment>
+                </field>
+                <field id="order_statuses" translate="label" type="multiselect" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Allow Delete Order With Statuses</label>
+                    <depends><field id="orders">1</field></depends>
+                    <source_model>IWD\OrderGrid\Model\Config\Source\Order\Statuses</source_model>
+                    <comment>Allow delete orders only with selected statuses</comment>
+                </field>
+                <field id="invoices" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Allow Delete Invoice(s)</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Delete invoice and related information like credit memos, transactions, etc.</comment>
+                </field>
+                <field id="credit_memos" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Allow Delete Credit Memo(s)</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Delete credit memo and related information</comment>
+                </field>
+                <field id="shipments" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Allow Delete Shipment(s)</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Delete shipments and related information like shipments tracks, etc.</comment>
+                </field>
+            </group>
+            <group id="allow_massaction" translate="label" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Massaction</label>
+                <field id="massaction_list" translate="label" type="multiselect" sortOrder="15" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Allow MassAction</label>
+                    <depends><field id="orders">1</field></depends>
+                    <source_model>IWD\OrderGrid\Model\Config\Source\Order\MassAction</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

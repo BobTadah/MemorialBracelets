@@ -1,0 +1,247 @@
+<?php
+/** @var IWD\AuthCIM\Block\Form $block */
+$code = $block->escapeHtml($block->getMethodCode());
+$savedCcList = $block->getSavedCcList();
+?>
+<fieldset class="fieldset items authnetcim"
+          id="payment_form_<?php /* @noEscape */
+          echo $code; ?>"
+          style="display:none">
+    <?php if (!empty($savedCcList) && !$block->isAcceptJsEnabled()) : ?>
+        <div class="admin__field _required">
+            <label class="admin__field-label" for="<?php /* @noEscape */
+            echo $code; ?>_saved_cc">
+                <span><?php echo $block->escapeHtml(__('Select Saved Credit Card or Enter New')); ?></span>
+            </label>
+            <div class="admin__field-control">
+                <select id="<?php /* @noEscape */
+                echo $code ?>_saved_cc" name="payment[cc_id]"
+                        class="admin__control-select required-entry" style="width:100%;">
+                    <?php foreach ($savedCcList as $id => $label) : ?>
+                        <option value="<?php echo $id ?>">
+                            <?php echo $block->escapeHtml($label); ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+        </div>
+    <?php endif; ?>
+
+    <div class="field type required hide-if-card-selected">
+        <label class="label admin__field-label" for="<?php /* @noEscape */
+        echo $code; ?>_cc_type">
+            <span><?php echo $block->escapeHtml(__('Credit Card Type')); ?></span>
+        </label>
+        <div class="admin__field-control control">
+            <select id="<?php /* @noEscape */
+            echo $code; ?>_cc_type" name="payment[cc_type]"
+                    class="required-entry select admin__control-select validate-cc-type-select">
+                <?php foreach ($block->getCcAvailableTypes() as $typeCode => $typeName) : ?>
+                    <option value="<?php echo $block->escapeHtml($typeCode); ?>">
+                        <?php echo $block->escapeHtml($typeName); ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+        </div>
+    </div>
+    <div class="field number required hide-if-card-selected">
+        <label for="<?php echo $code ?>-cc-number"
+               class="label"><span><?php echo $block->escapeHtml(__('Credit Card Number')) ?></span></label>
+        <div class="control">
+            <input type="text" id="<?php /* @noEscape */
+            echo $code; ?>_cc_number"
+                   <?php if (!$block->isAcceptJsEnabled()) : ?>name="payment[cc_number]"<?php endif; ?>
+                   title="<?php echo $block->escapeHtml(__('Credit Card Number')); ?>"
+                   class="admin__control-text validate-cc-number"/></div>
+    </div>
+    <div class="field date required hide-if-card-selected">
+        <label for="<?php echo $code ?>-cc-exp-month"
+               class="label"><span><?php echo $block->escapeHtml(__('Expiration Date')) ?></span></label>
+        <div class="control">
+            <div class="fields group group-2">
+                <div class="field no-label month">
+                    <div class="control">
+                        <select id="<?php echo $code ?>_expiration" name="payment[cc_exp_month]" class="select month"
+                                data-validate='{required:true, "validate-cc-exp":"#<?php echo $code ?>-cc-exp-year"}'
+                                autocomplete="cc-exp-month">
+                            <?php $_ccExpMonth = $block->getInfoData('cc_exp_month') ?>
+                            <?php foreach ($block->getCcMonths() as $k => $v): ?>
+                                <option value="<?php echo $k ? $block->escapeQuote($k) : '' ?>"<?php if ($k == $_ccExpMonth): ?> selected="selected"<?php endif ?>><?php echo $block->escapeHtml($v) ?></option>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="field no-label year">
+                    <div class="control">
+                        <?php $_ccExpYear = $block->getInfoData('cc_exp_year') ?>
+                        <select id="<?php echo $code ?>_expiration_yr" name="payment[cc_exp_year]" class="select year"
+                                data-validate='{required:true}' autocomplete="cc-exp-year">
+                            <?php foreach ($block->getCcYears() as $k => $v): ?>
+                                <option value="<?php echo $k ? $block->escapeQuote($k) : '' ?>"<?php if ($k == $_ccExpYear): ?> selected="selected"<?php endif ?>><?php echo $block->escapeHtml($v) ?></option>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php if ($block->hasVerification()) : ?>
+        <div class="field cvv required <?php if ($block->getMethod()->getConfigData('require_ccv') == 0): ?>hide-if-card-selected<?php endif; ?>">
+            <label for="<?php echo $code ?>-cc-cid"
+                   class="label"><span><?php echo $block->escapeHtml(__('Card Verification Number')) ?></span></label>
+            <div class="control">
+                <input type="text" title="<?php echo $block->escapeQuote(__('Card Verification Number')) ?>"
+                       class="input-text cvv" id="<?php echo $code ?>_cc_cid" name="payment[cc_cid]" value=""
+                       data-validate='{"required-number":true}' autocomplete="cc-csc"/>
+            </div>
+            <?php $_content = '<img src=\"' . $block->escapeUrl($block->getViewFileUrl('Magento_Checkout::cvv.png')) . '\" alt=\"' . $block->escapeQuote(__('Card Verification Number Visual Reference')) . '\" title=\"' . $block->escapeQuote(__('Card Verification Number Visual Reference')) . '\" />'; ?>
+            <div class="note">
+                <a href="#" class="action cvv" title="<?php echo $block->escapeQuote(__('What is this?')) ?>"
+                   data-mage-init='{"tooltip": {"content": "<?php echo $_content ?>"}}'><span><?php echo $block->escapeHtml(__('What is this?')) ?></span></a>
+            </div>
+        </div>
+    <?php endif; ?>
+    <?php if (!$block->isAcceptJsEnabled()): ?>
+
+        <?php if (!$block->isSaveCreditCard()) : ?>
+            <div class="admin__field cc-info-field">
+                <div class="admin__field-control control">
+                    <input type="checkbox"
+                           id="<?php /* @noEscape */
+                           echo $code; ?>_vault"
+                           name="payment[cc_save]"
+                           class="admin__control-checkbox"/>
+                    <label class="label admin__field-label" for="<?php /* @noEscape */
+                    echo $code; ?>_vault">
+                        <span><?php echo $block->escapeHtml('Save for later use.'); ?></span>
+                    </label>
+                </div>
+            </div>
+        <?php else : ?>
+            <div class="admin__field">
+                <div class="admin__field-control control">
+                    <label class="label admin__field-label">
+                        <span><?php /* @escapeNotVerified */
+                            echo __('This data will be stored securely by our payment processor.'); ?></span>
+                    </label>
+                    <input type="hidden" name="payment[cc_save]" value="1"/>
+                </div>
+            </div>
+        <?php endif; ?>
+    <?php endif; ?>
+
+    <?php if (count($savedCcList) == 0) : ?>
+        <input type="hidden" name="payment[cc_id]" value="0"/>
+    <?php endif; ?>
+
+    <?php if ($block->isAcceptJsEnabled()) : ?>
+        <div style="display:none">
+            <input type="hidden" name="payment[opaque_number]"
+                   id="<?php /* @noEscape */
+                   echo $code; ?>_opaque_number" value=""/>
+            <input type="hidden" name="payment[opaque_descriptor]"
+                   id="<?php /* @noEscape */
+                   echo $code; ?>_opaque_descriptor" value=""/>
+            <input type="hidden" name="payment[opaque_value]"
+                   id="<?php /* @noEscape */
+                   echo $code; ?>_opaque_value" value=""/>
+        </div>
+
+        <div class="message message-error" style="display:none"
+             id="<?php /* @noEscape */
+             echo $code; ?>_error_message">
+        </div>
+
+        <script type="text/javascript">
+            // <![CDATA[
+            require([
+                    'IWD_AuthCIM/js/accept',
+                    'jquery'
+                ],
+                function (iwdAuthCimAcceptJs, $) {
+                    var authCimAcceptJs = new iwdAuthCimAcceptJs();
+                    $(document).ready(
+                        function () {
+                            authCimAcceptJs.init({
+                                'acceptEnabled': '<?php echo $block->isAcceptJsEnabled() ?>',
+                                'apiLoginId': '<?php echo $block->getApiLoginId() ?>',
+                                'acceptKey': '<?php echo $block->getAcceptJsKey() ?>',
+                                'hasVerification': '<?php echo $block->hasVerification() ?>'
+                            });
+                             $('#payment-continue').on('click', function (e) {
+                                if (authCimAcceptJs.options.acceptEnabled && $('#p_method_iwd_authcim').is(':checked')) {
+                                    var $form = $('#multishipping-billing-form');
+                                    if ($form.validation() && $form.validation('isValid')) {
+                                        if ($.trim($('#iwd_authcim_error_message').text()).length != 0) {
+                                            e.stopPropagation();
+                                            e.preventDefault();
+                                        } else if ($('#iwd_authcim_opaque_value').val() == '') {
+                                            e.stopPropagation();
+                                            e.preventDefault();
+                                            $("#iwd_authcim_cc_number").change();
+                                            $('#multishipping-billing-form').trigger('processStart');
+                                            setTimeout(function () {
+                                                $('#multishipping-billing-form').trigger('processStop');
+                                                $('#payment-continue').trigger('click');
+                                            }, 2000);
+                                        }
+                                    }
+                                }
+                            });
+
+
+                            $('#multishipping-billing-form').on('submitOrder', function () {
+                                var opaque = $("#<?php /* @noEscape */ echo $code; ?>_opaque_value").val();
+                                var savedCc = $("#<?php /* @noEscape */ echo $code ?>_saved_cc").val();
+
+                                if (!opaque && savedCc == 0) {
+                                    $('#multishipping-billing-form').trigger('processStop');
+                                    $(document).trigger('requestAcceptJs');
+                                    $(document).off('responseAcceptJs');
+                                    $(document).on('responseAcceptJs', function () {
+                                        $('#multishipping-billing-form').trigger('submitOrder');
+                                    });
+                                }
+                            });
+                        });
+                }
+            );
+            // ]]>
+        </script>
+    <?php endif; ?>
+
+    <script type="text/javascript">
+        require([
+            'jquery'
+        ], function ($) {
+            var ccNumber = '#<?php /* @noEscape */ echo $code; ?>_cc_number';
+            var ccExpMonth = '#<?php /* @noEscape */ echo $code; ?>_expiration';
+            var ccExpYear = '#<?php /* @noEscape */ echo $code; ?>_expiration_yr';
+            var ccType = '#<?php /* @noEscape */ echo $code; ?>_cc_type';
+            var ccCid = '#<?php /* @noEscape */ echo $code; ?>_cc_cid';
+
+            $(document).on('change', '#iwd_authcim_saved_cc', function () {
+                if ($(this).val() == 0) {
+                    $(ccType).addClass('validate-cc-type-select').addClass('required-entry');
+                    $(ccNumber).addClass('validate-cc-number').addClass('required-entry');
+                    $(ccExpMonth).addClass('validate-cc-exp').addClass('required-entry');
+                    $(ccExpYear).addClass('required-entry');
+                    $('.cc-info-field').not('.cc-verification').show();
+                    <?php if ($block->isAcceptJsEnabled() && $block->hasVerification()) : ?>
+                    $(ccCid).removeAttr('name');
+                    <?php endif; ?>
+                } else {
+                    $(ccType).removeClass('validate-cc-type-select').removeClass('required-entry');
+                    $(ccNumber).removeClass('validate-cc-number').removeClass('required-entry');
+                    $(ccExpMonth).removeClass('validate-cc-exp').removeClass('required-entry');
+                    $(ccExpYear).removeClass('required-entry');
+                    $('.cc-info-field').not('.cc-verification').hide();
+                    <?php if ($block->isAcceptJsEnabled() && $block->hasVerification()) : ?>
+                    $(ccCid).attr('name', 'payment[cc_cid]');
+                    <?php endif; ?>
+                }
+            });
+        });
+
+    </script>
+</fieldset>

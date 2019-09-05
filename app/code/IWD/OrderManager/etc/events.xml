@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="sales_order_status_history_save_before">
+        <observer name="ordermanager_save_order" instance="IWD\OrderManager\Observer\SaveOrderStatusHistoryObserver"/>
+    </event>
+    <event name="payment_method_is_active">
+        <observer name="iwd_payment_method_is_available" instance="IWD\OrderManager\Observer\IsPaymentMethodAvailable"/>
+    </event>
+    <event name="iwd_sales_order_save_after">
+        <observer name="iwd_remove_archived_order_from_grid" instance="IWD\OrderManager\Observer\ArchivedOrderObserver"/>
+    </event>
+</config>

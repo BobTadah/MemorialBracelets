@@ -1,0 +1,82 @@
+<?php /** @var \IWD\OrderGrid\Block\Adminhtml\Config\Multiselect $block */
+$configArr = $block->getAggregatedConfig();
+?>
+<div class="i-select">
+    <ul class="i-list" id="order_status_list">
+        <?php foreach ($block->getValues() as $option):
+            $hasColor = (isset($configArr[$option['value']]) && !empty($configArr[$option['value']])) ? true : false;
+            ?>
+            <li class="i-item<?php echo ($hasColor) ? ' active-color' : ''; ?>" id="<?php echo $option['value']; ?>"
+                data-value="<?php echo ($hasColor) ? $configArr[$option['value']] : ''; ?>">
+                <div class="color-content">
+                    <div class="i-color"
+                         style="<?php echo ($hasColor) ? 'background-color: #' . $configArr[$option['value']] : ''; ?>"></div>
+                    <div class="i-label"><?php echo $option['label']; ?></div>
+                </div>
+                <div class="i-add">×</div>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+    <input id="colors_config" type="hidden"
+           value="<?php echo ($block->getConfigData()) ? $block->getConfigData() : '{}' ?>"
+           name="<?php echo $block->getName(); ?>">
+</div>
+<script type="text/javascript">
+    require(['jquery', 'domReady!'], function ($) {
+        'use strict';
+
+        $('li .color-content').colpick({
+            /**
+             * @param {String} hsb
+             * @param {String} hex
+             * @param {String} rgb
+             * @param {String} el
+             */
+            onSubmit: function (hsb, hex, rgb, el) {
+                var statusCode = $(el).parent('li').attr('id');
+                var objConfig = {};
+
+                $(el).children('.i-color').css('background-color', '#' + hex);
+                $(el).parent('li').data('value', hex);
+                $(el).parent().addClass('active-color');
+                $(el).colpickHide();
+
+                $("#order_status_list li").each(function (index) {
+                    var color = $(this).data('value');
+                    if (color) {
+                        objConfig[this.id] = color;
+                    }
+                });
+
+                $('#colors_config').val($.param(objConfig));
+            }
+        });
+
+
+        $('#order_status_list').on('click', '.active-color .i-add', function (e) {
+            e.stopImmediatePropagation();
+            e.preventDefault();
+            var objConfig = {};
+            var statusCode = $(this).parent().attr('id');
+
+            $(this).parent().find('.i-color').css('background-color', '');
+            $(this).parent().removeClass('active-color');
+            $(this).parent('li').data('value', '');
+
+
+            $("#order_status_list li").each(function (index) {
+                var color = $(this).data('value');
+                if (color) {
+                    objConfig[this.id] = color;
+                }
+            });
+
+            $('#colors_config').val($.param(objConfig));
+
+        });
+
+
+    });
+
+</script>
+
