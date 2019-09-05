@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="IWD_OrderGrid::config_iwdordergrid" title="Order Grid" sortOrder="80"></resource>
+                        </resource>
+                    </resource>
+                </resource>
+                <resource id="Magento_Sales::sales" title="Sales" translate="title" sortOrder="20">
+                    <resource id="Magento_Sales::sales_operation" title="Operations" translate="title" sortOrder="10">
+                        <resource id="Magento_Sales::sales_order" title="Orders" translate="title" sortOrder="10">
+                            <resource id="Magento_Sales::actions" title="Actions" translate="title" sortOrder="10">
+                                <resource id="IWD_OrderGrid::iwdordergrid_delete" title="MassAction Delete Order"/>
+                                <resource id="IWD_OrderGrid::iwdordergrid_delete_invoice" title="MassAction Delete Invoice"/>
+                                <resource id="IWD_OrderGrid::iwdordergrid_delete_shipment" title="MassAction Delete Shipment"/>
+                                <resource id="IWD_OrderGrid::iwdordergrid_delete_creditmemo" title="MassAction Delete Credit Memo"/>
+                                <resource id="IWD_OrderGrid::iwdordergrid_change_status" title="MassAction Change Order Status"/>
+                                <resource id="IWD_OrderGrid::iwdordergrid_print" title="MassAction Print Order"/>
+                                <resource id="IWD_OrderGrid::iwdordergrid_invoice_create" title="MassAction Create Invoice"/>
+                                <resource id="IWD_OrderGrid::iwdordergrid_ship" title="MassAction Create Ship"/>
+                                <resource id="IWD_OrderGrid::iwdordergrid_order_resend" title="MassAction Resend Order"/>
+                                <resource id="IWD_OrderGrid::iwdordergrid_invoice_resend" title="MassAction Resend Invoice"/>
+                                <resource id="IWD_OrderGrid::iwdordergrid_order_comment" title="MassAction Add Comment"/>
+                            </resource>
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>
