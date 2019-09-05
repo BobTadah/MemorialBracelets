@@ -1,0 +1,66 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="BraintreeCaptureStrategyCommand" type="IWD\OrderManager\Gateway\Command\BraintreeCaptureStrategy" />
+    <preference for="BraintreeFacade" type="IWD\OrderManager\Model\Method\BraintreeAdapter" />
+
+    <!-- add method clearQuoteParams() -->
+    <preference for="Magento\Backend\Model\Session\Quote" type="IWD\OrderManager\Model\Rewrite\Session\Quote" />
+
+    <!-- fix klarna -->
+    <preference for="Klarna\Kp\Observer\AssignData" type="IWD\OrderManager\Observer\Klarna\AssignAdditionalData" />
+
+    <!-- add method mapStockFilter() -->
+    <preference for="Magento\CatalogInventory\Model\ResourceModel\Stock\Status\StockStatusCriteriaMapper" type="IWD\OrderManager\Model\ResourceModel\Stock\Status\StockStatusCriteriaMapper" />
+
+    <!-- add method setStockFilters() -->
+    <preference for="Magento\CatalogInventory\Model\ResourceModel\Stock\Status\StockStatusCriteria" type="IWD\OrderManager\Model\ResourceModel\Stock\Status\StockStatusCriteria" />
+
+    <type name="Magento\Sales\Model\ResourceModel\Order\Creditmemo\Relation\Refund">
+        <plugin name="processRelation" type="IWD\OrderManager\Plugin\Model\Sales\ResourceModel\Order\Creditmemo\Relation\Refund" />
+    </type>
+
+    <type name="Magento\Sales\Model\ResourceModel\Order\Handler\State">
+        <plugin name="disableStateChange" type="IWD\OrderManager\Plugin\Model\Sales\ResourceModel\Order\Handler\State" />
+    </type>
+
+    <type name="\Magento\CatalogInventory\Model\Quote\Item\QuantityValidator">
+        <plugin name="disableStateChange" type="IWD\OrderManager\Plugin\Model\Quote\Item\QuantityValidator" />
+    </type>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="iwd_ordermanager_log_grid_data_source" xsi:type="string">IWD\OrderManager\Model\ResourceModel\Log\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <virtualType name="IWD\OrderManager\Model\ResourceModel\Log\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">iwd_om_log</argument>
+            <argument name="resourceModel" xsi:type="string">IWD\OrderManager\Model\ResourceModel\Log</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Framework\Module\Manager">
+        <arguments>
+            <argument name="outputConfigPaths" xsi:type="array">
+                <item name="IWD_OrderManager" xsi:type="const">IWD\OrderManager\Helper\Data::ENABLED</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="IWD\OrderManager\Model\Method\BraintreeAdapter">
+        <arguments>
+            <argument name="code" xsi:type="const">Magento\Braintree\Model\Ui\ConfigProvider::CODE</argument>
+            <argument name="formBlockType" xsi:type="string">Magento\Braintree\Block\Form</argument>
+            <argument name="infoBlockType" xsi:type="string">Magento\Braintree\Block\Info</argument>
+            <argument name="valueHandlerPool" xsi:type="object">BraintreeValueHandlerPool</argument>
+            <argument name="validatorPool" xsi:type="object">BraintreeValidatorPool</argument>
+            <argument name="commandPool" xsi:type="object">BraintreeCommandPool</argument>
+        </arguments>
+    </type>
+    <type name="IWD\OrderManager\Gateway\Command\BraintreeCaptureStrategy">
+        <arguments>
+            <argument name="commandPool" xsi:type="object">BraintreeCommandPool</argument>
+        </arguments>
+    </type>
+</config>
