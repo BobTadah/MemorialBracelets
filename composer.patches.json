@@ -1,0 +1,5 @@
+{
+  "patches": {
+    "Fix setup:upgrade": "patches/magento_framework_fix_setup_upgrade.patch"
+  }
+}

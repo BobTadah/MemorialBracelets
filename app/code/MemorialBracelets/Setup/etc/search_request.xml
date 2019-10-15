@@ -1,6 +1,3 @@
 <requests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="urn:magento:framework:Search/etc/search_request.xsd">
-    <request query="catalog_view_container" index="catalogsearch_fulltext">
-        <size>100000</size>
-    </request>
 </requests>

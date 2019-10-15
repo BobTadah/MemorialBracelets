@@ -1,12 +1,3 @@
-<?php
-/**
- * Copyright © 2016 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
-// @codingStandardsIgnoreFile
-use Aheadworks\Giftcard\Model\ConfigProvider;
-/** @var $block \Magento\Catalog\Block\Product\View */
-?>
 <?php $product     = $block->getProduct(); ?>
 <?php $buttonTitle = __('Add to Cart'); ?>
 <?php $qtyBlock    = $block->getLayout()->getBlock('quantity-discounts')?>
@@ -39,7 +30,7 @@ use Aheadworks\Giftcard\Model\ConfigProvider;
         </div>
     </div>
     <?php // skip quantity discounts block for gift card items ?>
-    <?php if(!$type = $product->getTypeId() === ConfigProvider::GIFTCARD_TOTAL_CODE): ?>
+    <?php if(!$type = $product->getTypeId() === 'aw_giftcard'): ?>
         <div class="quantity-discount-wrapper">
             <a class="link" id="discount-anchor"
                title="<?= __('Click to Display Discounts') ?>"><i class="icon-question-mark"></i><?= __('Quantity Discounts') ?></a>

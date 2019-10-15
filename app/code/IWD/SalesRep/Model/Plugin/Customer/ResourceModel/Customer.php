@@ -16,7 +16,7 @@ class Customer
     /**
      * @var \IWD\SalesRep\Helper\Data
      */
-    private $salesrepHelper;
+    //private $salesrepHelper;
 
     /**
      * @var \Magento\Framework\App\ResourceConnection
@@ -29,10 +29,10 @@ class Customer
      * @param \Magento\Framework\App\ResourceConnection $resource
      */
     function __construct(
-        \IWD\SalesRep\Helper\Data $salesrepHelper,
+        //\IWD\SalesRep\Helper\Data $salesrepHelper,
         \Magento\Framework\App\ResourceConnection $resource
     ) {
-        $this->salesrepHelper = $salesrepHelper;
+        //$this->salesrepHelper = $salesrepHelper;
         $this->resource = $resource;
     }
 
@@ -76,7 +76,7 @@ class Customer
                 ]
             );
 
-        if ($this->salesrepHelper->isWithB2B()) {
+        if (\IWD\SalesRep\Helper\Data::isWithB2B()) {
             $select->joinLeft(
                 ['b2b_customer_info' => $this->resource->getTableName('iwd_b2b_customer_info')],
                 'main_table.entity_id = b2b_customer_info.customer_id',

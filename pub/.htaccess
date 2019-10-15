@@ -2,7 +2,8 @@
 ## Optional override of deployment mode. We recommend you use the
 ## command bin/magento deploy:mode:set to switch modes instead
 
-#   SetEnv MAGE_MODE default # or production or developer
+# Options are default, production, or developer
+#   SetEnv MAGE_MODE default
 
 ############################################
 ## Uncomment these lines for CGI mode.
@@ -36,7 +37,7 @@
 ############################################
 ## Adjust memory limit
 
-    php_value memory_limit 768M
+    php_value memory_limit 756M
     php_value max_execution_time 18000
 
 ############################################
@@ -46,11 +47,6 @@
     php_flag session.auto_start off
 
 ############################################
-## Enable resulting html compression
-
-    #php_flag zlib.output_compression on
-
-###########################################
 # Disable user agent verification to not break multiple image upload
 
     php_flag suhosin.session.cryptua off
@@ -59,7 +55,7 @@
 ############################################
 ## Adjust memory limit
 
-    php_value memory_limit 768M
+    php_value memory_limit 756M
     php_value max_execution_time 18000
 
 ############################################
@@ -133,115 +129,6 @@
     Options +FollowSymLinks
     RewriteEngine on
 
-    # Redirects all URIs with the pattern: /template.php?key=value to /customize-a-product
-        RewriteCond %{REQUEST_URI} ^\/template\.php$
-        RewriteRule ^ /customize-a-product? [R=301,L]
-
-        # Names redirects
-        RewriteCond %{REQUEST_URI} ^\/names\.php$
-        RewriteCond %{QUERY_STRING} ^eventID=11
-        RewriteRule ^ /find-a-name/terrorism/9-11/9-11-world-trade-center? [R=301,L]
-
-        RewriteCond %{REQUEST_URI} ^\/names\.php$
-        RewriteCond %{QUERY_STRING} ^eventID=87
-        RewriteRule ^ /find-a-name/terrorism/1993-wtc-bombing? [R=301,L]
-
-        RewriteCond %{REQUEST_URI} ^\/names\.php$
-        RewriteCond %{QUERY_STRING} ^eventID=12
-        RewriteRule ^ /find-a-name/terrorism/9-11-american-flight-11? [R=301,L]
-
-        RewriteCond %{REQUEST_URI} ^\/names\.php$
-        RewriteCond %{QUERY_STRING} ^eventID=14
-        RewriteRule ^ /find-a-name/terrorism/9-11-american-flight-77? [R=301,L]
-
-        RewriteCond %{REQUEST_URI} ^\/names\.php$
-        RewriteCond %{QUERY_STRING} ^eventID=16
-        RewriteRule ^ /find-a-name/terrorism/9-11-pentagon? [R=301,L]
-
-        RewriteCond %{REQUEST_URI} ^\/names\.php$
-        RewriteCond %{QUERY_STRING} ^eventID=13
-        RewriteRule ^ /find-a-name/terrorism/9-11-united-flight-175? [R=301,L]
-
-        RewriteCond %{REQUEST_URI} ^\/names\.php$
-        RewriteCond %{QUERY_STRING} ^eventID=15
-        RewriteRule ^ /find-a-name/terrorism/9-11-united-flight-175? [R=301,L]
-
-        RewriteCond %{REQUEST_URI} ^\/names\.php$
-        RewriteCond %{QUERY_STRING} ^eventID=45
-        RewriteRule ^ /find-a-name/terrorism/bali-terrorist-attack? [R=301,L]
-
-        RewriteCond %{REQUEST_URI} ^\/names\.php$
-        RewriteCond %{QUERY_STRING} ^eventID=88
-        RewriteRule ^ /find-a-name/terrorism/fort-hood-shooting? [R=301,L]
-
-        RewriteCond %{REQUEST_URI} ^\/names\.php$
-        RewriteCond %{QUERY_STRING} ^eventID=99
-        RewriteRule ^ /find-a-name/terrorism/nairobi-u-s-embassy-bombing? [R=301,L]
-
-        RewriteCond %{REQUEST_URI} ^\/names\.php$
-        RewriteCond %{QUERY_STRING} ^eventID=46
-        RewriteRule ^ /find-a-name/terrorism/oklahoma-city-bombing? [R=301,L]
-
-        RewriteCond %{REQUEST_URI} ^\/names\.php$
-        RewriteCond %{QUERY_STRING} ^eventID=97
-        RewriteRule ^ /find-a-name/terrorism/pan-am-flight-103? [R=301,L]
-
-        RewriteCond %{REQUEST_URI} ^\/names\.php$
-        RewriteCond %{QUERY_STRING} ^eventID=93
-        RewriteRule ^ /find-a-name/terrorism? [R=301,L]
-
-        RewriteCond %{REQUEST_URI} ^\/names\.php$
-        RewriteCond %{QUERY_STRING} ^eventID=19
-        RewriteRule ^ /find-a-name/kia/enduring-freedom? [R=301,L]
-
-        RewriteCond %{REQUEST_URI} ^\/names\.php$
-        RewriteCond %{QUERY_STRING} ^eventID=17
-        RewriteRule ^ /find-a-name/kia/gulf-war? [R=301,L]
-
-        RewriteCond %{REQUEST_URI} ^\/names\.php$
-        RewriteCond %{QUERY_STRING} ^eventID=86
-        RewriteRule ^ /find-a-name/kia/beirut-barracks? [R=301,L]
-
-        RewriteCond %{REQUEST_URI} ^\/names\.php$
-        RewriteCond %{QUERY_STRING} ^eventID=94
-        RewriteRule ^ /find-a-name/kia/gothic-serpent? [R=301,L]
-
-        RewriteCond %{REQUEST_URI} ^\/names\.php$
-        RewriteCond %{QUERY_STRING} ^eventID=89
-        RewriteRule ^ /find-a-name/kia/khobar-towers? [R=301,L]
-
-        RewriteCond %{REQUEST_URI} ^\/names\.php$
-        RewriteCond %{QUERY_STRING} ^eventID=21
-        RewriteRule ^ /find-a-name/kia/uss-cole? [R=301,L]
-
-        RewriteCond %{REQUEST_URI} ^\/names\.php$
-        RewriteCond %{QUERY_STRING} ^eventID=29
-        RewriteRule ^ /find-a-name/kia/iraqi-freedom? [R=301,L]
-
-        RewriteCond %{REQUEST_URI} ^\/names\.php$
-        RewriteCond %{QUERY_STRING} ^eventID=90
-        RewriteRule ^ /find-a-name/kia/new-dawn? [R=301,L]
-
-        RewriteCond %{REQUEST_URI} ^\/names\.php$
-        RewriteCond %{QUERY_STRING} ^eventID=34
-        RewriteRule ^ /find-a-name/pow-mia/vietnam-war-prisoners-of-war? [R=301,L]
-
-        RewriteCond %{REQUEST_URI} ^\/names\.php$
-        RewriteCond %{QUERY_STRING} ^eventID=23
-        RewriteRule ^ /find-a-name/kia/enduring-freedom? [R=301,L]
-
-        RewriteCond %{REQUEST_URI} ^\/names\.php$
-        RewriteCond %{QUERY_STRING} ^eventID=20
-        RewriteRule ^ /find-a-name/pow-mia? [R=301,L]
-
-        RewriteCond %{REQUEST_URI} ^\/names\.php$
-        RewriteCond %{QUERY_STRING} ^eventID=44
-        RewriteRule ^ /find-a-name/pow-mia/vietnam-war-returnee? [R=301,L]
-
-        RewriteCond %{REQUEST_URI} ^\/names\.php$
-        RewriteCond %{QUERY_STRING} ^eventID=96
-        RewriteRule ^ /find-a-name/pow-mia/civilian-hostages? [R=301,L]
-
 ############################################
 ## You can put here your magento root folder
 ## path relative to web root
@@ -298,8 +185,13 @@
 ## Deny access to release notes to prevent disclosure of the installed Magento version
 
     <Files RELEASE_NOTES.txt>
-        order allow,deny
-        deny from all
+        <IfVersion < 2.4>
+            order allow,deny
+            deny from all
+        </IfVersion>
+        <IfVersion >= 2.4>
+            Require all denied
+        </IfVersion>
     </Files>
 
 # For 404s and 403s that aren't handled by the application, show plain 404 response
@@ -315,8 +207,23 @@ ErrorDocument 403 /errors/404.php
 ###########################################
 ## Deny access  to cron.php
     <Files cron.php>
-        order allow,deny
-        deny from all
+        <IfVersion < 2.4>
+            order allow,deny
+            deny from all
+        </IfVersion>
+        <IfVersion >= 2.4>
+            Require all denied
+        </IfVersion>
+    </Files>
+## Deny access  to .user.ini
+    <Files .user.ini>
+        <IfVersion < 2.4>
+            order allow,deny
+            deny from all
+        </IfVersion>
+        <IfVersion >= 2.4>
+            Require all denied
+        </IfVersion>
     </Files>
 
 <IfModule mod_headers.c>
@@ -324,10 +231,3 @@ ErrorDocument 403 /errors/404.php
     ## Prevent clickjacking
     Header set X-Frame-Options SAMEORIGIN
 </IfModule>
-
-# non-query-strings redirects.
-Redirect 301 /kia.php /find-a-name/kia
-Redirect 301 /customized.php /customize-a-product
-Redirect 301 /supportive/untiltheyallcomehome.php /customize-a-product
-Redirect 301 /powmia.php /find-a-name/pow-mia
-Redirect 301 /terrorism.php /find-a-name/terrorism

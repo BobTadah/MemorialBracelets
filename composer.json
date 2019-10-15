@@ -30,7 +30,7 @@
     "require": {
         "magento/product-community-edition": "2.3.2",
         "composer/composer": "@alpha",
-        "fooman/googleanalyticsplus-m2": "^3.0",
+        "fooman/googleanalyticsplus-m2": "^4.0",
         "navarr/easy-upgrades": "^1.0",
         "cweagans/composer-patches": "^1.6.0",
         "litespeed/module-litemage": "^2.0",
