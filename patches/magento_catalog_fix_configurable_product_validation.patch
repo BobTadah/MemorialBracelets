@@ -1,0 +1,24 @@
+--- a/Model/Product/Option/Type/Select.php
++++ b/Model/Product/Option/Type/Select.php
+@@ -63,7 +63,11 @@ class Select extends \Magento\Catalog\Model\Product\Option\Type\DefaultType
+         $option = $this->getOption();
+         $value = $this->getUserValue();
+ 
+-        if (empty($value) && $option->getIsRequire() && !$this->getSkipCheckRequiredOption()) {
++        if (!$option->getIsRequire()) {
++            return $this;
++        }
++
++        if (empty($value) && !$this->getSkipCheckRequiredOption()) {
+             $this->setIsValid(false);
+             throw new LocalizedException(
+                 __("The product's required option(s) weren't entered. Make sure the options are entered and try again.")
+@@ -71,7 +75,7 @@ class Select extends \Magento\Catalog\Model\Product\Option\Type\DefaultType
+         }
+         if (!$this->_isSingleSelection()) {
+             $valuesCollection = $option->getOptionValuesByOptionId($value, $this->getProduct()->getStoreId())->load();
+-            $valueCount = is_array($value) ? count($value) : 0;
++            $valueCount = is_array($value) ? count($value) : 1;
+             if ($valuesCollection->count() != $valueCount) {
+                 $this->setIsValid(false);
+                 throw new LocalizedException(

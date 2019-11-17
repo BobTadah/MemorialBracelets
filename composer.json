@@ -82,8 +82,11 @@
         "magento-force": "override",
         "composer-exit-on-patch-failure": true,
         "patches": {
-        "magento/framework": {
-                "Fix setup upgrade": "patches/magento_framework_fix_setup_upgrade.patch"
+            "magento/framework": {
+                    "Fix setup upgrade": "patches/magento_framework_fix_setup_upgrade.patch"
+            },
+            "magento/module-catalog": {
+                "Configurable Product Validation": "patches/magento_catalog_fix_configurable_product_validation.patch"
             }
         }
     },
