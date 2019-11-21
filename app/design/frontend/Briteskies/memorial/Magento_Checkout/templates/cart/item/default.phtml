@@ -1,15 +1,17 @@
 <?php
-use Aheadworks\Giftcard\Model\ConfigProvider;
+use Aheadworks\Giftcard\Model\Product\Type\Giftcard;
+use Magento\Msrp\Helper\Data as MsrpHelper;
+use MemorialBracelets\BraceletPreview\Helper\Data as PreviewHelper;
 /** @var $block \Magento\Checkout\Block\Cart\Item\Renderer */
-$item            = $block->getItem();
-$product          = $item->getProduct();
+$item = $block->getItem();
+$product = $item->getProduct();
 $isVisibleProduct = $product->isVisibleInSiteVisibility();
 /** @var \Magento\Msrp\Helper\Data $helper */
-$helper = $this->helper('Magento\Msrp\Helper\Data');
+$helper = $this->helper(MsrpHelper::class);
 /** @var \MemorialBracelets\BraceletPreview\Helper\Data $previewHelper */
-$previewHelper = $this->helper('MemorialBracelets\BraceletPreview\Helper\Data');
-$qtyBlock      = $block->getLayout()->getBlock('quantity-discounts');
-$canApplyMsrp  = $helper->isShowBeforeOrderConfirm($product) && $helper->isMinimalPriceLessMsrp($product);
+$previewHelper = $this->helper(PreviewHelper::class);
+$qtyBlock = $block->getLayout()->getBlock('quantity-discounts');
+$canApplyMsrp = $helper->isShowBeforeOrderConfirm($product) && $helper->isMinimalPriceLessMsrp($product);
 ?>
 <tbody class="cart item" data-bind="scope: 'customer'">
     <tr class="item-info">
@@ -36,9 +38,9 @@ $canApplyMsrp  = $helper->isShowBeforeOrderConfirm($product) && $helper->isMinim
                         <?= $block->escapeHtml($block->getProductName()) ?>
                     <?php endif; ?>
                 </strong>
-                <?php if ($_options = $block->getOptionList()):?>
+                <?php if ($_options = $block->getOptionList()): ?>
                     <dl class="item-options">
-                        <?php foreach ($_options as $_option) : ?>
+                        <?php foreach ($_options as $_option): ?>
                             <?php $_formatedOptionValue = $block->getFormatedOptionValue($_option) ?>
 
                             <?php if (isset($_formatedOptionValue['full_view']) || !empty($_formatedOptionValue['value'])): ?>
@@ -101,7 +103,7 @@ $canApplyMsrp  = $helper->isShowBeforeOrderConfirm($product) && $helper->isMinim
                 </div>
             </div>
             <?php // skip quantity discounts block for gift card items ?>
-            <?php if(!$type = $item->getProduct()->getTypeId() === ConfigProvider::GIFTCARD_TOTAL_CODE): ?>
+            <?php if(!$type = $item->getProduct()->getTypeId() === Giftcard::TYPE_CODE): ?>
                 <div class="quantity-discount-wrapper">
                     <a class="link" id="discount-anchor"
                        title="<?= __('Click to Display Discounts') ?>"><i class="icon-question-mark"></i><?= __('Quantity Discounts') ?></a>
