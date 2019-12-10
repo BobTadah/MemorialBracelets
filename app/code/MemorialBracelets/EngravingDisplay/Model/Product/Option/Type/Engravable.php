@@ -336,7 +336,7 @@ class Engravable extends \Magento\Catalog\Model\Product\Option\Type\DefaultType
             $productCustomOptions = $product->getCustomOptions();
             $buyRequest = $productCustomOptions['info_buyRequest'];
             $serializedValue = $buyRequest->getData('value');
-            $buyRequestData = json_decode($serializedValue);
+            $buyRequestData = json_decode($serializedValue, true);
             if (!isset($buyRequestData['name_string'])) {
                 //I don't love it, but If I can't find the string to compare, let it go through. TODO!
                 $price = $this->getOption()->getData('name_engraving_price');
