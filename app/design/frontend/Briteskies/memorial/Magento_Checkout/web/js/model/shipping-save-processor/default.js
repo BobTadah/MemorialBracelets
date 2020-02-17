@@ -50,12 +50,12 @@ define(
                     function (response) {
                         quote.setTotals(response.totals);
                         paymentService.setPaymentMethods(methodConverter(response.payment_methods));
-                        fullScreenLoader.stopLoader();
+                        fullScreenLoader.stopLoader(true);
                     }
                 ).fail(
                     function (response) {
                         errorProcessor.process(response);
-                        fullScreenLoader.stopLoader();
+                        fullScreenLoader.stopLoader(true);
                     }
                 );
             }
